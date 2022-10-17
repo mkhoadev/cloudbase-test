@@ -207,6 +207,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
         if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceBusd) {
           return farm
         }
+
         const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteTokenPriceBusd)
         const { cakeRewardsApr, lpRewardsApr } = isActive
           ? getFarmApr(
@@ -338,7 +339,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               </Button>
             </NextLinkFromReactRouter>
           </Box>
-          {(chainId === ChainId.BSC || chainId === ChainId.BSC_TESTNET) && (
+          {chainId === ChainId.BSC && (
             <Box>
               <BCakeBoosterCard />
             </Box>

@@ -1,6 +1,8 @@
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useRouter, NextRouter } from 'next/router'
 import { useEffect } from 'react'
+import { usePreviousValue } from '@pancakeswap/hooks'
+import { EXCHANGE_PAGE_PATHS } from 'config/constants/exchange'
 import { isChainSupported } from 'utils/wagmi'
 import { useProvider } from 'wagmi'
 import { ChainId } from '@pancakeswap/sdk'
@@ -12,20 +14,26 @@ const getHashFromRouter = (router: NextRouter) => {
 }
 
 export function useNetworkConnectorUpdater() {
-  const { chainId, isConnecting } = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React()
+  const previousChainId = usePreviousValue(chainId)
   const [loading] = useSwitchNetworkLoading()
   const router = useRouter()
 
   useEffect(() => {
-    if (loading || !router.isReady || isConnecting) return
+    if (loading || !router.isReady) return
     const parsedQueryChainId = Number(router.query.chainId)
     if (!parsedQueryChainId && chainId === ChainId.BSC) return
     if (parsedQueryChainId !== chainId && isChainSupported(chainId)) {
+      const removeQueriesFromPath =
+        previousChainId !== chainId &&
+        EXCHANGE_PAGE_PATHS.some((item) => {
+          return router.pathname.startsWith(item)
+        })
       const uriHash = getHashFromRouter(router)?.[0]
       router.replace(
         {
           query: {
-            ...router.query,
+            ...(!removeQueriesFromPath && router.query),
             chainId,
           },
           ...(uriHash && { hash: uriHash }),
@@ -33,7 +41,7 @@ export function useNetworkConnectorUpdater() {
         undefined,
       )
     }
-  }, [chainId, isConnecting, loading, router])
+  }, [previousChainId, chainId, loading, router])
 }
 
 /**

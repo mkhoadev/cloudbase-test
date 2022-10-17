@@ -57,6 +57,8 @@ import {
   getTradingCompetitionContractFanToken,
   getTradingCompetitionContractMobox,
   getTradingCompetitionContractMoD,
+  getNonBscVaultContract,
+  getCrossFarmingProxyContract,
 } from 'utils/contractHelpers'
 import { useSigner } from 'wagmi'
 
@@ -248,9 +250,9 @@ export const useBunnySpecialXmasContract = () => {
   return useMemo(() => getBunnySpecialXmasContract(signer), [signer])
 }
 
-export const useAnniversaryAchievementContract = () => {
-  const { data: signer } = useSigner()
-  return useMemo(() => getAnniversaryAchievementContract(signer), [signer])
+export const useAnniversaryAchievementContract = (withSignerIfPossible = true) => {
+  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
+  return useMemo(() => getAnniversaryAchievementContract(providerOrSigner), [providerOrSigner])
 }
 
 export const useNftSaleContract = () => {
@@ -362,5 +364,20 @@ export function useBCakeProxyContract(proxyContractAddress: string, withSignerIf
   return useMemo(
     () => proxyContractAddress && getBCakeProxyContract(proxyContractAddress, providerOrSigner),
     [providerOrSigner, proxyContractAddress],
+  )
+}
+
+export const useNonBscVault = (withSignerIfPossible = true) => {
+  const { chainId } = useActiveChainId()
+  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
+  return useMemo(() => getNonBscVaultContract(providerOrSigner, chainId), [providerOrSigner, chainId])
+}
+
+export const useCrossFarmingProxy = (proxyContractAddress: string, withSignerIfPossible = true) => {
+  const { chainId } = useActiveChainId()
+  const providerOrSigner = useProviderOrSigner(withSignerIfPossible)
+  return useMemo(
+    () => proxyContractAddress && getCrossFarmingProxyContract(proxyContractAddress, providerOrSigner, chainId),
+    [proxyContractAddress, providerOrSigner, chainId],
   )
 }

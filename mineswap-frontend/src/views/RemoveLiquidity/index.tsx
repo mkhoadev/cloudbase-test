@@ -56,7 +56,7 @@ import Dots from '../../components/Loader/Dots'
 import { useBurnActionHandlers, useDerivedBurnInfo, useBurnState } from '../../state/burn/hooks'
 
 import { Field } from '../../state/burn/actions'
-import { useGasPrice, useUserSlippageTolerance, useZapModeManager } from '../../state/user/hooks'
+import { useUserSlippageTolerance, useZapModeManager } from '../../state/user/hooks'
 import Page from '../Page'
 import ConfirmLiquidityModal from '../Swap/components/ConfirmRemoveLiquidityModal'
 import { logError } from '../../utils/sentry'
@@ -82,7 +82,6 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
   const [tokenA, tokenB] = useMemo(() => [currencyA?.wrapped, currencyB?.wrapped], [currencyA, currencyB])
 
   const { t } = useTranslation()
-  const gasPrice = useGasPrice()
 
   const canZapOut = useMemo(() => zapSupportedChainId.includes(chainId) && zapMode, [chainId, zapMode])
   const zapModeStatus = useMemo(
@@ -146,6 +145,7 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
   const atMaxAmount = parsedAmounts[Field.LIQUIDITY_PERCENT]?.equalTo(new Percent('1'))
 
   // pair contract
+  const pairContractRead: Contract | null = usePairContract(pair?.liquidityToken?.address, false)
   const pairContract: Contract | null = usePairContract(pair?.liquidityToken?.address)
 
   // allowance handling
@@ -156,7 +156,7 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
   )
 
   async function onAttemptToApprove() {
-    if (!pairContract || !pair || !library || !deadline) throw new Error('missing dependencies')
+    if (!pairContract || !pairContractRead || !pair || !library || !deadline) throw new Error('missing dependencies')
     const liquidityAmount = parsedAmounts[Field.LIQUIDITY]
     if (!liquidityAmount) {
       toastError(t('Error'), t('Missing liquidity amount'))
@@ -164,7 +164,7 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
     }
 
     // try to gather a signature for permission
-    const nonce = await pairContract.nonces(account)
+    const nonce = await pairContractRead.nonces(account)
 
     const EIP712Domain = [
       { name: 'name', type: 'string' },
@@ -285,13 +285,11 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
       ]
     }
     setLiquidityState({ attemptingTxn: true, liquidityErrorMessage: undefined, txHash: undefined })
-    callWithEstimateGas(zapContract, methodName, args, {
-      gasPrice,
-    })
+    callWithEstimateGas(zapContract, methodName, args)
       .then((response) => {
         setLiquidityState({ attemptingTxn: false, liquidityErrorMessage: undefined, txHash: response.hash })
         const amount = parsedAmounts[Field.LIQUIDITY].toSignificant(3)
-        const symbol = getLPSymbol(pair.token0.symbol, pair.token1.symbol)
+        const symbol = getLPSymbol(pair.token0.symbol, pair.token1.symbol, chainId)
         addTransaction(response, {
           summary: `Remove ${amount} ${symbol}`,
           translatableSummary: {
@@ -439,7 +437,6 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
       setLiquidityState({ attemptingTxn: true, liquidityErrorMessage: undefined, txHash: undefined })
       await routerContract[methodName](...args, {
         gasLimit: safeGasEstimate,
-        gasPrice,
       })
         .then((response: TransactionResponse) => {
           setLiquidityState({ attemptingTxn: false, liquidityErrorMessage: undefined, txHash: response.hash })
@@ -705,9 +702,13 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
               <CurrencyInputPanel
                 value={formattedAmounts[Field.LIQUIDITY]}
                 onUserInput={onLiquidityInput}
+                onPercentInput={(percent) => {
+                  onUserInput(Field.LIQUIDITY_PERCENT, percent.toString())
+                }}
                 onMax={() => {
                   onUserInput(Field.LIQUIDITY_PERCENT, '100')
                 }}
+                showQuickInputButton
                 showMaxButton={!atMaxAmount}
                 disableCurrencySelect
                 currency={pair?.liquidityToken}
@@ -766,8 +767,7 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
                 disabled={isZap && !removalCheckedB}
                 value={formattedAmounts[Field.CURRENCY_B]}
                 onUserInput={onCurrencyBInput}
-                onMax={() => onUserInput(Field.LIQUIDITY_PERCENT, '100')}
-                showMaxButton={!atMaxAmount}
+                showMaxButton={false}
                 currency={currencyB}
                 label={t('Output')}
                 onCurrencySelect={handleSelectCurrencyB}

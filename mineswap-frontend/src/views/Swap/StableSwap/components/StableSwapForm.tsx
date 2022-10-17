@@ -1,6 +1,6 @@
 import { SetStateAction, useCallback, useEffect, useState, Dispatch, useContext } from 'react'
 import styled from 'styled-components'
-import { Currency, CurrencyAmount } from '@pancakeswap/sdk'
+import { Currency, CurrencyAmount, Percent } from '@pancakeswap/sdk'
 import {
   Text,
   ArrowDownIcon,
@@ -184,6 +184,15 @@ export default function StableSwapForm({ setIsChartDisplayed, isChartDisplayed }
     [onCurrencySelection],
   )
 
+  const handlePercentInput = useCallback(
+    (percent) => {
+      if (maxAmountInput) {
+        onUserInput(Field.INPUT, maxAmountInput.multiply(new Percent(percent, 100)).toExact())
+      }
+    },
+    [maxAmountInput, onUserInput],
+  )
+
   const hasAmount = Boolean(parsedAmount)
 
   const onRefreshPrice = useCallback(() => {
@@ -200,7 +209,7 @@ export default function StableSwapForm({ setIsChartDisplayed, isChartDisplayed }
             {t('StableSwap')}
             <InfoTooltip
               ml="4px"
-              text="StableSwap provides better rates and lower fees for pairs with highly correlated prices"
+              text={t('StableSwap provides better rates and lower fees for pairs with highly correlated prices')}
             />
           </Flex>
         }
@@ -217,8 +226,10 @@ export default function StableSwapForm({ setIsChartDisplayed, isChartDisplayed }
             label={independentField === Field.OUTPUT && trade ? t('From (estimated)') : t('From')}
             value={formattedAmounts[Field.INPUT]}
             showMaxButton={!atMaxAmountInput}
+            showQuickInputButton
             currency={currencies[Field.INPUT]}
             onUserInput={handleTypeInput}
+            onPercentInput={handlePercentInput}
             onMax={handleMaxInput}
             onCurrencySelect={handleInputSelect}
             otherCurrency={currencies[Field.OUTPUT]}
@@ -289,7 +300,7 @@ export default function StableSwapForm({ setIsChartDisplayed, isChartDisplayed }
           {typedValue ? null : (
             <AutoColumn>
               <Message variant="warning" mb="16px">
-                <MessageText>Trade stablecoins in StableSwap with lower slippage and trading fees!</MessageText>
+                <MessageText>{t('Trade stablecoins in StableSwap with lower slippage and trading fees!')}</MessageText>
               </Message>
             </AutoColumn>
           )}

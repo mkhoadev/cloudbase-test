@@ -7,21 +7,102 @@ export const cakeBnbLpToken = new Token(ChainId.BSC, CAKE_BNB_LP_MAINNET, 18, 'C
 
 const ifos: Ifo[] = [
   {
+    id: 'wmx',
+    address: '0xC202eb5f2487DA3675c4aAa2C3D2c071078699c1',
+    isActive: true,
+    name: 'WMX',
+    poolBasic: {
+      saleAmount: '10,000,000 WMX',
+      raiseAmount: '$3,000,000',
+      distributionRatio: 0.25,
+    },
+    poolUnlimited: {
+      saleAmount: '30,000,000 WMX',
+      raiseAmount: '$9,000,000',
+      distributionRatio: 0.75,
+    },
+    currency: bscTokens.cake,
+    token: bscTokens.wmx,
+    releaseBlockNumber: 22242441,
+    campaignId: '511800000',
+    articleUrl:
+      'https://pancakeswap.finance/voting/proposal/0x8bef379b1f3e1f42e180d877edd3ef5b11476300f9de37196904ca4c2070b470',
+    tokenOfferingPrice: 0.3,
+    version: 3.2,
+    twitterUrl: 'https://twitter.com/WombexFinance',
+    description: 'Wombex is a customized fork of Convex, designed specifically for the Wombat Exchange ecosystem',
+    vestingTitle: 'Earn $WMX by staking assets; Lock $WMX for Fee-Sharing and Wombat Governance',
+  },
+  {
+    id: 'krs',
+    cIFO: true,
+    address: '0x4CCB9960dEF2f9a55D1a0454a134a8Adb0047B8e',
+    isActive: false,
+    name: 'KRS',
+    poolBasic: {
+      saleAmount: '12,000,000 KRS',
+      raiseAmount: '$420,000',
+      distributionRatio: 0.4,
+    },
+    poolUnlimited: {
+      saleAmount: '18,000,000 KRS',
+      raiseAmount: '$630,000',
+      distributionRatio: 0.6,
+    },
+    currency: bscTokens.cake,
+    token: bscTokens.krs,
+    releaseBlockNumber: 21970879,
+    campaignId: '511700000',
+    articleUrl:
+      'https://pancakeswap.finance/voting/proposal/bafkreicqqvgqpwtnhmlfdwz3ya3hnjm6nvgqbf3fpi4vbxmvqyv6yi3enu',
+    tokenOfferingPrice: 0.035,
+    version: 3.2,
+    twitterUrl: 'https://twitter.com/KingdomRaids',
+    description: 'Kingdom Raids is a blockchain-based strategy role-playing game (RPG) game with a NFT metaverse',
+    vestingTitle: '$KRS - utility token for Kingdom Raids, a role-playing game (RPG) game.',
+  },
+  {
+    id: 'co',
+    address: '0x8baeee7d68cb332c63b3e4a8740072121070a2df',
+    isActive: false,
+    name: 'CO',
+    poolBasic: {
+      saleAmount: '10,500,000 CO',
+      raiseAmount: '$367,500',
+      distributionRatio: 0.25,
+    },
+    poolUnlimited: {
+      saleAmount: '31,500,000 CO',
+      raiseAmount: '$1,102,500',
+      distributionRatio: 0.75,
+    },
+    currency: bscTokens.cake,
+    token: bscTokens.co,
+    releaseBlockNumber: 21615380,
+    campaignId: '511600000',
+    articleUrl:
+      'https://pancakeswap.finance/voting/proposal/bafkreiddual5o7vzfcwuazw3lgckis66hka4xytqkttqg2wjtea5pywohy',
+    tokenOfferingPrice: 0.035,
+    version: 3.2,
+    twitterUrl: 'https://twitter.com/Coritecom',
+    description:
+      'Corite is a blockchain-based music platform jointly powered by fans and artists to finance and promote music in a unique Engage-to-Earn (E2E) model.',
+    vestingTitle: '$CO - utility token for the Corite Experience!',
+  },
+  {
     id: 'hoop',
     address: '0x326e9E1B685C7F366fb320e7eC59599F3d88b1a2',
-    isActive: true,
+    isActive: false,
     cIFO: true,
     name: 'HOOP',
     poolBasic: {
       saleAmount: '6,499,500 HOOP',
       raiseAmount: '$357,472.50',
-      cakeToBurn: '$0',
       distributionRatio: 0.3,
     },
     poolUnlimited: {
       saleAmount: '15,165,500 HOOP',
       raiseAmount: '$834,102.50',
-      cakeToBurn: '$0',
       distributionRatio: 0.7,
     },
     currency: bscTokens.cake,
@@ -44,13 +125,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '2,800,000 WOM',
       raiseAmount: '$210,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.1,
     },
     poolUnlimited: {
       saleAmount: '25,200,000 WOM',
       raiseAmount: '$1,890,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.9,
     },
     currency: bscTokens.cake,
@@ -73,13 +152,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '10,000,000 PEEL',
       raiseAmount: '$400,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.2,
     },
     poolUnlimited: {
       saleAmount: '40,000,000 PEEL',
       raiseAmount: '$1,600,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.8,
     },
     currency: bscTokens.cake,
@@ -103,13 +180,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '10,000,000 TRIVIA',
       raiseAmount: '$350,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.2,
     },
     poolUnlimited: {
       saleAmount: '40,000,000 TRIVIA',
       raiseAmount: '$1,400,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.8,
     },
     currency: bscTokens.cake,
@@ -134,13 +209,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '1,200,000 DUET',
       raiseAmount: '$360,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.2,
     },
     poolUnlimited: {
       saleAmount: '4,800,000 DUET',
       raiseAmount: '$1,440,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.8,
     },
     currency: bscTokens.cake,
@@ -163,13 +236,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '4,000,000 ERA',
       raiseAmount: '$360,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.2,
     },
     poolUnlimited: {
       saleAmount: '16,000,000 ERA',
       raiseAmount: '$1,440,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.8,
     },
     currency: bscTokens.cake,
@@ -192,13 +263,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '20,000,000 FROYO',
       raiseAmount: '$1,200,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.3,
     },
     poolUnlimited: {
       saleAmount: '46,666,668 FROYO',
       raiseAmount: '$2,800,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.7,
     },
     currency: bscTokens.cake,
@@ -220,13 +289,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '7,200,000 DPT',
       raiseAmount: '$180,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.3,
     },
     poolUnlimited: {
       saleAmount: '16,800,000 DPT',
       raiseAmount: '$420,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.7,
     },
     currency: bscTokens.cake,
@@ -245,13 +312,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '120,000 SANTOS',
       raiseAmount: '$300,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.3,
     },
     poolUnlimited: {
       saleAmount: '280,000 SANTOS',
       raiseAmount: '$700,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.7,
     },
     currency: bscTokens.cake,
@@ -270,13 +335,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '250,000 PORTO',
       raiseAmount: '$500,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.5,
     },
     poolUnlimited: {
       saleAmount: '250,000 PORTO',
       raiseAmount: '$500,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.5,
     },
     currency: bscTokens.cake,
@@ -295,13 +358,11 @@ const ifos: Ifo[] = [
     poolBasic: {
       saleAmount: '6,000,000 DAR',
       raiseAmount: '$450,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.5,
     },
     poolUnlimited: {
       saleAmount: '6,000,000 DAR',
       raiseAmount: '$450,000',
-      cakeToBurn: '$0',
       distributionRatio: 0.5,
     },
     currency: bscTokens.cake,

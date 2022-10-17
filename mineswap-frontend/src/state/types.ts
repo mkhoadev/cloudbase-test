@@ -77,6 +77,7 @@ export interface DeserializedFarm extends DeserializedFarmConfig {
   quoteTokenAmountTotal?: BigNumber
   lpTotalInQuoteToken?: BigNumber
   lpTotalSupply?: BigNumber
+  lpTokenPrice?: BigNumber
   tokenPriceVsQuote?: BigNumber
   poolWeight?: BigNumber
   userData?: DeserializedFarmUserData
@@ -507,11 +508,6 @@ export enum ProposalState {
   CLOSED = 'closed',
 }
 
-export interface Space {
-  id: string
-  name: string
-}
-
 export interface Proposal {
   author: string
   body: string
@@ -519,7 +515,6 @@ export interface Proposal {
   end: number
   id: string
   snapshot: string
-  space: Space
   votes: number
   start: number
   state: ProposalState
@@ -530,7 +525,6 @@ export interface Vote {
   id: string
   voter: string
   created: number
-  space: Space
   proposal: {
     choices: Proposal['choices']
   }
@@ -637,6 +631,7 @@ export interface SerializedPotteryPublicData {
   totalLockCake: string
   totalSupply: string
   lockStartTime: string
+  lockTime: number
   totalLockedValue: string
   latestRoundId: string
   maxTotalDeposit: string
@@ -649,6 +644,7 @@ export interface DeserializedPublicData {
   totalLockCake: BigNumber
   totalSupply: BigNumber
   lockStartTime: string
+  lockTime: number
   totalLockedValue: BigNumber
   latestRoundId: string
   maxTotalDeposit: BigNumber

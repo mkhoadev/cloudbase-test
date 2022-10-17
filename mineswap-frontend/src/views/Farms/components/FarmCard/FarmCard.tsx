@@ -1,18 +1,20 @@
-import { useState, useCallback } from 'react'
-import BigNumber from 'bignumber.js'
-import styled from 'styled-components'
-import { Card, Flex, Text, Skeleton } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import { getBlockExploreLink } from 'utils'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { Card, Flex, Skeleton, Text } from '@pancakeswap/uikit'
+import BigNumber from 'bignumber.js'
 import ExpandableSectionButton from 'components/ExpandableSectionButton'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useCallback, useState } from 'react'
+import styled from 'styled-components'
+import { getBlockExploreLink } from 'utils'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import DetailsSection from './DetailsSection'
-import CardHeading from './CardHeading'
+import { multiChainPaths } from 'state/info/constant'
 import { FarmWithStakedValue } from '../types'
-import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
+import CardActionsContainer from './CardActionsContainer'
+import CardHeading from './CardHeading'
+import DetailsSection from './DetailsSection'
+
 import BoostedApr from '../YieldBooster/components/BoostedApr'
 
 const StyledCard = styled(Card)`
@@ -73,6 +75,7 @@ const FarmCard: React.FC<React.PropsWithChildren<FarmCardProps>> = ({
   const liquidityUrlPathParts = getLiquidityUrlPathParts({
     quoteTokenAddress: farm.quoteToken.address,
     tokenAddress: farm.token.address,
+    chainId,
   })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
   const { lpAddress } = farm
@@ -93,6 +96,7 @@ const FarmCard: React.FC<React.PropsWithChildren<FarmCardProps>> = ({
           token={farm.token}
           quoteToken={farm.quoteToken}
           boosted={farm.boosted}
+          isStable={farm.isStable}
         />
         {!removed && (
           <Flex justifyContent="space-between" alignItems="center">
@@ -117,6 +121,7 @@ const FarmCard: React.FC<React.PropsWithChildren<FarmCardProps>> = ({
                   <ApyButton
                     variant="text-and-button"
                     pid={farm.pid}
+                    lpTokenPrice={farm.lpTokenPrice}
                     lpSymbol={farm.lpSymbol}
                     multiplier={farm.multiplier}
                     lpLabel={lpLabel}
@@ -155,7 +160,7 @@ const FarmCard: React.FC<React.PropsWithChildren<FarmCardProps>> = ({
           <DetailsSection
             removed={removed}
             bscScanAddress={getBlockExploreLink(lpAddress, 'address', chainId)}
-            infoAddress={`/info/pool/${lpAddress}`}
+            infoAddress={`/info${multiChainPaths[chainId]}/pools/${lpAddress}`}
             totalValueFormatted={totalValueFormatted}
             lpLabel={lpLabel}
             addLiquidityUrl={addLiquidityUrl}

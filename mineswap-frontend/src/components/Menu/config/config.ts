@@ -69,6 +69,7 @@ const config: (
           href: `https://perp.pancakeswap.finance/${perpLangMap(languageCode)}/futures/BTCUSDT?theme=${perpTheme(
             isDark,
           )}`,
+          supportChainIds: SUPPORT_ONLY_BSC,
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },
         {
@@ -84,7 +85,6 @@ const config: (
       icon: EarnIcon,
       fillIcon: EarnFillIcon,
       image: '/images/decorations/pe2.png',
-      supportChainIds: SUPPORT_ONLY_BSC,
       items: [
         {
           label: t('Farms'),
@@ -158,7 +158,6 @@ const config: (
         {
           label: t('Info'),
           href: '/info',
-          supportChainIds: SUPPORT_ONLY_BSC,
         },
         {
           label: t('IFO'),

@@ -90,6 +90,7 @@ exports[`renders correctly 1`] = `
   color: var(--colors-failure);
   font-weight: 400;
   line-height: 1.5;
+  text-transform: uppercase;
   font-size: 14px;
 }
 
@@ -97,6 +98,7 @@ exports[`renders correctly 1`] = `
   color: var(--colors-warning);
   font-weight: 400;
   line-height: 1.5;
+  text-transform: uppercase;
   font-size: 14px;
 }
 
@@ -1877,8 +1879,8 @@ exports[`renders correctly 1`] = `
                     >
                       Docs & Guides
                       <svg
-                        class="c5"
-                        color="text"
+                        class="c18"
+                        color="textSubtle"
                         viewBox="0 0 24 24"
                         width="20px"
                         xmlns="http://www.w3.org/2000/svg"

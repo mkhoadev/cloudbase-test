@@ -1,3 +1,5 @@
+import { useTranslation } from '@pancakeswap/localization'
+import { ChainId, NATIVE } from '@pancakeswap/sdk'
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -11,16 +13,16 @@ import {
   UserMenuItem,
   useTooltip,
 } from '@pancakeswap/uikit'
-import { ChainId, NATIVE } from '@pancakeswap/sdk'
+import { useWeb3React } from '@pancakeswap/wagmi'
 import { useActiveChainId, useLocalNetworkChain } from 'hooks/useActiveChainId'
 import { useNetworkConnectorUpdater } from 'hooks/useActiveWeb3React'
-import { useTranslation } from '@pancakeswap/localization'
-import { useSessionChainId } from 'hooks/useSessionChainId'
 import { useHover } from 'hooks/useHover'
-import { useNetwork } from 'wagmi'
+import { useSessionChainId } from 'hooks/useSessionChainId'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
 import { useMemo } from 'react'
+import { useRouter } from 'next/router'
 import { chains } from 'utils/wagmi'
+import { useNetwork } from 'wagmi'
 import { ChainLogo } from './Logo/ChainLogo'
 
 const NetworkSelect = ({ switchNetwork, chainId }) => {
@@ -32,18 +34,20 @@ const NetworkSelect = ({ switchNetwork, chainId }) => {
         <Text color="textSubtle">{t('Select a Network')}</Text>
       </Box>
       <UserMenuDivider />
-      {chains.map((chain) => (
-        <UserMenuItem
-          key={chain.id}
-          style={{ justifyContent: 'flex-start' }}
-          onClick={() => chain.id !== chainId && switchNetwork(chain.id)}
-        >
-          <ChainLogo chainId={chain.id} />
-          <Text color={chain.id === chainId ? 'secondary' : 'text'} bold={chain.id === chainId} pl="12px">
-            {chain.name}
-          </Text>
-        </UserMenuItem>
-      ))}
+      {chains
+        .filter((chain) => !chain.testnet || chain.id === chainId)
+        .map((chain) => (
+          <UserMenuItem
+            key={chain.id}
+            style={{ justifyContent: 'flex-start' }}
+            onClick={() => chain.id !== chainId && switchNetwork(chain.id)}
+          >
+            <ChainLogo chainId={chain.id} />
+            <Text color={chain.id === chainId ? 'secondary' : 'text'} bold={chain.id === chainId} pl="12px">
+              {chain.name}
+            </Text>
+          </UserMenuItem>
+        ))}
     </>
   )
 }
@@ -107,6 +111,9 @@ export const NetworkSwitcher = () => {
   const { t } = useTranslation()
   const { chainId, isWrongNetwork, isNotMatched } = useActiveChainId()
   const { pendingChainId, isLoading, canSwitch, switchNetworkAsync } = useSwitchNetwork()
+  const router = useRouter()
+  const { account } = useWeb3React()
+
   useNetworkConnectorUpdater()
 
   const foundChain = useMemo(
@@ -114,17 +121,23 @@ export const NetworkSwitcher = () => {
     [isLoading, pendingChainId, chainId],
   )
   const symbol = NATIVE[foundChain?.id]?.symbol ?? foundChain?.nativeCurrency?.symbol
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(
+    t('Unable to switch network. Please try it on your wallet'),
+    { placement: 'auto' },
+  )
 
   const cannotChangeNetwork = !canSwitch
 
-  if (!chainId || chainId === ChainId.BSC) {
+  if (!chainId || (!account && router.pathname.includes('info'))) {
     return null
   }
 
   return (
-    <>
+    <Box ref={cannotChangeNetwork ? targetRef : null} height="100%">
+      {cannotChangeNetwork && tooltipVisible && tooltip}
       <UserMenu
         mr="8px"
+        placement="bottom"
         variant={isLoading ? 'pending' : isWrongNetwork ? 'danger' : 'default'}
         avatarSrc={`/images/chains/${chainId}.png`}
         disabled={cannotChangeNetwork}
@@ -151,6 +164,6 @@ export const NetworkSwitcher = () => {
           )
         }
       </UserMenu>
-    </>
+    </Box>
   )
 }

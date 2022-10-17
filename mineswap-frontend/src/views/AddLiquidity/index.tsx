@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { JSBI, CurrencyAmount, Token, WNATIVE, MINIMUM_LIQUIDITY } from '@pancakeswap/sdk'
+import { JSBI, CurrencyAmount, Token, WNATIVE, MINIMUM_LIQUIDITY, Percent } from '@pancakeswap/sdk'
 import {
   Button,
   Text,
@@ -44,13 +44,7 @@ import { Field } from '../../state/mint/actions'
 import { useDerivedMintInfo, useMintActionHandlers, useMintState, useZapIn } from '../../state/mint/hooks'
 
 import { useTransactionAdder } from '../../state/transactions/hooks'
-import {
-  useGasPrice,
-  useIsExpertMode,
-  usePairAdder,
-  useUserSlippageTolerance,
-  useZapModeManager,
-} from '../../state/user/hooks'
+import { useIsExpertMode, usePairAdder, useUserSlippageTolerance, useZapModeManager } from '../../state/user/hooks'
 import { calculateGasMargin } from '../../utils'
 import { calculateSlippageAmount, useRouterContract } from '../../utils/exchange'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
@@ -86,7 +80,6 @@ export default function AddLiquidity({ currencyA, currencyB }) {
   const [steps, setSteps] = useState(Steps.Choose)
 
   const { t } = useTranslation()
-  const gasPrice = useGasPrice()
 
   useEffect(() => {
     if (router.query.step === '1') {
@@ -284,7 +277,6 @@ export default function AddLiquidity({ currencyA, currencyB }) {
         method(...args, {
           ...(value ? { value } : {}),
           gasLimit: calculateGasMargin(estimatedGasLimit),
-          gasPrice,
         }).then((response) => {
           setLiquidityState({ attemptingTxn: false, liquidityErrorMessage: undefined, txHash: response.hash })
 
@@ -422,7 +414,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
       method = 'zapInBNB'
       args = [pair.liquidityToken.address, minAmountOut]
       const amount = parsedAmounts[zapIn.swapTokenField]?.toSignificant(3)
-      const symbol = getLPSymbol(pair.token0.symbol, pair.token1.symbol)
+      const symbol = getLPSymbol(pair.token0.symbol, pair.token1.symbol, chainId)
       summary = `Zap in ${amount} BNB for ${symbol}`
       translatableSummary = {
         text: 'Zap in %amount% BNB for %symbol%',
@@ -439,7 +431,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
       ]
       const amount = parsedAmounts[zapIn.swapTokenField]?.toSignificant(3)
       const { symbol } = currencies[zapIn.swapTokenField]
-      const lpSymbol = getLPSymbol(pair.token0.symbol, pair.token1.symbol)
+      const lpSymbol = getLPSymbol(pair.token0.symbol, pair.token1.symbol, chainId)
       summary = `Zap in ${amount} ${symbol} for ${lpSymbol}`
       translatableSummary = {
         text: 'Zap in %amount% %symbol% for %lpSymbol%',
@@ -449,7 +441,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
 
     setLiquidityState({ attemptingTxn: true, liquidityErrorMessage: undefined, txHash: undefined })
 
-    callWithEstimateGas(zapContract, method, args, value ? { value, gasPrice } : { gasPrice })
+    callWithEstimateGas(zapContract, method, args, value ? { value } : {})
       .then((response) => {
         setLiquidityState({ attemptingTxn: false, liquidityErrorMessage: undefined, txHash: response.hash })
 
@@ -593,7 +585,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
             <AppHeader
               title={
                 currencies[Field.CURRENCY_A]?.symbol && currencies[Field.CURRENCY_B]?.symbol
-                  ? `${getLPSymbol(currencies[Field.CURRENCY_A].symbol, currencies[Field.CURRENCY_B].symbol)}`
+                  ? `${getLPSymbol(currencies[Field.CURRENCY_A].symbol, currencies[Field.CURRENCY_B].symbol, chainId)}`
                   : t('Add Liquidity')
               }
               subtitle={t('Receive LP tokens and earn 0.17% trading fees')}
@@ -620,7 +612,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                 <CurrencyInputPanel
                   disableCurrencySelect={canZap}
                   showBUSD
-                  onInputBlur={zapIn.onInputBlurOnce}
+                  onInputBlur={canZap ? zapIn.onInputBlurOnce : undefined}
                   error={zapIn.priceSeverity > 3 && zapIn.swapTokenField === Field.CURRENCY_A}
                   disabled={canZap && !zapTokenCheckedA}
                   beforeButton={
@@ -638,9 +630,15 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                   zapStyle={canZap ? 'zap' : 'noZap'}
                   value={formattedAmounts[Field.CURRENCY_A]}
                   onUserInput={onFieldAInput}
+                  onPercentInput={(percent) => {
+                    if (maxAmounts[Field.CURRENCY_A]) {
+                      onFieldAInput(maxAmounts[Field.CURRENCY_A]?.multiply(new Percent(percent, 100)).toExact() ?? '')
+                    }
+                  }}
                   onMax={() => {
                     onFieldAInput(maxAmounts[Field.CURRENCY_A]?.toExact() ?? '')
                   }}
+                  showQuickInputButton
                   showMaxButton={!atMaxAmounts[Field.CURRENCY_A]}
                   currency={currencies[Field.CURRENCY_A]}
                   id="add-liquidity-input-tokena"
@@ -652,7 +650,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                 </ColumnCenter>
                 <CurrencyInputPanel
                   showBUSD
-                  onInputBlur={zapIn.onInputBlurOnce}
+                  onInputBlur={canZap ? zapIn.onInputBlurOnce : undefined}
                   disabled={canZap && !zapTokenCheckedB}
                   error={zapIn.priceSeverity > 3 && zapIn.swapTokenField === Field.CURRENCY_B}
                   beforeButton={
@@ -671,9 +669,15 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                   zapStyle={canZap ? 'zap' : 'noZap'}
                   value={formattedAmounts[Field.CURRENCY_B]}
                   onUserInput={onFieldBInput}
+                  onPercentInput={(percent) => {
+                    if (maxAmounts[Field.CURRENCY_B]) {
+                      onFieldBInput(maxAmounts[Field.CURRENCY_B]?.multiply(new Percent(percent, 100)).toExact() ?? '')
+                    }
+                  }}
                   onMax={() => {
                     onFieldBInput(maxAmounts[Field.CURRENCY_B]?.toExact() ?? '')
                   }}
+                  showQuickInputButton
                   showMaxButton={!atMaxAmounts[Field.CURRENCY_B]}
                   currency={currencies[Field.CURRENCY_B]}
                   id="add-liquidity-input-tokenb"

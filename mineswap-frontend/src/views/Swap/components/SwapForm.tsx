@@ -1,7 +1,17 @@
 import { SetStateAction, useCallback, useEffect, useState, Dispatch, useMemo } from 'react'
 import styled from 'styled-components'
-import { Currency, CurrencyAmount } from '@pancakeswap/sdk'
-import { Button, Text, ArrowDownIcon, Box, IconButton, ArrowUpDownIcon, Skeleton } from '@pancakeswap/uikit'
+import { Currency, CurrencyAmount, Percent } from '@pancakeswap/sdk'
+import {
+  Button,
+  Text,
+  ArrowDownIcon,
+  Box,
+  IconButton,
+  ArrowUpDownIcon,
+  Skeleton,
+  Message,
+  MessageText,
+} from '@pancakeswap/uikit'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
@@ -34,6 +44,8 @@ import AddressInputPanel from './AddressInputPanel'
 import AdvancedSwapDetailsDropdown from './AdvancedSwapDetailsDropdown'
 import TradePrice from './TradePrice'
 import { ArrowWrapper, Wrapper } from './styleds'
+import { useStableFarms } from '../StableSwap/hooks/useStableConfig'
+import { isAddress } from '../../../utils'
 
 const Label = styled(Text)`
   font-size: 12px;
@@ -68,6 +80,7 @@ interface SwapForm {
 export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAccessTokenSupported }) {
   const { t } = useTranslation()
   const { refreshBlockNumber, isLoading } = useRefreshBlockNumberID()
+  const stableFarms = useStableFarms()
   const warningSwapHandler = useWarningImport()
 
   const { account, chainId } = useActiveWeb3React()
@@ -88,6 +101,16 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
   } = useSwapState()
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
+  const hasStableSwapAlternative = useMemo(() => {
+    return stableFarms.some((stableFarm) => {
+      const checkSummedToken0 = isAddress(stableFarm?.token0.address)
+      const checkSummedToken1 = isAddress(stableFarm?.token1.address)
+      return (
+        (checkSummedToken0 === inputCurrencyId || checkSummedToken0 === outputCurrencyId) &&
+        (checkSummedToken1 === outputCurrencyId || checkSummedToken1 === outputCurrencyId)
+      )
+    })
+  }, [stableFarms, inputCurrencyId, outputCurrencyId])
 
   const currencies: { [field in Field]?: Currency } = useMemo(
     () => ({
@@ -194,6 +217,15 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
     [onCurrencySelection, warningSwapHandler],
   )
 
+  const handlePercentInput = useCallback(
+    (percent) => {
+      if (maxAmountInput) {
+        onUserInput(Field.INPUT, maxAmountInput.multiply(new Percent(percent, 100)).toExact())
+      }
+    },
+    [maxAmountInput, onUserInput],
+  )
+
   const swapIsUnsupported = useIsTransactionUnsupported(currencies?.INPUT, currencies?.OUTPUT)
 
   const hasAmount = Boolean(parsedAmount)
@@ -203,10 +235,6 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
       refreshBlockNumber()
     }
   }, [hasAmount, refreshBlockNumber])
-
-  const isShowAccessToken = useMemo(() => {
-    return isAccessTokenSupported && !currencies[Field.OUTPUT]?.isNative
-  }, [isAccessTokenSupported, currencies])
 
   return (
     <>
@@ -225,8 +253,10 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
               label={independentField === Field.OUTPUT && !showWrap && trade ? t('From (estimated)') : t('From')}
               value={formattedAmounts[Field.INPUT]}
               showMaxButton={!atMaxAmountInput}
+              showQuickInputButton
               currency={currencies[Field.INPUT]}
               onUserInput={handleTypeInput}
+              onPercentInput={handlePercentInput}
               onMax={handleMaxInput}
               onCurrencySelect={handleInputSelect}
               otherCurrency={currencies[Field.OUTPUT]}
@@ -243,6 +273,8 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                   onClick={() => {
                     setApprovalSubmitted(false) // reset 2 step UI for approvals
                     onSwitchTokens()
+                    replaceBrowserHistory('inputCurrency', outputCurrencyId)
+                    replaceBrowserHistory('outputCurrency', inputCurrencyId)
                   }}
                 >
                   <ArrowDownIcon
@@ -274,8 +306,8 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
               commonBasesType={CommonBasesType.SWAP_LIMITORDER}
             />
 
-            <Box style={{ display: isShowAccessToken ? 'block' : 'none' }}>
-              <AccessRisk currency={currencies[Field.OUTPUT]} />
+            <Box style={{ display: isAccessTokenSupported ? 'block' : 'none' }}>
+              <AccessRisk inputCurrency={currencies[Field.INPUT]} outputCurrency={currencies[Field.OUTPUT]} />
             </Box>
 
             {isExpertMode && recipient !== null && !showWrap ? (
@@ -319,6 +351,13 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
               </AutoColumn>
             )}
           </AutoColumn>
+          {hasStableSwapAlternative && (
+            <AutoColumn>
+              <Message variant="warning" my="16px">
+                <MessageText>{t('Trade stablecoins in StableSwap with lower slippage and trading fees!')}</MessageText>
+              </Message>
+            </AutoColumn>
+          )}
           <Box mt="0.25rem">
             <SwapCommitButton
               swapIsUnsupported={swapIsUnsupported}

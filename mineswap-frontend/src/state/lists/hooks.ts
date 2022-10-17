@@ -1,6 +1,6 @@
 import { ChainId } from '@pancakeswap/sdk'
-import { EMPTY_LIST, TagInfo, TokenAddressMap, WrappedTokenInfo } from '@pancakeswap/tokens'
-import { TokenList } from '@uniswap/token-lists'
+import { EMPTY_LIST, TokenAddressMap, WrappedTokenInfo } from '@pancakeswap/tokens'
+import { TokenList, TokenInfo } from '@uniswap/token-lists'
 import { DEFAULT_LIST_OF_LISTS, OFFICIAL_LISTS } from 'config/constants/lists'
 import { atom, useAtomValue } from 'jotai'
 import mapValues from 'lodash/mapValues'
@@ -88,6 +88,27 @@ export const combinedTokenMapFromOfficialsUrlsAtom = atom((get) => {
   return combineTokenMapsWithDefault(lists, OFFICIAL_LISTS)
 })
 
+export const tokenListFromOfficialsUrlsAtom = atom((get) => {
+  const lists: ListsState['byUrl'] = get(selectorByUrlsAtom)
+
+  const mergedTokenLists: TokenInfo[] = OFFICIAL_LISTS.reduce((acc, url) => {
+    if (lists?.[url]?.current?.tokens) {
+      acc.push(...lists?.[url]?.current.tokens)
+    }
+    return acc
+  }, [])
+
+  const mergedList =
+    mergedTokenLists.length > 0 ? [...DEFAULT_TOKEN_LIST.tokens, ...mergedTokenLists] : DEFAULT_TOKEN_LIST.tokens
+  return mapValues(
+    groupBy(
+      uniqBy(mergedList, (tokenInfo) => `${tokenInfo.chainId}#${tokenInfo.address}`),
+      'chainId',
+    ),
+    (tokenInfos) => keyBy(tokenInfos, 'address'),
+  )
+})
+
 export const combinedTokenMapFromUnsupportedUrlsAtom = atom((get) => {
   const lists = get(selectorByUrlsAtom)
   // get hard coded unsupported tokens
@@ -118,17 +139,7 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
   const tokenMap: WrappedTokenInfo[] = uniqBy(
     list.tokens,
     (tokenInfo) => `${tokenInfo.chainId}#${tokenInfo.address}`,
-  ).map((tokenInfo) => {
-    const tags: TagInfo[] =
-      tokenInfo.tags
-        ?.map((tagId) => {
-          if (!list.tags?.[tagId]) return undefined
-          return { ...list.tags[tagId], id: tagId }
-        })
-        ?.filter((x): x is TagInfo => Boolean(x)) ?? []
-
-    return new WrappedTokenInfo(tokenInfo, tags)
-  })
+  ).map((tokenInfo) => new WrappedTokenInfo(tokenInfo))
 
   const groupedTokenMap: { [chainId: string]: WrappedTokenInfo[] } = groupBy(tokenMap, 'chainId')
 

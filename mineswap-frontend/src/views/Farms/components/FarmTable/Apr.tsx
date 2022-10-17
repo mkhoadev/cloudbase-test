@@ -4,6 +4,7 @@ import BigNumber from 'bignumber.js'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { Skeleton } from '@pancakeswap/uikit'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 
 export interface AprProps {
   value: string
@@ -12,6 +13,7 @@ export interface AprProps {
   lpLabel: string
   lpSymbol: string
   lpRewardsApr: number
+  lpTokenPrice: BigNumber
   tokenAddress?: string
   quoteTokenAddress?: string
   cakePrice: BigNumber
@@ -49,6 +51,7 @@ const Apr: React.FC<React.PropsWithChildren<AprProps>> = ({
   pid,
   lpLabel,
   lpSymbol,
+  lpTokenPrice,
   multiplier,
   tokenAddress,
   quoteTokenAddress,
@@ -60,7 +63,8 @@ const Apr: React.FC<React.PropsWithChildren<AprProps>> = ({
   useTooltipText = true,
   boosted,
 }) => {
-  const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAddress, tokenAddress })
+  const { chainId } = useActiveWeb3React()
+  const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAddress, tokenAddress, chainId })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
   return originalValue !== 0 ? (
     <Container>
@@ -70,6 +74,7 @@ const Apr: React.FC<React.PropsWithChildren<AprProps>> = ({
           pid={pid}
           lpSymbol={lpSymbol}
           lpLabel={lpLabel}
+          lpTokenPrice={lpTokenPrice}
           multiplier={multiplier}
           cakePrice={cakePrice}
           apr={originalValue}

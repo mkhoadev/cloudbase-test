@@ -2277,7 +2277,7 @@ export const bscTokens = {
     '0x0782b6d8c4551B9760e74c0545a9bCD90bdc41E5',
     18,
     'HAY',
-    'Hay Stablecoin',
+    'Hay Destablecoin',
     'https://helio.money/',
   ),
   spin: new Token(
@@ -2311,5 +2311,22 @@ export const bscTokens = {
     'HOOP',
     'Chibi Dinos',
     'https://www.chibidinos.io/',
+  ),
+  co: new Token(ChainId.BSC, '0x936B6659Ad0C1b244Ba8Efe639092acae30dc8d6', 6, 'CO', 'CO', 'https://corite.com/'),
+  krs: new Token(
+    ChainId.BSC,
+    '0x37b53894e7429f794B56F22a32E1695567Ee9913',
+    18,
+    'KRS',
+    'Kingdom Raids',
+    'https://kingdomraids.io/',
+  ),
+  wmx: new Token(
+    ChainId.BSC,
+    '0xa75d9ca2a0a1D547409D82e1B06618EC284A2CeD',
+    18,
+    'WMX',
+    'Wombex Token',
+    'https://wombex.finance/',
   ),
 }
