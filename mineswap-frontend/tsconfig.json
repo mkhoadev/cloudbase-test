@@ -17,5 +17,5 @@
     }
   },
   "exclude": ["node_modules", "cypress", "/apps/*"],
-  "include": ["next-env.d.ts", "./src/**/*.ts", "./src/**/*.tsx"]
+  "include": ["next-env.d.ts", "./src/**/*.ts", "./src/**/*.js", "./src/**/*.tsx"]
 }

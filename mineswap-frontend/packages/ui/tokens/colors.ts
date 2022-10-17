@@ -58,7 +58,7 @@ export const darkColors = {
   ...additionalColors,
   secondary: '#9A6AFF',
   secondary80: '#9A6AFF80',
-  background: '#08060B',
+  background: '#1e1e1e',
   backgroundDisabled: '#3c3742',
   backgroundAlt: '#27262c',
   backgroundAlt2: 'rgba(39, 38, 44, 0.7)',

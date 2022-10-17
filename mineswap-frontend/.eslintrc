@@ -15,6 +15,15 @@
     "lodash/import-scope": [2, "method"],
     "@next/next/no-img-element": 0,
     "no-sparse-arrays": 0,
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": false
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": ["off"],
+    "import/newline-after-import": ["off"],
     "react-hooks/exhaustive-deps": [
       "warn",
       {

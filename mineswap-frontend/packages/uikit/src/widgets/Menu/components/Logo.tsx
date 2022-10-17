@@ -18,13 +18,14 @@ const StyledLink = styled("a")`
   display: flex;
   align-items: center;
   .mobile-icon {
-    width: 32px;
+    width: 100px;
     ${({ theme }) => theme.mediaQueries.lg} {
       display: none;
     }
   }
   .desktop-icon {
     width: 160px;
+    height:55px;
     display: none;
     ${({ theme }) => theme.mediaQueries.lg} {
       display: block;
@@ -48,8 +49,10 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
+      {/* <LogoIcon className="mobile-icon" /> */}
+      <img src="./logoMineswap.png" alt="" className="mobile-icon" />
+      <img src="./logoMineswap.png" alt="" className="desktop-icon" />
+      {/* <LogoWithTextIcon className="desktop-icon" isDark={isDark} /> */}
     </>
   );
 
