@@ -17,7 +17,7 @@ interface ImportProps {
 }
 
 const getStandard = (chainId: ChainId) =>
-  chainId !== ChainId.BSC && chainId !== ChainId.BSC_TESTNET ? 'ERC20' : 'BEP20'
+  chainId !== ChainId.ETHEREUM && chainId !== ChainId.ETHEREUM_TESTNET ? 'ERC20' : 'BEP20'
 
 function ImportToken({ tokens, handleCurrencySelect }: ImportProps) {
   const { chainId } = useActiveWeb3React()

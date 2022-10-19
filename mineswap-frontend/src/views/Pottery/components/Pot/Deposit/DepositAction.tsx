@@ -5,7 +5,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'
 import { usePotteryData, useLatestVaultAddress } from 'state/pottery/hook'
 import { Input as NumericalInput } from 'components/CurrencyInputPanel/NumericalInput'
-import { CAKE } from '@pancakeswap/tokens'
+import { MINE } from '@pancakeswap/tokens'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useTokenBalance from 'hooks/useTokenBalance'
 import { getFullDisplayBalance, getBalanceNumber } from 'utils/formatBalance'
@@ -45,13 +45,13 @@ const DepositAction: React.FC<React.PropsWithChildren<DepositActionProps>> = ({ 
   const maxTotalDepositToNumber = getBalanceNumber(publicData.maxTotalDeposit)
   const remainingCakeCanStake = new BigNumber(maxTotalDepositToNumber).minus(totalValueLockedValue).toString()
 
-  const { balance: userCake } = useTokenBalance(CAKE[chainId]?.address)
+  const { balance: userCake } = useTokenBalance(MINE[chainId]?.address)
   const userCakeDisplayBalance = getFullDisplayBalance(userCake, 18, 3)
   const { userNotEnoughCake, notEnoughErrorMessage } = useUserEnoughCakeValidator(depositAmount, userCake)
 
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t(
-      'CAKE deposit will be diverted to the fixed-term staking pool. Please note that CAKE deposited can ONLY be withdrawn after 10 weeks.',
+      'MINE deposit will be diverted to the fixed-term staking pool. Please note that MINE deposited can ONLY be withdrawn after 10 weeks.',
     ),
     {
       placement: 'bottom',
@@ -140,14 +140,14 @@ const DepositAction: React.FC<React.PropsWithChildren<DepositActionProps>> = ({ 
         </Container>
         {isLessThanOneCake && (
           <Text color="failure" fontSize="14px" textAlign="right">
-            {t('Please deposit at least 1 CAKE to participate in the Pottery')}
+            {t('Please deposit at least 1 MINE to participate in the Pottery')}
           </Text>
         )}
       </InputPanel>
       <Flex>
         <Flex ml="auto">
           <Text fontSize="12px" color="textSubtle">
-            {t('Deposited CAKE will be locked for 10 weeks')}
+            {t('Deposited MINE will be locked for 10 weeks')}
           </Text>
           <Flex ref={targetRef}>
             {tooltipVisible && tooltip}

@@ -19,7 +19,7 @@ export const footerLinks: FooterLinkType[] = [
         href: "https://docs.pancakeswap.finance/contact-us/telegram",
       },
       {
-        label: "CAKE",
+        label: "MINE",
         href: "https://docs.pancakeswap.finance/tokenomics/cake",
       },
       {

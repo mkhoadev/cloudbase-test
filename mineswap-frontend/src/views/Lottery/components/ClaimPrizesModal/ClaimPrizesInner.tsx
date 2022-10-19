@@ -90,7 +90,7 @@ const ClaimInnerContainer: React.FC<React.PropsWithChildren<ClaimInnerProps>> = 
       toastSuccess(
         t('Prizes Collected!'),
         <ToastDescriptionWithTx txHash={receipt.transactionHash}>
-          {t('Your CAKE prizes for round %lotteryId% have been sent to your wallet', { lotteryId })}
+          {t('Your MINE prizes for round %lotteryId% have been sent to your wallet', { lotteryId })}
         </ToastDescriptionWithTx>,
       )
       handleProgressToNextClaim()
@@ -142,7 +142,7 @@ const ClaimInnerContainer: React.FC<React.PropsWithChildren<ClaimInnerProps>> = 
     if (receipts.length === transactionsToFire) {
       toastSuccess(
         t('Prizes Collected!'),
-        t('Your CAKE prizes for round %lotteryId% have been sent to your wallet', { lotteryId }),
+        t('Your MINE prizes for round %lotteryId% have been sent to your wallet', { lotteryId }),
       )
       handleProgressToNextClaim()
     }

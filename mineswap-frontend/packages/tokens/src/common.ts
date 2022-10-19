@@ -109,7 +109,7 @@ export const BUSD: Record<ChainId, Token> = {
 //   [ChainId.GOERLI]: BUSD_TESTNET,
 }
 
-export const CAKE = {
+export const MINE = {
   [ChainId.ETHEREUM]: CAKE_MAINNET,
   [ChainId.GOERLI]: CAKE_TESTNET,
 }

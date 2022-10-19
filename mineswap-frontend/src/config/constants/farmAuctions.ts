@@ -151,7 +151,7 @@ export const whitelistedBidders: FarmAuctionBidderConfig[] = [
   },
   {
     account: '0x1bA962acab22Be9e49C4cEBE7710c9201A72dFcc',
-    farmName: 'BABYCAKE-BNB',
+    farmName: 'BABYMINE-BNB',
     tokenAddress: '0xdB8D30b74bf098aF214e862C90E647bbB1fcC58c',
     quoteToken: bscTokens.wbnb,
     tokenName: 'Babycake',

@@ -12,7 +12,7 @@ const NotOkNFT = ({ admissionProfile }) => {
 
   const keyword = '%Pancake Squad NFT%'
 
-  const rawText = t(`Set %Pancake Squad NFT% as Pancake Profile avatar`)
+  const rawText = t(`Set %Pancake Squad NFT% as MineSwapProfile avatar`)
 
   return (
     <TransWithElement

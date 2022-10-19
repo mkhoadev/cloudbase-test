@@ -88,7 +88,7 @@ const BCakeCalculator: React.FC<React.PropsWithChildren<BCakeCalculatorProps>> =
     targetRef: myBalanceTargetRef,
     tooltip: myBalanceTooltip,
     tooltipVisible: myBalanceTooltipVisible,
-  } = useTooltip(t('Boost multiplier calculation does not include profit from CAKE staking pool'), {
+  } = useTooltip(t('Boost multiplier calculation does not include profit from MINE staking pool'), {
     placement: 'bottom-start',
   })
   const theme = useTheme()
@@ -104,7 +104,7 @@ const BCakeCalculator: React.FC<React.PropsWithChildren<BCakeCalculatorProps>> =
         <>
           <BCakeBlock style={{ marginTop: 24 }}>
             <Text color="secondary" bold fontSize="12px" textTransform="uppercase">
-              {t('Cake locked')}
+              {t('Mine locked')}
             </Text>
             <BalanceInput
               inputProps={{

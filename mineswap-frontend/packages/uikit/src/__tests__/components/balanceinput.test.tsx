@@ -157,7 +157,7 @@ it("renders correctly", () => {
 
 it("renders correctly with unit prop", () => {
   const { asFragment } = renderWithProvider(
-    <BalanceInput value="14" currencyValue="15 USD" unit="CAKE" onUserInput={handleChange} />
+    <BalanceInput value="14" currencyValue="15 USD" unit="MINE" onUserInput={handleChange} />
   );
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
@@ -332,7 +332,7 @@ it("renders correctly with unit prop and switchEditingUnits", () => {
     <BalanceInput
       value="14"
       currencyValue="15 USD"
-      unit="CAKE"
+      unit="MINE"
       switchEditingUnits={jest.fn()}
       onUserInput={handleChange}
     />

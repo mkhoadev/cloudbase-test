@@ -225,7 +225,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
             {
               step: 2,
               tx: '',
-              chainId: ChainId.BSC,
+              chainId: ChainId.ETHEREUM,
               status: FarmTransactionStatus.PENDING,
             },
           ],
@@ -281,7 +281,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
             },
             {
               step: 2,
-              chainId: ChainId.BSC,
+              chainId: ChainId.ETHEREUM,
               tx: '',
               status: FarmTransactionStatus.PENDING,
             },

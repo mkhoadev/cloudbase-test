@@ -33,7 +33,7 @@ const PoolCard: React.FC<React.PropsWithChildren<{ pool: DeserializedPool; accou
           <>
             <PoolCardHeaderTitle
               title={isCakePool ? t('Manual') : t('Earn %asset%', { asset: earningToken.symbol })}
-              subTitle={isCakePool ? t('Earn CAKE, stake CAKE') : t('Stake %symbol%', { symbol: stakingToken.symbol })}
+              subTitle={isCakePool ? t('Earn MINE, stake MINE') : t('Stake %symbol%', { symbol: stakingToken.symbol })}
             />
             <TokenPairImage primaryToken={earningToken} secondaryToken={stakingToken} width={64} height={64} />
           </>

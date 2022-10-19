@@ -7,7 +7,7 @@ import { VaultPosition } from 'utils/cakePool'
 import { MAX_LOCK_DURATION } from 'config/constants/pools'
 import { VaultRoiCalculatorModal } from '../../Vault/VaultRoiCalculatorModal'
 
-interface CakeVaultAprProps {
+interface MineVaultAprProps {
   pool: DeserializedPool
   userData: DeserializedVaultUser
   vaultPosition: VaultPosition
