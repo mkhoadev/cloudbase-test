@@ -18,43 +18,23 @@ export const CAKE_TESTNET = new Token(
   'https://pancakeswap.finance/',
 )
 
-// export const USDC_BSC = new Token(
-//   ChainId.ETHEREUM,
-//   '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-//   18,
-//   'USDC',
-//   'Binance-Peg USD Coin',
-//   'https://www.centre.io/usdc',
-// )
-
-// export const USDC_TESTNET = new Token(
-//   ChainId.GOERLI,
-//   '0x64544969ed7EBf5f083679233325356EbE738930',
-//   18,
-//   'USDC',
-//   'Binance-Peg USD Coin',
-//   'https://www.centre.io/usdc',
-// )
-
 export const USDC_ETH = new Token(ChainId.ETHEREUM, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD Coin')
 
 
 export const USDC_GOERLI = new Token(
   ChainId.GOERLI,
-  '0x07865c6E87B9F70255377e024ace6630C1Eaa37F',
+  '0x74Bec6330C9a850697338c4C53068a8567ca8379',
   6,
-  'tUSDC',
+  'USDC',
   'test USD Coin',
 )
-
-// export const USDT_BSC = new Token(
-//   ChainId.ETHEREUM,
-//   '0x55d398326f99059fF775485246999027B3197955',
-//   18,
-//   'USDT',
-//   'Tether USD',
-//   'https://tether.to/',
-// )
+export const USDT_GOERLI = new Token(
+  ChainId.GOERLI,
+  '0xfe54279Bd3faA2fAF8797C5973CA9FB5816Ef048',
+  6,
+  'USDT',
+  'test USD Coin',
+)
 
 export const USDT_ETH = new Token(
   ChainId.ETHEREUM,
@@ -64,24 +44,6 @@ export const USDT_ETH = new Token(
   'Tether USD',
   'https://tether.to/',
 )
-
-// export const BUSD_BSC = new Token(
-//   ChainId.ETHEREUM,
-//   '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-//   18,
-//   'BUSD',
-//   'Binance USD',
-//   'https://www.paxos.com/busd/',
-// )
-
-// export const BUSD_TESTNET = new Token(
-//   ChainId.GOERLI,
-//   '0xaB1a4d4f1D656d2450692D237fdD6C7f9146e814',
-//   18,
-//   'BUSD',
-//   'Binance USD',
-//   'https://www.paxos.com/busd/',
-// )
 
 export const BUSD_ETH = new Token(
   ChainId.ETHEREUM,
@@ -105,8 +67,6 @@ export const BUSD_GOERLI = new Token(
 export const BUSD: Record<ChainId, Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,
   [ChainId.GOERLI]: BUSD_GOERLI,
-//   [ChainId.ETHEREUM]: BUSD_BSC,
-//   [ChainId.GOERLI]: BUSD_TESTNET,
 }
 
 export const MINE = {
@@ -115,14 +75,12 @@ export const MINE = {
 }
 
 export const USDC = {
-  // [ChainId.ETHEREUM]: USDC_BSC,
-  // [ChainId.GOERLI]: USDC_TESTNET,
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.GOERLI]: USDC_GOERLI,
 }
 
 export const USDT = {
-  // [ChainId.ETHEREUM]: USDT_BSC,
+  [ChainId.GOERLI]: USDT_GOERLI,
   [ChainId.ETHEREUM]: USDT_ETH,
 }
 
