@@ -50,7 +50,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           <div className="div-millions-colum">
             <Amplified txt={'$820 million in BNB + CAKE won so far'} span={'Predict the price trend of BNB or CAKE to win'} type={'0'} />
             <Amplified txt={'$64,883 in CAKE prizes this round'} span={'Buy tickets with CAKE, win CAKE if your numbers match'} type={'1'} />
-            <Amplified txt={'mineswap Fraktal'} span={'EVM-compatible block sidechain, secured by a permissionless set of PoS validators.'} type={'2'} />
+            <Amplified txt={'mineswap Fraktal'} span={'EVM-compatible block sidechain, secured by a permissionless set of PoS validators.'} type={'2'}  />
           </div>
         </div>
       </div>

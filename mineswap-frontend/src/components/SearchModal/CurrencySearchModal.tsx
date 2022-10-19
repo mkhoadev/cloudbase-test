@@ -22,6 +22,7 @@ import ImportToken from './ImportToken'
 import Manage from './Manage'
 import ImportList from './ImportList'
 import { CurrencyModalView } from './types'
+import useTheme from 'hooks/useTheme'
 
 const Footer = styled.div`
   width: 100%;
@@ -103,9 +104,10 @@ export default function CurrencySearchModal({
     if (!wrapperRef.current) return
     setHeight(wrapperRef.current.offsetHeight - 330)
   }, [])
-
+  const { isDark } = useTheme()
   return (
     <StyledModalContainer
+      className={isDark ? 'test' : 'test1'}
       drag={isMobile ? 'y' : false}
       dragConstraints={{ top: 0, bottom: 600 }}
       dragElastic={{ top: 0 }}

@@ -13,16 +13,8 @@ const Earncrypto : React.FC<React.PropsWithChildren> = () => {
         <br />
         <div className="dflex mt-5">
           <div className="sc-cjibBx bquLPr">
-            <div className="btn-connect">
+            <div className="btn-connect button-css">
               <div className="txt-connect">LAUNCH APP</div>
-              <div className="sc-fLcnxK lhhHgp corner">
-                <img className="imgLeft-btn-connect" src="/img/subtract@2x.svg" alt="Subtract" />
-                <div className="border-connect">
-                  <div className="border-btn-connect-trade"></div>
-                  <div className="border-btn-connect-trade"></div>
-                </div>
-                <img className="img-btn-coonect" src="/img/subtract-1@2x.svg" alt="Subtract" />
-              </div>
             </div>
           </div>
           <a className='sc-cabOPr imwMnF' style={{marginLeft:'15px'}} href="#">Read the docs</a>

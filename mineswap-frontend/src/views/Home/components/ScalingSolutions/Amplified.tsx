@@ -1,13 +1,13 @@
 /* eslint import/newline-after-import: "off" */
 type nftSaleType = {
-  txt?: String
-  span?: String
-  type?: String
+  txt?: string,
+  span?: string,
+  type?: string,
 }
 const Amplified = ({ txt, span, type }: nftSaleType) => {
   console.log(txt, span)
   return (
-    <div className="div-millions-user">
+    <div className={type === '2'? 'div-millions-user mb-5s' :  'div-millions-user'}>
       {/* <div className="txtmillionuser"></div> */}
       <div className="bEQugO">
         <div className="image-million">
@@ -19,11 +19,9 @@ const Amplified = ({ txt, span, type }: nftSaleType) => {
             <div className="sc-iAEawV eojyCN">
               <div className="sc-eeMvmM jKblIE">
                 <img src="./img/crystal-shadow-1@2x.png" alt="slices" className="sc-cUEOzv imhWGR" />
-               
               </div>
             </div>
           </div> */}
-           
         </div>
       </div>
       <div className="sc-eblUpn kAIfLV">

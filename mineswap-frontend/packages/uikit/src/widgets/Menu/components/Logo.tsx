@@ -25,7 +25,7 @@ const StyledLink = styled("a")`
   }
   .desktop-icon {
     width: 160px;
-    height:55px;
+    height:50px;
     display: none;
     ${({ theme }) => theme.mediaQueries.lg} {
       display: block;
@@ -50,8 +50,8 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
   const innerLogo = (
     <>
       {/* <LogoIcon className="mobile-icon" /> */}
-      <img src="./logoMineswap.png" alt="" className="mobile-icon" />
-      <img src="./logoMineswap.png" alt="" className="desktop-icon" />
+      <img src={isDark ? "./logoMineswaps.png" : "./logoMineswap.png" } alt="" className="mobile-icon" />
+      <img src={isDark ? "./logoMineswaps.png" : "./logoMineswap.png" } alt="" className="desktop-icon" />
       {/* <LogoWithTextIcon className="desktop-icon" isDark={isDark} /> */}
     </>
   );

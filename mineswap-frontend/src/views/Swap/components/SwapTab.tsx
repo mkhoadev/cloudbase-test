@@ -34,7 +34,7 @@ export default function SwapTab({ children, showStable }) {
   if (showStable) {
     return (
       <>
-        <Wrapper>
+        {/* <Wrapper>
           <ButtonMenu
             activeIndex={swapTypeState}
             onItemClick={() => {
@@ -55,7 +55,7 @@ export default function SwapTab({ children, showStable }) {
               </ButtonMenuItem>
             ))}
           </ButtonMenu>
-        </Wrapper>
+        </Wrapper> */}
         {children(swapTypeState)}
       </>
     )

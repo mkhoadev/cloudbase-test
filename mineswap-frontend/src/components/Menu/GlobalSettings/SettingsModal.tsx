@@ -87,9 +87,8 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
       setShowConfirmExpertModal(true)
     }
   }
-
   return (
-    <Modal title={t('Settings')} headerBackground="gradientCardHeader" onDismiss={onDismiss}>
+    <Modal title={t('Settings')}  onDismiss={onDismiss} className={isDark ? 'test' : 'test1'}>
       <ScrollableContainer>
         {mode === SettingsMode.GLOBAL && (
           <>

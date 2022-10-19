@@ -2,7 +2,7 @@ export const baseColors = {
   white: 'white',
   failure: '#ED4B9E',
   failure33: '#ED4B9E33',
-  primary: '#1FC7D4',
+  primary: '#FFC700',
   primary0f: '#1FC7D40f',
   primary3D: '#1FC7D43D',
   primaryBright: '#53DEE9',
@@ -27,7 +27,7 @@ export const lightColors = {
   ...additionalColors,
   secondary: '#7645D9',
   secondary80: '#7645D980',
-  background: '#FAF9FA',
+  background: '#FEFAEF',
   backgroundDisabled: '#E9EAEB',
   backgroundAlt: '#FFFFFF',
   backgroundAlt2: 'rgba(255, 255, 255, 0.7)',
@@ -51,6 +51,7 @@ export const lightColors = {
   gradientViolet: 'linear-gradient(180deg, #E2C9FB 0%, #CDB8FA 100%)',
   gradientVioletAlt: 'linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)',
   gradientGold: 'linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)',
+  backgroundImage: 'url(/img/Group11.png)',
 }
 
 export const darkColors = {
@@ -83,4 +84,5 @@ export const darkColors = {
   gradientViolet: 'linear-gradient(180deg, #6C4999 0%, #6D4DB2 100%)',
   gradientVioletAlt: 'linear-gradient(180deg, #434575 0%, #66578D 100%)',
   gradientGold: 'linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)',
+  backgroundImage: 'url(/img/Group.png)',
 }

@@ -379,7 +379,7 @@ function User() {
   }
 
   return (
-    <Button scale="sm" onClick={() => window.stargate.ui.connectWalletPopup.open()}>
+    <Button scale="sm"  onClick={() => window.stargate.ui.connectWalletPopup.open()}>
       <Box display={['none', null, null, 'block']}>Connect Wallet</Box>
       <Box display={['block', null, null, 'none']}>Connect</Box>
     </Button>

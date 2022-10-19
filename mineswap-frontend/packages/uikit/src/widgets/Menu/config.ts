@@ -50,47 +50,47 @@ export const links: MenuItemsType[] = [
       },
     ],
   },
-  {
-    label: "Earn",
-    href: "/earn",
-    icon: EarnIcon,
-    fillIcon: EarnFillIcon,
-    items: [
-      {
-        label: "Earn",
-        href: "/earn",
-      },
-      {
-        label: "Yield Farms",
-        href: "/farms",
-      },
-      {
-        label: "Syrup pools",
-        href: "/pools",
-      },
-    ],
-  },
-  {
-    label: "Win",
-    href: "/",
-    icon: TrophyIcon,
-    fillIcon: TrophyFillIcon,
-    items: [
-      {
-        label: "Win",
-        href: "/",
-      },
-      {
-        label: "Predictions",
-        href: "/",
-        status: status.LIVE,
-      },
-      {
-        label: "Lottery",
-        href: "/",
-      },
-    ],
-  },
+  // {
+  //   label: "Earn",
+  //   href: "/earn",
+  //   icon: EarnIcon,
+  //   fillIcon: EarnFillIcon,
+  //   items: [
+  //     {
+  //       label: "Earn",
+  //       href: "/earn",
+  //     },
+  //     {
+  //       label: "Yield Farms",
+  //       href: "/farms",
+  //     },
+  //     {
+  //       label: "Syrup pools",
+  //       href: "/pools",
+  //     },
+  //   ],
+  // },
+  // {
+  //   label: "Win",
+  //   href: "/",
+  //   icon: TrophyIcon,
+  //   fillIcon: TrophyFillIcon,
+  //   items: [
+  //     {
+  //       label: "Win",
+  //       href: "/",
+  //     },
+  //     {
+  //       label: "Predictions",
+  //       href: "/",
+  //       status: status.LIVE,
+  //     },
+  //     {
+  //       label: "Lottery",
+  //       href: "/",
+  //     },
+  //   ],
+  // },
   {
     label: "",
     href: "/",

@@ -24,6 +24,8 @@
     ],
     "jsx-a11y/anchor-is-valid": ["off"],
     "import/newline-after-import": ["off"],
+    "react/jsx-curly-brace-presence": ["off"],
+    "import/order": ["off"],
     "react-hooks/exhaustive-deps": [
       "warn",
       {
