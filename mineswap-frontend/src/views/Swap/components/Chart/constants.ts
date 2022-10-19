@@ -1,4 +1,4 @@
 // BNB Address
 const BNB_ADDRESS = '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c'
-
-export { BNB_ADDRESS }
+const GOR_ADDRESS = '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6'
+export { BNB_ADDRESS,GOR_ADDRESS }

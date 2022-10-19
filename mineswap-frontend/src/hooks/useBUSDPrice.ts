@@ -156,7 +156,7 @@ export const useCakeBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pr
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet cake if chain is testnet
-  const cake: Token = isTestnet ? CAKE[ChainId.BSC_TESTNET] : CAKE[ChainId.BSC]
+  const cake: Token = isTestnet ? CAKE[ChainId.GOERLI] : CAKE[ChainId.ETHEREUM]
   return usePriceByPairs(BUSD[cake.chainId], cake)
 }
 
@@ -165,6 +165,6 @@ export const useBNBBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pri
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet wbnb if chain is testnet
-  const wbnb: Token = isTestnet ? WBNB[ChainId.BSC_TESTNET] : WBNB[ChainId.BSC]
+  const wbnb: Token = isTestnet ? WBNB[ChainId.GOERLI] : WBNB[ChainId.ETHEREUM]
   return usePriceByPairs(BUSD[wbnb.chainId], wbnb)
 }

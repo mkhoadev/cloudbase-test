@@ -1,8 +1,8 @@
 import { Token } from '@pancakeswap/sdk'
-import { bscTokens } from '@pancakeswap/tokens'
+import { ethereumTokens } from '@pancakeswap/tokens'
 import { bscWarningTokens } from 'config/constants/warningTokens'
 
-const { bondly, itam, ccar, bttold } = bscTokens
+// const { bondly, itam, ccar, bttold } = bscTokens
 const { pokemoney, free, safemoon } = bscWarningTokens
 
 interface WarningTokenList {
@@ -10,13 +10,13 @@ interface WarningTokenList {
 }
 
 const SwapWarningTokens = <WarningTokenList>{
-  safemoon,
-  bondly,
-  itam,
-  ccar,
-  bttold,
-  pokemoney,
-  free,
+  // safemoon,
+  // bondly,
+  // itam,
+  // ccar,
+  // bttold,
+  // pokemoney,
+  // free,
 }
 
 export default SwapWarningTokens

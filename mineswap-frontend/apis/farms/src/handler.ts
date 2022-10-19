@@ -35,20 +35,20 @@ const pairAbi = [
 ]
 
 const cakeBusdPairMap = {
-  [ChainId.BSC]: {
-    address: Pair.getAddress(CAKE[ChainId.BSC], BUSD[ChainId.BSC]),
-    tokenA: CAKE[ChainId.BSC],
-    tokenB: BUSD[ChainId.BSC],
+  [ChainId.ETHEREUM]: {
+    address: Pair.getAddress(CAKE[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM]),
+    tokenA: CAKE[ChainId.ETHEREUM],
+    tokenB: BUSD[ChainId.ETHEREUM],
   },
-  [ChainId.BSC_TESTNET]: {
-    address: Pair.getAddress(CAKE[ChainId.BSC_TESTNET], BUSD[ChainId.BSC_TESTNET]),
-    tokenA: CAKE[ChainId.BSC_TESTNET],
-    tokenB: BUSD[ChainId.BSC_TESTNET],
+  [ChainId.GOERLI]: {
+    address: Pair.getAddress(CAKE[ChainId.GOERLI], BUSD[ChainId.GOERLI]),
+    tokenA: CAKE[ChainId.GOERLI],
+    tokenB: BUSD[ChainId.GOERLI],
   },
 }
 
 const getCakePrice = async (isTestnet: boolean) => {
-  const pairConfig = cakeBusdPairMap[isTestnet ? ChainId.BSC_TESTNET : ChainId.BSC]
+  const pairConfig = cakeBusdPairMap[isTestnet ? ChainId.GOERLI : ChainId.ETHEREUM]
   const pairContract = new Contract(pairConfig.address, pairAbi, isTestnet ? bscTestnetProvider : bscProvider)
   const reserves = await pairContract.getReserves()
   const { reserve0, reserve1 } = reserves

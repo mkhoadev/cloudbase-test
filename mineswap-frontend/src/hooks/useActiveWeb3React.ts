@@ -22,7 +22,7 @@ export function useNetworkConnectorUpdater() {
   useEffect(() => {
     if (loading || !router.isReady) return
     const parsedQueryChainId = Number(router.query.chainId)
-    if (!parsedQueryChainId && chainId === ChainId.BSC) return
+    if (!parsedQueryChainId && chainId === ChainId.ETHEREUM) return
     if (parsedQueryChainId !== chainId && isChainSupported(chainId)) {
       const removeQueriesFromPath =
         previousChainId !== chainId &&

@@ -4,10 +4,12 @@ export default {
   masterChef: {
     97: '0xB4A466911556e39210a6bB2FaECBB59E4eB7E43d',
     56: '0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652',
+    1:'0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652'
   },
   masterChefV1: {
     97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
     56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+    1:'0x73feaa1eE314F8c655E354234017bE2193C9E24E'
   },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
@@ -16,11 +18,13 @@ export default {
   lotteryV2: {
     97: '0x5790c3534F30437641541a0FA04C992799602998',
     56: '0x5aF6D33DE2ccEC94efb1bDF8f92Bd58085432d2c',
+    1:"0x5aF6D33DE2ccEC94efb1bDF8f92Bd58085432d2c"
   },
   multiCall: multicallAddresses,
   pancakeProfile: {
     56: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a',
     97: '0x4B683C7E13B6d5D7fd1FeA9530F451954c1A7c8A',
+    1:"0x4B683C7E13B6d5D7fd1FeA9530F451954c1A7c8A"
   },
   pancakeBunnies: {
     56: '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07',
@@ -45,10 +49,12 @@ export default {
   tradingCompetitionEaster: {
     56: '0xd718baa0B1F4f70dcC8458154042120FFE0DEFFA',
     97: '0xC787F45B833721ED3aC46E99b703B3E1E01abb97',
+    1: '0xC787F45B833721ED3aC46E99b703B3E1E01abb97'
   },
   tradingCompetitionFanToken: {
     56: '0xA8FECf847e28aa1Df39E995a45b7FCfb91b676d4',
     97: '',
+    1:""
   },
   tradingCompetitionMobox: {
     56: '0x1C5161CdB145dE35a8961F82b065fd1F75C3BaDf',
@@ -57,6 +63,7 @@ export default {
   tradingCompetitionMoD: {
     56: '0xbDd9a61c67ee16c10f5E37b1D0c907a9EC959f33',
     97: '',
+    1:''
   },
   easterNft: {
     56: '0x23c41D28A239dDCAABd1bb1deF8d057189510066',
@@ -65,10 +72,12 @@ export default {
   cakeVault: {
     56: '0x45c54210128a065de780C4B0Df3d16664f7f859e',
     97: '0x683433ba14e8F26774D43D3E90DA6Dd7a22044Fe',
+    1:''
   },
   cakeFlexibleSideVault: {
     56: '0x615e896A8C2CA8470A2e9dc2E9552998f8658Ea0',
     97: '',
+    1:'0x615e896A8C2CA8470A2e9dc2E9552998f8658Ea0'
   },
   predictionsBNB: {
     56: '0x18B2A687610328590Bc8F2e5fEdDe3b582A49cdA',
@@ -85,14 +94,17 @@ export default {
   chainlinkOracleCAKE: {
     56: '0xB6064eD41d4f67e353768aA239cA86f4F73665a1',
     97: '',
+    1:''
   },
   predictionsV1: {
     56: '0x516ffd7d1e0ca40b1879935b2de87cb20fc1124b',
     97: '',
+    1:''
   },
   bunnySpecialCakeVault: {
     56: '0x5B4a770Abe7Eafb2601CA4dF9d73EA99363E60a4',
     97: '',
+    1:''
   },
   bunnySpecialPrediction: {
     56: '0x342c99e9aC24157657095eC69CB04b73257e7A9C',
@@ -101,18 +113,22 @@ export default {
   bunnySpecialLottery: {
     56: '0x24ED31d31C5868e5a96aA77fdcB890f3511fa0b2',
     97: '0x382cB497110F398F0f152cae82821476AE51c9cF',
+    1:''
   },
   bunnySpecialXmas: {
     56: '0x59EdDF3c21509dA3b0aCCd7c5ccc596d930f4783',
     97: '',
+    1:''
   },
   farmAuction: {
     56: '0xb92Ab7c1edcb273AbA24b0656cEb3681654805D2',
     97: '0x3F9602593b4f7C67ab045DB51BbDEa94E40fA9Fe',
+    1:''
   },
   AnniversaryAchievement: {
     56: '0xF839286bD9D14b358496829F3BaB3145C16ad3C1',
     97: '0x981aE96378e770DE44F89cD9175E708f9EDB70a9',
+    1:'0x981aE96378e770DE44F89cD9175E708f9EDB70a9'
   },
   nftMarket: {
     56: '0x17539cCa21C7933Df5c980172d22659B8C345C5A',
@@ -129,6 +145,7 @@ export default {
   potteryDraw: {
     56: '0x01871991587d5671f3A2d4E2BcDC22F4E026396e',
     97: '0xDB9D365b50E62fce747A90515D2bd1254A16EbB9',
+    1: "0xDB9D365b50E62fce747A90515D2bd1254A16EbB9"
   },
   // TODO: multi
   zap: {

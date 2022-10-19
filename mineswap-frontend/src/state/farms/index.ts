@@ -41,7 +41,7 @@ const fetchFetchPublicDataOld = async ({ pids, chainId }): Promise<[SerializedFa
     multicall(masterchefABI, [
       {
         // BSC only
-        address: getMasterChefAddress(ChainId.BSC),
+        address: getMasterChefAddress(ChainId.ETHEREUM),
         name: 'cakePerBlock',
         params: [true],
       },
@@ -234,7 +234,7 @@ export const fetchFarmUserDataAsync = createAsyncThunk<
 >(
   'farms/fetchFarmUserDataAsync',
   async ({ account, pids, proxyAddress, chainId }, config) => {
-    const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.BSC))
+    const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.ETHEREUM))
     const farmsConfig = await getFarmConfig(chainId)
     const farmsCanFetch = farmsConfig.filter(
       (farmConfig) => pids.includes(farmConfig.pid) && poolLength > farmConfig.pid,
