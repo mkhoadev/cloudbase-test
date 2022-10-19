@@ -22,7 +22,7 @@ const StyledCardBody = styled(CardBody)<{ isLoading: boolean }>`
   min-height: ${({ isLoading }) => (isLoading ? '0' : '254px')};
 `
 
-interface CakeVaultProps extends CardProps {
+interface MineVaultProps extends CardProps {
   pool: DeserializedPool
   showStakedOnly: boolean
   defaultFooterExpanded?: boolean
@@ -30,7 +30,7 @@ interface CakeVaultProps extends CardProps {
   showSkeleton?: boolean
 }
 
-interface CakeVaultDetailProps {
+interface MineVaultDetailProps {
   isLoading?: boolean
   account: string
   pool: DeserializedPool

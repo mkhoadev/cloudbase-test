@@ -1,7 +1,7 @@
 {
     "short_name": "MinSwap",
     "name": "MinSwap",
-    "description": "Farm CAKE with Pancake LP Tokens",
+    "description": "Farm MINE with MineSwapLP Tokens",
     "homepage_url": "https://pancakeswap.finance",
     "start_url": ".",
     "display": "standalone",

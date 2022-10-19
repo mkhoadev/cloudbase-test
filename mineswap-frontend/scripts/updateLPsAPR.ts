@@ -34,7 +34,7 @@ const getWeekAgoTimestamp = () => {
 const LP_HOLDERS_FEE = 0.0017
 const WEEKS_IN_A_YEAR = 52.1429
 
-const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.BSC) => {
+const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.ETHEREUM) => {
   try {
     const { blocks } = await request<BlockResponse>(
       BLOCKS_CLIENT_WITH_CHAIN[chainId],
@@ -166,7 +166,7 @@ function splitNormalAndStableFarmsReducer(result: SplitFarmResult, farm: any): S
 }
 // ====
 
-const FETCH_CHAIN_ID = [ChainId.BSC, ChainId.ETHEREUM]
+const FETCH_CHAIN_ID = [ChainId.ETHEREUM, ChainId.ETHEREUM]
 const fetchAndUpdateLPsAPR = async () => {
   Promise.all(
     FETCH_CHAIN_ID.map(async (chainId) => {

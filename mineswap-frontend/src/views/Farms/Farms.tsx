@@ -339,7 +339,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               </Button>
             </NextLinkFromReactRouter>
           </Box>
-          {chainId === ChainId.BSC && (
+          {chainId === ChainId.ETHEREUM && (
             <Box>
               <BCakeBoosterCard />
             </Box>

@@ -20,7 +20,7 @@ const whitelist = [
   'Do you like chocolate with your syrup? Go long!',
   'Happy Niu Year! This bunny’s excited for the year of the bull (market!)',
   'Sunny is always cheerful when there are pancakes around. Smile!',
-  `Don't let that dopey smile deceive you... Churro's a master CAKE chef!`,
+  `Don't let that dopey smile deceive you... Churro's a master MINE chef!`,
   `Nommm... Oh hi, I'm just meditating on the meaning of CAKE.`,
   `Three guesses what's put that twinkle in those eyes! (Hint: it's CAKE)`,
   'These bunnies love nothing more than swapping pancakes. Especially on BSC.',

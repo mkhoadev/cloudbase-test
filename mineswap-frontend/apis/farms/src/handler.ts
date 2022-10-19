@@ -2,7 +2,7 @@ import { FixedNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { getFarmCakeRewardApr, SerializedFarmConfig } from '@pancakeswap/farms'
 import { ChainId, CurrencyAmount, Pair } from '@pancakeswap/sdk'
-import { BUSD, CAKE } from '@pancakeswap/tokens'
+import { BUSD, MINE } from '@pancakeswap/tokens'
 import { farmFetcher } from './helper'
 import { FarmKV, FarmResult } from './kv'
 import { updateLPsAPR } from './lpApr'
@@ -37,12 +37,12 @@ const pairAbi = [
 const cakeBusdPairMap = {
   [ChainId.ETHEREUM]: {
     address: Pair.getAddress(CAKE[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM]),
-    tokenA: CAKE[ChainId.ETHEREUM],
+    tokenA: MINE[ChainId.ETHEREUM],
     tokenB: BUSD[ChainId.ETHEREUM],
   },
   [ChainId.GOERLI]: {
     address: Pair.getAddress(CAKE[ChainId.GOERLI], BUSD[ChainId.GOERLI]),
-    tokenA: CAKE[ChainId.GOERLI],
+    tokenA: MINE[ChainId.GOERLI],
     tokenB: BUSD[ChainId.GOERLI],
   },
 }

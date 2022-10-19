@@ -148,7 +148,7 @@ const DepositModal: React.FC<React.PropsWithChildren<DepositModalProps>> = ({
   }
 
   const crossChainWarningText = isFirstTime
-    ? t('A small amount of %nativeToken% is required for the first-time setup of cross-chain CAKE farming.', {
+    ? t('A small amount of %nativeToken% is required for the first-time setup of cross-chain MINE farming.', {
         nativeToken: native.symbol,
       })
     : t('For safety, cross-chain transactions will take around 30 minutes to confirm.')
@@ -192,7 +192,7 @@ const DepositModal: React.FC<React.PropsWithChildren<DepositModalProps>> = ({
             <Skeleton width={60} />
           )}
         </Flex>
-        {chainId !== ChainId.BSC && chainId !== ChainId.BSC_TESTNET && (
+        {chainId !== ChainId.ETHEREUM && chainId !== ChainId.ETHEREUM_TESTNET && (
           <Box mt="15px">
             <Message variant="warning">
               <MessageText>{crossChainWarningText}</MessageText>
