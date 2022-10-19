@@ -12,6 +12,7 @@ import { useMenuItems } from 'components/Menu/hooks/useMenuItems'
 import { getActiveMenuItem, getActiveSubMenuItem } from 'components/Menu/utils'
 import { useRouter } from 'next/router'
 import useAuth from 'hooks/useAuth'
+import useTheme from 'hooks/useTheme'
 
 export function PageNetworkSupportModal() {
   const { t } = useTranslation()
@@ -37,9 +38,9 @@ export function PageNetworkSupportModal() {
       image: activeSubMenuItem?.image || activeMenuItem?.image,
     }
   }, [menuItems, pathname])
-
+  const { isDark } = useTheme()
   return (
-    <Modal title={title || t('Check your network')} hideCloseButton headerBackground="gradientCardHeader">
+    <Modal title={title || t('Check your network')} hideCloseButton className={isDark ? 'test': 'test1'}>
       <Grid style={{ gap: '16px' }} maxWidth="360px">
         <Text bold>{t('It’s a BNB Smart Chain only feature')}</Text>
 

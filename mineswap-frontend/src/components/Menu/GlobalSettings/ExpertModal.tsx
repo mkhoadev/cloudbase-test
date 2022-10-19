@@ -11,6 +11,7 @@ import {
 } from '@pancakeswap/uikit'
 import { useExpertModeManager } from 'state/user/hooks'
 import { useTranslation } from '@pancakeswap/localization'
+import useTheme from 'hooks/useTheme'
 
 interface ExpertModalProps extends InjectedModalProps {
   setShowConfirmExpertModal: (boolean) => void
@@ -26,13 +27,13 @@ const ExpertModal: React.FC<React.PropsWithChildren<ExpertModalProps>> = ({
   const { isMobile } = useMatchBreakpoints()
 
   const { t } = useTranslation()
-
+  const { isDark } = useTheme()
   return (
     <Modal
       title={t('Expert Mode')}
       onBack={() => setShowConfirmExpertModal(false)}
       onDismiss={() => setShowConfirmExpertModal(false)}
-      headerBackground="gradientCardHeader"
+      className={isDark ? 'test': 'test1'}
       style={{ width: isMobile ? '100%' : '436px' }}
     >
       <Message variant="warning" mb="24px">

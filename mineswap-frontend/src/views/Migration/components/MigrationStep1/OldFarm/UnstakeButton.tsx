@@ -5,8 +5,8 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import React from 'react'
 import { useAppDispatch } from 'state'
-import { fetchFarmUserDataAsync } from 'state/farmsV1'
-import { useFarmUser } from 'state/farmsV1/hooks'
+import { fetchFarmUserDataAsync } from 'state/farms'
+import { useFarmUser } from 'state/farms/hooks'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 import useUnstakeFarms from '../../../hook/V1/Farms/useUnstakeFarms'
 
@@ -40,7 +40,7 @@ const UnstakeButton: React.FC<React.PropsWithChildren<UnstakeButtonProps>> = ({ 
           {t('Your earnings have also been harvested to your wallet')}
         </ToastDescriptionWithTx>,
       )
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
+      // dispatch(fetchFarmUserDataAsync({ account, pids: [pid] }))
     }
   }
 

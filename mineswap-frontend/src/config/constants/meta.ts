@@ -3,9 +3,9 @@ import { ContextApi } from '@pancakeswap/localization'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'MinSwap',
+  title: 'MineSwap',
   description:
-    'MinSwap',
+    'MineSwap',
   image: '/logoMineswap.png',
 }
 
@@ -36,16 +36,16 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/voting': { basePath: true, title: t('Voting') },
       '/voting/proposal': { title: t('Proposals') },
       '/voting/proposal/create': { title: t('Make a Proposal') },
-      '/info': { title: t('Overview'), description: 'View statistics for MinSwap exchanges.' },
-      '/info/pools': { title: t('Pools'), description: 'View statistics for MinSwap exchanges.' },
-      '/info/tokens': { title: t('Tokens'), description: 'View statistics for MinSwap exchanges.' },
+      '/info': { title: t('Overview'), description: 'View statistics for MineSwap exchanges.' },
+      '/info/pools': { title: t('Pools'), description: 'View statistics for MineSwap exchanges.' },
+      '/info/tokens': { title: t('Tokens'), description: 'View statistics for MineSwap exchanges.' },
       '/nfts/collections': { basePath: true, title: t('Collections') },
       '/nfts/activity': { title: t('Activity') },
       '/profile': { basePath: true, title: t('Profile') },
-      '/pancake-squad': { basePath: true, title: t('MinSwap Squad') },
+      '/pancake-squad': { basePath: true, title: t('MineSwap Squad') },
       '/pottery': { basePath: true, title: t('Pottery') },
     },
-    defaultTitleSuffix: t('MinSwap'),
+    defaultTitleSuffix: t('MineSwap'),
   }
 }
 

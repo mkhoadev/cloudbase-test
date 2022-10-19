@@ -13,7 +13,7 @@ interface MineVaultAprProps {
   vaultPosition: VaultPosition
 }
 
-const CakeVaultApr: React.FC<React.PropsWithChildren<CakeVaultAprProps>> = ({ pool, userData, vaultPosition }) => {
+const CakeVaultApr: React.FC<React.PropsWithChildren<MineVaultAprProps>> = ({ pool, userData, vaultPosition }) => {
   const { t } = useTranslation()
 
   const { flexibleApy, lockedApy } = useVaultApy({

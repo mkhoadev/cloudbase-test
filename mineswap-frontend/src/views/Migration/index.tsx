@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Heading, Text, Button, ArrowForwardIcon, Link } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import { usePollFarmsV1WithUserData } from 'state/farmsV1/hooks'
+import { usePollFarmsWithUserData } from 'state/farms/hooks'
 import { VaultKey } from 'state/types'
 import { useFetchUserPools } from 'views/Migration/hook/V1/Pool/useFetchUserPools'
 import { useFetchPublicPoolsData } from 'views/Migration/hook/V1/Pool/useFetchPublicPoolsData'
@@ -36,7 +36,7 @@ const MigrationPage: React.FC<React.PropsWithChildren> = () => {
   ]
 
   // v1 Farms
-  usePollFarmsV1WithUserData()
+  usePollFarmsWithUserData()
 
   // v1 Pools
   useFetchPublicPoolsData()

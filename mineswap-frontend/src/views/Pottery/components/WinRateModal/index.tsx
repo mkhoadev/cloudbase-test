@@ -13,6 +13,7 @@ import WinRateTvl from './WinRateTvl'
 import AnimatedArrow from './AnimatedArrow'
 import WinRateCard from './WinRateCard'
 import WinRateFooter from './WinRateFooter'
+import useTheme from 'hooks/useTheme'
 
 const StyledModal = styled(Modal)`
   & > :nth-child(2) {
@@ -84,13 +85,13 @@ const WinRateModal: React.FC<React.PropsWithChildren<WinRateModalProps>> = ({
   const conversionUnit = editingCurrency === EditingCurrency.TOKEN ? 'USD' : 'CAKE'
   const conversionValue = editingCurrency === EditingCurrency.TOKEN ? principalAsUSD : principalAsToken
   const onUserInput = editingCurrency === EditingCurrency.TOKEN ? setPrincipalFromTokenValue : setPrincipalFromUSDValue
-
+  const { isDark } = useTheme()
   return (
     <StyledModal
       title={t('Winning % Calculator')}
       onDismiss={onBack || onDismiss}
       onBack={onBack ?? null}
-      headerBackground="gradientCardHeader"
+      className={isDark ? 'test': 'test1'}
     >
       <ScrollableContainer>
         <Flex flexDirection="column" mb="8px">

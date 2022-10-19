@@ -17,7 +17,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import cakeAbi from 'config/abi/cake.json'
 import { getCakeVaultAddress, getCakeFlexibleSideVaultAddress } from 'utils/addressHelpers'
 import { multicallv2 } from 'utils/multicall'
-import { bscTokens } from '@pancakeswap/tokens'
+import { ethereumTokens} from '@pancakeswap/tokens'
 import { isAddress } from 'utils'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { bscRpcProvider } from 'utils/providers'
@@ -110,12 +110,12 @@ export const fetchCakePoolPublicDataAsync = () => async (dispatch, getState) => 
 
 export const fetchCakePoolUserDataAsync = (account: string) => async (dispatch) => {
   const allowanceCall = {
-    address: bscTokens.cake.address,
+    address: ethereumTokens.weth.address,
     name: 'allowance',
     params: [account, cakeVaultAddress],
   }
   const balanceOfCall = {
-    address: bscTokens.cake.address,
+    address: ethereumTokens.weth.address,
     name: 'balanceOf',
     params: [account],
   }

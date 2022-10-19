@@ -4,7 +4,6 @@ import { useWeb3React } from '@pancakeswap/wagmi'
 import { getFarmApr } from 'utils/apr'
 import { useTranslation } from '@pancakeswap/localization'
 import { useFarms, usePriceCakeBusd, usePollFarmsWithUserData } from 'state/farms/hooks'
-import { useFarmsV1 } from 'state/farmsV1/hooks'
 import { DeserializedFarm } from 'state/types'
 import { FarmWithStakedValue } from 'views/Farms/components/types'
 import MigrationFarmTable from '../../MigrationFarmTable'
@@ -14,7 +13,7 @@ const NewFarmStep2: React.FC<React.PropsWithChildren> = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const { data: farmsLP, userDataLoaded, regularCakePerBlock } = useFarms()
-  const { data: farmsV1LP } = useFarmsV1()
+  const { data: farmsV1LP } = useFarms()
   const cakePrice = usePriceCakeBusd()
 
   usePollFarmsWithUserData()

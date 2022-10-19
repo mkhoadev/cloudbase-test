@@ -21,6 +21,7 @@ import { WrappedTokenInfo } from '@pancakeswap/tokens'
 import { AutoColumn, ColumnCenter } from '../Layout/Column'
 import { getBlockExploreLink, getBlockExploreName } from '../../utils'
 import AddToWalletButton, { AddToWalletTextOptions } from '../AddToWallet/AddToWalletButton'
+import useTheme from 'hooks/useTheme'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -171,9 +172,9 @@ const TransactionConfirmationModal: React.FC<
   }, [customOnDismiss, onDismiss])
 
   if (!chainId) return null
-
+  const { isDark } = useTheme()
   return (
-    <Modal title={title} headerBackground="gradientCardHeader" {...props} onDismiss={handleDismiss}>
+    <Modal title={title} className={isDark ? 'test': 'test1'} {...props} onDismiss={handleDismiss}>
       {attemptingTxn ? (
         <ConfirmationPendingContent pendingText={pendingText} />
       ) : hash ? (

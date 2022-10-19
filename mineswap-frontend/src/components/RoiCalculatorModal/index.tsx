@@ -25,6 +25,7 @@ import useRoiCalculatorReducer, {
   DefaultCompoundStrategy,
   EditingCurrency,
 } from './useRoiCalculatorReducer'
+import useTheme from 'hooks/useTheme'
 
 export interface RoiCalculatorModalProps {
   pid?: number
@@ -158,13 +159,13 @@ const RoiCalculatorModal: React.FC<React.PropsWithChildren<RoiCalculatorModalPro
   const onUserInput = editingCurrency === EditingCurrency.TOKEN ? setPrincipalFromTokenValue : setPrincipalFromUSDValue
 
   const DURATION = useMemo(() => [t('1D'), t('7D'), t('30D'), t('1Y'), t('5Y')], [t])
-
+  const { isDark } = useTheme()
   return (
     <StyledModal
       title={t('ROI Calculator')}
       onDismiss={onBack || onDismiss}
       onBack={onBack ?? null}
-      headerBackground="gradientCardHeader"
+      className={isDark ? 'test': 'test1'}
     >
       <ScrollableContainer>
         {strategy ? (

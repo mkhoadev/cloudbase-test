@@ -192,7 +192,7 @@ const DepositModal: React.FC<React.PropsWithChildren<DepositModalProps>> = ({
             <Skeleton width={60} />
           )}
         </Flex>
-        {chainId !== ChainId.ETHEREUM && chainId !== ChainId.ETHEREUM_TESTNET && (
+        {chainId !== ChainId.ETHEREUM  && (
           <Box mt="15px">
             <Message variant="warning">
               <MessageText>{crossChainWarningText}</MessageText>

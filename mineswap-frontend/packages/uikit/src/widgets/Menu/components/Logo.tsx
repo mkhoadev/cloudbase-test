@@ -49,10 +49,8 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      {/* <LogoIcon className="mobile-icon" /> */}
-      <img src={isDark ? "./logoMineswaps.png" : "./logoMineswap.png" } alt="" className="mobile-icon" />
-      <img src={isDark ? "./logoMineswaps.png" : "./logoMineswap.png" } alt="" className="desktop-icon" />
-      {/* <LogoWithTextIcon className="desktop-icon" isDark={isDark} /> */}
+      <LogoIcon className="mobile-icon" isDark={isDark}/>
+      <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
     </>
   );
 

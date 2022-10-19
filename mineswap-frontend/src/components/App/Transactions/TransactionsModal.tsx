@@ -12,6 +12,7 @@ import { chains } from 'utils/wagmi'
 import { AutoRow } from '../../Layout/Row'
 import Transaction from './Transaction'
 import ConnectWalletButton from '../../ConnectWalletButton'
+import useTheme from 'hooks/useTheme'
 
 function renderTransactions(transactions: TransactionDetails[], chainId: number) {
   return (
@@ -35,9 +36,9 @@ const TransactionsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> =
   const clearAllTransactionsCallback = useCallback(() => {
     dispatch(clearAllTransactions())
   }, [dispatch])
-
+  const { isDark } = useTheme()
   return (
-    <Modal title={t('Recent Transactions')} headerBackground="gradientCardHeader" onDismiss={onDismiss}>
+    <Modal title={t('Recent Transactions')} className={isDark ? 'test': 'test1'} onDismiss={onDismiss}>
       {account ? (
         <ModalBody>
           {hasTransactions ? (

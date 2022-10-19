@@ -36,12 +36,12 @@ const pairAbi = [
 
 const cakeBusdPairMap = {
   [ChainId.ETHEREUM]: {
-    address: Pair.getAddress(CAKE[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM]),
+    address: Pair.getAddress(MINE[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM]),
     tokenA: MINE[ChainId.ETHEREUM],
     tokenB: BUSD[ChainId.ETHEREUM],
   },
   [ChainId.GOERLI]: {
-    address: Pair.getAddress(CAKE[ChainId.GOERLI], BUSD[ChainId.GOERLI]),
+    address: Pair.getAddress(MINE[ChainId.GOERLI], BUSD[ChainId.GOERLI]),
     tokenA: MINE[ChainId.GOERLI],
     tokenB: BUSD[ChainId.GOERLI],
   },
@@ -94,7 +94,7 @@ export async function saveFarms(chainId: number, event: ScheduledEvent | FetchEv
     const finalFarm = farmsWithPrice.map((f) => {
       return {
         ...f,
-        lpApr: lpAprs?.[f.lpAddress.toLowerCase()] || 0,
+        lpApr: lpAprs?.[f.lpAddress?.toLowerCase()] || 0,
         cakeApr: getFarmCakeRewardApr(f, FixedNumber.from(cakeBusdPrice.toSignificant(3)), regularCakePerBlock),
       }
     }) as FarmResult

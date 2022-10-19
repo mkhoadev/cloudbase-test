@@ -17,7 +17,7 @@ import {
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Token } from '@pancakeswap/sdk'
 import { Ifo, PoolIds } from 'config/constants/types'
-import { bscTokens } from '@pancakeswap/tokens'
+import { ethereumTokens} from '@pancakeswap/tokens'
 import { cakeBnbLpToken } from 'config/constants/ifo'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 import { useTranslation } from '@pancakeswap/localization'
@@ -78,7 +78,7 @@ const CommitTokenSection: React.FC<React.PropsWithChildren<TokenSectionProps & {
   ...props
 }) => {
   if (commitToken.equals(cakeBnbLpToken)) {
-    return <TokenSection primaryToken={bscTokens.cake} secondaryToken={bscTokens.wbnb} {...props} />
+    return <TokenSection primaryToken={ethereumTokens.weth} secondaryToken={ethereumTokens.weth} {...props} />
   }
   return <TokenSection primaryToken={commitToken} {...props} />
 }
@@ -183,8 +183,8 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
           <Box>
             <MessageText display="inline">
               {publicIfoData.status === 'finished'
-                ? t('Activate MinSwap Profile to take part in next IFO‘s!')
-                : t('You need an active MinSwap Profile to take part in an IFO!')}
+                ? t('Activate MineSwap Profile to take part in next IFO‘s!')
+                : t('You need an active MineSwap Profile to take part in an IFO!')}
             </MessageText>{' '}
             <MessageTextLink href="/ifo#ifo-how-to" color="#D67E0A" display="inline">
               {t('How does it work?')} »

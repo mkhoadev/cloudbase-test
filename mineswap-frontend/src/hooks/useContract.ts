@@ -108,7 +108,7 @@ export const useERC721 = (address: string, withSignerIfPossible = true) => {
   return useMemo(() => getErc721Contract(address, providerOrSigner), [address, providerOrSigner])
 }
 
-export const useCake = (): { reader: Cake; signer: MINE } => {
+export const useCake = (): { reader: Cake; signer: Cake } => {
   const providerOrSigner = useProviderOrSigner()
   return useMemo(
     () => ({

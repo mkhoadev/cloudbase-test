@@ -11,6 +11,7 @@ import { useAccount, useNetwork } from 'wagmi'
 import { useMemo } from 'react'
 import { ChainId } from '@pancakeswap/sdk'
 import Dots from '../Loader/Dots'
+import useTheme from 'hooks/useTheme'
 
 // Where chain is not supported or page not supported
 export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupportedChains: number[] }) {
@@ -35,9 +36,9 @@ export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupported
     () => chains.filter((chain) => !chain.testnet && pageSupportedChains?.includes(chain.id)),
     [chains, pageSupportedChains],
   )
-
+  const { isDark } = useTheme()
   return (
-    <Modal title={t('Check your network')} hideCloseButton headerBackground="gradientCardHeader">
+    <Modal title={t('Check your network')} hideCloseButton className={isDark ? 'test': 'test1'}>
       <Grid style={{ gap: '16px' }} maxWidth="336px">
         <Text>
           {t('Currently %feature% only supported in', { feature: typeof title === 'string' ? title : 'this page' })}{' '}

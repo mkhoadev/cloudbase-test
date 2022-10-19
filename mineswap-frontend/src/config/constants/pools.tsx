@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import Trans from 'components/Trans'
 import { VaultKey } from 'state/types'
-import { ethereumTokens } from '@pancakeswap/tokens'
+import { ethereumTokens} from '@pancakeswap/tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'
 
 export const MAX_LOCK_DURATION = 31536000
@@ -63,8 +63,8 @@ export const livePools: SerializedPoolConfig[] = [].map((p) => ({
 const finishedPools = [
 //   {
 //     sousId: 291,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pstake,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pstake,
 //     contractAddress: {
 //       56: '0x56D6955Ba6404647191DD7A5D65A5c9Fe43905e1',
 //       97: '',
@@ -75,8 +75,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 290,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.peel,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.peel,
 //     contractAddress: {
 //       56: '0x288d1aD79c113552B618765B4986f7DE679367Da',
 //       97: '',
@@ -87,8 +87,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 289,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.shell,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.shell,
 //     contractAddress: {
 //       56: '0x595B7AF4F1828AB4953792482b01B2AFC4A46b72',
 //       97: '',
@@ -99,8 +99,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 288,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.high,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.high,
 //     contractAddress: {
 //       56: '0x28cc814bE3B994187B7f8Bfed10516A84A671119',
 //       97: '',
@@ -111,8 +111,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 287,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ole,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ole,
 //     contractAddress: {
 //       56: '0xda6F750be1331963E5772BEe757062f6bddcEA4C',
 //       97: '',
@@ -123,8 +123,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 286,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.trivia,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.trivia,
 //     contractAddress: {
 //       56: '0x86471019Bf3f403083390AC47643062e15B0256e',
 //       97: '',
@@ -135,8 +135,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 285,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.sdao,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.sdao,
 //     contractAddress: {
 //       56: '0x168eF2e470bfeAEB32BE52FB218A41483904851c',
 //       97: '',
@@ -147,8 +147,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 284,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.antex,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.antex,
 //     contractAddress: {
 //       97: '',
 //       56: '0xdC37A2B2A6a62008beEe029E36153dF8055a8ADa',
@@ -159,8 +159,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 283,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xcn,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xcn,
 //     contractAddress: {
 //       97: '',
 //       56: '0xa79D37ce9DF9443eF4B6DEC2e38a8ecd35303adc',
@@ -171,8 +171,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 282,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.chr,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.chr,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2D17ec6cd0AF737B2adE40ea527d41ceEedc166f',
@@ -183,8 +183,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 281,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.MIX,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.MIX,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0F96E19Bdc787e767BA1e8F1aDD0f62cbdad87C8',
@@ -195,8 +195,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 280,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.metis,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.metis,
 //     contractAddress: {
 //       97: '',
 //       56: '0xC0A94bFF88EdCae7D5d79294C0e9954Ed75CBCb7',
@@ -207,8 +207,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 279,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.gal,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.gal,
 //     contractAddress: {
 //       97: '',
 //       56: '0xa5D57C5dca083a7051797920c78fb2b19564176B',
@@ -219,8 +219,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 278,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.rpg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.rpg,
 //     contractAddress: {
 //       97: '',
 //       56: '0xD1c395BCdC2d64ac6544A34A36185483B00530a1',
@@ -231,8 +231,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 277,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ankr,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ankr,
 //     contractAddress: {
 //       97: '',
 //       56: '0xc581345e1648CcE154978eA80bF8A584EC8aFDe0',
@@ -243,8 +243,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 276,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ceek,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ceek,
 //     contractAddress: {
 //       97: '',
 //       56: '0xED53944b1c0cEecDe1a413fDb4D0496e1a08ab58',
@@ -255,8 +255,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 275,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.tinc,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.tinc,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9593462fF51A14633b243Ba3d054A8183d057A02',
@@ -267,8 +267,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 274,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pex,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pex,
 //     contractAddress: {
 //       97: '',
 //       56: '0x641B1F2781B34a493E4308A0A3F1c7E042A9B952',
@@ -279,8 +279,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 273,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.gmi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.gmi,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0D53E0f2Eb384777442e4EB813d8f5fAcC742206',
@@ -291,8 +291,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 272,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.froyo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.froyo,
 //     contractAddress: {
 //       97: '',
 //       56: '0x84e3208578eE7db397a3d584d97Fea107b15bF35',
@@ -303,8 +303,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 271,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bsw,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bsw,
 //     contractAddress: {
 //       97: '',
 //       56: '0x7092e029E4ce660F9AC081BF6D8a339BE602398b',
@@ -315,8 +315,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 270,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.duet,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.duet,
 //     contractAddress: {
 //       97: '',
 //       56: '0xA581349F26dE887700045F9B7d148775d422fDA2',
@@ -327,8 +327,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 269,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.gmt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.gmt,
 //     contractAddress: {
 //       97: '',
 //       56: '0xe76a31cF974BA5819ce86cB4667a4bf05174bC59',
@@ -339,8 +339,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 268,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xwg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xwg,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6e0272A70075f6782F6842730107E9ABf74C5CC7',
@@ -351,8 +351,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 267,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.high,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.high,
 //     contractAddress: {
 //       97: '',
 //       56: '0x60c4998C058BaC8042712B54E7e43b892Ab0B0c4',
@@ -363,8 +363,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 266,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.thg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.thg,
 //     contractAddress: {
 //       97: '',
 //       56: '0xD1D03A3D4C27884a8703Cdb78504737C9E9A159e',
@@ -375,8 +375,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 265,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.era,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.era,
 //     contractAddress: {
 //       97: '',
 //       56: '0x260F95f5b7FD8eda720ED9d0829164dE35B048ab',
@@ -387,8 +387,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 264,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.btt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.btt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x346a1b672C5Cbb6AE21715428f77A0049B29B332',
@@ -398,8 +398,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 263,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ach,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ach,
 //     contractAddress: {
 //       97: '',
 //       56: '0xcD1Be742b04DB005e2C445A11BDe6d13DD9dd454',
@@ -409,8 +409,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 261,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.sfund,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.sfund,
 //     contractAddress: {
 //       97: '',
 //       56: '0x80762101bd79D6e7A175E9678d05c7f815b8D7d7',
@@ -420,8 +420,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 260,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.raca,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.raca,
 //     contractAddress: {
 //       97: '',
 //       56: '0xAaF43935a526DF88AB57FC69b1d80a8d35e1De82',
@@ -431,8 +431,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 259,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ertha,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ertha,
 //     contractAddress: {
 //       97: '',
 //       56: '0x921Ea7e12A66025F2BD287eDbff6dc5cEABd6477',
@@ -442,8 +442,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 258,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.fuse,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.fuse,
 //     contractAddress: {
 //       97: '',
 //       56: '0xeAd7b8fc5F2E5672FAe9dCf14E902287F35CB169',
@@ -453,8 +453,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 257,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.froyo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.froyo,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1c9E3972fdBa29b40954Bb7594Da6611998F8830',
@@ -464,8 +464,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 256,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.aog,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.aog,
 //     contractAddress: {
 //       97: '',
 //       56: '0xa34832efe74133763A85060a64103542031B0A7E',
@@ -475,8 +475,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 255,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.apx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.apx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x92c07c325cE7b340Da2591F5e9CbB1F5Bab73FCF',
@@ -486,8 +486,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 254,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bcoin,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bcoin,
 //     contractAddress: {
 //       97: '',
 //       56: '0x25ca61796d786014ffe15e42ac11c7721d46e120',
@@ -497,8 +497,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 253,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bcoin,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bcoin,
 //     contractAddress: {
 //       97: '',
 //       56: '0xad8F6A9d58012DCa2303226B287E80e5fE27eff0',
@@ -508,8 +508,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 252,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.insur,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.insur,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1A777aE604CfBC265807A46Db2d228d4CC84E09D',
@@ -519,8 +519,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 251,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.gm,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.gm,
 //     contractAddress: {
 //       97: '',
 //       56: '0x09e727c83a75fFdB729280639eDBf947dB76EeB7',
@@ -530,8 +530,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 250,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.woop,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.woop,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2718D56aE2b8F08B3076A409bBF729542233E451',
@@ -541,8 +541,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 249,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.high,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.high,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2461ea28907A2028b2bCa40040396F64B4141004',
@@ -552,8 +552,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 247,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dpt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dpt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1c0C7F3B07a42efb4e15679a9ed7e70B2d7Cc157',
@@ -563,8 +563,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 246,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.thg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.thg,
 //     contractAddress: {
 //       97: '',
 //       56: '0x56Bfb98EBEF4344dF2d88c6b80694Cba5EfC56c8',
@@ -574,8 +574,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 245,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.idia,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.idia,
 //     contractAddress: {
 //       97: '',
 //       56: '0x07984aBb7489CD436d27875c07Eb532d4116795a',
@@ -585,8 +585,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 244,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xcv,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xcv,
 //     contractAddress: {
 //       97: '',
 //       56: '0xF1fA41f593547E406a203b681df18acCC3971A43',
@@ -596,8 +596,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 243,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.nabox,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.nabox,
 //     contractAddress: {
 //       97: '',
 //       56: '0x13A40BFab005D9284f8938FBb70Bf39982580e4D',
@@ -607,8 +607,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 242,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.santos,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.santos,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0914b2d9D4DD7043893DEF53ecFC0F1179F87d5c',
@@ -618,8 +618,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 241,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.quidd,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.quidd,
 //     contractAddress: {
 //       97: '',
 //       56: '0xd97ee2bfe79a4d4ab388553411c462fbb536a88c',
@@ -629,8 +629,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 240,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.zoo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.zoo,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2EfE8772EB97B74be742d578A654AB6C95bF18db',
@@ -640,8 +640,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 239,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.sfund,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.sfund,
 //     contractAddress: {
 //       97: '',
 //       56: '0x7F103689cabe17C2F70DA6faa298045d72a943b8',
@@ -651,8 +651,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 238,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.qi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.qi,
 //     contractAddress: {
 //       97: '',
 //       56: '0xbd52ef04DB1ad1c68A8FA24Fa71f2188978ba617',
@@ -662,8 +662,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 237,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.kart,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.kart,
 //     contractAddress: {
 //       97: '',
 //       56: '0x73bB10B89091f15e8FeD4d6e9EBa6415df6acb21',
@@ -673,8 +673,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 236,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.porto,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.porto,
 //     contractAddress: {
 //       97: '',
 //       56: '0xdD52FAB121376432DBCBb47592742F9d86CF8952',
@@ -684,8 +684,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 235,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dvi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dvi,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2b8751B7141Efa7a9917f9C6fea2CEA071af5eE7',
@@ -695,8 +695,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 234,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.jgn,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.jgn,
 //     contractAddress: {
 //       97: '',
 //       56: '0xfDFb4DbE94916F9f55dBC2c14Ea8B3e386eCD9F9',
@@ -706,8 +706,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 232,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xwg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xwg,
 //     contractAddress: {
 //       97: '',
 //       56: '0x79f5f7DDADeFa0A9e850DFFC4fBa77e5172Fe701',
@@ -717,8 +717,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 231,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dar,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dar,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9b861A078B2583373A7a3EEf815bE1A39125Ae08',
@@ -728,8 +728,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 230,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.fina,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.fina,
 //     contractAddress: {
 //       97: '',
 //       56: '0xa35caA9509a2337E22C54C929146D5F7f6515794',
@@ -739,8 +739,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 229,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bmon,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bmon,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6e63B2B96c77532ea7ec2B3D3BFA9C8e1d383f3C',
@@ -750,8 +750,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 228,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dkt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dkt,
 //     contractAddress: {
 //       97: '',
 //       56: '0xFef4B7a0194159d89717Efa592384d42B28D3926',
@@ -761,8 +761,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 227,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ramp,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ramp,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2D26e4b9a5F19eD5BB7AF221DC02432D31DEB4dA',
@@ -772,8 +772,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 226,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lazio,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lazio,
 //     contractAddress: {
 //       97: '',
 //       56: '0xd008416c2c9cf23843bd179aa3cefedb4c8d1607',
@@ -783,8 +783,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 225,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.sps,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.sps,
 //     contractAddress: {
 //       97: '',
 //       56: '0xd9b63bb6c62fe2e9a641699a91e680994b8b0081',
@@ -794,8 +794,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 224,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mcb,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mcb,
 //     contractAddress: {
 //       97: '',
 //       56: '0xCc2D359c3a99d9cfe8e6F31230142efF1C828e6D',
@@ -805,8 +805,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 223,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.rpg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.rpg,
 //     contractAddress: {
 //       97: '',
 //       56: '0x65C0940C50A3C98AEEc95a115Ae62E9804588713',
@@ -816,8 +816,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 222,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.beta,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.beta,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6f660c58723922c6f866a058199ff4881019b4b5',
@@ -827,8 +827,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 233,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.eternal,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.eternal,
 //     contractAddress: {
 //       97: '',
 //       56: '0xc28c400F2B675b25894FA632205ddec71E432288',
@@ -838,8 +838,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 221,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.nft,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.nft,
 //     contractAddress: {
 //       97: '',
 //       56: '0x8d018823d13c56d62ffb795151a9e629c21e047b',
@@ -849,8 +849,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 220,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.chess,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.chess,
 //     contractAddress: {
 //       97: '',
 //       56: '0x4D1Ec426d0d7fb6bF344Dd372d0502EDD71c8d88',
@@ -860,8 +860,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 219,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.tlos,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.tlos,
 //     contractAddress: {
 //       97: '',
 //       56: '0xCB41a72067c227D6Ed7bc7CFAcd13eCe47Dfe5E9',
@@ -871,8 +871,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 218,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.stephero,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.stephero,
 //     contractAddress: {
 //       97: '',
 //       56: '0xcecba456fefe5b18d43df23419e7ab755b436655',
@@ -882,8 +882,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 217,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bp,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bp,
 //     contractAddress: {
 //       97: '',
 //       56: '0x8ed7acf12b08274d5cdaf03d43d0e54bcbdd487e',
@@ -893,8 +893,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 216,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.cvp,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.cvp,
 //     contractAddress: {
 //       97: '',
 //       56: '0xC4b15117BC0be030c20754FF36197641477af5d1',
@@ -904,8 +904,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 215,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.qbt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.qbt,
 //     contractAddress: {
 //       97: '',
 //       56: '0xB72dEf58D0832f747d6B7197471Fe20AeA7EB463',
@@ -915,8 +915,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 214,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.naos,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.naos,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb38b78529bCc895dA16CE2978D6cD6C56e8CfFC3',
@@ -926,8 +926,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 213,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pha,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pha,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2E101b5F7f910F2609e5AcE5f43bD274b1DE09AA',
@@ -937,8 +937,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 212,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bel,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bel,
 //     contractAddress: {
 //       97: '',
 //       56: '0x52733Ad7b4D09BF613b0389045e33E2F287afa04',
@@ -948,8 +948,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 211,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ramp,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ramp,
 //     contractAddress: {
 //       97: '',
 //       56: '0x401b9b97bdbc3197c1adfab9652dc78040bd1e13',
@@ -959,8 +959,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 210,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pots,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pots,
 //     contractAddress: {
 //       97: '',
 //       56: '0xBeDb490970204cb3CC7B0fea94463BeD67d5364D',
@@ -970,8 +970,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 209,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.tusd,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.tusd,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb6e510ae2da1ab4e350f837c70823ab75091780e',
@@ -981,8 +981,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 208,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.revv,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.revv,
 //     contractAddress: {
 //       97: '',
 //       56: '0x8aa5b2c67852ed5334c8a7f0b5eb0ef975106793',
@@ -992,8 +992,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 207,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bttold,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bttold,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3b804460c3c62f0f565af593984159f13b1ac976',
@@ -1003,8 +1003,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 206,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.skill,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.skill,
 //     contractAddress: {
 //       97: '',
 //       56: '0x455f4d4cc4d6ca15441a93c631e82aaf338ad843',
@@ -1014,8 +1014,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 205,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.win,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.win,
 //     contractAddress: {
 //       97: '',
 //       56: '0xde4aef42bb27a2cb45c746acde4e4d8ab711d27c',
@@ -1025,8 +1025,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 204,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.if,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.if,
 //     contractAddress: {
 //       97: '',
 //       56: '0x57d3524888ded4085d9124a422f13b27c8a43de7',
@@ -1036,8 +1036,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 203,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.sps,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.sps,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb56299d8fbf46c509014b103a164ad1fc65ea222',
@@ -1047,8 +1047,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 202,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.c98,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.c98,
 //     contractAddress: {
 //       97: '',
 //       56: '0x5e49531BA07bE577323e55666D46C6217164119E',
@@ -1058,8 +1058,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 201,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.axs,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.axs,
 //     contractAddress: {
 //       97: '',
 //       56: '0xBB472601B3CB32723d0755094BA80B73F67f2AF3',
@@ -1069,8 +1069,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 200,
-//     stakingToken: bscTokens.axs,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.axs,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0x583A36816F3b8401C4fdf682203E0caDA6997740',
@@ -1080,8 +1080,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 199,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pmon,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pmon,
 //     contractAddress: {
 //       97: '',
 //       56: '0x28050e8f024e05f9ddbef5f60dd49f536dba0cf0',
@@ -1091,8 +1091,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 198,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.trx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.trx,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb2b62f88ab82ed0bb4ab4da60d9dc9acf9e816e5',
@@ -1102,8 +1102,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 197,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.chess,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.chess,
 //     contractAddress: {
 //       97: '',
 //       56: '0xd1812e7e28c39e78727592de030fc0e7c366d61a',
@@ -1113,8 +1113,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 196,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.titan,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.titan,
 //     contractAddress: {
 //       97: '',
 //       56: '0x97058cf9b36c9ef1622485cef22e72d6fea32a36',
@@ -1124,8 +1124,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 195,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.harmony,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.harmony,
 //     contractAddress: {
 //       97: '',
 //       56: '0xe595456846155e23b24cc9cbee910ee97027db6d',
@@ -1135,8 +1135,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 194,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mask,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mask,
 //     contractAddress: {
 //       97: '',
 //       56: '0xae611c6d4d3ca2cee44cd34eb7aac29d5a387fcf',
@@ -1146,8 +1146,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 193,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dvi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dvi,
 //     contractAddress: {
 //       97: '',
 //       56: '0x135827eaf9746573c0b013f18ee12f138b9b0384',
@@ -1157,8 +1157,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 192,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.gum,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.gum,
 //     contractAddress: {
 //       97: '',
 //       56: '0x09b8a5f51c9e245402057851ada274174fa00e2a',
@@ -1168,8 +1168,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 191,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.adx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.adx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x53a2d1db049b5271c6b6db020dba0e8a7c4eb90d',
@@ -1179,8 +1179,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 190,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.suter,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.suter,
 //     contractAddress: {
 //       97: '',
 //       56: '0x4da8da81647ee0aa7350e9959f3e4771eb753da0',
@@ -1190,8 +1190,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 189,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bscpad,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bscpad,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0446b8f8474c590d2249a4acdd6eedbc2e004bca',
@@ -1201,8 +1201,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 188,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.rabbit,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.rabbit,
 //     contractAddress: {
 //       97: '',
 //       56: '0x391240A007Bfd8A59bA74978D691219a76c64c5C',
@@ -1212,8 +1212,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 187,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.waultx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.waultx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x017DEa5C58c2Bcf57FA73945073dF7AD4052a71C',
@@ -1223,8 +1223,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 186,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.wex,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.wex,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6Bd94783caCef3fb7eAa9284f1631c464479829f',
@@ -1234,8 +1234,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 185,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.form,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.form,
 //     contractAddress: {
 //       97: '',
 //       56: '0x7c71723fB1F9Cfb250B702cfc4eBd5D9Ab2E83d9',
@@ -1245,8 +1245,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 184,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.orbs,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.orbs,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9C8813d7D0A61d30610a7A5FdEF9109e196a3D77',
@@ -1256,8 +1256,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 183,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.$dg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.$dg,
 //     contractAddress: {
 //       97: '',
 //       56: '0xa07a91da6d10173f33c294803684bceede325957',
@@ -1267,8 +1267,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 182,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.woo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.woo,
 //     contractAddress: {
 //       97: '',
 //       56: '0x88c321d444c88acf3e747dc90f20421b97648903',
@@ -1278,8 +1278,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 181,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.woo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.woo,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3c7234c496d76133b48bd6a342e7aea4f8d87fc8',
@@ -1289,8 +1289,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 180,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.htb,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.htb,
 //     contractAddress: {
 //       97: '',
 //       56: '0x64473c33c360f315cab38674f1633505d1d8dcb2',
@@ -1300,8 +1300,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 179,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.jgn,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.jgn,
 //     contractAddress: {
 //       97: '',
 //       56: '0x5cc7a19a50be2a6b2540ebcd55bd728e732e59c3',
@@ -1311,8 +1311,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 178,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dft,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dft,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2666e2494e742301ffc8026e476acc1710a775ed',
@@ -1322,8 +1322,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 177,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hai,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hai,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6ac2213F09A404c86AFf506Aa51B6a5BF1F6e24E',
@@ -1333,8 +1333,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 176,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.o3,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.o3,
 //     contractAddress: {
 //       97: '',
 //       56: '0x35BD47263f7E57368Df76339903C53bAa99076e1',
@@ -1344,8 +1344,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 175,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ampl,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ampl,
 //     contractAddress: {
 //       97: '',
 //       56: '0x62dEc3A560D2e8A84D30752bA454f97b26757877',
@@ -1355,8 +1355,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 174,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.oddz,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.oddz,
 //     contractAddress: {
 //       97: '',
 //       56: '0x44d1f81e80e43e935d66d65874354ef91e5e49f6',
@@ -1366,8 +1366,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 173,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bondly,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bondly,
 //     contractAddress: {
 //       97: '',
 //       56: '0x4ea43fce546975aae120c9eeceb172500be4a02b',
@@ -1377,8 +1377,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 172,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.marsh,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.marsh,
 //     contractAddress: {
 //       97: '',
 //       56: '0x567fd708e788e51b68666b9310ee9df163d60fae',
@@ -1388,8 +1388,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 171,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mbox,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mbox,
 //     contractAddress: {
 //       97: '',
 //       56: '0x36f9452083fc9bc469a31e7966b873f402292433',
@@ -1399,8 +1399,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 170,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ata,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ata,
 //     contractAddress: {
 //       97: '',
 //       56: '0xc612680457751d0d01b5d901ad08132a3b001900',
@@ -1410,8 +1410,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 169,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x336bcd59f2b6eb7221a99f7a50fd03c6bf9a306b',
@@ -1421,8 +1421,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 168,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bcfx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bcfx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2b3974dda76b2d408b7d680a27fbb0393e3cf0e1',
@@ -1432,8 +1432,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 167,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.qkc,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.qkc,
 //     contractAddress: {
 //       97: '',
 //       56: '0xfa67f97eeee6de55d179ecabbfe701f27d9a1ed9',
@@ -1443,8 +1443,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 166,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ktn,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ktn,
 //     contractAddress: {
 //       97: '',
 //       56: '0x48852322a185dc5fc733ff8c8d7c6dcbd2b3b2a2',
@@ -1454,8 +1454,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 165,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mtrg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mtrg,
 //     contractAddress: {
 //       97: '',
 //       56: '0xf4d0f71698f58f221911515781b05e808a8635cb',
@@ -1465,8 +1465,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 164,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.tusd,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.tusd,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9dceb1d92f7e0361d0766f3d98482424df857654',
@@ -1476,8 +1476,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 163,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.vrt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.vrt,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb77f1425ec3a7c78b1a1e892f72332c8b5e8ffcb',
@@ -1487,8 +1487,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 162,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.kalm,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.kalm,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb9ff4da0954b300542e722097671ead8cf337c17',
@@ -1498,8 +1498,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 161,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ez,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ez,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb19395702460261e51edf7a7b130109c64f13af9',
@@ -1509,8 +1509,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 160,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.kalm,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.kalm,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6e113ecb9ff2d271140f124c2cc5b5e4b5700c9f',
@@ -1520,8 +1520,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 159,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.popen,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.popen,
 //     contractAddress: {
 //       97: '',
 //       56: '0x7baf1763ce5d0da8c9d85927f08a8be9c481ce50',
@@ -1531,8 +1531,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 158,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lien,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lien,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2b8d6c9c62bfc1bed84724165d3000e61d332cab',
@@ -1542,8 +1542,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 157,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.well,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.well,
 //     contractAddress: {
 //       97: '',
 //       56: '0x8a06ff2748edcba3fb4e44a6bfda4e46769e557b',
@@ -1553,8 +1553,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 156,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.deri,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.deri,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3eba95f5493349bbe0cad33eaae05dc6a7e26b90',
@@ -1564,8 +1564,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 155,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.chr,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.chr,
 //     contractAddress: {
 //       97: '',
 //       56: '0x593edbd14a5b7eec828336accca9c16cc12f04be',
@@ -1575,8 +1575,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 154,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.cyc,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.cyc,
 //     contractAddress: {
 //       97: '',
 //       56: '0xD714738837944C3c592477249E8edB724A76e068',
@@ -1586,8 +1586,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 153,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xend,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xend,
 //     contractAddress: {
 //       97: '',
 //       56: '0x8ea9f2482b2f7b12744a831f81f8d08714adc093',
@@ -1597,8 +1597,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 152,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hget,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hget,
 //     contractAddress: {
 //       97: '',
 //       56: '0x8e8125f871eb5ba9d55361365f5391ab437f9acc',
@@ -1608,8 +1608,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 151,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hotcross,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hotcross,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0e09205e993f78cd5b3a5df355ae98ee7d0b5834',
@@ -1619,8 +1619,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 150,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.rfox,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.rfox,
 //     contractAddress: {
 //       97: '',
 //       56: '0xf9f00d41b1f4b3c531ff750a9b986c1a530f33d9',
@@ -1630,8 +1630,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 149,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.wmass,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.wmass,
 //     contractAddress: {
 //       97: '',
 //       56: '0x4Af531EcD50167a9402Ce921ee6436dd4cFC04FD',
@@ -1641,8 +1641,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 148,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ubxt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ubxt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9b4bac2d8f69853aa29cb45478c77fc54532ac22',
@@ -1652,8 +1652,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 147,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.btr,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.btr,
 //     contractAddress: {
 //       97: '',
 //       56: '0x20ee70a07ae1b475cb150dec27930d97915726ea',
@@ -1663,8 +1663,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 146,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.τdoge,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.τdoge,
 //     contractAddress: {
 //       97: '',
 //       56: '0x017556dffb8c6a52fd7f4788adf6fb339309c81b',
@@ -1674,8 +1674,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 145,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pmon,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pmon,
 //     contractAddress: {
 //       97: '',
 //       56: '0xdaa711ecf2ac0bff5c82fceeae96d0008791cc49',
@@ -1685,8 +1685,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 144,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.one,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.one,
 //     contractAddress: {
 //       97: '',
 //       56: '0x74af842ecd0b6588add455a47aa21ed9ba794108',
@@ -1696,8 +1696,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 143,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.fine,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.fine,
 //     contractAddress: {
 //       97: '',
 //       56: '0x42d41749d6e9a1c5b47e27f690d4531f181b2159',
@@ -1707,8 +1707,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 142,
-//     stakingToken: bscTokens.doge,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.doge,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0xbebd44824631b55991fa5f2bf5c7a4ec96ff805b',
@@ -1718,8 +1718,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 141,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bmxx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bmxx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x55131f330c886e3f0cae389cedb23766ac9aa3ed',
@@ -1729,8 +1729,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 140,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.oin,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.oin,
 //     contractAddress: {
 //       97: '',
 //       56: '0x01453a74a94687fa3f99b80762435855a13664f4',
@@ -1740,8 +1740,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 139,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hyfi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hyfi,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0032ceb978fe5fc8a5d5d6f5adfc005e76397e29',
@@ -1751,8 +1751,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 138,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.kun,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.kun,
 //     contractAddress: {
 //       97: '',
 //       56: '0x439b46d467402cebc1a2fa05038b5b696b1f4417',
@@ -1762,8 +1762,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 137,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.math,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.math,
 //     contractAddress: {
 //       97: '',
 //       56: '0x377ae5f933aa4cfa41fa03e2cae8a2befccf53b2',
@@ -1773,8 +1773,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 136,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ust,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ust,
 //     contractAddress: {
 //       97: '',
 //       56: '0xce3ebac3f549ebf1a174a6ac3b390c179422b5f6',
@@ -1784,8 +1784,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 135,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.win,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.win,
 //     contractAddress: {
 //       97: '',
 //       56: '0xd26dec254c699935c286cd90e9841dcabf1af72d',
@@ -1795,8 +1795,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 134,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.trx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.trx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x93e2867d9b74341c2d19101b7fbb81d6063cca4d',
@@ -1806,8 +1806,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 133,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bttold,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bttold,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3b644e44033cff70bd6b771904225f3dd69dfb6d',
@@ -1817,8 +1817,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 132,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lmt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lmt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0a687d7b951348d681f7ed5eea84c0ba7b9566dc',
@@ -1828,8 +1828,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 131,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pnt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pnt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x417df1c0e6a498eb1f2247f99032a01d4fafe922',
@@ -1839,8 +1839,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 130,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xmark,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xmark,
 //     contractAddress: {
 //       97: '',
 //       56: '0xdc8943d806f9dd64312d155284abf780455fd345',
@@ -1850,8 +1850,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 129,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ramp,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ramp,
 //     contractAddress: {
 //       97: '',
 //       56: '0xa90a894e5bc20ab2be46c7e033a38f8b8eaa771a',
@@ -1862,8 +1862,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 128,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hakka,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hakka,
 //     contractAddress: {
 //       97: '',
 //       56: '0x34ac807e34e534fe426da1e11f816422774aae1c',
@@ -1873,8 +1873,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 127,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pbtc,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pbtc,
 //     contractAddress: {
 //       97: '',
 //       56: '0x31fa2f516b77c4273168b284ac6d9def5aa6dafb',
@@ -1884,8 +1884,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 126,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lien,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lien,
 //     contractAddress: {
 //       97: '',
 //       56: '0x7112f8988f075c7784666ab071927ae4109a8076',
@@ -1895,8 +1895,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 125,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bbadger,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bbadger,
 //     contractAddress: {
 //       97: '',
 //       56: '0x126dfbcef85c5bf335f8be99ca4006037f417892',
@@ -1906,8 +1906,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 124,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bdigg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bdigg,
 //     contractAddress: {
 //       97: '',
 //       56: '0x4f0ad2332b1f9983e8f63cbee617523bb7de5031',
@@ -1917,8 +1917,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 123,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bondly,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bondly,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9483ca44324de06802576866b9d296f7614f45ac',
@@ -1928,8 +1928,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 122,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xed,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xed,
 //     contractAddress: {
 //       97: '',
 //       56: '0x72ceec6e2a142678e703ab0710de78bc819f4ce0',
@@ -1939,8 +1939,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 121,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.cgg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.cgg,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1c6ed21d3313822ae73ed0d94811ffbbe543f341',
@@ -1950,8 +1950,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 120,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.perl,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.perl,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1ac0d0333640f57327c83053c581340ebc829e30',
@@ -1961,8 +1961,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 119,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.arpa,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.arpa,
 //     contractAddress: {
 //       97: '',
 //       56: '0xc707e5589aeb1dc117b0bb5a3622362f1812d4fc',
@@ -1972,8 +1972,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 118,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.oddz,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.oddz,
 //     contractAddress: {
 //       97: '',
 //       56: '0x22106cdcf9787969e1672d8e6a9c03a889cda9c5',
@@ -1983,8 +1983,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 117,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dexe,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dexe,
 //     contractAddress: {
 //       97: '',
 //       56: '0x999b86e8bba3d4f05afb8155963999db70afa97f',
@@ -1995,8 +1995,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 116,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dfd,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dfd,
 //     contractAddress: {
 //       97: '',
 //       56: '0xAF3EfE5fCEeBc603Eada6A2b0172be11f7405102',
@@ -2006,8 +2006,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 115,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.alpaca,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.alpaca,
 //     contractAddress: {
 //       97: '',
 //       56: '0xf73fdeb26a8c7a4abf3809d3db11a06ba5c13d0e',
@@ -2017,8 +2017,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 114,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.τbtc,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.τbtc,
 //     contractAddress: {
 //       97: '',
 //       56: '0xaac7171afc93f4b75e1268d208040b152ac65e32',
@@ -2028,8 +2028,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 113,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.τbtc,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.τbtc,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2c6017269b4324d016ca5d8e3267368652c18905',
@@ -2040,8 +2040,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 112,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.swingby,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.swingby,
 //     contractAddress: {
 //       97: '',
 //       56: '0x675434c68f2672c983e36cf10ed13a4014720b79',
@@ -2051,8 +2051,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 111,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xed,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xed,
 //     contractAddress: {
 //       97: '',
 //       56: '0x05d6c2d1d687eacfb5e6440d5a3511e91f2201a8',
@@ -2064,8 +2064,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 110,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hakka,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hakka,
 //     contractAddress: {
 //       97: '',
 //       56: '0xd623a32da4a632ce01766c317d07cb2cad56949b',
@@ -2077,8 +2077,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 109,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.cgg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.cgg,
 //     contractAddress: {
 //       97: '',
 //       56: '0xdf75f38dbc98f9f26377414e567abcb8d57cca33',
@@ -2090,8 +2090,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 108,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mix,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mix,
 //     contractAddress: {
 //       97: '',
 //       56: '0xce64a930884b2c68cd93fc1c7c7cdc221d427692',
@@ -2101,8 +2101,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 107,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.suter,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.suter,
 //     contractAddress: {
 //       97: '',
 //       56: '0xc1E70edd0141c454b834Deac7ddDeA413424aEf9',
@@ -2112,8 +2112,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 106,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.broobee,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.broobee,
 //     contractAddress: {
 //       97: '',
 //       56: '0x189d8228CdfDc404Bd9e5bD65ff958cb5fd8855c',
@@ -2123,8 +2123,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 105,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hzn,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hzn,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0196c582216e2463f052E2B07Ef8667Bec9Fb17a',
@@ -2134,8 +2134,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 104,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.alpa,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.alpa,
 //     contractAddress: {
 //       97: '',
 //       56: '0x8f84106286c9c8A42bc3555C835E6e2090684ab7',
@@ -2145,8 +2145,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 103,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.perl,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.perl,
 //     contractAddress: {
 //       97: '',
 //       56: '0xa8d32b31ECB5142f067548Bf0424389eE98FaF26',
@@ -2158,8 +2158,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 102,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.tlm,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.tlm,
 //     contractAddress: {
 //       97: '',
 //       56: '0xC59aa49aE508050c2dF653E77bE13822fFf02E9A',
@@ -2169,8 +2169,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 101,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.jgn,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.jgn,
 //     contractAddress: {
 //       97: '',
 //       56: '0x14AeA62384789EDA98f444cCb970F6730877d3F9',
@@ -2180,8 +2180,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 100,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.eps,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.eps,
 //     contractAddress: {
 //       97: '',
 //       56: '0xebb87dF24D65977cbe62538E4B3cFBD5d0308642',
@@ -2191,8 +2191,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 99,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.arpa,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.arpa,
 //     contractAddress: {
 //       97: '',
 //       56: '0x40918EF8efFF4aA061656013a81E0e5A8A702eA7',
@@ -2204,8 +2204,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 98,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.itam,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.itam,
 //     contractAddress: {
 //       97: '',
 //       56: '0x44eC1B26035865D9A7C130fD872670CD7Ebac2bC',
@@ -2215,8 +2215,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 97,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bondly,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bondly,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1329ad151dE6C441184E32E108401126AE850937',
@@ -2228,8 +2228,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 96,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.tko,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.tko,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9bbDc92474a7e7321B78dcDA5EF35f4981438760',
@@ -2239,8 +2239,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 95,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.apys,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.apys,
 //     contractAddress: {
 //       97: '',
 //       56: '0x46530d79b238f809e80313e73715b160c66677aF',
@@ -2250,8 +2250,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 94,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hoo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hoo,
 //     contractAddress: {
 //       97: '',
 //       56: '0x47fD853D5baD391899172892F91FAa6d0cd8A2Aa',
@@ -2261,8 +2261,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 93,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.oddz,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.oddz,
 //     contractAddress: {
 //       97: '',
 //       56: '0xe25aB6F05BBF6C1be953BF2d7df15B3e01b8e5a5',
@@ -2274,8 +2274,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 92,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.easy,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.easy,
 //     contractAddress: {
 //       97: '',
 //       56: '0xEB8Fd597921E3Dd37B0F103a2625F855e2C9b9B5',
@@ -2285,8 +2285,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 91,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.nrv,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.nrv,
 //     contractAddress: {
 //       97: '',
 //       56: '0xABFd8d1942628124aB971937154f826Bce86DcbC',
@@ -2296,8 +2296,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 90,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dego,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dego,
 //     contractAddress: {
 //       97: '',
 //       56: '0x526d3c204255f807C95a99b69596f2f9f72345e5',
@@ -2307,8 +2307,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 89,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.gum,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.gum,
 //     contractAddress: {
 //       97: '',
 //       56: '0xAa2082BeE04fc518300ec673F9497ffa6F669dB8',
@@ -2318,8 +2318,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 88,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pbtc,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pbtc,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9096625Bc0d36F5EDa6d44e511641667d89C28f4',
@@ -2331,8 +2331,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 87,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dft,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dft,
 //     contractAddress: {
 //       97: '',
 //       56: '0x78BD4dB48F8983c3C36C8EAFbEF38f6aC7B55285',
@@ -2342,8 +2342,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 86,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.swth,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.swth,
 //     contractAddress: {
 //       97: '',
 //       56: '0x35418e14F5aA615C4f020eFBa6e01C5DbF15AdD2',
@@ -2353,8 +2353,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 85,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lien,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lien,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3c7cC49a35942fbD3C2ad428a6c22490cd709d03',
@@ -2366,8 +2366,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 84,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.zil,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.zil,
 //     contractAddress: {
 //       97: '',
 //       56: '0xF795739737ABcFE0273f4Dced076460fdD024Dd9',
@@ -2377,8 +2377,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 83,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.pcws,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.pcws,
 //     contractAddress: {
 //       97: '',
 //       56: '0x06FF8960F7F4aE572A3f57FAe77B2882BE94Bf90',
@@ -2388,8 +2388,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 82,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bbadger,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bbadger,
 //     contractAddress: {
 //       97: '',
 //       56: '0xe4dD0C50fb314A8B2e84D211546F5B57eDd7c2b9',
@@ -2401,8 +2401,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 81,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bdigg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bdigg,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb627A7e33Db571bE792B0b69c5C2f5a8160d5500',
@@ -2414,8 +2414,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 80,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lto,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lto,
 //     contractAddress: {
 //       97: '',
 //       56: '0xadBfFA25594AF8Bc421ecaDF54D057236a99781e',
@@ -2425,8 +2425,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 79,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mir,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mir,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3e31488f08EBcE6F2D8a2AA512aeFa49a3C7dFa7',
@@ -2436,8 +2436,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 78,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.mir,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.mir,
 //     contractAddress: {
 //       97: '',
 //       56: '0x453a75908fb5a36d482d5f8fe88eca836f32ead5',
@@ -2449,8 +2449,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 77,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.trade,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.trade,
 //     contractAddress: {
 //       97: '',
 //       56: '0x509C99D73FB54b2c20689708b3F824147292D38e',
@@ -2460,8 +2460,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 76,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dusk,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dusk,
 //     contractAddress: {
 //       97: '',
 //       56: '0xF1bd5673Ea4a1C415ec84fa3E402F2F7788E7717',
@@ -2471,8 +2471,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 75,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bifi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bifi,
 //     contractAddress: {
 //       97: '',
 //       56: '0xB4C68A1C565298834360BbFF1652284275120D47',
@@ -2482,8 +2482,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 74,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.txl,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.txl,
 //     contractAddress: {
 //       97: '',
 //       56: '0x153e62257F1AAe05d5d253a670Ca7585c8D3F94F',
@@ -2493,8 +2493,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 73,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.cos,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.cos,
 //     contractAddress: {
 //       97: '',
 //       56: '0xF682D186168b4114ffDbF1291F19429310727151',
@@ -2504,8 +2504,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 72,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bunny,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bunny,
 //     contractAddress: {
 //       97: '',
 //       56: '0xaDdAE5f4dB84847ac9d947AED1304A8e7D19f7cA',
@@ -2515,8 +2515,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 71,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.alice,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.alice,
 //     contractAddress: {
 //       97: '',
 //       56: '0x4C32048628D0d32d4D6c52662FB4A92747782B56',
@@ -2526,8 +2526,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 70,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.for,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.for,
 //     contractAddress: {
 //       97: '',
 //       56: '0x47642101e8D8578C42765d7AbcFd0bA31868c523',
@@ -2537,8 +2537,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 69,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bux,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bux,
 //     contractAddress: {
 //       97: '',
 //       56: '0x07F8217c68ed9b838b0b8B58C19c79bACE746e9A',
@@ -2548,8 +2548,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 68,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.nuls,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.nuls,
 //     contractAddress: {
 //       97: '',
 //       56: '0x580DC9bB9260A922E3A4355b9119dB990F09410d',
@@ -2559,8 +2559,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 67,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.belt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.belt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6f0037d158eD1AeE395e1c12d21aE8583842F472',
@@ -2571,8 +2571,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 66,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ramp,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ramp,
 //     contractAddress: {
 //       97: '',
 //       56: '0x423382f989C6C289c8D441000e1045e231bd7d90',
@@ -2584,8 +2584,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 65,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bfi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bfi,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0A595623b58dFDe6eB468b613C11A7A8E84F09b9',
@@ -2595,8 +2595,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 64,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dexe,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dexe,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9E6dA246d369a41DC44673ce658966cAf487f7b2',
@@ -2608,8 +2608,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 63,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bel,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bel,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2C0f449387b15793B9da27c2d945dBed83ab1B07',
@@ -2619,8 +2619,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 62,
-//     stakingToken: bscTokens.tpt,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.tpt,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0c3D6892aa3b23811Af3bd1bbeA8b0740E8e4528',
@@ -2631,8 +2631,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 61,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.tpt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.tpt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x75C91844c5383A68b7d3A427A44C32E3ba66Fe45',
@@ -2643,8 +2643,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 60,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.watch,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.watch,
 //     contractAddress: {
 //       97: '',
 //       56: '0xC58954199E268505fa3D3Cb0A00b7207af8C2D1d',
@@ -2655,8 +2655,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 59,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.xmark,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.xmark,
 //     contractAddress: {
 //       97: '',
 //       56: '0xA5137e08C48167E363Be8Ec42A68f4F54330964E',
@@ -2667,8 +2667,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 58,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bmxx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bmxx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6F31B87f51654424Ce57E9F8243E27ed13846CDB',
@@ -2679,8 +2679,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 57,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.iotx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.iotx,
 //     contractAddress: {
 //       97: '',
 //       56: '0xCE54BA909d23B9d4BE0Ff0d84e5aE83F0ADD8D9a',
@@ -2691,8 +2691,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 56,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bor,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bor,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3e677dC00668d69c2A7724b9AFA7363e8A56994e',
@@ -2703,8 +2703,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 55,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bopen,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bopen,
 //     contractAddress: {
 //       97: '',
 //       56: '0x5Ac8406498dC1921735d559CeC271bEd23B294A7',
@@ -2715,8 +2715,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 54,
-//     stakingToken: bscTokens.sushi,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.sushi,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0xb69b6e390cba1F68442A886bC89E955048DAe7E3',
@@ -2727,8 +2727,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 53,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.dodo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.dodo,
 //     contractAddress: {
 //       97: '',
 //       56: '0xae3001ddb18A6A57BEC2C19D71680437CA87bA1D',
@@ -2739,8 +2739,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 52,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.swingby,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.swingby,
 //     contractAddress: {
 //       97: '',
 //       56: '0x02aa767e855b8e80506fb47176202aA58A95315a',
@@ -2751,8 +2751,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 51,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bry,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bry,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1c736F4FB20C7742Ee83a4099fE92abA61dFca41',
@@ -2763,8 +2763,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 50,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.zee,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.zee,
 //     contractAddress: {
 //       97: '',
 //       56: '0x02861B607a5E87daf3FD6ec19DFB715F1b371379',
@@ -2775,8 +2775,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 49,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.swgb,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.swgb,
 //     contractAddress: {
 //       97: '',
 //       56: '0x73e4E8d010289267dEe3d1Fc48974B60363963CE',
@@ -2787,8 +2787,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 48,
-//     stakingToken: bscTokens.comp,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.comp,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0xE0565fBb109A3f3f8097D8A9D931277bfd795072',
@@ -2799,8 +2799,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 47,
-//     stakingToken: bscTokens.comp,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.comp,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0xc3693e3cbc3514d5d07EA5b27A721F184F617900',
@@ -2811,8 +2811,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 46,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.sfp,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.sfp,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2B02d43967765b18E31a9621da640588f3550EFD',
@@ -2823,8 +2823,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 45,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lina,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lina,
 //     contractAddress: {
 //       97: '',
 //       56: '0x212bb602418C399c29D52C55100fD6bBa12bea05',
@@ -2835,8 +2835,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 44,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lina,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lina,
 //     contractAddress: {
 //       97: '',
 //       56: '0x04aE8ca68A116278026fB721c06dCe709eD7013C',
@@ -2847,8 +2847,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 43,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.lit,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.lit,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1714bAAE9DD4738CDEA07756427FA8d4F08D9479',
@@ -2859,8 +2859,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 42,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hget,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hget,
 //     contractAddress: {
 //       97: '',
 //       56: '0xcCD0b93cC6ce3dC6dFaA9DB68f70e5C8455aC5bd',
@@ -2871,8 +2871,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 41,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bdo,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bdo,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9cB24e9460351bC51d4066BC6AEd1F3809b02B78',
@@ -2883,8 +2883,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 40,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.egld,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.egld,
 //     contractAddress: {
 //       97: '',
 //       56: '0x2dcf4cDFf4Dd954683Fe0a6123077f8a025b66cF',
@@ -2895,8 +2895,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 39,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ust,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ust,
 //     contractAddress: {
 //       97: '',
 //       56: '0x6EFa207ACdE6e1caB77c1322CbdE9628929ba88F',
@@ -2907,8 +2907,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 38,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.wsote,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.wsote,
 //     contractAddress: {
 //       97: '',
 //       56: '0xD0b738eC507571176D40f28bd56a0120E375f73a',
@@ -2919,8 +2919,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 37,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.front,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.front,
 //     contractAddress: {
 //       97: '',
 //       56: '0xf7a31366732F08E8e6B88519dC3E827e04616Fc9',
@@ -2931,8 +2931,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 36,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.helmet,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.helmet,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9F23658D5f4CEd69282395089B0f8E4dB85C6e79',
@@ -2943,8 +2943,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 35,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.btcst,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.btcst,
 //     contractAddress: {
 //       97: '',
 //       56: '0xB6fd2724cc9c90DD31DA35DbDf0300009dceF97d',
@@ -2955,8 +2955,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 34,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bscx,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.bscx,
 //     contractAddress: {
 //       97: '',
 //       56: '0x108BFE84Ca8BCe0741998cb0F60d313823cEC143',
@@ -2967,8 +2967,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 33,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ten,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ten,
 //     contractAddress: {
 //       97: '',
 //       56: '0x4A26b082B432B060B1b00A84eE4E823F04a6f69a',
@@ -2979,8 +2979,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 32,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.balbt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.balbt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x3cc08B7C6A31739CfEd9d8d38b484FDb245C79c8',
@@ -2991,8 +2991,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 31,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.asr,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.asr,
 //     contractAddress: {
 //       97: '',
 //       56: '0xd18E1AEb349ef0a6727eCe54597D98D263e05CAB',
@@ -3003,8 +3003,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 30,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.atm,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.atm,
 //     contractAddress: {
 //       97: '',
 //       56: '0x68C7d180bD8F7086D91E65A422c59514e4aFD638',
@@ -3015,8 +3015,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 29,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.og,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.og,
 //     contractAddress: {
 //       97: '',
 //       56: '0xbE65d7e42E05aD2c4ad28769dc9c5b4b6EAff2C7',
@@ -3027,8 +3027,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 28,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.reef,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.reef,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1500fa1afbfe4f4277ed0345cdf12b2c9ca7e139',
@@ -3039,8 +3039,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 27,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ditto,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ditto,
 //     contractAddress: {
 //       97: '',
 //       56: '0x624ef5C2C6080Af188AF96ee5B3160Bb28bb3E02',
@@ -3050,8 +3050,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 26,
-//     stakingToken: bscTokens.twt,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.twt,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0x0554a5D083Abf2f056ae3F6029e1714B9A655174',
@@ -3062,8 +3062,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 24,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.juv,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.juv,
 //     contractAddress: {
 //       97: '',
 //       56: '0x543467B17cA5De50c8BF7285107A36785Ab57E56',
@@ -3074,8 +3074,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 25,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.psg,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.psg,
 //     contractAddress: {
 //       97: '',
 //       56: '0x65aFEAFaec49F23159e897EFBDCe19D94A86A1B6',
@@ -3086,8 +3086,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 21,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.vai,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.vai,
 //     contractAddress: {
 //       97: '',
 //       56: '0x1AD34D8d4D79ddE88c9B6b8490F8fC67831f2CAe',
@@ -3098,8 +3098,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 20,
-//     stakingToken: bscTokens.bnb,
-//     earningToken: bscTokens.cake,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0x555Ea72d7347E82C614C16f005fA91cAf06DCB5a',
@@ -3110,8 +3110,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 19,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.bnb,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.weth,
 //     contractAddress: {
 //       97: '',
 //       56: '0x326D754c64329aD7cb35744770D56D0E1f3B3124',
@@ -3122,8 +3122,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 18,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.blink,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.blink,
 //     contractAddress: {
 //       97: '',
 //       56: '0x42Afc29b2dEa792974d1e9420696870f1Ca6d18b',
@@ -3134,8 +3134,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 17,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.blink,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.blink,
 //     contractAddress: {
 //       97: '',
 //       56: '0xBb2B66a2c7C2fFFB06EA60BeaD69741b3f5BF831',
@@ -3147,8 +3147,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 16,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.unfi,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.unfi,
 //     contractAddress: {
 //       97: '',
 //       56: '0xFb1088Dae0f03C5123587d2babb3F307831E6367',
@@ -3159,8 +3159,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 15,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.twt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.twt,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9c4EBADa591FFeC4124A7785CAbCfb7068fED2fb',
@@ -3171,8 +3171,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 14,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.hard,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.hard,
 //     contractAddress: {
 //       97: '',
 //       56: '0x90F995b9d46b32c4a1908A8c6D0122e392B3Be97',
@@ -3183,8 +3183,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 13,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.broobee,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.broobee,
 //     contractAddress: {
 //       97: '',
 //       56: '0xdc8c45b7F3747Ca9CaAEB3fa5e0b5FCE9430646b',
@@ -3195,8 +3195,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 12,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.stax,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.stax,
 //     contractAddress: {
 //       97: '',
 //       56: '0xFF02241a2A1d2a7088A344309400E9fE74772815',
@@ -3207,8 +3207,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 11,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.nar,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.nar,
 //     contractAddress: {
 //       97: '',
 //       56: '0xDc938BA1967b06d666dA79A7B1E31a8697D1565E',
@@ -3219,8 +3219,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 10,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.nya,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.nya,
 //     contractAddress: {
 //       97: '',
 //       56: '0x07a0A5B67136d40F4d7d95Bc8e0583bafD7A81b9',
@@ -3231,8 +3231,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 9,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ctk,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ctk,
 //     contractAddress: {
 //       97: '',
 //       56: '0x21A9A53936E812Da06B7623802DEc9A1f94ED23a',
@@ -3243,8 +3243,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 8,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.twt,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.twt,
 //     contractAddress: {
 //       97: '',
 //       56: '0xe7f9A439Aa7292719aC817798DDd1c4D35934aAF',
@@ -3255,8 +3255,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 7,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.inj,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.inj,
 //     contractAddress: {
 //       97: '',
 //       56: '0xcec2671C81a0Ecf7F8Ee796EFa6DBDc5Cb062693',
@@ -3267,8 +3267,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 248,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ccar,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ccar,
 //     contractAddress: {
 //       97: '',
 //       56: '0x9e31aef040941E67356519f44bcA07c5f82215e5',
@@ -3278,8 +3278,8 @@ const finishedPools = [
 //   },
 //   {
 //     sousId: 262,
-//     stakingToken: bscTokens.cake,
-//     earningToken: bscTokens.ach,
+//     stakingToken: ethereumTokens.weth,
+//     earningToken: ethereumTokens.ach,
 //     contractAddress: {
 //       97: '',
 //       56: '0xD5668e936B951292Ddf8c84553CC58F85948F816',

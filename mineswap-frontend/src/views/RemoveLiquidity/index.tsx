@@ -69,7 +69,7 @@ const BorderCard = styled.div`
   padding: 16px;
 `
 
-const zapSupportedChainId = [ChainId.ETHEREUM, ChainId.ETHEREUM_TESTNET]
+const zapSupportedChainId = [ChainId.ETHEREUM, ChainId.ETHEREUM]
 
 export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, currencyIdB }) {
   const router = useRouter()

@@ -78,6 +78,25 @@
     background-repeat: round;
 }
 
+.imgbutton {
+    background-color: unset !important;
+    background-image: url(/img/Button40.png);
+    background-repeat: round;
+    border-radius: 0px !important;
+    align-items: center;
+    border: 0;
+    box-shadow: 0px -1px 0px 0px rgb(14 14 44 / 40%) inset;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    height: 32px;
+    padding: 5px 20px;
+    color: var(--colors-white);
+}
+
 .test1 {
     background-color: unset !important;
     background-image: url(/img/Group11.png);
@@ -388,7 +407,6 @@
     align-self: stretch;
     margin-top: -1px;
     text-align: center;
-    letter-spacing: -1.2px;
     line-height: 72px;
 }
 
@@ -442,7 +460,7 @@
 
 .bEQugO {
     align-self: stretch;
-    height: 124.00005340576172px;
+    height: 120px;
     border: 1px none;
 }
 
@@ -525,12 +543,6 @@
     -ms-flex-align: flex-start;
     align-items: flex-start;
     min-width: 340px;
-    border: 1px none;
-}
-
-.bEQugO {
-    align-self: stretch;
-    height: 124.00005340576172px;
     border: 1px none;
 }
 
@@ -686,8 +698,8 @@
 .txt-connect {
     color: var(--alto);
     font-family: var(--font-family-karla);
-    font-size: var(--font-size-xs);
-    font-weight: 800;
+    font-size: var(--font-size-m);
+    font-weight: 600;
     font-style: normal;
     width: fit-content;
     letter-spacing: -0.28px;
@@ -721,13 +733,14 @@
 }
 
 .button-css {
-    border: 2px solid var(--supernova);
-    border-top-right-radius: 10px;
+    background-color: unset !important;
+    background-image: url(/img/Button40.png);
+    background-repeat: round;
+    background-size: cover;
 }
 
 .button-css-connect {
     border-radius: unset !important;
-    background: var(--deep-bronze) !important;
     border: 2px solid var(--supernova) !important;
     border-top-right-radius: 10px !important;
     box-shadow: unset !important
@@ -915,7 +928,7 @@
 }
 
 .mt-5 {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .mb-5s {}
@@ -947,7 +960,6 @@
     font-style: normal;
     margin-top: -1px;
     text-align: center;
-    letter-spacing: -1.2px;
     line-height: 72px;
     white-space: nowrap;
 }
@@ -978,19 +990,30 @@
     border: 1px none;
 }
 
-.reveal {
-    opacity: 0;
-    transition: .5s ease .5s;
+.desktop-icon {
+    display: flex;
 }
 
-.reveal.active {
-    opacity: 1;
+.mobile-icon {
+    display: block;
 }
 
 
 /* ------------------------------------------------------------------------------------------ */
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
+    .desktop-icon {
+        display: block;
+    }
+    .mobile-icon {
+        display: flex;
+    }
+    .involved-txt {
+        font-size: var(--font-size-l);
+    }
+    .involved-div-span {
+        font-size: var(--font-size-m);
+    }
     .size-hearder {
         min-height: 200px;
     }
@@ -1033,11 +1056,11 @@
         display: contents;
     }
     .image-million {
-        width: 80%;
+        width: 100%;
         margin: auto;
     }
     .dfbVyw {
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
     .color-trade {
@@ -1066,8 +1089,8 @@
     }
     .imhWGR {
         /* position: absolute; */
-        width: 280px;
-        height: 280px;
+        /* width: 280px;
+        height: 280px; */
         top: 20px;
         object-fit: cover;
     }
@@ -1088,12 +1111,12 @@
         font-size: var(--font-size-l) !important;
     }
     .kAIfLV {
-        width: 95%;
+        width: 88%;
         margin: auto;
+        padding: 0;
     }
-    .jKblIE {
-        width: 280px;
-        height: 280px;
+    .gIUHqg {
+        left: 0;
     }
     .hWpUlW {
         font-size: var(--font-size-l);
@@ -1131,15 +1154,6 @@
         border: 1px solid;
         background: white;
         border-radius: 10px;
-    }
-    .involved-txt {
-        font-size: var(--font-size-l);
-    }
-    .involved-div-span {
-        font-size: var(--font-size-m);
-    }
-    .involved {
-        gap: 50px;
     }
 }
 
@@ -1196,7 +1210,6 @@
         font-size: var(--font-size-xl);
         font-weight: 900;
         margin-top: -1px;
-        letter-spacing: -1.2px;
         line-height: 40px;
     }
     .div-millions-colum {

@@ -11,7 +11,7 @@ export abstract class BaseCurrency {
    */
   public abstract readonly isNative: boolean
   /**
-   * Returns whether the currency is a token that is usable in MinSwap without wrapping
+   * Returns whether the currency is a token that is usable in MineSwap without wrapping
    */
   public abstract readonly isToken: boolean
 
@@ -56,8 +56,8 @@ export abstract class BaseCurrency {
   public abstract equals(other: Currency): boolean
 
   /**
-   * Return the wrapped version of this currency that can be used with the MinSwap contracts. Currencies must
-   * implement this to be used in MinSwap
+   * Return the wrapped version of this currency that can be used with the MineSwap contracts. Currencies must
+   * implement this to be used in MineSwap
    */
   public abstract get wrapped(): Token
 }

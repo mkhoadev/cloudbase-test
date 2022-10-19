@@ -1,5 +1,5 @@
 import { Token, ChainId } from '@pancakeswap/sdk'
-import { ethereumTokens } from '@pancakeswap/tokens'
+import { ethereumTokens} from '@pancakeswap/tokens'
 import { CAKE_BNB_LP_MAINNET } from './lp'
 import { Ifo } from './types'
 

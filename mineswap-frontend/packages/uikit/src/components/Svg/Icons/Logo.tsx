@@ -1,10 +1,12 @@
 import React from "react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
-
-const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
+interface LogoProps extends SvgProps {
+  isDark?: boolean;
+}
+const Icon: React.FC<React.PropsWithChildren<LogoProps>> = ({ isDark, ...props }) => {
   return (
-    <img src="./logoMineswap.png" alt="" />
+    <img src={isDark ? "/logoMineswaps.png" : "/logoMineswap.png" } alt="" className="desktop-icon" style={{width: '200px'}}  />
   );
 };
 

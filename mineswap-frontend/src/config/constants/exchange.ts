@@ -40,7 +40,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WNATIVE[ChainId.ETHEREUM], WBTC_ETH],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  // [ChainId.ETHEREUM]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
+  // [ChainId.ETHEREUM]: [ethereumTokens.busd, ethereumTokens.weth, ethereumTokens.btcb],
   // [ChainId.GOERLI]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
 }
 
@@ -48,7 +48,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], WNATIVE[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WBTC_ETH],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  // [ChainId.ETHEREUM]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
+  // [ChainId.ETHEREUM]: [ethereumTokens.weth, ethereumTokens.dai, ethereumTokens.busd, ethereumTokens.usdt, ethereumTokens.weth],
   // [ChainId.GOERLI]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
 }
 
@@ -59,9 +59,9 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [WNATIVE[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM]],
   ],
   // [ChainId.ETHEREUM]: [
-  //   [bscTokens.cake, bscTokens.wbnb],
-  //   [bscTokens.busd, bscTokens.usdt],
-  //   [bscTokens.dai, bscTokens.usdt],
+  //   [ethereumTokens.weth, ethereumTokens.weth],
+  //   [ethereumTokens.busd, ethereumTokens.usdt],
+  //   [ethereumTokens.dai, ethereumTokens.usdt],
   // ],
 }
 

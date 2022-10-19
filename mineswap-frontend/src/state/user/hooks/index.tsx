@@ -420,13 +420,13 @@ export function useGasPrice(chainIdOverride?: number): string {
   )
   const { data } = useFeeData({
     chainId,
-    enabled: chainId !== ChainId.ETHEREUM && chainId !== ChainId.ETHEREUM_TESTNET,
+    enabled: chainId !== ChainId.ETHEREUM ,
     watch: true,
   })
   if (chainId === ChainId.ETHEREUM) {
     return bscProviderGasPrice
   }
-  if (chainId === ChainId.ETHEREUM_TESTNET) {
+  if (chainId === ChainId.ETHEREUM) {
     return GAS_PRICE_GWEI.testnet
   }
   if (chain?.testnet) {

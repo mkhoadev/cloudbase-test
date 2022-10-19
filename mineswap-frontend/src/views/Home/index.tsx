@@ -19,7 +19,10 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             </h3>
             <span className="trade-earn">
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
-            </span>
+            </span><br/>
+            <br/>
+            <br/>
+            <a href="/swap" className='imgbutton'>LaunchApp</a>
           </div>
           <div style={{ width: '100%' }}>
             <img src="/img/hero-images@1x.svg" alt="hero images" style={{ width: '60%', float: 'right' }} />

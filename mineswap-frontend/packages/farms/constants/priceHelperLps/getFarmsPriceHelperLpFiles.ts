@@ -8,7 +8,7 @@ export const getFarmsPriceHelperLpFiles = (chainId: ChainId) => {
   switch (chainId) {
     // case ChainId.ETHEREUM:
     //   return FarmsBscPriceHelper
-    // case ChainId.ETHEREUM_TESTNET:
+    // case ChainId.ETHEREUM:
       // return FarmsBscTestnetPriceHelper
     case ChainId.ETHEREUM:
       return FarmsEthereumPriceHelper

@@ -2,7 +2,7 @@ import { getBalanceNumber } from 'utils/formatBalance'
 import { easterPrizes, PrizesConfig } from 'config/constants/trading-competition/prizes'
 import BigNumber from 'bignumber.js'
 import useBUSDPrice, { useCakeBusdPrice } from 'hooks/useBUSDPrice'
-import { bscTokens } from '@pancakeswap/tokens'
+import { ethereumTokens} from '@pancakeswap/tokens'
 import { multiplyPriceByAmount } from 'utils/prices'
 
 export const localiseTradingVolume = (value: number, decimals = 0) => {
@@ -30,9 +30,9 @@ export const useFanTokenCompetitionRewards = ({
   userPortoRewards: string | number
   userSantosRewards: string | number
 }) => {
-  const lazioPriceBUSD = useBUSDPrice(bscTokens.lazio)
-  const portoPriceBUSD = useBUSDPrice(bscTokens.porto)
-  const santosPriceBUSD = useBUSDPrice(bscTokens.santos)
+  const lazioPriceBUSD = useBUSDPrice(ethereumTokens.wbtc)
+  const portoPriceBUSD = useBUSDPrice(ethereumTokens.wbtc)
+  const santosPriceBUSD = useBUSDPrice(ethereumTokens.wbtc)
   const cakeAsBigNumber = new BigNumber(userCakeRewards as string)
   const lazioAsBigNumber = new BigNumber(userLazioRewards as string)
   const portoAsBigNumber = new BigNumber(userPortoRewards as string)
@@ -67,7 +67,7 @@ export const useMoboxCompetitionRewards = ({
   userCakeRewards: string | number
   userMoboxRewards: string | number
 }) => {
-  const moboxPriceBUSD = useBUSDPrice(bscTokens.mbox)
+  const moboxPriceBUSD = useBUSDPrice(ethereumTokens.wbtc)
   const cakeAsBigNumber = new BigNumber(userCakeRewards as string)
   const moboxAsBigNumber = new BigNumber(userMoboxRewards as string)
   const cakeBalance = getBalanceNumber(cakeAsBigNumber)
@@ -93,17 +93,17 @@ export const useModCompetitionRewards = ({
   userCakeRewards: string | number
   userDarRewards: string | number
 }) => {
-  const darPriceBUSD = useBUSDPrice(bscTokens.dar)
+  const darPriceBUSD = useBUSDPrice(ethereumTokens.wbtc)
   const cakeAsBigNumber = new BigNumber(userCakeRewards as string)
   const darAsBigNumber = new BigNumber(userDarRewards as string)
   const cakeBalance = getBalanceNumber(cakeAsBigNumber)
-  const darBalance = getBalanceNumber(darAsBigNumber, bscTokens.dar.decimals)
+  const darBalance = getBalanceNumber(darAsBigNumber, ethereumTokens.wbtc.decimals)
   const cakePriceBusd = useCakeBusdPrice()
 
   const dollarValueOfTokensReward =
     cakePriceBusd && darPriceBUSD
       ? multiplyPriceByAmount(cakePriceBusd, cakeBalance) +
-        multiplyPriceByAmount(darPriceBUSD, darBalance, bscTokens.dar.decimals)
+        multiplyPriceByAmount(darPriceBUSD, darBalance, ethereumTokens.wbtc.decimals)
       : null
 
   return {

@@ -55,7 +55,7 @@ const Footer: React.FC<React.PropsWithChildren<{ variant?: FooterVariant; helpUr
         </div>
       </div>
         <div className="btn-connect button-css">
-          <div className="txt-connect ">JOIN THE COMMUNITY</div>
+          <div className="txt-connect">JOIN THE COMMUNITY</div>
         </div>
     </div>
   )

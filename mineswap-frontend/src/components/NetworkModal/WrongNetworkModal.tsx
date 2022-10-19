@@ -6,6 +6,7 @@ import { ChainLogo } from 'components/Logo/ChainLogo'
 import useAuth from 'hooks/useAuth'
 import { useSessionChainId } from 'hooks/useSessionChainId'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
+import useTheme from 'hooks/useTheme'
 import Image from 'next/future/image'
 import { Chain, useAccount, useNetwork } from 'wagmi'
 import Dots from '../Loader/Dots'
@@ -21,9 +22,9 @@ export function WrongNetworkModal({ currentChain, onDismiss }: { currentChain: C
   const { t } = useTranslation()
 
   const switchText = t('Switch to %network%', { network: currentChain.name })
-
+  const { isDark } = useTheme()
   return (
-    <Modal title={t('You are in wrong network')} headerBackground="gradientCardHeader" onDismiss={onDismiss}>
+    <Modal title={t('You are in wrong network')} className={isDark ? 'test': 'test1'}onDismiss={onDismiss}>
       <Grid style={{ gap: '16px' }} maxWidth="336px">
         <Text>{t('This page is located for %network%.', { network: currentChain.name })}</Text>
         <Text>

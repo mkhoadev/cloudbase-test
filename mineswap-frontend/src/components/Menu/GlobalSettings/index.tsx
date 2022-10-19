@@ -11,6 +11,7 @@ const GlobalSettings = ({ color, mr = '8px', mode }: Props) => {
   const [onPresentSettingsModal] = useModal(<SettingsModal mode={mode} />)
 
   return (
+    // <img src="/img/Menubutton.png" alt="" onClick={onPresentSettingsModal} style={{ marginRight: '20px', height:'32px'}} id={`open-settings-dialog-button-${mode}`}/>
     <Flex>
       <IconButton
         onClick={onPresentSettingsModal}

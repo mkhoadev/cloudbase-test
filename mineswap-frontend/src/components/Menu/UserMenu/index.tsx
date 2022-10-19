@@ -104,8 +104,8 @@ const UserMenu = () => {
   }
 
   return (
-    <ConnectWalletButton scale="sm" >
-      <Box display={['none', , , 'block']}>
+    <ConnectWalletButton scale="sm" style={{backgroundImage: 'url(/img/Button40.png)', backgroundRepeat: 'round', backgroundColor:'unset', borderRadius: 'unset', height: '40px'}}>
+      <Box display={['none', , , 'block']} >
         <Trans>Connect Wallet</Trans>
       </Box>
       <Box display={['block', , , 'none']}>
