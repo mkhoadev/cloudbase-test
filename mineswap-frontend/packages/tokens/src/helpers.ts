@@ -44,9 +44,6 @@ export type TokenAddressMap = Readonly<{
  */
 export const EMPTY_LIST: TokenAddressMap = {
   [ChainId.ETHEREUM]: {},
-  [ChainId.RINKEBY]: {},
-  [ChainId.GOERLI]: {},
-  [ChainId.ETHEREUM]: {},
   [ChainId.GOERLI]: {},
 }
 

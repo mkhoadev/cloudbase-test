@@ -20,11 +20,6 @@ const getNodeRealUrl = (networkName: string) => {
         host = `eth-mainnet.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_ETH}`
       }
       break
-    case 'rinkeby':
-      if (process.env.NEXT_PUBLIC_NODE_REAL_API_RINKEBY) {
-        host = `eth-rinkeby.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_RINKEBY}`
-      }
-      break
     case 'goerli':
       if (process.env.NEXT_PUBLIC_NODE_REAL_API_GOERLI) {
         host = `eth-goerli.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_GOERLI}`
