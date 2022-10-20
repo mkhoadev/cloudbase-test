@@ -83,8 +83,10 @@ const getDesiredOutput = (
 }
 
 // Just returns Redux state for limitOrders
-export const useOrderState = (): AppState['limitOrders'] => {
-  return useSelector<AppState, AppState['limitOrders']>((state) => state.limitOrders)
+export const useOrderState = () => {
+// export const useOrderState = (): AppState['limitOrders'] => {
+  // return useSelector<AppState, AppState['limitOrders']>((state) => state.limitOrders)
+  return null
 }
 
 // Returns handlers to change user-defined parts of limitOrders state

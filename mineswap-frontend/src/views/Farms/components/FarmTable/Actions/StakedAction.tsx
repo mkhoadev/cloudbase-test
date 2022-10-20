@@ -10,7 +10,7 @@ import { useERC20 } from 'hooks/useContract'
 import { useRouter } from 'next/router'
 import { useCallback, useContext, useMemo } from 'react'
 import { useAppDispatch } from 'state'
-import { fetchFarmUserDataAsync } from 'state/farms'
+// import { fetchFarmUserDataAsync } from 'state/farms'
 import { useTransactionAdder, useNonBscFarmPendingTransaction } from 'state/transactions/hooks'
 import { FarmTransactionStatus, NonBscFarmStepType } from 'state/transactions/actions'
 import { pickFarmTransactionTx } from 'state/global/actions'
@@ -70,7 +70,8 @@ export function useStakedActions(lpContract, pid, vaultPid) {
   const { onApprove } = useApproveFarm(lpContract, chainId)
 
   const onDone = useCallback(
-    () => dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId })),
+    // () => dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId })),
+    () => dispatch(null),
     [account, pid, chainId, dispatch],
   )
 
