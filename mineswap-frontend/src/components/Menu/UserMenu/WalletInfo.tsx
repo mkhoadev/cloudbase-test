@@ -91,7 +91,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
           <Flex bg={COLORS.BNB} borderRadius="16px" pl="4px" pr="8px" py="2px">
             <ChainLogo chainId={ChainId.ETHEREUM} />
             <Text color="white" ml="4px">
-              BNB Smart Chain
+              ETH Chain
             </Text>
           </Flex>
           <LinkExternal href={getBlockExploreLink(account, 'address', ChainId.ETHEREUM)}>

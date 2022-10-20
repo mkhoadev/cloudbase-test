@@ -75,7 +75,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="twitter:title" content="🥞 MineSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
         <title>MineSwap</title>
       </Head>
-      <NextThemeProvider>
+      <NextThemeProvider defaultTheme = 'dark'>
         <StyledThemeProvider>
           <ModalProvider>
             <ResetCSS />

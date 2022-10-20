@@ -14,21 +14,22 @@ const potteryDrawContract = getPotteryDrawContract()
 
 export const fetchLastVaultAddress = async () => {
   try {
-    const response = await request(
-      GRAPH_API_POTTERY,
-      gql`
-        query getLastVaultAddress($contract: ID!) {
-          pottery(id: $contract) {
-            id
-            lastVaultAddress
-          }
-        }
-      `,
-      { contract: potteryDrawAddress },
-    )
+    // const response = await request(
+    //   GRAPH_API_POTTERY,
+    //   gql`
+    //     query getLastVaultAddress($contract: ID!) {
+    //       pottery(id: $contract) {
+    //         id
+    //         lastVaultAddress
+    //       }
+    //     }
+    //   `,
+    //   { contract: potteryDrawAddress },
+    // )
 
-    const { lastVaultAddress } = response.pottery
-    return lastVaultAddress
+    // const { lastVaultAddress } = response.pottery
+    // return lastVaultAddress
+    return ''
   } catch (error) {
     console.error('Failed to fetch last vault address', error)
     return ''
@@ -37,31 +38,41 @@ export const fetchLastVaultAddress = async () => {
 
 export const fetchPublicPotteryValue = async (potteryVaultAddress: string) => {
   try {
-    const calls = [
-      'getStatus',
-      'totalLockCake',
-      'totalSupply',
-      'lockStartTime',
-      'getLockTime',
-      'getMaxTotalDeposit',
-    ].map((method) => ({
-      address: potteryVaultAddress,
-      name: method,
-    }))
+    // const calls = [
+    //   'getStatus',
+    //   'totalLockCake',
+    //   'totalSupply',
+    //   'lockStartTime',
+    //   'getLockTime',
+    //   'getMaxTotalDeposit',
+    // ].map((method) => ({
+    //   address: potteryVaultAddress,
+    //   name: method,
+    // }))
 
-    const [getStatus, [totalLockCake], [totalSupply], [lockStartTime], getLockTime, getMaxTotalDeposit] =
-      await multicall(potteryVaultAbi, calls)
-    const [lastDrawId, totalPrize] = await potteryDrawContract.getPot(potteryVaultAddress)
+    // const [getStatus, [totalLockCake], [totalSupply], [lockStartTime], getLockTime, getMaxTotalDeposit] =
+    //   await multicall(potteryVaultAbi, calls)
+    // const [lastDrawId, totalPrize] = await potteryDrawContract.getPot(potteryVaultAddress)
 
+    // return {
+    //   lastDrawId: new BigNumber(lastDrawId.toString()).toJSON(),
+    //   totalPrize: new BigNumber(totalPrize.toString()).toJSON(),
+    //   getStatus: getStatus[0],
+    //   totalLockCake: new BigNumber(totalLockCake.toString()).toJSON(),
+    //   totalSupply: new BigNumber(totalSupply.toString()).toJSON(),
+    //   lockStartTime: lockStartTime.toString(),
+    //   lockTime: Number(getLockTime),
+    //   maxTotalDeposit: new BigNumber(getMaxTotalDeposit.toString()).toJSON(),
+    // }
     return {
-      lastDrawId: new BigNumber(lastDrawId.toString()).toJSON(),
-      totalPrize: new BigNumber(totalPrize.toString()).toJSON(),
-      getStatus: getStatus[0],
-      totalLockCake: new BigNumber(totalLockCake.toString()).toJSON(),
-      totalSupply: new BigNumber(totalSupply.toString()).toJSON(),
-      lockStartTime: lockStartTime.toString(),
-      lockTime: Number(getLockTime),
-      maxTotalDeposit: new BigNumber(getMaxTotalDeposit.toString()).toJSON(),
+      lastDrawId: BIG_ZERO.toJSON(),
+      totalPrize: BIG_ZERO.toJSON(),
+      getStatus: PotteryDepositStatus.BEFORE_LOCK,
+      totalLockCake: BIG_ZERO.toJSON(),
+      totalSupply: BIG_ZERO.toJSON(),
+      lockStartTime: BIG_ZERO.toJSON(),
+      lockTime: 0,
+      maxTotalDeposit: BIG_ZERO.toJSON(),
     }
   } catch (error) {
     console.error('Failed to fetch public pottery value data', error)
