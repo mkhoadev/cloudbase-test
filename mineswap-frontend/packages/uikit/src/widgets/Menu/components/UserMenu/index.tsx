@@ -117,7 +117,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
         {!disabled && <ChevronDownIcon color="text" width="24px" />}
       </StyledUserMenu>
       {!disabled && (
-        <Menu style={styles.popper} ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>
+        <Menu style={styles.popper} className='tranform' ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>
           <Box onClick={() => setIsOpen(false)}>{children?.({ isOpen })}</Box>
         </Menu>
       )}

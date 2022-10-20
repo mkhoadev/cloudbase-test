@@ -19,6 +19,7 @@ import { useBalance } from 'wagmi'
 import WalletInfo from './WalletInfo'
 import WalletTransactions from './WalletTransactions'
 import WalletWrongNetwork from './WalletWrongNetwork'
+import useTheme from 'hooks/useTheme'
 
 export enum WalletView {
   WALLET_INFO,
@@ -32,9 +33,7 @@ interface WalletModalProps extends InjectedModalProps {
 
 export const LOW_BNB_BALANCE = parseUnits('2', 'gwei')
 
-const ModalHeader = styled(UIKitModalHeader)`
-  background: ${({ theme }) => theme.colors.gradientBubblegum};
-`
+const ModalHeader = styled(UIKitModalHeader)``
 
 const Tabs = styled.div`
   background-color: ${({ theme }) => theme.colors.dropdown};
@@ -64,9 +63,9 @@ const WalletModal: React.FC<React.PropsWithChildren<WalletModalProps>> = ({
       </ButtonMenu>
     </Tabs>
   )
-
+  const { isDark } = useTheme()
   return (
-    <ModalContainer title={t('Welcome!')} $minWidth="360px">
+    <ModalContainer title={t('Welcome!')} className={isDark ? 'test' : 'test1'} $minWidth="360px">
       <ModalHeader>
         <ModalTitle>
           <Heading>{t('Your Wallet')}</Heading>
@@ -76,7 +75,7 @@ const WalletModal: React.FC<React.PropsWithChildren<WalletModalProps>> = ({
         </IconButton>
       </ModalHeader>
       {view !== WalletView.WRONG_NETWORK && <TabsComponent />}
-      <ModalBody p="24px" width="100%">
+      <ModalBody p="24px" width="100%" style={{ backgroundColor: 'var(--colors-dropdown)' }}>
         {view === WalletView.WALLET_INFO && (
           <WalletInfo hasLowNativeBalance={hasLowNativeBalance} switchView={handleClick} onDismiss={onDismiss} />
         )}

@@ -1,5 +1,5 @@
 import { WalletModalV2 } from '@pancakeswap/ui-wallets'
-import { Button, ButtonProps } from '@pancakeswap/uikit'
+import {  ButtonProps } from '@pancakeswap/uikit'
 import { createWallets } from 'config/wallet'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
@@ -10,7 +10,7 @@ import { useMemo, useState } from 'react'
 import { useConnect } from 'wagmi'
 import Trans from './Trans'
 
-const ConnectWalletButtonHome = ({ children, ...props }: ButtonProps) => {
+const ConnectWalletButtonHome = () => {
   const handleActive = useActiveHandle()
   const { login } = useAuth()
   const { connectAsync } = useConnect()

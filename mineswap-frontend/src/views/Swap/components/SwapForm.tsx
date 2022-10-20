@@ -277,10 +277,10 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                     replaceBrowserHistory('outputCurrency', inputCurrencyId)
                   }}
                 >
-                  <ArrowDownIcon
+                  {/* <ArrowDownIcon
                     className="icon-down"
                     color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'primary' : 'text'}
-                  />
+                  /> */}
                   <ArrowUpDownIcon
                     className="icon-up-down"
                     color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'primary' : 'text'}

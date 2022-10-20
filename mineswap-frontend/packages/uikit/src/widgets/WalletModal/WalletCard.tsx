@@ -74,7 +74,7 @@ const WalletCard: React.FC<React.PropsWithChildren<Props<any>>> = ({ login, wall
   }
 
   return (
-    <WalletButton variant="tertiary" {...linkAction} id={`wallet-connect-${title.toLowerCase()}`}>
+    <WalletButton variant="tertiary" {...linkAction} id={`wallet-connect-${title?.toLowerCase()}`}>
       <Icon width="40px" mb="8px" />
       <Text fontSize="14px">{title}</Text>
     </WalletButton>

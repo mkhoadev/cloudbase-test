@@ -23,28 +23,6 @@ const DropDownHeader = styled.div`
   transition: border-radius 0.15s;
 `
 
-const DropDownContainer = styled(Button)`
-  cursor: pointer;
-  width: 100%;
-  position: relative;
-  background: ${({ theme }) => theme.colors.input};
-  border-radius: 16px;
-  height: 40px;
-  min-width: 136px;
-  user-select: none;
-  z-index: 20;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 168px;
-  }
-
-  .down-icon {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-`
 
 interface CurrencySelectProps extends CurrencySearchModalProps, BoxProps {
   hideBalance?: boolean
@@ -83,7 +61,7 @@ export const CurrencySelect = ({
 
   return (
     <Box width="100%" {...props}>
-      <DropDownContainer p={0} onClick={onPresentCurrencyModal}>
+      <div style={{display:'flex'}} onClick={onPresentCurrencyModal}>
         <DropDownHeader>
           <Text id="pair" color={!selectedCurrency ? 'text' : undefined}>
             {!selectedCurrency ? (
@@ -104,7 +82,7 @@ export const CurrencySelect = ({
           </Text>
         </DropDownHeader>
         <ArrowDropDownIcon color="text" className="down-icon" />
-      </DropDownContainer>
+      </div>
       {account && !!selectedCurrency && !hideBalance && (
         <Box>
           <AutoRow justify="space-between" gap="2px">

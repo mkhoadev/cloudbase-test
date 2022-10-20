@@ -55,8 +55,8 @@ const GlobalCheckClaim: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusP
   // Check claim status
   useEffect(() => {
     const fetchClaimAnniversaryStatus = async () => {
-      const canClaimAnniversary = await canClaim(account)
-      setCanClaimAnniversaryPoints(canClaimAnniversary)
+      // const canClaimAnniversary = await canClaim(account)
+      // setCanClaimAnniversaryPoints(canClaimAnniversary)
     }
 
     if (account) {

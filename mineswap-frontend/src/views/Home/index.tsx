@@ -5,13 +5,14 @@ import Billionstaked from './components/UserBy/Billionstaked'
 import Earncrypto from './components/TradeAnythink/Earncrypto'
 import Statistical from './components/TradeAnythink/Statistical'
 import Amplified from './components/ScalingSolutions/Amplified'
+import { Link } from '@pancakeswap/uikit'
 
 const Home: React.FC<React.PropsWithChildren> = () => {
   return (
     <>
       <div className="home-style">
         <div className="dflex size-hearder">
-          <div className="txt-banner">
+          <div className="txt-banner-tt">
             <h6 className="intro-swap">INTRODUCING MINESWAP</h6>
             <h3 className="comunioner">
               Community-owned <br />
@@ -22,7 +23,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             </span><br/>
             <br/>
             <br/>
-            <a href="/swap" className='imgbutton'>LaunchApp</a>
+            <Link href="/swap" className='imgbutton'>LaunchApp</Link>
           </div>
           <div style={{ width: '100%' }}>
             <img src="/img/hero-images@1x.svg" alt="hero images" style={{ width: '60%', float: 'right' }} />

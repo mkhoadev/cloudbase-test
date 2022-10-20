@@ -54,7 +54,7 @@ export function ChoosePair({
             {t('Choose a valid pair')}
           </Text>
           <FlexGap gap="4px">
-            <CurrencySelect
+            <CurrencySelect 
               id="add-liquidity-select-tokena"
               selectedCurrency={currencyA}
               onCurrencySelect={handleCurrencyASelect}

@@ -190,7 +190,7 @@ export const updateLPsAPR = async (chainId: number, allFarms: any[]) => {
     stableFarms: [],
   })
 
-  const lowerCaseAddresses = normalFarms.map((farm) => farm.lpAddress.toLowerCase())
+  const lowerCaseAddresses = normalFarms.map((farm) => farm.lpAddress?.toLowerCase())
   console.info(`[LP APR Update] Fetching farm data for ${lowerCaseAddresses.length} addresses`)
   // Split it into chunks of 30 addresses to avoid gateway timeout
   const addressesInGroups = chunk<string>(lowerCaseAddresses, 30)

@@ -62,7 +62,7 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
     const itf = new Interface(abi)
 
     const calldata = calls.map((call) => ({
-      target: call.address.toLowerCase(),
+      target: call.address?.toLowerCase(),
       callData: itf.encodeFunctionData(call.name, call.params),
     }))
     const { returnData } = await multi.callStatic.aggregate(calldata)
@@ -79,7 +79,7 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
     const itf = new Interface(abi)
 
     const calldata = calls.map((call) => ({
-      target: call.address.toLowerCase(),
+      target: call.address?.toLowerCase(),
       callData: itf.encodeFunctionData(call.name, call.params),
     }))
 

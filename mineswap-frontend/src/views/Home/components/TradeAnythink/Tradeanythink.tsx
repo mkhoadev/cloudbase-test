@@ -4,7 +4,7 @@ import { useWeb3React } from '@pancakeswap/wagmi'
 const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
   const { account } = useWeb3React()
   return (
-    <div className="dflex mt-screen">
+    <div className="dflex mt-screen" style={{ marginLeft:'5%'}}>
       <div className="txt-banner">
         <h3 className="comunioner">
           <span className="color-trade">Trade</span> anything. No registration, no hassle.
@@ -17,7 +17,7 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
           <div className="sc-cjibBx bquLPr">
             {!account && <div className="btn-connect button-css">
               {/* <div className="txt-connect"></div> */}
-              <ConnectWalletButtonHome  width="100%" />
+              <ConnectWalletButtonHome   />
             </div>}
           </div>
           <a className="sc-cabOPr imwMnF" href="#">
@@ -25,8 +25,8 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
           </a>
         </div>
       </div>
-      <div style={{ width: '100%' }}>
-        <img src="/img/stick-6@3x.png" alt="hero images" style={{ width: '45%', float: 'right' }} />
+      <div style={{ width: '40%' }}>
+        <img src="/img/stick-6@3x.png" alt="hero images" style={{ width: '80%'}} />
       </div>
     </div>
   )

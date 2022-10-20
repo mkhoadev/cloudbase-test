@@ -76,6 +76,9 @@
     background-color: unset !important;
     background-image: url(/img/Group.png);
     background-repeat: round;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .imgbutton {
@@ -97,10 +100,18 @@
     color: var(--colors-white);
 }
 
+.tranform {
+    transform: translate3d(-10px, 70px, 0px) !important;
+    transform: translate(-10px, 70px) !important;
+}
+
 .test1 {
     background-color: unset !important;
     background-image: url(/img/Group11.png);
     background-repeat: round;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .bgr-page {
@@ -108,6 +119,8 @@
     background-image: url(/img/Swap.svg);
     background-repeat: round;
     padding: 50px !important;
+    max-width: 1569px;
+    margin: auto;
 }
 
 .corner-c5ghsZ {
@@ -311,7 +324,6 @@
 
 .group-iEyiFd {
     background-color: transparent;
-    height: 90.07715606689453px;
     min-width: 273px;
     position: relative;
 }
@@ -361,6 +373,7 @@
     width: 100%;
     margin: auto;
     color: white;
+    max-width: 1560px;
 }
 
 .intro-swap {
@@ -412,16 +425,26 @@
 
 .txt-banner {
     align-self: center;
-    margin-left: 10%;
+    margin-left: 100px;
+    /* position: absolute; */
+    width: 60%;
+    max-width: 900px;
+}
+
+.txt-banner-tt {
+    align-self: center;
+    margin-left: 100px;
     position: absolute;
-    width: 50%
+    width: 60%;
+    max-width: 900px;
 }
 
 .txt-banner-trade {
     align-self: center;
     right: 0;
-    position: absolute;
-    width: 50%
+    /* position: absolute; */
+    width: 50%;
+    max-width: 900px;
 }
 
 .use-by {
