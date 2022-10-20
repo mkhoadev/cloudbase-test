@@ -6,7 +6,7 @@ import useCatchTxError from 'hooks/useCatchTxError'
 import { useERC20 } from 'hooks/useContract'
 import { useAppDispatch } from 'state'
 
-import { fetchFarmUserDataAsync } from 'state/farms'
+// import { fetchFarmUserDataAsync } from 'state/farms'
 import { useFarmFromPid, useFarmUser } from 'state/farms/hooks'
 import useUnstakeFarms from '../../../hooks/useUnstakeFarms'
 import { BCakeMigrateModal } from '../../BCakeMigrateModal'
@@ -38,7 +38,7 @@ const MigrateActionButton: React.FunctionComponent<MigrateActionButtonPropsType>
         </ToastDescriptionWithTx>,
       )
       callback()
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
+      // dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
     }
   }
 

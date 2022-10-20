@@ -66,7 +66,8 @@ export const fetchPublicPotteryDataAsync = createAsyncThunk<SerializedPotteryPub
   'pottery/fetchPublicPotteryData',
   async (arg, { getState }) => {
     const state = getState()
-    const potteryVaultAddress = (state as AppState).pottery.lastVaultAddress
+    // const potteryVaultAddress = (state as AppState).pottery.lastVaultAddress
+    const potteryVaultAddress = null
 
     const [publicPotteryData, totalLockedValue, latestRoundId] = await Promise.all([
       fetchPublicPotteryValue(potteryVaultAddress),
@@ -82,7 +83,8 @@ export const fetchPotteryUserDataAsync = createAsyncThunk<SerializedPotteryUserD
   async (account, { rejectWithValue, getState }) => {
     try {
       const state = getState()
-      const potteryVaultAddress = (state as AppState).pottery.lastVaultAddress
+      // const potteryVaultAddress = (state as AppState).pottery.lastVaultAddress
+      const potteryVaultAddress = null
       const [allowance, vaultUserData, drawData, withdrawAbleData] = await Promise.all([
         fetchPotterysAllowance(account, potteryVaultAddress),
         fetchVaultUserData(account, potteryVaultAddress),

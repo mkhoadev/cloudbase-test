@@ -7,7 +7,7 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { useERC20 } from 'hooks/useContract'
 import { useAppDispatch } from 'state'
-import { fetchFarmUserDataAsync } from 'state/farms'
+// import { fetchFarmUserDataAsync } from 'state/farms'
 
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCallback } from 'react'
@@ -42,7 +42,8 @@ export const HarvestActionContainer = ({ children, ...props }) => {
   const dispatch = useAppDispatch()
 
   const onDone = useCallback(
-    () => dispatch(fetchFarmUserDataAsync({ account, pids: [props.pid], chainId })),
+    // () => dispatch(fetchFarmUserDataAsync({ account, pids: [props.pid], chainId })),
+    () =>(dispatch(null)),
     [account, dispatch, chainId, props.pid],
   )
 
