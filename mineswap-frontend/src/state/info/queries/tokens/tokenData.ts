@@ -75,7 +75,8 @@ const fetchTokenData = async (
   tokenAddresses: string[],
 ) => {
   try {
-    const weeksQuery = chainName === 'BSC' ? `twoWeeksAgo: ${TOKEN_AT_BLOCK(chainName, block14d, tokenAddresses)}` : ''
+    // const weeksQuery = chainName === 'BSC' ? `twoWeeksAgo: ${TOKEN_AT_BLOCK(chainName, block14d, tokenAddresses)}` : ''
+    const weeksQuery = chainName === 'GOERLI' ? `twoWeeksAgo: ${TOKEN_AT_BLOCK(chainName, block14d, tokenAddresses)}` : ''
     const query = gql`
       query tokens {
         now: ${TOKEN_AT_BLOCK(chainName, null, tokenAddresses)}

@@ -19,6 +19,7 @@ export const GRAPH_API_PREDICTION_V1 = 'https://api.thegraph.com/subgraphs/name/
 
 // export const INFO_CLIENT = 'https://bsc.streamingfast.io/subgraphs/name/pancakeswap/exchange-v2'
 export const INFO_CLIENT = 'https://api.thegraph.com/subgraphs/name/hoaflee/test-4'
+export const INFO_CLIENT_GOERLI = 'https://api.thegraph.com/subgraphs/name/hoaflee/test-4'
 
 export const INFO_CLIENT_ETH = 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth'
 
