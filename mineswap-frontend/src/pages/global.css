@@ -53,7 +53,7 @@
 
 .h6_font {
     color: var(--colors-primary);
-    font-family: "Karla", Helvetica;
+    font-family: "Kanit", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -65,7 +65,7 @@
 
 .tab_active {
     color: #ffc600;
-    font-family: "Karla", Helvetica;
+    font-family: "Kanit", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -88,7 +88,6 @@
     border-radius: 0px !important;
     align-items: center;
     border: 0;
-    box-shadow: 0px -1px 0px 0px rgb(14 14 44 / 40%) inset;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
@@ -97,7 +96,7 @@
     line-height: 1;
     height: 32px;
     padding: 5px 20px;
-    color: var(--colors-white);
+    height: 40px;
 }
 
 .tranform {
@@ -270,7 +269,7 @@
 .title-JgtX10 {
     background-color: transparent;
     color: #dddddd;
-    font-family: "Inter", Helvetica;
+    font-family: "Kanit", sans-serif;
     font-size: 60px;
     font-style: normal;
     font-weight: 900;
@@ -287,7 +286,7 @@
 .or-learn-all-about-how-to-build-on-onix-JgtX10 {
     background-color: transparent;
     color: transparent;
-    font-family: "Inter", Helvetica;
+    font-family: "Kanit", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -387,7 +386,7 @@
 }
 
 .comunioner {
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-weight: 900;
     color: var(--colors-text);
     font-size: var(--font-size-xxl);
@@ -413,7 +412,7 @@
 
 .div_millions {
     color: var(--colors-text);
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-size: var(--font-size-xxl);
     font-weight: 900;
     font-style: normal;
@@ -435,7 +434,7 @@
     align-self: center;
     margin-left: 100px;
     position: absolute;
-    width: 60%;
+    width: 40%;
     max-width: 900px;
 }
 
@@ -520,7 +519,7 @@
     position: absolute;
     width: 80px;
     height: 80px;
-    top: 175px;
+    top: 170px;
     right: 1px;
     background-color: var(--inchworm);
     border-radius: 23px;
@@ -617,7 +616,7 @@
 }
 
 .hpiEQ {
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
@@ -629,7 +628,7 @@
 }
 
 .hWpUlW {
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-weight: 900;
     color: var(--blue-marguerite);
     font-size: var(--font-size-xl);
@@ -757,7 +756,7 @@
 
 .button-css {
     background-color: unset !important;
-    background-image: url(/img/Button40.png);
+    /* background-image: url(/img/Button40.png); */
     background-repeat: round;
     background-size: cover;
 }
@@ -804,14 +803,14 @@
 }
 
 .color-trade {
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-weight: 900;
     color: var(--porsche);
     font-size: var(--font-size-xxl);
 }
 
 .color-earn {
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-weight: 900;
     color: var(--blue-marguerite);
     font-size: var(--font-size-xxl);
@@ -863,7 +862,7 @@
 
 .txt-title {
     color: var(--alto);
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
@@ -888,7 +887,7 @@
 
 .txt-title2 {
     color: var(--alto);
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
@@ -934,9 +933,6 @@
     width: 40px;
     height: 40px;
     margin-left: 50px;
-    border: 1px solid;
-    background: white;
-    border-radius: 10px;
 }
 
 .group-iEyiFds {}
@@ -977,7 +973,7 @@
 
 .involved-txt {
     color: var(--colors-text);
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-karla);
     font-size: var(--font-size-xxl);
     font-weight: 900;
     font-style: normal;
@@ -1055,6 +1051,10 @@
     }
     .txt-banner {
         margin-left: 5%;
+        width: 60%;
+    }
+    .txt-banner-tt {
+        margin-left: 10px;
         width: 60%;
     }
     .txt-banner-trade {
@@ -1174,9 +1174,9 @@
         width: 30px;
         height: 30px;
         margin-left: 50px;
-        border: 1px solid;
-        background: white;
-        border-radius: 10px;
+    }
+    .imgbutton {
+        height: 30px;
     }
 }
 
@@ -1187,9 +1187,6 @@
         width: 40px;
         height: 40px;
         margin-left: 50px;
-        border: 1px solid;
-        background: white;
-        border-radius: 10px;
     }
     .mb-5s {
         margin-bottom: 40px;

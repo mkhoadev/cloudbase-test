@@ -16,7 +16,6 @@ const ButtonConnect = <E extends ElementType = "button">(props: ButtonProps<E>):
   if (isDisabled && !isLoading) {
     classNames.push("pancake-button--disabled");
   }
-
   return (
     <StyledButton
       $isLoading={isLoading}

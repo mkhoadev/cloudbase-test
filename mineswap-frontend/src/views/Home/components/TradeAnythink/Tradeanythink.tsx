@@ -1,8 +1,10 @@
 import ConnectWalletButtonHome from "components/ConnectWalletButtonHome"
 import { useWeb3React } from '@pancakeswap/wagmi'
+import useTheme from "hooks/useTheme"
 /* eslint import/newline-after-import: "off" */
 const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
   const { account } = useWeb3React()
+  const {isDark} = useTheme()
   return (
     <div className="dflex mt-screen" style={{ marginLeft:'5%'}}>
       <div className="txt-banner">
@@ -15,7 +17,7 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
         <br />
         <div className="dflex mt-5">
           <div className="sc-cjibBx bquLPr">
-            {!account && <div className="btn-connect button-css">
+            {!account && <div className="btn-connect button-css" >
               {/* <div className="txt-connect"></div> */}
               <ConnectWalletButtonHome   />
             </div>}

@@ -1,7 +1,9 @@
 import { Link } from '@pancakeswap/uikit'
+import useTheme from 'hooks/useTheme'
 
 /* eslint import/newline-after-import: "off" */
 const Earncrypto: React.FC<React.PropsWithChildren> = () => {
+  const {isDark} = useTheme()
   return (
     <div className="dflex margin-top">
       <div style={{ width: '40%' }}>
@@ -16,7 +18,7 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
         </span>
         <br />
         <div className="dflex mt-5">
-          <Link href="/swap" className="imgbutton">
+          <Link href="/swap" className="imgbutton" style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)', color: isDark ? '' : '#121212' }}>
             LaunchApp
           </Link>
           <a className="sc-cabOPr imwMnF" style={{ marginLeft: '15px' }} href="#">

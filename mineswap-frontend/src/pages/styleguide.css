@@ -1,97 +1,96 @@
-:root { 
-  --alto: #dddddd;
-  --alto-2: #d9d9d9;
-  --black: #000000;
-  --blue-marguerite: #6f5beb;
-  --deep-bronze: #463701;
-  --eerie-black: #1a171a;
-  --gray: #808080;
-  --inchworm: #89eb5b;
-  --inchworm-2: #89eb5b0d;
-  --licorice: #151515;
-  --porsche: #ebb15b;
-  --shark: #222325;
-  --shuttle-gray: #5e6b7e;
-  --supernova: #ffc600;
- 
-  --font-size-l: 24px;
-  --font-size-m: 18px;
-  --font-size-s: 16px;
-  --font-size-xl: 32px;
-  --font-size-xs: 14px;
-  --font-size-xxl: 60px;
-  --font-size-xxxl: 80px;
- 
-  --font-family-inter: "Inter", Helvetica;
-  --font-family-karla: "Karla", Helvetica;
+:root {
+    --alto: #dddddd;
+    --alto-2: #d9d9d9;
+    --black: #000000;
+    --blue-marguerite: #6f5beb;
+    --deep-bronze: #463701;
+    --eerie-black: #1a171a;
+    --gray: #808080;
+    --inchworm: #89eb5b;
+    --inchworm-2: #89eb5b0d;
+    --licorice: #151515;
+    --porsche: #ebb15b;
+    --shark: #222325;
+    --shuttle-gray: #5e6b7e;
+    --supernova: #ffc600;
+    --font-size-l: 24px;
+    --font-size-m: 18px;
+    --font-size-s: 16px;
+    --font-size-xl: 32px;
+    --font-size-xs: 14px;
+    --font-size-xxl: 60px;
+    --font-size-xxxl: 80px;
+    --font-family-inter: "Kanit", sans-serif;
+    --font-family-karla: "Kanit", sans-serif;
 }
+
 .inter-black-alto-32px {
-  color: var(--alto);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-xl);
-  font-style: normal;
-  font-weight: 900;
+    color: var(--alto);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 900;
 }
 
 .karla-normal-shuttle-gray-18px {
-  color: var(--shuttle-gray);
-  font-family: var(--font-family-karla);
-  font-size: var(--font-size-m);
-  font-style: normal;
-  font-weight: 400;
+    color: var(--shuttle-gray);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
 }
 
 .karla-normal-alto-18px {
-  color: var(--alto);
-  font-family: var(--font-family-karla);
-  font-size: var(--font-size-m);
-  font-style: normal;
-  font-weight: 400;
+    color: var(--alto);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
 }
 
 .karla-extra-bold-alto-16px {
-  color: var(--alto);
-  font-family: var(--font-family-karla);
-  font-size: var(--font-size-s);
-  font-style: normal;
-  font-weight: 800;
+    color: var(--alto);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 800;
 }
 
 .karla-extra-bold-alto-14px {
-  color: var(--alto);
-  font-family: var(--font-family-karla);
-  font-size: var(--font-size-xs);
-  font-style: normal;
-  font-weight: 800;
+    color: var(--alto);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-xs);
+    font-style: normal;
+    font-weight: 800;
 }
 
 .inter-black-alto-60px {
-  color: var(--alto);
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-xxl);
-  font-style: normal;
-  font-weight: 900;
+    color: var(--alto);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-xxl);
+    font-style: normal;
+    font-weight: 900;
 }
 
 .karla-normal-alto-24px {
-  color: var(--alto);
-  font-family: var(--font-family-karla);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 400;
+    color: var(--alto);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
 }
 
 .inter-black-white-32px {
-  font-family: var(--font-family-inter);
-  font-size: var(--font-size-xl);
-  font-style: normal;
-  font-weight: 900;
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 900;
 }
 
 .karla-normal-gray-24px {
-  color: var(--gray);
-  font-family: var(--font-family-karla);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 400;
+    color: var(--gray);
+    font-family: var(--font-family-karla);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 400;
 }

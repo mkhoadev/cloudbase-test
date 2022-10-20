@@ -1,8 +1,11 @@
+import { BackgroundImage } from '@pancakeswap/uikit'
+import useTheme from 'hooks/useTheme';
 import { memo } from 'react'
 
 type FooterVariant = 'default' | 'side'
 
 const Footer: React.FC<React.PropsWithChildren<{ variant?: FooterVariant; helpUrl?: string }>> = () => {
+  const {isDark} = useTheme()
   return (
     <div className="involved">
       <div className="involved-div">
@@ -13,9 +16,12 @@ const Footer: React.FC<React.PropsWithChildren<{ variant?: FooterVariant; helpUr
           <span className="color-span ">.</span>
         </div>
       </div>
-        <div className="btn-connect button-css">
-          <div className="txt-connect">JOIN THE COMMUNITY</div>
-        </div>
+      <div
+        className="btn-connect button-css"
+        style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)' }}
+      >
+        <div className="txt-connect" style={{ color: isDark ? '' : '#121212'  }}>JOIN THE COMMUNITY</div>
+      </div>
     </div>
   )
 }

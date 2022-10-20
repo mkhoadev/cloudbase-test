@@ -41,7 +41,7 @@ const Menu = (props) => {
           <>
             <SettingApp mode={SettingsMode.GLOBAL} />
             {/* <NetworkSwitcher /> */}
-            <UserMenu />
+            <UserMenu isDark={isDark} />
           </>
         }
         // banner={showPhishingWarningBanner && typeof window !== 'undefined' && <PhishingWarningBanner />}
