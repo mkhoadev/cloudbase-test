@@ -1,7 +1,7 @@
 import { Token, Pair, ChainId } from '@pancakeswap/sdk'
 import { isAddress } from 'utils'
 
-const getLpAddress = (token1: string | Token, token2: string | Token, chainId: number = ChainId.ETHEREUM) => {
+const getLpAddress = (token1: string | Token, token2: string | Token, chainId: number = ChainId.GOERLI) => {
   let token1AsTokenInstance = token1
   let token2AsTokenInstance = token2
   if (!token1 || !token2) {
@@ -21,7 +21,9 @@ const getLpAddress = (token1: string | Token, token2: string | Token, chainId: n
     }
     token2AsTokenInstance = new Token(chainId, checksummedToken2Address, 18, 'Mine-LP')
   }
-  return Pair.getAddress(token1AsTokenInstance as Token, token2AsTokenInstance as Token)
+  const pairId = Pair.getAddress(token1AsTokenInstance as Token, token2AsTokenInstance as Token)
+  // console.log({chainId, pairId, token1, token2})
+  return pairId
 }
 
 export default getLpAddress

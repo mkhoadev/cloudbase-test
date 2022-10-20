@@ -6,14 +6,17 @@ import { ADDRESS_ZERO, factoryContract, ONE_BD, ZERO_BD } from "./utils";
 // let WETH_ADDRESS = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
 // let WETH_USDT_PAIR = "0x17c1ae82d99379240059940093762c5e4539aba5";
 // let WETH_USDC_PAIR = "0x2e8135be71230c6b1b4045696d41c09db0414226";
-let WETH_ADDRESS = "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6";
-let WETH_USDT_PAIR = "0x510c7403E1E13f75ba6f3264CCD1a233F0b69636";
-let WETH_USDC_PAIR = "0xB39de224fC37663202D09c6ac1eA48Ff0207de6D";
+let WETH_ADDRESS = "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6";
+let WETH_USDT_PAIR = "0x51b3a415ef84e36ae12a6561d3d5cc8cecb2efe0";
+let WETH_USDC_PAIR = "0x63248e01aca3afc858be58e018aa32d93a00068f";
 
 export function getETHPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
   let usdtPair = Pair.load(WETH_USDT_PAIR); // usdt is token1
   let usdcPair = Pair.load(WETH_USDC_PAIR); // usdc is token0
+
+  // console.log(usdtPair)
+  // console.log(usdcPair)
 
   if (usdcPair !== null && usdtPair !== null) {
     let totalLiquidityBNB = usdcPair.reserve1.plus(usdtPair.reserve0);
@@ -35,15 +38,17 @@ export function getETHPriceInUSD(): BigDecimal {
 
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
-  "0x418d75f65a02b3d53b2418fb8e1fe493759c7605", // WBNB
-  "0x4fabb145d64652a948d72533023f6e7a623c7c53", // BUSD
-  "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
-  "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", // USDC
+  // "0x418d75f65a02b3d53b2418fb8e1fe493759c7605", // WBNB
+  // "0x4fabb145d64652a948d72533023f6e7a623c7c53", // BUSD
+  // "0xdac17f958d2ee523a2206206994597c13d831ec7", // USDT
+  // "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", // USDC
   // "0x23396cf899ca06c4472205fc903bdb4de249d6fc", // UST
   // "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", // BTCB
-  "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", // WBTC (new)
-
-  "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // ETH
+  // "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", // WBTC (new)
+  // "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", // ETH
+  "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6",
+  "0x74Bec6330C9a850697338c4C53068a8567ca8379",
+  "0xfe54279Bd3faA2fAF8797C5973CA9FB5816Ef048"
 ];
 
 // minimum liquidity for price to get tracked
