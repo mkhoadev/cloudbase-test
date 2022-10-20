@@ -89,9 +89,9 @@ export const fetchPoolData = async (
   block7d: number,
   block14d: number,
   poolAddresses: string[],
-  chainName: 'ETH' | 'BSC' = 'BSC',
+  chainName: 'ETH' | 'GOERLI' = 'GOERLI',
 ) => {
-  const weeksQuery = chainName === 'BSC' ? `twoWeeksAgo: ${POOL_AT_BLOCK(chainName, block14d, poolAddresses)}` : ''
+  const weeksQuery = chainName === 'GOERLI' ? `twoWeeksAgo: ${POOL_AT_BLOCK(chainName, block14d, poolAddresses)}` : ''
   try {
     const query = gql`
       query pools {
