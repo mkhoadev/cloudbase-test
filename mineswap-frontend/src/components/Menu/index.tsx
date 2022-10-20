@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useRouter } from 'next/router'
 import { NextLinkFromReactRouter } from 'components/NextLink'
-import { Menu as UikitMenu } from '@pancakeswap/uikit'
+import { Flex, Menu as UikitMenu, ThemeSwitcher } from '@pancakeswap/uikit'
 import { useTranslation, languageList } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
@@ -39,7 +39,11 @@ const Menu = (props) => {
         }}
         rightSide={
           <>
-            <SettingApp mode={SettingsMode.GLOBAL} />
+            {/* <SettingApp mode={SettingsMode.GLOBAL} /> */}
+            <Flex mr={'24px'}>
+              <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
+            </Flex>
+
             {/* <NetworkSwitcher /> */}
             <UserMenu isDark={isDark} />
           </>
