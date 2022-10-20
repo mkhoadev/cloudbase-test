@@ -457,7 +457,6 @@
     gap: 180px;
     padding: 0px 80px;
     border: 1px none;
-    height: 900px;
     padding: 0px 50px 80px;
 }
 
@@ -613,6 +612,22 @@
     align-self: stretch;
     border: 1px none;
     z-index: 9;
+}
+
+.hkipsh {
+    position: absolute;
+    width: 400px;
+    right: 0px;
+    object-fit: cover;
+    z-index: 10;
+}
+
+.bZXvp {
+    position: absolute;
+    width: 100px;
+    left: 0px;
+    z-index: 10;
+    bottom: 200px;
 }
 
 .hpiEQ {
@@ -955,7 +970,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
     border: 1px none;
     width: 90%;
     margin: 100px auto;
@@ -968,6 +983,7 @@
     align-items: center;
     gap: 16px;
     border: 1px none;
+    margin-top: 200px;
 }
 
 .involved-txt {
@@ -1016,10 +1032,39 @@
     display: block;
 }
 
+.div-join {
+    align-self: stretch;
+    height: 700px;
+    overflow: hidden;
+    border: 1px none;
+}
+
+.div-join-txt {
+    position: relative;
+    height: 1214px;
+    top: -257px;
+    left: 353px;
+}
+
+.background-involved {
+    background-color: unset !important;
+    background-image: url(/img/Getinvolved.svg);
+    background-repeat: round;
+    background-size: cover;
+    height: 600px;
+    margin-top: -231px;
+    margin-bottom: -67px;
+    position: sticky;
+}
+
 
 /* ------------------------------------------------------------------------------------------ */
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
+    .background-involved {
+        visibility: hidden;
+        display: none;
+    }
     .desktop-icon {
         display: block;
     }
@@ -1182,6 +1227,12 @@
 .frame_footers {}
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
+    .background-involved {
+        height: 600px;
+        margin-top: -250px;
+        margin-bottom: -157px;
+        position: sticky;
+    }
     .w-6 {
         width: 40px;
         height: 40px;

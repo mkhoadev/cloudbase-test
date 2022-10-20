@@ -18,6 +18,8 @@ import { MenuContext } from "./context";
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  max-width: 1569px;
+  margin:auto;
 `;
 
 const StyledNav = styled.nav`
@@ -32,16 +34,18 @@ const StyledNav = styled.nav`
 
   padding-left: 16px;
   padding-right: 16px;
+  max
 `;
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
   position: fixed;
   top: ${({ showMenu, height }) => (showMenu ? 0 : `-${height}px`)};
-  left: 0;
   transition: top 0.2s;
   height: ${({ height }) => `${height}px`};
   width: 100%;
   z-index: 20;
+  max-width: 1569px;
+  margin: auto;
 `;
 
 const TopBannerContainer = styled.div<{ height: number }>`

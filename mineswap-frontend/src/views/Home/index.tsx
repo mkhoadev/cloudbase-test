@@ -9,23 +9,30 @@ import { Link } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 
 const Home: React.FC<React.PropsWithChildren> = () => {
-  const {isDark} = useTheme()
+  const { isDark } = useTheme()
   return (
     <>
       <div className="home-style">
         <div className="dflex size-hearder">
           <div className="txt-banner-tt">
             <h6 className="intro-swap">INTRODUCING MINESWAP</h6>
-            <h3 className="comunioner">
-              Community-owned 
-              API of blockchains.
-            </h3>
+            <h3 className="comunioner">Community-owned API of blockchains.</h3>
             <span className="trade-earn">
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
-            </span><br/>
-            <br/>
-            <br/>
-            <Link href="/swap" className='imgbutton' style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)', color: isDark ? '' : '#121212' }}>LaunchApp</Link>
+            </span>
+            <br />
+            <br />
+            <br />
+            <Link
+              href="/swap"
+              className="imgbutton"
+              style={{
+                backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
+                color: isDark ? '' : '#121212',
+              }}
+            >
+              LaunchApp
+            </Link>
           </div>
           <div style={{ width: '100%' }}>
             <img src="/img/hero-images@1x.svg" alt="hero images" style={{ width: '60%', float: 'right' }} />
@@ -54,9 +61,49 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <span className="intro-swap">Onix`s complete suite of blockchain-scaling solutions.</span>
           </div>
           <div className="div-millions-colum">
-            <Amplified txt={'$820 million in BNB + MINE won so far'} span={'Predict the price trend of BNB or MINE to win'} type={'0'} />
-            <Amplified txt={'$64,883 in MINE prizes this round'} span={'Buy tickets with MINE, win MINE if your numbers match'} type={'1'} />
-            <Amplified txt={'mineswap Fraktal'} span={'EVM-compatible block sidechain, secured by a permissionless set of PoS validators.'} type={'2'}  />
+            <Amplified
+              txt={'$820 million in BNB + MINE won so far'}
+              span={'Predict the price trend of BNB or MINE to win'}
+              type={'0'}
+            />
+            <Amplified
+              txt={'$64,883 in MINE prizes this round'}
+              span={'Buy tickets with MINE, win MINE if your numbers match'}
+              type={'1'}
+            />
+            <Amplified
+              txt={'mineswap Fraktal'}
+              span={'EVM-compatible block sidechain, secured by a permissionless set of PoS validators.'}
+              type={'2'}
+            />
+          </div>
+          <img src="/img/cube2@1x.png" alt="cube2" className="sc-djTcra hkipsh" />
+        </div>
+        <div className="background-involved">
+          <div className="involved">
+            <div className="involved-div">
+              <div
+                className="involved-txt"
+                style={{
+                  color: isDark ? '' : '#121212',
+                }}
+              >
+                Want to get involved?
+              </div>
+              <div className="involved-div-span">
+                <span className="color-span ">Or learn all about </span>
+                <span className="color-span ">how to build on Onix</span>
+                <span className="color-span ">.</span>
+              </div>
+            </div>
+            <div
+              className="btn-connect button-css"
+              style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)' }}
+            >
+              <div className="txt-connect" style={{ color: isDark ? '' : '#121212' }}>
+                JOIN THE COMMUNITY
+              </div>
+            </div>
           </div>
         </div>
       </div>
