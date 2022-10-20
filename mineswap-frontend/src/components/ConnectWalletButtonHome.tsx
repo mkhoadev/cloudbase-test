@@ -1,11 +1,12 @@
 import { WalletModalV2 } from '@pancakeswap/ui-wallets'
-import {  ButtonProps } from '@pancakeswap/uikit'
+import { ButtonProps } from '@pancakeswap/uikit'
 import { createWallets } from 'config/wallet'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
 // @ts-ignore
 // eslint-disable-next-line import/extensions
 import { useActiveHandle } from 'hooks/useEagerConnect.bmp.ts'
+import useTheme from 'hooks/useTheme'
 import { useMemo, useState } from 'react'
 import { useConnect } from 'wagmi'
 import Trans from './Trans'
@@ -26,10 +27,10 @@ const ConnectWalletButtonHome = () => {
   }
 
   const wallets = useMemo(() => createWallets(chainId, connectAsync), [chainId, connectAsync])
-
+  const { isDark } = useTheme()
   return (
     <>
-      <div className="txt-connect" onClick={handleClick}>
+      <div className="txt-connect" style={{ color: isDark ? '' : '#121212' }} onClick={handleClick}>
         <Trans>Connect Wallet</Trans>
       </div>
       {/* <Button onClick={handleClick} {...props}>

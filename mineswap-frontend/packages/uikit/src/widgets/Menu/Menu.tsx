@@ -25,9 +25,9 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 95%;
-  margin:auto;
+  margin: auto;
   height: ${MENU_HEIGHT}px;
-  
+
   transform: translate3d(0, 0, 0);
 
   padding-left: 16px;
@@ -121,9 +121,19 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
-  const subLinksWithoutMobile = subLinks?.filter((subLink) => !subLink.isMobileOnly);
+  const subLinksWithoutMobile = [
+    {
+      label: "Swap",
+      href: "/swap",
+    },
+    {
+      label: "Liquidity",
+      href: "/liquidity",
+    },
+  ];
   const subLinksMobileOnly = subLinks?.filter((subLink) => subLink.isMobileOnly);
-
+  const active = window.location.href.split("/");
+  const linkActive = '/'+active[active.length - 1];
   return (
     <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>
@@ -132,7 +142,8 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
           <StyledNav>
             <Flex>
               <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
-              {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
+              {/* {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />} */}
+              {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={linkActive} ml="24px" />}
             </Flex>
             <Flex alignItems="center" height="100%">
               {/* {!isMobile && !isMd && (
@@ -156,13 +167,21 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
         </FixedContainer>
         {subLinks && (
           <Flex justifyContent="space-around">
-            <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={activeSubItem} />
-
-            {subLinksMobileOnly?.length > 0 && (
+            {/* <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={activeSubItem} /> */}
+            <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={linkActive} />
+            {/* {subLinksMobileOnly?.length > 0 && (
               <SubMenuItems
                 items={subLinksMobileOnly}
                 mt={`${totalTopMenuHeight + 1}px`}
                 activeItem={activeSubItem}
+                isMobileOnly
+              />
+            )} */}
+            {subLinksMobileOnly?.length > 0 && (
+              <SubMenuItems
+                items={subLinksMobileOnly}
+                mt={`${totalTopMenuHeight + 1}px`}
+                activeItem={linkActive}
                 isMobileOnly
               />
             )}

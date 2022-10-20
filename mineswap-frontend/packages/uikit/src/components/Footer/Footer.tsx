@@ -53,10 +53,11 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
             <span style={{ lineHeight: "100px", color:'white' }}>© 2022 mineswap. All rights reserved.</span>
           </div>
           <div className="icon_footer" >
-            <img src="/icon/telegram.svg" className="w-6" />
-            <img src="/icon/facebook.svg" className="w-6" />
-            <img src="/icon/twitter.svg" className="w-6" />
-            <img src="/icon/discord.svg" className="w-6" />
+            <img src="/img/telegram.png" className="w-6" />
+            <img src="/img/facebook.png" className="w-6" />
+            <img src="/img/twitter.png" className="w-6" />
+            <img src="/img/discord.png" className="w-6" />
+            <img src="/img/intagram.png" className="w-6" />
           </div>
         </div>
       </div>

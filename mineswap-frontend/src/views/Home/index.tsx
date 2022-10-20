@@ -6,8 +6,10 @@ import Earncrypto from './components/TradeAnythink/Earncrypto'
 import Statistical from './components/TradeAnythink/Statistical'
 import Amplified from './components/ScalingSolutions/Amplified'
 import { Link } from '@pancakeswap/uikit'
+import useTheme from 'hooks/useTheme'
 
 const Home: React.FC<React.PropsWithChildren> = () => {
+  const {isDark} = useTheme()
   return (
     <>
       <div className="home-style">
@@ -15,7 +17,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           <div className="txt-banner-tt">
             <h6 className="intro-swap">INTRODUCING MINESWAP</h6>
             <h3 className="comunioner">
-              Community-owned <br />
+              Community-owned 
               API of blockchains.
             </h3>
             <span className="trade-earn">
@@ -23,7 +25,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             </span><br/>
             <br/>
             <br/>
-            <Link href="/swap" className='imgbutton'>LaunchApp</Link>
+            <Link href="/swap" className='imgbutton' style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)', color: isDark ? '' : '#121212' }}>LaunchApp</Link>
           </div>
           <div style={{ width: '100%' }}>
             <img src="/img/hero-images@1x.svg" alt="hero images" style={{ width: '60%', float: 'right' }} />
