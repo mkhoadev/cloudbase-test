@@ -27,11 +27,14 @@ export const getBlocksFromTimestamps = async (
   timestamps: number[],
   sortDirection: 'asc' | 'desc' | undefined = 'desc',
   skipCount: number | undefined = 500,
-  chainName: MultiChainName | undefined = 'BSC',
+  // chainName: MultiChainName | undefined = 'BSC',
+  chainName: MultiChainName | undefined = 'GOERLI',
 ): Promise<Block[]> => {
   if (timestamps?.length === 0) {
     return []
   }
+
+  console.log('getBlocksFromTimestamps: ', {timestamps, chainName})
 
   const fetchedData: any = await multiQuery(
     blocksQueryConstructor,
