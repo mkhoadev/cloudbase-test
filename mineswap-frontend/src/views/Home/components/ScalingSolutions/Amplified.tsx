@@ -26,13 +26,13 @@ const Amplified = ({ txt, span, type }: nftSaleType) => {
       </div>
       <div className="sc-eblUpn kAIfLV">
       <img src="/img/icon@2x.svg" alt="slices" className="img-qr" />
-        <div className="sc-eOSrOQ hpiEQ">
-          <span>
-            $820 million in
-            <br /> BNB + MINE won so far
-          </span>
-        </div>
-        <div className="sc-fpRgNi gltMei">Predict the price trend of BNB or MINE to win</div>
+        {/* <div className="sc-eOSrOQ hpiEQ">
+         
+            {txt}
+          
+        </div> */}
+        <div className="sc-fpRgNi hpiEQ">{txt}</div>
+        <div className="sc-fpRgNi gltMei">{span}</div>
       </div>
       <div className="sc-iOMxnH dfbVyw">
         <div
