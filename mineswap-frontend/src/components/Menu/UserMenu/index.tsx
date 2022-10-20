@@ -65,7 +65,7 @@ const UserMenu = () => {
           {t('Recent Transactions')}
           {hasPendingTransactions && <RefreshIcon spin />}
         </UserMenuItem>
-        <UserMenuDivider />
+        {/* <UserMenuDivider />
         <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
           <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.ETHEREUM}>
             {t('Your NFTs')}
@@ -75,7 +75,7 @@ const UserMenu = () => {
           isLoading={isLoading}
           hasProfile={hasProfile}
           disabled={isWrongNetwork || chainId !== ChainId.ETHEREUM}
-        />
+        /> */}
         <UserMenuDivider />
         <UserMenuItem as="button" onClick={logout}>
           <Flex alignItems="center" justifyContent="space-between" width="100%">
