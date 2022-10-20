@@ -3,7 +3,7 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useFarms, usePriceCakeBusd } from 'state/farms/hooks'
 import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
 import { useAppDispatch } from 'state'
-import { fetchFarmsPublicDataAsync } from 'state/farms'
+// import { fetchFarmsPublicDataAsync } from 'state/farms'
 import { getFarmApr } from 'utils/apr'
 import orderBy from 'lodash/orderBy'
 import { DeserializedFarm } from 'state/types'
@@ -27,8 +27,8 @@ const useGetTopFarmsByApr = (isIntersecting: boolean) => {
       setFetchStatus(FetchStatus.Fetching)
       const activeFarms = farmsConfig.filter((farm) => farm.pid !== 0)
       try {
-        await dispatch(
-          fetchFarmsPublicDataAsync({ pids: activeFarms.map((farm) => farm.pid), chainId, flag: farmFlag }),
+        await dispatch(null
+          // fetchFarmsPublicDataAsync({ pids: activeFarms.map((farm) => farm.pid), chainId, flag: farmFlag }),
         )
         setFetchStatus(FetchStatus.Fetched)
       } catch (e) {

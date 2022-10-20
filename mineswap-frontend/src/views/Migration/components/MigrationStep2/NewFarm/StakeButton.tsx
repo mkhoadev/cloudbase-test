@@ -7,7 +7,7 @@ import useCatchTxError from 'hooks/useCatchTxError'
 import { useERC20 } from 'hooks/useContract'
 import React, { useCallback } from 'react'
 import { useAppDispatch } from 'state'
-import { fetchFarmUserDataAsync } from 'state/farms'
+// import { fetchFarmUserDataAsync } from 'state/farms'
 import { useFarmUser, usePriceCakeBusd } from 'state/farms/hooks'
 import styled from 'styled-components'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
@@ -72,7 +72,8 @@ const StakeButton: React.FC<React.PropsWithChildren<StackedActionProps>> = ({
           {t('Your funds have been staked in the farm')}
         </ToastDescriptionWithTx>,
       )
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
+      // dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
+      dispatch(null)
     }
   }
 
@@ -87,7 +88,8 @@ const StakeButton: React.FC<React.PropsWithChildren<StackedActionProps>> = ({
           {t('Your earnings have also been harvested to your wallet')}
         </ToastDescriptionWithTx>,
       )
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
+      // dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
+      dispatch(null)
     }
   }
 
@@ -127,7 +129,8 @@ const StakeButton: React.FC<React.PropsWithChildren<StackedActionProps>> = ({
     })
     if (receipt?.status) {
       toastSuccess(t('Contract Enabled'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
-      dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
+      // dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId }))
+      dispatch(null)
     }
   }, [onApprove, dispatch, chainId, account, pid, t, toastSuccess, fetchWithCatchTxError])
 

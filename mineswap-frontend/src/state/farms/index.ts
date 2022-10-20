@@ -102,53 +102,53 @@ export const fetchInitialFarmsData = createAsyncThunk<SerializedFarm[], { chainI
   },
 )
 
-let fallback = false
+// let fallback = false
 
-export const fetchFarmsPublicDataAsync = createAsyncThunk<
-  [SerializedFarm[], number, number],
-  { pids: number[]; chainId: number; flag: string },
-  {
-    state: AppState
-  }
->(
-  'farms/fetchFarmsPublicDataAsync',
-  async ({ pids, chainId, flag = 'pkg' }) => {
-    const chain = chains.find((c) => c.id === chainId)
-    if (!chain || !farmFetcher.isChainSupported(chain.id)) throw new Error('chain not supported')
-    try {
-      if (flag === 'old') {
-        return fetchFetchPublicDataOld({ pids, chainId })
-      }
-      if (flag === 'api' && !fallback) {
-        try {
-          const { updatedAt, data: farmsWithPrice, poolLength, regularCakePerBlock } = await farmApiFetch(chainId)
-          if (Date.now() - new Date(updatedAt).getTime() > 3 * 60 * 1000) {
-            fallback = true
-            throw new Error('Farm Api out dated')
-          }
-          return [farmsWithPrice, poolLength, regularCakePerBlock]
-        } catch (error) {
-          console.error(error)
-          return fetchFarmPublicDataPkg({ pids, chainId, chain })
-        }
-      }
-      return fetchFarmPublicDataPkg({ pids, chainId, chain })
-    } catch (error) {
-      console.error(error)
-      throw error
-    }
-  },
-  {
-    condition: (arg, { getState }) => {
-      const { farms } = getState()
-      if (farms.loadingKeys[stringify({ type: fetchFarmsPublicDataAsync.typePrefix, arg })]) {
-        console.debug('farms action is fetching, skipping here')
-        return false
-      }
-      return true
-    },
-  },
-)
+// export const fetchFarmsPublicDataAsync = createAsyncThunk<
+//   [SerializedFarm[], number, number],
+//   { pids: number[]; chainId: number; flag: string },
+//   {
+//     state: AppState
+//   }
+// >(
+//   // 'farms/fetchFarmsPublicDataAsync',
+//   // async ({ pids, chainId, flag = 'pkg' }) => {
+//   //   const chain = chains.find((c) => c.id === chainId)
+//   //   if (!chain || !farmFetcher.isChainSupported(chain.id)) throw new Error('chain not supported')
+//   //   try {
+//   //     if (flag === 'old') {
+//   //       return fetchFetchPublicDataOld({ pids, chainId })
+//   //     }
+//   //     if (flag === 'api' && !fallback) {
+//   //       try {
+//   //         const { updatedAt, data: farmsWithPrice, poolLength, regularCakePerBlock } = await farmApiFetch(chainId)
+//   //         if (Date.now() - new Date(updatedAt).getTime() > 3 * 60 * 1000) {
+//   //           fallback = true
+//   //           throw new Error('Farm Api out dated')
+//   //         }
+//   //         return [farmsWithPrice, poolLength, regularCakePerBlock]
+//   //       } catch (error) {
+//   //         console.error(error)
+//   //         return fetchFarmPublicDataPkg({ pids, chainId, chain })
+//   //       }
+//   //     }
+//   //     return fetchFarmPublicDataPkg({ pids, chainId, chain })
+//   //   } catch (error) {
+//   //     console.error(error)
+//   //     throw error
+//   //   }
+//   // },
+//   // {
+//   //   condition: (arg, { getState }) => {
+//   //     // const { farms } = getState()
+//   //     // if (farms.loadingKeys[stringify({ type: fetchFarmsPublicDataAsync.typePrefix, arg })]) {
+//   //     //   console.debug('farms action is fetching, skipping here')
+//   //     //   return false
+//   //     // }
+//   //     return true
+//   //   },
+//   // },
+// )
 
 interface FarmUserDataResponse {
   pid: number
@@ -225,44 +225,44 @@ async function getNormalFarmsStakeValue(farms, account, chainId) {
   return normalFarmAllowances
 }
 
-export const fetchFarmUserDataAsync = createAsyncThunk<
-  FarmUserDataResponse[],
-  { account: string; pids: number[]; proxyAddress?: string; chainId: number },
-  {
-    state: AppState
-  }
->(
-  'farms/fetchFarmUserDataAsync',
-  async ({ account, pids, proxyAddress, chainId }, config) => {
-    const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.ETHEREUM))
-    const farmsConfig = await getFarmConfig(chainId)
-    const farmsCanFetch = farmsConfig.filter(
-      (farmConfig) => pids.includes(farmConfig.pid) && poolLength > farmConfig.pid,
-    )
-    if (proxyAddress && farmsCanFetch?.length && verifyBscNetwork(chainId)) {
-      const { normalFarms, farmsWithProxy } = splitProxyFarms(farmsCanFetch)
+// export const fetchFarmUserDataAsync = createAsyncThunk<
+//   FarmUserDataResponse[],
+//   { account: string; pids: number[]; proxyAddress?: string; chainId: number },
+//   {
+//     state: AppState
+//   }
+// >(
+//   'farms/fetchFarmUserDataAsync',
+//   async ({ account, pids, proxyAddress, chainId }, config) => {
+//     const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.ETHEREUM))
+//     const farmsConfig = await getFarmConfig(chainId)
+//     const farmsCanFetch = farmsConfig.filter(
+//       (farmConfig) => pids.includes(farmConfig.pid) && poolLength > farmConfig.pid,
+//     )
+//     if (proxyAddress && farmsCanFetch?.length && verifyBscNetwork(chainId)) {
+//       const { normalFarms, farmsWithProxy } = splitProxyFarms(farmsCanFetch)
 
-      const [proxyAllowances, normalAllowances] = await Promise.all([
-        getBoostedFarmsStakeValue(farmsWithProxy, account, chainId, proxyAddress),
-        getNormalFarmsStakeValue(normalFarms, account, chainId),
-      ])
+//       const [proxyAllowances, normalAllowances] = await Promise.all([
+//         getBoostedFarmsStakeValue(farmsWithProxy, account, chainId, proxyAddress),
+//         getNormalFarmsStakeValue(normalFarms, account, chainId),
+//       ])
 
-      return [...proxyAllowances, ...normalAllowances]
-    }
+//       return [...proxyAllowances, ...normalAllowances]
+//     }
 
-    return getNormalFarmsStakeValue(farmsCanFetch, account, chainId)
-  },
-  {
-    condition: (arg, { getState }) => {
-      const { farms } = getState()
-      if (farms.loadingKeys[stringify({ type: fetchFarmUserDataAsync.typePrefix, arg })]) {
-        console.debug('farms user action is fetching, skipping here')
-        return false
-      }
-      return true
-    },
-  },
-)
+//     return getNormalFarmsStakeValue(farmsCanFetch, account, chainId)
+//   },
+//   {
+//     condition: (arg, { getState }) => {
+//       const { farms } = getState()
+//       if (farms.loadingKeys[stringify({ type: fetchFarmUserDataAsync.typePrefix, arg })]) {
+//         console.debug('farms user action is fetching, skipping here')
+//         return false
+//       }
+//       return true
+//     },
+//   },
+// )
 
 type UnknownAsyncThunkFulfilledOrPendingAction =
   | UnknownAsyncThunkFulfilledAction
@@ -300,53 +300,53 @@ export const farmsSlice = createSlice({
       })
       state.userDataLoaded = false
     })
-    // Init farm data
-    builder.addCase(fetchInitialFarmsData.fulfilled, (state, action) => {
-      const farmData = action.payload
-      state.data = farmData
-    })
+    // // Init farm data
+    // builder.addCase(fetchInitialFarmsData.fulfilled, (state, action) => {
+    //   const farmData = action.payload
+    //   state.data = farmData
+    // })
 
-    // Update farms with live data
-    builder.addCase(fetchFarmsPublicDataAsync.fulfilled, (state, action) => {
-      const [farmPayload, poolLength, regularCakePerBlock] = action.payload
-      const farmPayloadPidMap = fromPairs(farmPayload.map((farmData) => [farmData.pid, farmData]))
+    // // Update farms with live data
+    // builder.addCase(fetchFarmsPublicDataAsync.fulfilled, (state, action) => {
+    //   const [farmPayload, poolLength, regularCakePerBlock] = action.payload
+    //   const farmPayloadPidMap = fromPairs(farmPayload.map((farmData) => [farmData.pid, farmData]))
 
-      state.data = state.data.map((farm) => {
-        const liveFarmData = farmPayloadPidMap[farm.pid]
-        return { ...farm, ...liveFarmData }
-      })
-      state.poolLength = poolLength
-      state.regularCakePerBlock = regularCakePerBlock
-    })
+    //   state.data = state.data.map((farm) => {
+    //     const liveFarmData = farmPayloadPidMap[farm.pid]
+    //     return { ...farm, ...liveFarmData }
+    //   })
+    //   state.poolLength = poolLength
+    //   state.regularCakePerBlock = regularCakePerBlock
+    // })
 
-    // Update farms with user data
-    builder.addCase(fetchFarmUserDataAsync.fulfilled, (state, action) => {
-      const userDataMap = fromPairs(action.payload.map((userDataEl) => [userDataEl.pid, userDataEl]))
-      state.data = state.data.map((farm) => {
-        const userDataEl = userDataMap[farm.pid]
-        if (userDataEl) {
-          return { ...farm, userData: userDataEl }
-        }
-        return farm
-      })
-      state.userDataLoaded = true
-    })
+    // // Update farms with user data
+    // builder.addCase(fetchFarmUserDataAsync.fulfilled, (state, action) => {
+    //   const userDataMap = fromPairs(action.payload.map((userDataEl) => [userDataEl.pid, userDataEl]))
+    //   state.data = state.data.map((farm) => {
+    //     const userDataEl = userDataMap[farm.pid]
+    //     if (userDataEl) {
+    //       return { ...farm, userData: userDataEl }
+    //     }
+    //     return farm
+    //   })
+    //   state.userDataLoaded = true
+    // })
 
-    builder.addMatcher(isAnyOf(fetchFarmUserDataAsync.pending, fetchFarmsPublicDataAsync.pending), (state, action) => {
-      state.loadingKeys[serializeLoadingKey(action, 'pending')] = true
-    })
-    builder.addMatcher(
-      isAnyOf(fetchFarmUserDataAsync.fulfilled, fetchFarmsPublicDataAsync.fulfilled),
-      (state, action) => {
-        state.loadingKeys[serializeLoadingKey(action, 'fulfilled')] = false
-      },
-    )
-    builder.addMatcher(
-      isAnyOf(fetchFarmsPublicDataAsync.rejected, fetchFarmUserDataAsync.rejected),
-      (state, action) => {
-        state.loadingKeys[serializeLoadingKey(action, 'rejected')] = false
-      },
-    )
+    // builder.addMatcher(isAnyOf(fetchFarmUserDataAsync.pending, fetchFarmsPublicDataAsync.pending), (state, action) => {
+    //   state.loadingKeys[serializeLoadingKey(action, 'pending')] = true
+    // })
+    // builder.addMatcher(
+    //   isAnyOf(fetchFarmUserDataAsync.fulfilled, fetchFarmsPublicDataAsync.fulfilled),
+    //   (state, action) => {
+    //     state.loadingKeys[serializeLoadingKey(action, 'fulfilled')] = false
+    //   },
+    // )
+    // builder.addMatcher(
+    //   isAnyOf(fetchFarmsPublicDataAsync.rejected, fetchFarmUserDataAsync.rejected),
+    //   (state, action) => {
+    //     state.loadingKeys[serializeLoadingKey(action, 'rejected')] = false
+    //   },
+    // )
   },
 })
 

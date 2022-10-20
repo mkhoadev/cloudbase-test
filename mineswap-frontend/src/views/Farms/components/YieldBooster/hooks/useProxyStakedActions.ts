@@ -3,7 +3,7 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'state'
 import { harvestFarm, stakeFarm, unstakeFarm } from 'utils/calls/farms'
-import { fetchFarmUserDataAsync } from 'state/farms'
+// import { fetchFarmUserDataAsync } from 'state/farms'
 import { useBCakeProxyContractAddress } from 'views/Farms/hooks/useBCakeProxyContractAddress'
 import { useApproveBoostProxyFarm } from '../../../hooks/useApproveFarm'
 import useProxyCAKEBalance from './useProxyCAKEBalance'
@@ -17,7 +17,7 @@ export default function useProxyStakedActions(pid, lpContract) {
 
   const onDone = useCallback(() => {
     refreshProxyCakeBalance()
-    dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId, proxyAddress }))
+    // dispatch(fetchFarmUserDataAsync({ account, pids: [pid], chainId, proxyAddress }))
   }, [account, proxyAddress, chainId, pid, dispatch, refreshProxyCakeBalance])
 
   const { onApprove } = useApproveBoostProxyFarm(lpContract, proxyAddress)
