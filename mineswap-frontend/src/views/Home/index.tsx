@@ -40,7 +40,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </div>
         <div className="use-by">
           <div className="div_millions">
-            <h3>
+            <h3 className='h3-home'>
               Used by millions.
               <br />
               Trusted with billions.
