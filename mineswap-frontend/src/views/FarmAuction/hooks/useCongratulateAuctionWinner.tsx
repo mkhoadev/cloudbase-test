@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Auction, AuctionStatus, Bidder } from 'config/constants/types'
-import { useFarmAuctionContract } from 'hooks/useContract'
+// import { useFarmAuctionContract } from 'hooks/useContract'
 import { processAuctionData, sortAuctionBidders } from '../helpers'
 
 interface WonAuction {
@@ -14,24 +14,24 @@ const useCongratulateAuctionWinner = (currentAuction: Auction, bidders: Bidder[]
 
   const { account } = useWeb3React()
 
-  const farmAuctionContract = useFarmAuctionContract(false)
+  // const farmAuctionContract = useFarmAuctionContract(false)
 
   useEffect(() => {
     const checkIfWonPreviousAuction = async (previousAuctionId: number) => {
-      const auctionData = await farmAuctionContract.auctions(previousAuctionId)
-      const processedAuctionData = await processAuctionData(previousAuctionId, auctionData)
-      const [auctionBidders] = await farmAuctionContract.viewBidsPerAuction(previousAuctionId, 0, 500)
-      const sortedBidders = sortAuctionBidders(auctionBidders)
-      const { leaderboardThreshold } = processedAuctionData
-      const winnerAddresses = sortedBidders
-        .filter((bidder) => leaderboardThreshold.lte(bidder.amount))
-        .map((bidder) => bidder.account)
+      // const auctionData = await farmAuctionContract.auctions(previousAuctionId)
+      // const processedAuctionData = await processAuctionData(previousAuctionId, auctionData)
+      // const [auctionBidders] = await farmAuctionContract.viewBidsPerAuction(previousAuctionId, 0, 500)
+      // const sortedBidders = sortAuctionBidders(auctionBidders)
+      // const { leaderboardThreshold } = processedAuctionData
+      // const winnerAddresses = sortedBidders
+      //   .filter((bidder) => leaderboardThreshold.lte(bidder.amount))
+      //   .map((bidder) => bidder.account)
       if (winnerAddresses.includes(account)) {
-        const accountBidderData = sortedBidders.find((bidder) => bidder.account === account)
-        setWonAuction({
-          auction: processedAuctionData,
-          bidderData: accountBidderData,
-        })
+        // const accountBidderData = sortedBidders.find((bidder) => bidder.account === account)
+        // setWonAuction({
+        //   auction: processedAuctionData,
+        //   bidderData: accountBidderData,
+        // })
       }
     }
 
@@ -48,8 +48,8 @@ const useCongratulateAuctionWinner = (currentAuction: Auction, bidders: Bidder[]
     } else if (previousAuctionId > 0) {
       checkIfWonPreviousAuction(previousAuctionId)
     }
-  }, [currentAuction, bidders, account, farmAuctionContract])
-
+  }, [currentAuction, bidders, account])
+  // farmAuctionContract
   return wonAuction
 }
 

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { AutoRenewIcon, Button, Card, CardBody, Heading, Skeleton, Text, useToast } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { NextLinkFromReactRouter } from 'components/NextLink'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
+// import { getPancakeProfileAddress } from 'utils/addressHelpers'
 import { getErc721Contract } from 'utils/contractHelpers'
 import { useTranslation } from '@pancakeswap/localization'
-import { useProfileContract } from 'hooks/useContract'
+// import { useProfileContract } from 'hooks/useContract'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { nftsBaseUrl } from 'views/Nft/market/constants'
@@ -33,43 +33,43 @@ const ProfilePicture: React.FC = () => {
   const [isApproved, setIsApproved] = useState(false)
   const [userProfileCreationNfts, setUserProfileCreationNfts] = useState(null)
   const { selectedNft, actions } = useContext(ProfileCreationContext)
-  const profileContract = useProfileContract(false)
+  // const profileContract = useProfileContract(false)
   const { isLoading: isProfileLoading, profile } = useProfile()
   const { nfts, isLoading: isUserNftLoading } = useNftsForAddress(account, profile, isProfileLoading)
 
-  useEffect(() => {
-    const fetchUserPancakeCollectibles = async () => {
-      try {
-        const nftsByCollection = Array.from(
-          nfts.reduce((acc, value) => {
-            acc.add(value.collectionAddress)
-            return acc
-          }, new Set<string>()),
-        )
+  // useEffect(() => {
+  //   const fetchUserPancakeCollectibles = async () => {
+  //     try {
+  //       const nftsByCollection = Array.from(
+  //         nfts.reduce((acc, value) => {
+  //           acc.add(value.collectionAddress)
+  //           return acc
+  //         }, new Set<string>()),
+  //       )
 
-        if (nftsByCollection.length > 0) {
-          const nftRole = await profileContract.NFT_ROLE()
-          const collectionsNftRoleCalls = nftsByCollection.map((collectionAddress) => {
-            return {
-              address: profileContract.address,
-              name: 'hasRole',
-              params: [nftRole, collectionAddress],
-            }
-          })
-          const collectionRolesRaw = await multicall(profileABI, collectionsNftRoleCalls)
-          const collectionRoles = collectionRolesRaw.flat()
-          setUserProfileCreationNfts(
-            nfts.filter((nft) => collectionRoles[nftsByCollection.indexOf(nft.collectionAddress)]),
-          )
-        }
-      } catch (e) {
-        console.error(e)
-      }
-    }
-    if (!isUserNftLoading) {
-      fetchUserPancakeCollectibles()
-    }
-  }, [nfts, profileContract, isUserNftLoading])
+  //       if (nftsByCollection.length > 0) {
+  //         const nftRole = await profileContract.NFT_ROLE()
+  //         const collectionsNftRoleCalls = nftsByCollection.map((collectionAddress) => {
+  //           return {
+  //             address: profileContract.address,
+  //             name: 'hasRole',
+  //             params: [nftRole, collectionAddress],
+  //           }
+  //         })
+  //         const collectionRolesRaw = await multicall(profileABI, collectionsNftRoleCalls)
+  //         const collectionRoles = collectionRolesRaw.flat()
+  //         setUserProfileCreationNfts(
+  //           nfts.filter((nft) => collectionRoles[nftsByCollection.indexOf(nft.collectionAddress)]),
+  //         )
+  //       }
+  //     } catch (e) {
+  //       console.error(e)
+  //     }
+  //   }
+  //   if (!isUserNftLoading) {
+  //     fetchUserPancakeCollectibles()
+  //   }
+  // }, [nfts, profileContract, isUserNftLoading])
 
   const { t } = useTranslation()
   const { toastSuccess } = useToast()
@@ -77,16 +77,16 @@ const ProfilePicture: React.FC = () => {
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
   const { data: signer } = useSigner()
 
-  const handleApprove = async () => {
-    const contract = getErc721Contract(selectedNft.collectionAddress, signer)
-    const receipt = await fetchWithCatchTxError(() => {
-      return callWithMarketGasPrice(contract, 'approve', [getPancakeProfileAddress(), selectedNft.tokenId])
-    })
-    if (receipt?.status) {
-      toastSuccess(t('Enabled'), t('Please progress to the next step.'))
-      setIsApproved(true)
-    }
-  }
+  // const handleApprove = async () => {
+  //   const contract = getErc721Contract(selectedNft.collectionAddress, signer)
+  //   const receipt = await fetchWithCatchTxError(() => {
+  //     return callWithMarketGasPrice(contract, 'approve', [getPancakeProfileAddress(), selectedNft.tokenId])
+  //   })
+  //   if (receipt?.status) {
+  //     toastSuccess(t('Enabled'), t('Please progress to the next step.'))
+  //     setIsApproved(true)
+  //   }
+  // }
 
   if (userProfileCreationNfts?.length === 0) {
     return (
@@ -108,7 +108,7 @@ const ProfilePicture: React.FC = () => {
 
   return (
     <>
-      <Text fontSize="20px" color="textSubtle" bold>
+      {/* <Text fontSize="20px" color="textSubtle" bold>
         {t('Step %num%', { num: 2 })}
       </Text>
       <Heading as="h3" scale="xl" mb="24px">
@@ -171,7 +171,7 @@ const ProfilePicture: React.FC = () => {
       </Card>
       <NextStepButton onClick={actions.nextStep} disabled={selectedNft.tokenId === null || !isApproved || isApproving}>
         {t('Next Step')}
-      </NextStepButton>
+      </NextStepButton> */}
     </>
   )
 }

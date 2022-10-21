@@ -4,7 +4,7 @@ import ifosList from 'config/constants/ifo'
 import { campaignMap } from 'config/constants/campaigns'
 import { Achievement } from 'state/types'
 import { multicallv2 } from 'utils/multicall'
-import { getPointCenterIfoAddress } from 'utils/addressHelpers'
+// import { getPointCenterIfoAddress } from 'utils/addressHelpers'
 import pointCenterIfoABI from 'config/abi/pointCenterIfo.json'
 
 interface IfoMapResponse {
@@ -49,11 +49,12 @@ export const getClaimableIfoData = async (account: string): Promise<Achievement[
 
   // Returns the claim status of every IFO with a campaign ID
   const claimStatusCalls = ifoCampaigns.map(({ address }) => {
-    return {
-      address: getPointCenterIfoAddress(),
-      name: 'checkClaimStatus',
-      params: [account, address],
-    }
+    // return {
+    //   address: getPointCenterIfoAddress(),
+    //   name: 'checkClaimStatus',
+    //   params: [account, address],
+    // }
+    return null
   })
 
   const claimStatuses = (await multicallv2({
@@ -73,7 +74,8 @@ export const getClaimableIfoData = async (account: string): Promise<Achievement[
       const [claimStatus] = claimStatusArr
 
       if (claimStatus === true) {
-        return [...accum, { address: getPointCenterIfoAddress(), name: 'ifos', params: [ifoCampaigns[index].address] }]
+        // return [...accum, { address: getPointCenterIfoAddress(), name: 'ifos', params: [ifoCampaigns[index].address] }]
+        return null
       }
 
       return accum

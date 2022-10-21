@@ -5,7 +5,7 @@ import Balance from 'components/Balance'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { LotteryTicket, LotteryTicketClaimData } from 'config/constants/types'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { useLotteryV2Contract } from 'hooks/useContract'
+// import { useLotteryV2Contract } from 'hooks/useContract'
 import { useState } from 'react'
 import { useAppDispatch } from 'state'
 import { usePriceCakeBusd } from 'state/farms/hooks'
@@ -32,7 +32,7 @@ const ClaimInnerContainer: React.FC<React.PropsWithChildren<ClaimInnerProps>> = 
       roundsToClaim[activeClaimIndex].ticketsWithUnclaimedRewards.length / maxNumberTicketsPerBuyOrClaim.toNumber(),
     ),
   )
-  const lotteryContract = useLotteryV2Contract()
+  // const lotteryContract = useLotteryV2Contract()
   const activeClaimData = roundsToClaim[activeClaimIndex]
 
   const cakePriceBusd = usePriceCakeBusd()
@@ -84,7 +84,8 @@ const ClaimInnerContainer: React.FC<React.PropsWithChildren<ClaimInnerProps>> = 
   const handleClaim = async () => {
     const { lotteryId, ticketIds, brackets } = claimTicketsCallData
     const receipt = await fetchWithCatchTxError(() => {
-      return callWithEstimateGas(lotteryContract, 'claimTickets', [lotteryId, ticketIds, brackets])
+      // return callWithEstimateGas(lotteryContract, 'claimTickets', [lotteryId, ticketIds, brackets])
+      return null
     })
     if (receipt?.status) {
       toastSuccess(
@@ -106,11 +107,12 @@ const ClaimInnerContainer: React.FC<React.PropsWithChildren<ClaimInnerProps>> = 
     for (const ticketBatch of ticketBatches) {
       /* eslint-disable no-await-in-loop */
       const receipt = await fetchWithCatchTxError(() => {
-        return callWithEstimateGas(lotteryContract, 'claimTickets', [
-          lotteryId,
-          ticketBatch.ticketIds,
-          ticketBatch.brackets,
-        ])
+        // return callWithEstimateGas(lotteryContract, 'claimTickets', [
+        //   lotteryId,
+        //   ticketBatch.ticketIds,
+        //   ticketBatch.brackets,
+        // ])
+        return null
       })
       if (receipt?.status) {
         // One transaction within batch has succeeded

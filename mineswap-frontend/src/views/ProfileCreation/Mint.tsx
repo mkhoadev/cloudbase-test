@@ -4,13 +4,13 @@ import { Card, CardBody, Heading, Text, useToast } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
-import { useCake, useBunnyFactory } from 'hooks/useContract'
+// import { useCake, useBunnyFactory } from 'hooks/useContract'
 import { useGetCakeBalance } from 'hooks/useTokenBalance'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
 import { getNftsFromCollectionApi } from 'state/nftMarket/helpers'
 import { ApiSingleTokenData } from 'state/nftMarket/types'
-import { pancakeBunniesAddress } from 'views/Nft/market/constants'
+// import { pancakeBunniesAddress } from 'views/Nft/market/constants'
 import { requiresApproval } from 'utils/requiresApproval'
 import { FetchStatus } from 'config/constants/types'
 import SelectionCard from './SelectionCard'
@@ -29,57 +29,57 @@ const Mint: React.FC<React.PropsWithChildren> = () => {
   const { toastSuccess } = useToast()
 
   const { account } = useWeb3React()
-  const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
-  const bunnyFactoryContract = useBunnyFactory()
+  // const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
+  // const bunnyFactoryContract = useBunnyFactory()
   const { t } = useTranslation()
   const { balance: cakeBalance, fetchStatus } = useGetCakeBalance()
   const hasMinimumCakeRequired = fetchStatus === FetchStatus.Fetched && cakeBalance.gte(MINT_COST)
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
 
-  useEffect(() => {
-    const getStarterNfts = async () => {
-      const response = await getNftsFromCollectionApi(pancakeBunniesAddress)
-      if (!response) return
-      const { data: allPbTokens } = response
-      const nfts = STARTER_NFT_BUNNY_IDS.map((bunnyId) => {
-        if (allPbTokens && allPbTokens[bunnyId]) {
-          return { ...allPbTokens[bunnyId], bunnyId }
-        }
-        return undefined
-      })
-      setStarterNfts(nfts)
-    }
-    if (starterNfts.length === 0) {
-      getStarterNfts()
-    }
-  }, [starterNfts])
+  // useEffect(() => {
+  //   const getStarterNfts = async () => {
+  //     // const response = await getNftsFromCollectionApi(pancakeBunniesAddress)
+  //     if (!response) return
+  //     const { data: allPbTokens } = response
+  //     const nfts = STARTER_NFT_BUNNY_IDS.map((bunnyId) => {
+  //       if (allPbTokens && allPbTokens[bunnyId]) {
+  //         return { ...allPbTokens[bunnyId], bunnyId }
+  //       }
+  //       return undefined
+  //     })
+  //     setStarterNfts(nfts)
+  //   }
+  //   if (starterNfts.length === 0) {
+  //     getStarterNfts()
+  //   }
+  // }, [starterNfts])
 
-  const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
-    useApproveConfirmTransaction({
-      onRequiresApproval: async () => {
-        return requiresApproval(cakeContractReader, account, bunnyFactoryContract.address, minimumCakeRequired)
-      },
-      onApprove: () => {
-        return callWithMarketGasPrice(cakeContractApprover, 'approve', [
-          bunnyFactoryContract.address,
-          allowance.toString(),
-        ])
-      },
-      onConfirm: () => {
-        return callWithMarketGasPrice(bunnyFactoryContract, 'mintNFT', [selectedBunnyId])
-      },
-      onApproveSuccess: () => {
-        toastSuccess(t('Enabled'), t("Press 'confirm' to mint this NFT"))
-      },
-      onSuccess: () => {
-        toastSuccess(t('Success'), t('You have minted your starter NFT'))
-        actions.nextStep()
-      },
-    })
+  // const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
+  //   useApproveConfirmTransaction({
+  //     onRequiresApproval: async () => {
+  //       return requiresApproval(cakeContractReader, account, bunnyFactoryContract.address, minimumCakeRequired)
+  //     },
+  //     onApprove: () => {
+  //       return callWithMarketGasPrice(cakeContractApprover, 'approve', [
+  //         bunnyFactoryContract.address,
+  //         allowance.toString(),
+  //       ])
+  //     },
+  //     onConfirm: () => {
+  //       return callWithMarketGasPrice(bunnyFactoryContract, 'mintNFT', [selectedBunnyId])
+  //     },
+  //     onApproveSuccess: () => {
+  //       toastSuccess(t('Enabled'), t("Press 'confirm' to mint this NFT"))
+  //     },
+  //     onSuccess: () => {
+  //       toastSuccess(t('Success'), t('You have minted your starter NFT'))
+  //       actions.nextStep()
+  //     },
+  //   })
 
   return (
     <>
-      <Text fontSize="20px" color="textSubtle" bold>
+      {/* <Text fontSize="20px" color="textSubtle" bold>
         {t('Step %num%', { num: 1 })}
       </Text>
       <Heading as="h3" scale="xl" mb="24px">
@@ -135,7 +135,7 @@ const Mint: React.FC<React.PropsWithChildren> = () => {
       </Card>
       <NextStepButton onClick={actions.nextStep} disabled={!isConfirmed}>
         {t('Next Step')}
-      </NextStepButton>
+      </NextStepButton> */}
     </>
   )
 }

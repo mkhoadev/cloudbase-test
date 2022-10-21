@@ -1,16 +1,17 @@
 import BigNumber from 'bignumber.js'
 import multicall from 'utils/multicall'
 import potteryVaultAbi from 'config/abi/potteryVaultAbi.json'
-import { getPotteryDrawAddress } from 'utils/addressHelpers'
+// import { getPotteryDrawAddress } from 'utils/addressHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { PotteryDepositStatus } from 'state/types'
 import { ethereumTokens} from '@pancakeswap/tokens'
-import { getPotteryDrawContract, getBep20Contract } from 'utils/contractHelpers'
+// import { getPotteryDrawContract, getBep20Contract } from 'utils/contractHelpers'
+import { getBep20Contract } from 'utils/contractHelpers'
 import { request, gql } from 'graphql-request'
 import { GRAPH_API_POTTERY } from 'config/constants/endpoints'
 
-const potteryDrawAddress = getPotteryDrawAddress()
-const potteryDrawContract = getPotteryDrawContract()
+// const potteryDrawAddress = getPotteryDrawAddress()
+// const potteryDrawContract = getPotteryDrawContract()
 
 export const fetchLastVaultAddress = async () => {
   try {

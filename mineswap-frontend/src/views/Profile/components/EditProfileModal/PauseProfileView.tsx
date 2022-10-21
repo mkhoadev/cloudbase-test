@@ -4,7 +4,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import useGetProfileCosts from 'views/Profile/hooks/useGetProfileCosts'
 import { useProfile } from 'state/profile/hooks'
 import { formatBigNumber } from 'utils/formatBalance'
-import { useProfileContract } from 'hooks/useContract'
+// import { useProfileContract } from 'hooks/useContract'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { ToastDescriptionWithTx } from 'components/Toast'
@@ -20,33 +20,33 @@ const PauseProfilePage: React.FC<React.PropsWithChildren<PauseProfilePageProps>>
     costs: { numberCakeToReactivate },
   } = useGetProfileCosts()
   const { t } = useTranslation()
-  const pancakeProfileContract = useProfileContract()
+  // const pancakeProfileContract = useProfileContract()
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: isConfirming } = useCatchTxError()
 
   const handleChange = () => setIsAcknowledged(!isAcknowledged)
 
-  const handleDeactivateProfile = async () => {
-    const receipt = await fetchWithCatchTxError(() => {
-      return callWithMarketGasPrice(pancakeProfileContract, 'pauseProfile')
-    })
-    if (receipt?.status) {
-      // Re-fetch profile
-      refreshProfile()
-      toastSuccess(t('Profile Paused!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
-      onSuccess?.()
-      onDismiss?.()
-    }
-  }
+  // const handleDeactivateProfile = async () => {
+  //   const receipt = await fetchWithCatchTxError(() => {
+  //     return callWithMarketGasPrice(pancakeProfileContract, 'pauseProfile')
+  //   })
+  //   if (receipt?.status) {
+  //     // Re-fetch profile
+  //     refreshProfile()
+  //     toastSuccess(t('Profile Paused!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
+  //     onSuccess?.()
+  //     onDismiss?.()
+  //   }
+  // }
 
-  if (!profile) {
-    return null
-  }
+  // if (!profile) {
+  //   return null
+  // }
 
   return (
     <>
-      <Text as="p" color="failure" mb="24px">
+      {/* <Text as="p" color="failure" mb="24px">
         {t('This will suspend your profile and send your Collectible back to your wallet')}
       </Text>
       <Text as="p" color="textSubtle" mb="24px">
@@ -75,7 +75,7 @@ const PauseProfilePage: React.FC<React.PropsWithChildren<PauseProfilePageProps>>
       </Button>
       <Button variant="text" width="100%" onClick={onDismiss}>
         {t('Close Window')}
-      </Button>
+      </Button> */}
     </>
   )
 }

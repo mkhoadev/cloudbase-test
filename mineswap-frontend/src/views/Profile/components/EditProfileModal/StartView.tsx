@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Button, Flex, Text, InjectedModalProps, Message, MessageText } from '@pancakeswap/uikit'
 import { formatBigNumber } from 'utils/formatBalance'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
+// import { getPancakeProfileAddress } from 'utils/addressHelpers'
 import { useCake } from 'hooks/useContract'
 import { useGetCakeBalance } from 'hooks/useTokenBalance'
 import { useTranslation } from '@pancakeswap/localization'
@@ -59,25 +59,25 @@ const StartPage: React.FC<React.PropsWithChildren<StartPageProps>> = ({ goToAppr
    * Check if the wallet has the required MINE allowance to change their profile pic or reactivate
    * If they don't, we send them to the approval screen first
    */
-  useEffect(() => {
-    const checkApprovalStatus = async () => {
-      const approvalNeeded = await requiresApproval(
-        cakeContract,
-        account,
-        getPancakeProfileAddress(),
-        minimumCakeRequired,
-      )
-      setNeedsApproval(approvalNeeded)
-    }
+  // useEffect(() => {
+  //   const checkApprovalStatus = async () => {
+  //     const approvalNeeded = await requiresApproval(
+  //       cakeContract,
+  //       account,
+  //       getPancakeProfileAddress(),
+  //       minimumCakeRequired,
+  //     )
+  //     setNeedsApproval(approvalNeeded)
+  //   }
 
-    if (account && !isProfileCostsLoading) {
-      checkApprovalStatus()
-    }
-  }, [account, minimumCakeRequired, setNeedsApproval, cakeContract, isProfileCostsLoading])
+  //   if (account && !isProfileCostsLoading) {
+  //     checkApprovalStatus()
+  //   }
+  // }, [account, minimumCakeRequired, setNeedsApproval, cakeContract, isProfileCostsLoading])
 
-  if (!profile) {
-    return null
-  }
+  // if (!profile) {
+  //   return null
+  // }
 
   return (
     <Flex alignItems="center" justifyContent="center" flexDirection="column">

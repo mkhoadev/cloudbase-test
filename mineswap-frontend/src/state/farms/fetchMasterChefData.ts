@@ -6,23 +6,24 @@ import { multicallv2 } from 'utils/multicall'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { SerializedFarmConfig } from '../../config/constants/types'
 import { SerializedFarm } from '../types'
-import { getMasterChefAddress } from '../../utils/addressHelpers'
+// import { getMasterChefAddress } from '../../utils/addressHelpers'
 import { farmFetcher } from '../../../apis/farms/src/helper'
 
 export const fetchMasterChefFarmPoolLength = async (chainId: number) => {
   try {
-    const [poolLength] = await multicallv2({
-      abi: masterchefABI,
-      calls: [
-        {
-          name: 'poolLength',
-          address: getMasterChefAddress(chainId),
-        },
-      ],
-      chainId,
-    })
-
-    return new BigNumber(poolLength).toNumber()
+    // const [poolLength] = await multicallv2({
+    //   abi: masterchefABI,
+    //   calls: [
+    //     {
+    //       name: 'poolLength',
+    //       address: getMasterChefAddress(chainId),
+    //     },
+    //   ],
+    //   chainId,
+    // })
+    // return new BigNumber(poolLength).toNumber()
+    return BIG_ZERO.toNumber()
+    
   } catch (error) {
     console.error('Fetch MasterChef Farm Pool Length Error: ', error)
     return BIG_ZERO.toNumber()
@@ -32,20 +33,20 @@ export const fetchMasterChefFarmPoolLength = async (chainId: number) => {
 const masterChefFarmCalls = async (farm: SerializedFarm) => {
   const { pid, quoteToken } = farm
   const multiCallChainId = farmFetcher.isTestnet(quoteToken.chainId) ? ChainId.GOERLI : ChainId.ETHEREUM
-  const masterChefAddress = getMasterChefAddress(multiCallChainId)
+  // const masterChefAddress = getMasterChefAddress(multiCallChainId)
   const masterChefPid = pid
 
   return masterChefPid || masterChefPid === 0
     ? [
-        {
-          address: masterChefAddress,
-          name: 'poolInfo',
-          params: [masterChefPid],
-        },
-        {
-          address: masterChefAddress,
-          name: 'totalRegularAllocPoint',
-        },
+        // {
+        //   address: masterChefAddress,
+        //   name: 'poolInfo',
+        //   params: [masterChefPid],
+        // },
+        // {
+        //   address: masterChefAddress,
+        //   name: 'totalRegularAllocPoint',
+        // },
       ]
     : [null, null]
 }

@@ -8,7 +8,7 @@ import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { ethereumTokens} from '@pancakeswap/tokens'
 import { Bet } from 'state/types'
 import { transformBetResponse } from 'state/predictions/helpers'
-import { getPredictionsV1Address } from 'utils/addressHelpers'
+// import { getPredictionsV1Address } from 'utils/addressHelpers'
 
 import CollectRoundWinningsModal from '../CollectRoundWinningsModal'
 import { getAllV1History } from './helpers'
@@ -29,21 +29,21 @@ const ClaimCheck = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const dispatch = useLocalDispatch()
-  const predictionsV1Address = useMemo(() => getPredictionsV1Address(), [])
+  // const predictionsV1Address = useMemo(() => getPredictionsV1Address(), [])
 
-  const [onPresentCollectWinningsModal] = useModal(
-    <CollectRoundWinningsModal
-      predictionsAddress={predictionsV1Address}
-      token={ethereumTokens.weth}
-      dispatch={dispatch}
-      history={history}
-      isLoadingHistory={isFetching}
-      isV1Claim
-    />,
-    false,
-    true,
-    'CollectRoundWinningsModalV1',
-  )
+  // const [onPresentCollectWinningsModal] = useModal(
+  //   <CollectRoundWinningsModal
+  //     predictionsAddress={predictionsV1Address}
+  //     token={ethereumTokens.weth}
+  //     dispatch={dispatch}
+  //     history={history}
+  //     isLoadingHistory={isFetching}
+  //     isV1Claim
+  //   />,
+  //   false,
+  //   true,
+  //   'CollectRoundWinningsModalV1',
+  // )
 
   const [onPresentNothingToClaimModal] = useModal(<NothingToClaimModal />)
 
@@ -60,7 +60,7 @@ const ClaimCheck = () => {
       if (unclaimedBets.length > 0) {
         const transformer = transformBetResponse(ethereumTokens.weth)
         setHistory(unclaimedBets.map(transformer))
-        onPresentCollectWinningsModal()
+        // onPresentCollectWinningsModal()
       } else {
         onPresentNothingToClaimModal()
       }

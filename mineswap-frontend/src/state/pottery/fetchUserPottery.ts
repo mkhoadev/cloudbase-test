@@ -1,14 +1,15 @@
 import BigNumber from 'bignumber.js'
 import { ethereumTokens} from '@pancakeswap/tokens'
 import { BIG_ZERO } from 'utils/bigNumber'
-import { getBep20Contract, getPotteryVaultContract, getPotteryDrawContract } from 'utils/contractHelpers'
+// import { getBep20Contract, getPotteryVaultContract, getPotteryDrawContract } from 'utils/contractHelpers'
+import { getBep20Contract } from 'utils/contractHelpers'
 import { request, gql } from 'graphql-request'
 import { GRAPH_API_POTTERY } from 'config/constants/endpoints'
 import { PotteryDepositStatus } from 'state/types'
 import { multicallv2 } from 'utils/multicall'
 import potteryVaultAbi from 'config/abi/potteryVaultAbi.json'
 
-const potteryDrawContract = getPotteryDrawContract()
+// const potteryDrawContract = getPotteryDrawContract()
 
 export const fetchPotterysAllowance = async (account: string, potteryVaultAddress: string) => {
   try {
@@ -23,12 +24,16 @@ export const fetchPotterysAllowance = async (account: string, potteryVaultAddres
 
 export const fetchVaultUserData = async (account: string, potteryVaultAddress: string) => {
   try {
-    const potteryVaultContract = getPotteryVaultContract(potteryVaultAddress)
-    const balance = await potteryVaultContract.balanceOf(account)
-    const previewDeposit = await potteryVaultContract.previewRedeem(balance)
+    // const potteryVaultContract = getPotteryVaultContract(potteryVaultAddress)
+    // const balance = await potteryVaultContract.balanceOf(account)
+    // const previewDeposit = await potteryVaultContract.previewRedeem(balance)
+    // return {
+    //   previewDepositBalance: new BigNumber(previewDeposit.toString()).toJSON(),
+    //   stakingTokenBalance: new BigNumber(balance.toString()).toJSON(),
+    // }
     return {
-      previewDepositBalance: new BigNumber(previewDeposit.toString()).toJSON(),
-      stakingTokenBalance: new BigNumber(balance.toString()).toJSON(),
+      previewDepositBalance: BIG_ZERO.toJSON(),
+      stakingTokenBalance: BIG_ZERO.toJSON(),
     }
   } catch (error) {
     console.error('Failed to fetch pottery vault user data', error)
@@ -41,10 +46,14 @@ export const fetchVaultUserData = async (account: string, potteryVaultAddress: s
 
 export const fetchUserDrawData = async (account: string) => {
   try {
-    const [reward, winCount] = await potteryDrawContract.userInfos(account)
+    // const [reward, winCount] = await potteryDrawContract.userInfos(account)
+    // return {
+    //   rewards: new BigNumber(reward.toString()).toJSON(),
+    //   winCount: new BigNumber(winCount.toString()).toJSON(),
+    // }
     return {
-      rewards: new BigNumber(reward.toString()).toJSON(),
-      winCount: new BigNumber(winCount.toString()).toJSON(),
+      rewards: BIG_ZERO.toJSON(),
+      winCount: BIG_ZERO.toString(),
     }
   } catch (error) {
     console.error('Failed to fetch pottery user draw data', error)

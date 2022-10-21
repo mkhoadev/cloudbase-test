@@ -4,7 +4,7 @@ import { Zero } from '@ethersproject/constants'
 import { useTranslation } from '@pancakeswap/localization'
 import { multicallv2 } from 'utils/multicall'
 import profileABI from 'config/abi/pancakeProfile.json'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
+// import { getPancakeProfileAddress } from 'utils/addressHelpers'
 import { useToast } from '@pancakeswap/uikit'
 
 const useGetProfileCosts = () => {
@@ -17,30 +17,30 @@ const useGetProfileCosts = () => {
   })
   const { toastError } = useToast()
 
-  useEffect(() => {
-    const fetchCosts = async () => {
-      try {
-        const calls = ['numberCakeToReactivate', 'numberCakeToRegister', 'numberCakeToUpdate'].map((method) => ({
-          address: getPancakeProfileAddress(),
-          name: method,
-        }))
-        const [[numberCakeToReactivate], [numberCakeToRegister], [numberCakeToUpdate]] = await multicallv2<
-          [[BigNumber], [BigNumber], [BigNumber]]
-        >({ abi: profileABI, calls })
+  // useEffect(() => {
+  //   const fetchCosts = async () => {
+  //     try {
+  //       const calls = ['numberCakeToReactivate', 'numberCakeToRegister', 'numberCakeToUpdate'].map((method) => ({
+  //         address: getPancakeProfileAddress(),
+  //         name: method,
+  //       }))
+  //       const [[numberCakeToReactivate], [numberCakeToRegister], [numberCakeToUpdate]] = await multicallv2<
+  //         [[BigNumber], [BigNumber], [BigNumber]]
+  //       >({ abi: profileABI, calls })
 
-        setCosts({
-          numberCakeToReactivate,
-          numberCakeToRegister,
-          numberCakeToUpdate,
-        })
-        setIsLoading(false)
-      } catch (error) {
-        toastError(t('Error'), t('Could not retrieve MINE costs for profile'))
-      }
-    }
+  //       setCosts({
+  //         numberCakeToReactivate,
+  //         numberCakeToRegister,
+  //         numberCakeToUpdate,
+  //       })
+  //       setIsLoading(false)
+  //     } catch (error) {
+  //       toastError(t('Error'), t('Could not retrieve MINE costs for profile'))
+  //     }
+  //   }
 
-    fetchCosts()
-  }, [setCosts, toastError, t])
+  //   fetchCosts()
+  // }, [setCosts, toastError, t])
 
   return { costs, isLoading }
 }

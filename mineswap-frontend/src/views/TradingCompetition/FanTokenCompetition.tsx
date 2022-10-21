@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { Box, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTradingCompetitionContractFanToken } from 'hooks/useContract'
+// import { useTradingCompetitionContractFanToken } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
 import { API_PROFILE } from 'config/constants/endpoints'
 import { PageMeta } from 'components/Layout/Page'
@@ -38,7 +38,7 @@ const FanTokenCompetition = () => {
   const { isMobile } = useMatchBreakpoints()
   const { profile, isLoading: isProfileLoading } = useProfile()
   const { isDark } = useTheme()
-  const tradingCompetitionContract = useTradingCompetitionContractFanToken(false)
+  // const tradingCompetitionContract = useTradingCompetitionContractFanToken(false)
   const [currentPhase, setCurrentPhase] = useState(CompetitionPhases.OVER)
   const { registrationSuccessful, claimSuccessful, onRegisterSuccess, onClaimSuccess } = useRegistrationClaimStatus()
   const [userTradingInformation, setUserTradingInformation] = useState({
@@ -94,55 +94,55 @@ const FanTokenCompetition = () => {
   const finishedAndPrizesClaimed = hasCompetitionEnded && account && hasUserClaimed
   const finishedAndNothingToClaim = hasCompetitionEnded && account && !userCanClaimPrizes
 
-  useEffect(() => {
-    const fetchCompetitionInfoContract = async () => {
-      const competitionStatus = await tradingCompetitionContract.currentStatus()
-      setCurrentPhase(SmartContractPhases[competitionStatus])
-    }
+  // useEffect(() => {
+  //   const fetchCompetitionInfoContract = async () => {
+  //     const competitionStatus = await tradingCompetitionContract.currentStatus()
+  //     setCurrentPhase(SmartContractPhases[competitionStatus])
+  //   }
 
-    const fetchUserContract = async () => {
-      try {
-        const user = await tradingCompetitionContract.claimInformation(account)
-        const userObject = {
-          isLoading: false,
-          account,
-          hasRegistered: user[0],
-          hasUserClaimed: user[1],
-          userRewardGroup: user[2].toString(),
-          userCakeRewards: user[3].toString(),
-          userLazioRewards: user[4].toString(),
-          userPortoRewards: user[5].toString(),
-          userSantosRewards: user[6].toString(),
-          userPointReward: user[7].toString(),
-          canClaimNFT: user[8],
-        }
-        setUserTradingInformation(userObject)
-      } catch (error) {
-        console.error(error)
-      }
-    }
+  //   const fetchUserContract = async () => {
+  //     try {
+  //       const user = await tradingCompetitionContract.claimInformation(account)
+  //       const userObject = {
+  //         isLoading: false,
+  //         account,
+  //         hasRegistered: user[0],
+  //         hasUserClaimed: user[1],
+  //         userRewardGroup: user[2].toString(),
+  //         userCakeRewards: user[3].toString(),
+  //         userLazioRewards: user[4].toString(),
+  //         userPortoRewards: user[5].toString(),
+  //         userSantosRewards: user[6].toString(),
+  //         userPointReward: user[7].toString(),
+  //         canClaimNFT: user[8],
+  //       }
+  //       setUserTradingInformation(userObject)
+  //     } catch (error) {
+  //       console.error(error)
+  //     }
+  //   }
 
-    if (chainId === ChainId.ETHEREUM) {
-      fetchCompetitionInfoContract()
-      if (account) {
-        fetchUserContract()
-      } else {
-        setUserTradingInformation({
-          isLoading: false,
-          account,
-          hasRegistered: false,
-          hasUserClaimed: false,
-          userRewardGroup: '0',
-          userCakeRewards: '0',
-          userLazioRewards: '0',
-          userPortoRewards: '0',
-          userSantosRewards: '0',
-          userPointReward: '0',
-          canClaimNFT: false,
-        })
-      }
-    }
-  }, [chainId, account, registrationSuccessful, claimSuccessful, tradingCompetitionContract])
+  //   if (chainId === ChainId.ETHEREUM) {
+  //     fetchCompetitionInfoContract()
+  //     if (account) {
+  //       fetchUserContract()
+  //     } else {
+  //       setUserTradingInformation({
+  //         isLoading: false,
+  //         account,
+  //         hasRegistered: false,
+  //         hasUserClaimed: false,
+  //         userRewardGroup: '0',
+  //         userCakeRewards: '0',
+  //         userLazioRewards: '0',
+  //         userPortoRewards: '0',
+  //         userSantosRewards: '0',
+  //         userPointReward: '0',
+  //         canClaimNFT: false,
+  //       })
+  //     }
+  //   }
+  // }, [chainId, account, registrationSuccessful, claimSuccessful, tradingCompetitionContract])
 
   useEffect(() => {
     const fetchUserTradingStats = async () => {

@@ -3,7 +3,7 @@ import { AutoRenewIcon, Button, Flex, useToast } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { usePointCenterIfoContract } from 'hooks/useContract'
+// import { usePointCenterIfoContract } from 'hooks/useContract'
 import { Achievement } from 'state/types'
 import styled from 'styled-components'
 import AchievementAvatar from 'views/Profile/components/Achievements/AchievementAvatar'
@@ -52,44 +52,45 @@ const Body = styled(Flex)`
 
 const AchievementRow: React.FC<React.PropsWithChildren<AchievementRowProps>> = ({ achievement, onCollectSuccess }) => {
   const { t } = useTranslation()
-  const pointCenterContract = usePointCenterIfoContract()
+  // const pointCenterContract = usePointCenterIfoContract()
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: isCollecting } = useCatchTxError()
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
 
-  const handleCollectPoints = async () => {
-    const receipt = await fetchWithCatchTxError(() => {
-      return callWithMarketGasPrice(pointCenterContract, 'getPoints', [achievement.address])
-    })
-    if (receipt?.status) {
-      onCollectSuccess(achievement)
-      toastSuccess(t('Points Collected!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
-    }
-  }
+  // const handleCollectPoints = async () => {
+  //   const receipt = await fetchWithCatchTxError(() => {
+  //     // return callWithMarketGasPrice(pointCenterContract, 'getPoints', [achievement.address])
+  //   })
+  //   if (receipt?.status) {
+  //     onCollectSuccess(achievement)
+  //     toastSuccess(t('Points Collected!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
+  //   }
+  // }
 
-  return (
-    <StyledAchievementRow>
-      <AchievementAvatar badge={achievement.badge} />
-      <Body>
-        <Details>
-          <AchievementTitle title={achievement.title} />
-          <AchievementDescription description={achievement.description} />
-        </Details>
-        <PointsLabel points={achievement.points} px={[0, null, null, '32px']} mb={['16px', null, null, 0]} />
-        <ActionColumn>
-          <Button
-            onClick={handleCollectPoints}
-            isLoading={isCollecting}
-            endIcon={isCollecting ? <AutoRenewIcon spin color="currentColor" /> : null}
-            disabled={isCollecting}
-            variant="secondary"
-          >
-            {t('Collect')}
-          </Button>
-        </ActionColumn>
-      </Body>
-    </StyledAchievementRow>
-  )
+//   return (
+//     <StyledAchievementRow>
+//       <AchievementAvatar badge={achievement.badge} />
+//       <Body>
+//         <Details>
+//           <AchievementTitle title={achievement.title} />
+//           <AchievementDescription description={achievement.description} />
+//         </Details>
+//         <PointsLabel points={achievement.points} px={[0, null, null, '32px']} mb={['16px', null, null, 0]} />
+//         <ActionColumn>
+//           <Button
+//             onClick={handleCollectPoints}
+//             isLoading={isCollecting}
+//             endIcon={isCollecting ? <AutoRenewIcon spin color="currentColor" /> : null}
+//             disabled={isCollecting}
+//             variant="secondary"
+//           >
+//             {t('Collect')}
+//           </Button>
+//         </ActionColumn>
+//       </Body>
+//     </StyledAchievementRow>
+//   )
+return null
 }
 
 export default AchievementRow
