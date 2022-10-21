@@ -98,6 +98,9 @@
     padding: 5px 20px;
     height: 40px;
 }
+.imgbutton:hover{
+    text-decoration: none !important;
+}
 
 .tranform {
     transform: translate3d(-10px, 70px, 0px) !important;
@@ -386,7 +389,7 @@
 }
 
 .comunioner {
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-weight: 900;
     color: var(--colors-text);
     font-size: var(--font-size-xxl);
@@ -394,25 +397,25 @@
     -moz-letter-spacing: 0;
     -ms-letter-spacing: 0;
     letter-spacing: 0;
-    line-height: 88px;
+    line-height: 65px;
 }
 
 .trade-earn {
     color: var(--colors-text);
     font-family: var(--font-family-karla);
-    font-size: var(--font-size-l);
-    font-weight: 400;
+    font-size: var(--font-size-m);
+    font-weight: 200;
     font-style: normal;
     -webkit-letter-spacing: 0;
     -moz-letter-spacing: 0;
     -ms-letter-spacing: 0;
     letter-spacing: 0;
-    line-height: 36px;
+    line-height: 30px;
 }
 
 .div_millions {
+    font-family: var(--font-family-inter) !important;
     color: var(--colors-text);
-    font-family: var(--font-family-karla);
     font-size: var(--font-size-xxl);
     font-weight: 900;
     font-style: normal;
@@ -1089,10 +1092,10 @@
         font-size: var(--font-size-m);
         line-height: 30px;
     }
-    .trade-earn {
+    /* .trade-earn {
         font-size: 12px;
         line-height: 10px;
-    }
+    } */
     .txt-banner {
         margin-left: 5%;
         width: 60%;

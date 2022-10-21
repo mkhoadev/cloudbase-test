@@ -6,7 +6,7 @@ interface LogoProps extends SvgProps {
 }
 const Icon: React.FC<React.PropsWithChildren<LogoProps>> = ({ isDark, ...props }) => {
   return (
-    <img src={isDark ? "/logoMineswaps.png" : "/logoMineswap.png" } alt="" className="desktop-icon" style={{width: '180px'}}  />
+    <img src={isDark ? "/logoMineswaps.png" : "/logoMineswap.png" } alt="" className="desktop-icon" />
   );
 };
 

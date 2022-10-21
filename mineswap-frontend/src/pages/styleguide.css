@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:900|Karla:400,700,500,800");
 :root {
     --alto: #dddddd;
     --alto-2: #d9d9d9;
@@ -20,8 +21,8 @@
     --font-size-xs: 14px;
     --font-size-xxl: 60px;
     --font-size-xxxl: 80px;
-    --font-family-inter: "Kanit", sans-serif;
-    --font-family-karla: "Kanit", sans-serif;
+    --font-family-inter: "Inter", Helvetica;
+    --font-family-karla: "Karla", Helvetica;
 }
 
 .inter-black-alto-32px {

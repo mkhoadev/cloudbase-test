@@ -16,12 +16,12 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <div className="dflex size-hearder">
           <div className="txt-banner-tt">
             <h6 className="intro-swap">INTRODUCING MINESWAP</h6>
-            <h3 className="comunioner">Community-owned API of blockchains.</h3>
-            <span className="trade-earn">
+            <h3 className="comunioner" style={{ marginTop: '20px' }}>
+              Community-owned API of blockchains.
+            </h3>
+            <div className="trade-earn" style={{ marginTop: '20px' }}>
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
-            </span>
-            <br />
-            <br />
+            </div>
             <br />
             <Link
               href="/swap"
@@ -31,7 +31,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                 color: isDark ? '' : '#121212',
               }}
             >
-              LaunchApp
+              TRADE NOW
             </Link>
           </div>
           <div style={{ width: '100%' }}>
@@ -40,11 +40,9 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </div>
         <div className="use-by">
           <div className="div_millions">
-            <h3>
-              Used by millions.
-              <br />
-              Trusted with billions.
-            </h3>
+            Used by millions.
+            <br />
+            Trusted with billions.
           </div>
           <div className="div-millions-colum">
             <Millionusers />
