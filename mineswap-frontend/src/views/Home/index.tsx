@@ -19,7 +19,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <h3 className="comunioner" style={{ marginTop: '20px' }}>
               Community-owned API of blockchains.
             </h3>
-            <div className="trade-earn" style={{ marginTop: '20px' }}>
+            <div className="trade-earn">
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
             </div>
             <br />

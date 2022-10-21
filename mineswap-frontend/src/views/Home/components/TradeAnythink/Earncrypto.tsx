@@ -13,9 +13,9 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
         <h3 className="comunioner">
           <span className="color-earn">Earn</span> passive income with crypto.
         </h3>
-        <span className="trade-earn">
+        <div className="trade-earn">
           Trade any token on BNB Smart Chain in seconds, just by connecting your wallet.
-        </span>
+        </div>
         <br />
         <div className="dflex mt-5">
           <Link href="/swap" className="imgbutton" style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)', color: isDark ? '' : '#121212' }}>

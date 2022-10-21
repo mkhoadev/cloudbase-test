@@ -11,9 +11,9 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
         <h3 className="comunioner">
           <span className="color-trade">Trade</span> anything. No registration, no hassle.
         </h3>
-        <span className="trade-earn">
+        <div className="trade-earn">
           Trade any token on BNB Smart Chain in seconds, just by connecting your wallet.
-        </span>
+        </div>
         <br />
         <div className="dflex mt-5">
           <div className="sc-cjibBx bquLPr">
