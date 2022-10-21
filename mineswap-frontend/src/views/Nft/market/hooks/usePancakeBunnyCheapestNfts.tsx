@@ -10,7 +10,7 @@ import {
 import { FAST_INTERVAL } from 'config/constants'
 import { FetchStatus } from 'config/constants/types'
 import { formatBigNumber } from 'utils/formatBalance'
-import { pancakeBunniesAddress } from '../constants'
+// import { pancakeBunniesAddress } from '../constants'
 import { getLowestUpdatedToken } from './useGetLowestPrice'
 
 type WhereClause = Record<string, string | number | boolean | string[]>
@@ -24,52 +24,53 @@ const fetchCheapestBunny = async (
   if (!nftsMarket.length) return null
 
   const nftsMarketTokenIds = nftsMarket.map((marketData) => marketData.tokenId)
-  const lowestPriceUpdatedBunny = await getLowestUpdatedToken(pancakeBunniesAddress.toLowerCase(), nftsMarketTokenIds)
+  // const lowestPriceUpdatedBunny = await getLowestUpdatedToken(pancakeBunniesAddress.toLowerCase(), nftsMarketTokenIds)
 
-  const cheapestBunnyOfAccount = nftsMarket
-    .filter((marketData) => marketData.tokenId === lowestPriceUpdatedBunny?.tokenId)
-    .map((marketData) => {
-      const apiMetadata = getMetadataWithFallback(nftMetadata.data, marketData.otherId)
-      const attributes = getPancakeBunniesAttributesField(marketData.otherId)
-      const bunnyToken = combineApiAndSgResponseToNftToken(apiMetadata, marketData, attributes)
-      const updatedPrice = formatBigNumber(lowestPriceUpdatedBunny.currentAskPrice)
-      return {
-        ...bunnyToken,
-        marketData: { ...bunnyToken.marketData, ...lowestPriceUpdatedBunny, currentAskPrice: updatedPrice },
-      }
-    })
-  return cheapestBunnyOfAccount.length > 0 ? cheapestBunnyOfAccount[0] : null
-}
+//   const cheapestBunnyOfAccount = nftsMarket
+//     .filter((marketData) => marketData.tokenId === lowestPriceUpdatedBunny?.tokenId)
+//     .map((marketData) => {
+//       const apiMetadata = getMetadataWithFallback(nftMetadata.data, marketData.otherId)
+//       const attributes = getPancakeBunniesAttributesField(marketData.otherId)
+//       const bunnyToken = combineApiAndSgResponseToNftToken(apiMetadata, marketData, attributes)
+//       const updatedPrice = formatBigNumber(lowestPriceUpdatedBunny.currentAskPrice)
+//       return {
+//         ...bunnyToken,
+//         marketData: { ...bunnyToken.marketData, ...lowestPriceUpdatedBunny, currentAskPrice: updatedPrice },
+//       }
+//     })
+//   return cheapestBunnyOfAccount.length > 0 ? cheapestBunnyOfAccount[0] : null
+// }
 
-export const usePancakeBunnyCheapestNft = (bunnyId: string, nftMetadata: ApiResponseCollectionTokens) => {
-  const { account } = useWeb3React()
-  const { data, status, mutate } = useSWR(
-    nftMetadata && bunnyId ? ['cheapestBunny', bunnyId, account] : null,
-    async () => {
-      const allCheapestBunnyClause = {
-        collection: pancakeBunniesAddress.toLowerCase(),
-        otherId: bunnyId,
-        isTradable: true,
-      }
-      if (!account) {
-        return fetchCheapestBunny(allCheapestBunnyClause, nftMetadata)
-      }
+// export const usePancakeBunnyCheapestNft = (bunnyId: string, nftMetadata: ApiResponseCollectionTokens) => {
+//   const { account } = useWeb3React()
+//   const { data, status, mutate } = useSWR(
+//     nftMetadata && bunnyId ? ['cheapestBunny', bunnyId, account] : null,
+//     async () => {
+//       const allCheapestBunnyClause = {
+//         collection: pancakeBunniesAddress.toLowerCase(),
+//         otherId: bunnyId,
+//         isTradable: true,
+//       }
+//       if (!account) {
+//         return fetchCheapestBunny(allCheapestBunnyClause, nftMetadata)
+//       }
 
-      const cheapestBunnyOtherSellersClause = {
-        collection: pancakeBunniesAddress.toLowerCase(),
-        currentSeller_not: account.toLowerCase(),
-        otherId: bunnyId,
-        isTradable: true,
-      }
-      const cheapestBunnyOtherSellers = await fetchCheapestBunny(cheapestBunnyOtherSellersClause, nftMetadata)
-      return cheapestBunnyOtherSellers ?? fetchCheapestBunny(allCheapestBunnyClause, nftMetadata)
-    },
-    { refreshInterval: FAST_INTERVAL },
-  )
+//       const cheapestBunnyOtherSellersClause = {
+//         collection: pancakeBunniesAddress.toLowerCase(),
+//         currentSeller_not: account.toLowerCase(),
+//         otherId: bunnyId,
+//         isTradable: true,
+//       }
+//       const cheapestBunnyOtherSellers = await fetchCheapestBunny(cheapestBunnyOtherSellersClause, nftMetadata)
+//       return cheapestBunnyOtherSellers ?? fetchCheapestBunny(allCheapestBunnyClause, nftMetadata)
+//     },
+//     { refreshInterval: FAST_INTERVAL },
+//   )
 
-  return {
-    data,
-    isFetched: [FetchStatus.Failed, FetchStatus.Fetched].includes(status),
-    refresh: mutate,
-  }
+  // return {
+  //   data,
+  //   isFetched: [FetchStatus.Failed, FetchStatus.Fetched].includes(status),
+  //   refresh: mutate,
+  // }
+  return null
 }

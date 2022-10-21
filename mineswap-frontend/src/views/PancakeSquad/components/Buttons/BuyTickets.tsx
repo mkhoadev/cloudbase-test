@@ -6,7 +6,7 @@ import { Button, useModal, useToast } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
-import { useCake, useNftSaleContract } from 'hooks/useContract'
+// import { useCake, useNftSaleContract } from 'hooks/useContract'
 import { useContext, useEffect, useState } from 'react'
 import { DefaultTheme } from 'styled-components'
 import { requiresApproval } from 'utils/requiresApproval'
@@ -54,9 +54,9 @@ const BuyTicketsButtons: React.FC<React.PropsWithChildren<BuyTicketsProps>> = ({
   const [txHashEnablingResult, setTxHashEnablingResult] = useState(null)
   const [txHashBuyingResult, setTxHashBuyingResult] = useState(null)
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
-  const nftSaleContract = useNftSaleContract()
+  // const nftSaleContract = useNftSaleContract()
   const { toastSuccess } = useToast()
-  const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
+  // const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
   const { isUserEnabled, setIsUserEnabled } = useContext(PancakeSquadContext)
 
   const canBuySaleTicket =
@@ -70,10 +70,12 @@ const BuyTicketsButtons: React.FC<React.PropsWithChildren<BuyTicketsProps>> = ({
   const { isApproving, isApproved, isConfirming, handleApprove, handleConfirm, hasApproveFailed, hasConfirmFailed } =
     useApproveConfirmTransaction({
       onRequiresApproval: async () => {
-        return requiresApproval(cakeContractReader, account, nftSaleContract.address)
+        // return requiresApproval(cakeContractReader, account, nftSaleContract.address)
+        return null
       },
       onApprove: () => {
-        return callWithMarketGasPrice(cakeContractApprover, 'approve', [nftSaleContract.address, MaxUint256])
+        // return callWithMarketGasPrice(cakeContractApprover, 'approve', [nftSaleContract.address, MaxUint256])
+        return null
       },
       onApproveSuccess: async ({ receipt }) => {
         toastSuccess(t('Transaction has succeeded!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
@@ -81,9 +83,10 @@ const BuyTicketsButtons: React.FC<React.PropsWithChildren<BuyTicketsProps>> = ({
       },
       onConfirm: ({ ticketsNumber }) => {
         onPresentConfirmModal()
-        return callWithMarketGasPrice(nftSaleContract, isPreSale ? 'buyTicketsInPreSaleForGen0' : 'buyTickets', [
-          ticketsNumber,
-        ])
+        // return callWithMarketGasPrice(nftSaleContract, isPreSale ? 'buyTicketsInPreSaleForGen0' : 'buyTickets', [
+        //   ticketsNumber,
+        // ])
+        return null
       },
       onSuccess: async ({ receipt }) => {
         toastSuccess(t('Transaction has succeeded!'))

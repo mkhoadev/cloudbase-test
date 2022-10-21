@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Text, Heading, Card, CardHeader, CardBody, Flex, useToast } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
-import { useCake, useFarmAuctionContract } from 'hooks/useContract'
+// import { useCake, useFarmAuctionContract } from 'hooks/useContract'
 import { requiresApproval } from 'utils/requiresApproval'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -25,17 +25,19 @@ const ReclaimBidCard: React.FC<React.PropsWithChildren> = () => {
 
   const [reclaimableAuction, checkForNextReclaimableAuction] = useReclaimAuctionBid()
 
-  const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
-  const farmAuctionContract = useFarmAuctionContract()
+  // const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
+  // const farmAuctionContract = useFarmAuctionContract()
 
   const { toastSuccess } = useToast()
 
   const { isApproving, isApproved, isConfirming, handleApprove, handleConfirm } = useApproveConfirmTransaction({
     onRequiresApproval: async () => {
-      return requiresApproval(cakeContractReader, account, farmAuctionContract.address)
+      // return requiresApproval(cakeContractReader, account, farmAuctionContract.address)
+      return null
     },
     onApprove: () => {
-      return callWithMarketGasPrice(cakeContractApprover, 'approve', [farmAuctionContract.address, MaxUint256])
+      // return callWithMarketGasPrice(cakeContractApprover, 'approve', [farmAuctionContract.address, MaxUint256])
+      return null
     },
     onApproveSuccess: async ({ receipt }) => {
       toastSuccess(
@@ -44,7 +46,8 @@ const ReclaimBidCard: React.FC<React.PropsWithChildren> = () => {
       )
     },
     onConfirm: () => {
-      return callWithMarketGasPrice(farmAuctionContract, 'claimAuction', [reclaimableAuction.id])
+      // return callWithMarketGasPrice(farmAuctionContract, 'claimAuction', [reclaimableAuction.id])
+      return null
     },
     onSuccess: async ({ receipt }) => {
       checkForNextReclaimableAuction()

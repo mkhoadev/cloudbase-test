@@ -1,9 +1,9 @@
 import { LotteryV2 } from 'config/abi/types'
 import { TICKET_LIMIT_PER_REQUEST } from 'config/constants/lottery'
 import { LotteryTicket } from 'config/constants/types'
-import { getLotteryV2Contract } from 'utils/contractHelpers'
+// import { getLotteryV2Contract } from 'utils/contractHelpers'
 
-const lotteryContract = getLotteryV2Contract()
+// const lotteryContract = getLotteryV2Contract()
 
 export const processRawTicketsResponse = (
   ticketsResponse: Awaited<ReturnType<LotteryV2['viewUserInfoForLotteryId']>>,
@@ -29,8 +29,9 @@ export const viewUserInfoForLotteryId = async (
   perRequestLimit: number,
 ): Promise<LotteryTicket[]> => {
   try {
-    const data = await lotteryContract.viewUserInfoForLotteryId(account, lotteryId, cursor, perRequestLimit)
-    return processRawTicketsResponse(data)
+    // const data = await lotteryContract.viewUserInfoForLotteryId(account, lotteryId, cursor, perRequestLimit)
+    // return processRawTicketsResponse(data)
+    return null
   } catch (error) {
     console.error('viewUserInfoForLotteryId', error)
     return null

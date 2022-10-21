@@ -1,6 +1,6 @@
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useFarmUser } from 'state/farms/hooks'
-import { useBCakeFarmBoosterContract } from 'hooks/useContract'
+// import { useBCakeFarmBoosterContract } from 'hooks/useContract'
 import { useSWRMulticall } from 'hooks/useSWRContract'
 import farmBoosterAbi from 'config/abi/farmBooster.json'
 import isUndefinedOrNull from '@pancakeswap/utils/isUndefinedOrNull'
@@ -23,19 +23,23 @@ export enum YieldBoosterState {
 }
 
 function useIsPoolActive(pid: number) {
-  const farmBoosterContract = useBCakeFarmBoosterContract()
+  // const farmBoosterContract = useBCakeFarmBoosterContract()
   const { account } = useActiveWeb3React()
 
-  const { data, mutate } = useSWRMulticall(
-    farmBoosterAbi,
-    [{ address: farmBoosterContract.address, name: 'isBoostedPool', params: [account, pid] }],
-    { isPaused: () => !account },
-  )
+  // const { data, mutate } = useSWRMulticall(
+  //   farmBoosterAbi,
+  //   [{ address: farmBoosterContract.address, name: 'isBoostedPool', params: [account, pid] }],
+  //   { isPaused: () => !account },
+  // )
 
+  // return {
+  //   isActivePool: Array.isArray(data) ? data[0][0] : false,
+  //   refreshIsPoolActive: mutate,
+  // }
   return {
-    isActivePool: Array.isArray(data) ? data[0][0] : false,
-    refreshIsPoolActive: mutate,
-  }
+      isActivePool: false,
+      refreshIsPoolActive: null,
+    }
 }
 
 interface UseYieldBoosterStateArgs {

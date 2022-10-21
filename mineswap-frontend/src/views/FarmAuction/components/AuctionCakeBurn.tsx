@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Text, Flex, Skeleton, Image } from '@pancakeswap/uikit'
-import { useFarmAuctionContract } from 'hooks/useContract'
+// import { useFarmAuctionContract } from 'hooks/useContract'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { useTranslation } from '@pancakeswap/localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'
@@ -20,7 +20,7 @@ const BurnedText = styled(Text)`
 const AuctionCakeBurn: React.FC<React.PropsWithChildren> = () => {
   const [burnedCakeAmount, setBurnedCakeAmount] = useState(0)
   const { t } = useTranslation()
-  const farmAuctionContract = useFarmAuctionContract(false)
+  // const farmAuctionContract = useFarmAuctionContract(false)
   const { observerRef, isIntersecting } = useIntersectionObserver()
   const cakePriceBusd = usePriceCakeBusd()
 
@@ -29,9 +29,9 @@ const AuctionCakeBurn: React.FC<React.PropsWithChildren> = () => {
   useEffect(() => {
     const fetchBurnedCakeAmount = async () => {
       try {
-        const amount = await farmAuctionContract.totalCollected()
-        const amountAsBN = ethersToBigNumber(amount)
-        setBurnedCakeAmount(getBalanceNumber(amountAsBN))
+        // const amount = await farmAuctionContract.totalCollected()
+        // const amountAsBN = ethersToBigNumber(amount)
+        // setBurnedCakeAmount(getBalanceNumber(amountAsBN))
       } catch (error) {
         console.error('Failed to fetch burned auction cake', error)
       }
@@ -39,7 +39,8 @@ const AuctionCakeBurn: React.FC<React.PropsWithChildren> = () => {
     if (isIntersecting && burnedCakeAmount === 0) {
       fetchBurnedCakeAmount()
     }
-  }, [isIntersecting, burnedCakeAmount, farmAuctionContract])
+  }, [isIntersecting, burnedCakeAmount])
+  // farmAuctionContract
   return (
     <Flex flexDirection={['column-reverse', null, 'row']}>
       <Flex flexDirection="column" flex="2" ref={observerRef}>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { useProfile } from 'state/profile/hooks'
 import { Box, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTradingCompetitionContractMobox } from 'hooks/useContract'
+// import { useTradingCompetitionContractMobox } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
 import { PageMeta } from 'components/Layout/Page'
 import { TC_MOBOX_SUBGRAPH, API_PROFILE } from 'config/constants/endpoints'
@@ -46,7 +46,7 @@ const MoboxCompetition = () => {
   const { isMobile } = useMatchBreakpoints()
   const { profile, isLoading: isProfileLoading } = useProfile()
   const { isDark, theme } = useTheme()
-  const tradingCompetitionContract = useTradingCompetitionContractMobox(false)
+  // const tradingCompetitionContract = useTradingCompetitionContractMobox(false)
   const [currentPhase, setCurrentPhase] = useState(() => {
     const now = Date.now()
     const actualPhase = orderBy(
@@ -99,51 +99,51 @@ const MoboxCompetition = () => {
       canClaimNFT)
   const finishedAndPrizesClaimed = hasCompetitionEnded && account && hasUserClaimed
   const finishedAndNothingToClaim = hasCompetitionEnded && account && !userCanClaimPrizes
-  useEffect(() => {
-    const fetchCompetitionInfoContract = async () => {
-      const competitionStatus = await tradingCompetitionContract.currentStatus()
-      setCurrentPhase(SmartContractPhases[competitionStatus])
-    }
+  // useEffect(() => {
+    // const fetchCompetitionInfoContract = async () => {
+    //   // const competitionStatus = await tradingCompetitionContract.currentStatus()
+    //   // setCurrentPhase(SmartContractPhases[competitionStatus])
+    // }
 
-    const fetchUserContract = async () => {
-      try {
-        const user = await tradingCompetitionContract.claimInformation(account)
-        const userObject = {
-          isLoading: false,
-          account,
-          hasRegistered: user[0],
-          isUserActive: user[1],
-          hasUserClaimed: user[2],
-          userRewardGroup: user[3].toString(),
-          userCakeRewards: user[4].toString(),
-          userMoboxRewards: user[5].toString(),
-          userPointReward: user[6].toString(),
-          canClaimMysteryBox: user[7],
-          // canClaimNFT: user[8],
-          // NOTE: Mobox Trading competition has a bug in claimInformation
-          // that returns wrong canClaimNFT.
-          // The bug is only in view function though, all other code is OK
-          // recalculating canClaimNFT here to get proper boolean
-          canClaimNFT: user[3].gt(1),
-        }
-        setUserTradingInformation(userObject)
-      } catch (error) {
-        console.error(error)
-        setUserTradingInformation({ ...initialUserTradingInformation, isLoading: false })
-      }
-    }
+    // const fetchUserContract = async () => {
+    //   try {
+        // const user = await tradingCompetitionContract.claimInformation(account)
+        // const userObject = {
+        //   isLoading: false,
+        //   account,
+        //   hasRegistered: user[0],
+        //   isUserActive: user[1],
+        //   hasUserClaimed: user[2],
+        //   userRewardGroup: user[3].toString(),
+        //   userCakeRewards: user[4].toString(),
+        //   userMoboxRewards: user[5].toString(),
+        //   userPointReward: user[6].toString(),
+        //   canClaimMysteryBox: user[7],
+        //   // canClaimNFT: user[8],
+        //   // NOTE: Mobox Trading competition has a bug in claimInformation
+        //   // that returns wrong canClaimNFT.
+        //   // The bug is only in view function though, all other code is OK
+        //   // recalculating canClaimNFT here to get proper boolean
+        //   canClaimNFT: user[3].gt(1),
+        // }
+        // setUserTradingInformation(userObject)
+  //     } catch (error) {
+  //       console.error(error)
+  //       setUserTradingInformation({ ...initialUserTradingInformation, isLoading: false })
+  //     }
+  //   }
 
-    if (chainId === ChainId.ETHEREUM) {
-      fetchCompetitionInfoContract()
-      if (account) {
-        setUserTradingInformation({ ...initialUserTradingInformation })
-        fetchUserContract()
-      } else {
-        setUserTradingInformation({ ...initialUserTradingInformation, isLoading: false })
-      }
-    }
-  }, [chainId, account, registrationSuccessful, claimSuccessful, tradingCompetitionContract])
-
+  //   if (chainId === ChainId.ETHEREUM) {
+  //     // fetchCompetitionInfoContract()
+  //     if (account) {
+  //       setUserTradingInformation({ ...initialUserTradingInformation })
+  //       fetchUserContract()
+  //     } else {
+  //       setUserTradingInformation({ ...initialUserTradingInformation, isLoading: false })
+  //     }
+  //   }
+  // }, [chainId, account, registrationSuccessful, claimSuccessful,tradingCompetitionContract ])
+  // 
   useEffect(() => {
     const fetchUserTradingStats = async () => {
       const res = await fetch(`${API_PROFILE}/api/users/${userTradingInformation.account}`)

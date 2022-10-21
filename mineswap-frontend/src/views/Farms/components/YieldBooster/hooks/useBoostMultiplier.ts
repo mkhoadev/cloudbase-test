@@ -1,5 +1,6 @@
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useBCakeFarmBoosterContract, useMasterchef } from 'hooks/useContract'
+// import { useBCakeFarmBoosterContract, useMasterchef } from 'hooks/useContract'
+
 import farmBoosterAbi from 'config/abi/farmBooster.json'
 import masterChefAbi from 'config/abi/masterchef.json'
 import { FixedNumber } from '@ethersproject/bignumber'
@@ -90,31 +91,31 @@ async function getMultiplierFromMC({ pid, proxyAddress, masterChefContract }): P
 }
 
 export default function useBoostMultiplier({ pid, boosterState, proxyAddress }): number {
-  const farmBoosterContract = useBCakeFarmBoosterContract()
-  const masterChefContract = useMasterchef()
+  // const farmBoosterContract = useBCakeFarmBoosterContract()
+  // const masterChefContract = useMasterchef()
 
-  const { account } = useActiveWeb3React()
+  // const { account } = useActiveWeb3React()
 
-  const shouldGetFromSC = [YieldBoosterState.DEACTIVE, YieldBoosterState.ACTIVE, YieldBoosterState.MAX].includes(
-    boosterState,
-  )
-  const should1X = [YieldBoosterState.LOCKED_END].includes(boosterState)
+  // const shouldGetFromSC = [YieldBoosterState.DEACTIVE, YieldBoosterState.ACTIVE, YieldBoosterState.MAX].includes(
+  //   boosterState,
+  // )
+  // const should1X = [YieldBoosterState.LOCKED_END].includes(boosterState)
 
-  const getMultiplier = useCallback(async () => {
-    if (shouldGetFromSC) {
-      return getMultiplierFromMC({ pid, masterChefContract, proxyAddress })
-    }
+  // const getMultiplier = useCallback(async () => {
+  //   if (shouldGetFromSC) {
+  //     return getMultiplierFromMC({ pid, masterChefContract, proxyAddress })
+  //   }
 
-    return should1X
-      ? getUserMultiplier({ farmBoosterContract, pid, account })
-      : getPublicMultiplier({
-          farmBoosterContract,
-        })
-  }, [farmBoosterContract, masterChefContract, should1X, shouldGetFromSC, pid, account, proxyAddress])
+  //   return should1X
+  //     ? getUserMultiplier({ farmBoosterContract, pid, account })
+  //     : getPublicMultiplier({
+  //         farmBoosterContract,
+  //       })
+  // }, [farmBoosterContract, masterChefContract, should1X, shouldGetFromSC, pid, account, proxyAddress])
 
-  const cacheName = shouldGetFromSC ? `proxy${pid}` : should1X ? `user${pid}` : `public${pid}`
+  // const cacheName = shouldGetFromSC ? `proxy${pid}` : should1X ? `user${pid}` : `public${pid}`
 
-  const { data } = useSWR(['boostMultiplier', cacheName], getMultiplier)
-
+  // const { data } = useSWR(['boostMultiplier', cacheName], getMultiplier)
+  const data = 0
   return data || 0
 }

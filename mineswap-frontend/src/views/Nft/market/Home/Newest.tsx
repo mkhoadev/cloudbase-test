@@ -4,7 +4,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { NftToken } from 'state/nftMarket/types'
 import { getLatestListedNfts, getNftsFromDifferentCollectionsApi } from 'state/nftMarket/helpers'
-import { nftsBaseUrl, pancakeBunniesAddress } from 'views/Nft/market/constants'
+// import { nftsBaseUrl, pancakeBunniesAddress } from 'views/Nft/market/constants'
 import { isAddress } from 'utils'
 import { CollectibleLinkCard } from '../components/CollectibleCard'
 import GridPlaceholder from '../components/GridPlaceholder'
@@ -46,7 +46,7 @@ const Newest: React.FC<React.PropsWithChildren> = () => {
 
   return (
     <>
-      <Flex justifyContent="space-between" alignItems="center" mb="26px">
+      {/* <Flex justifyContent="space-between" alignItems="center" mb="26px">
         <Heading data-test="nfts-newest">{t('Newest Arrivals')}</Heading>
         <Button
           as={NextLinkFromReactRouter}
@@ -80,7 +80,7 @@ const Newest: React.FC<React.PropsWithChildren> = () => {
         </Grid>
       ) : (
         <GridPlaceholder numItems={8} />
-      )}
+      )} */}
     </>
   )
 }

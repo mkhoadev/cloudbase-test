@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti'
 import delay from 'lodash/delay'
 import { useTranslation } from '@pancakeswap/localization'
 import { useEffect, useState } from 'react'
-import { useBunnySpecialXmasContract } from 'hooks/useContract'
+// import { useBunnySpecialXmasContract } from 'hooks/useContract'
 
 const showConfetti = () => {
   confetti({
@@ -21,13 +21,13 @@ const showConfetti = () => {
 const ClaimNftModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ onDismiss }) => {
   const { t } = useTranslation()
   const [isClaiming, setIsClaiming] = useState(false)
-  const bunnyXmasContract = useBunnySpecialXmasContract()
+  // const bunnyXmasContract = useBunnySpecialXmasContract()
   const { toastSuccess, toastError } = useToast()
 
   const claimNft = async () => {
     try {
       setIsClaiming(true)
-      await bunnyXmasContract.mintNFT()
+      // await bunnyXmasContract.mintNFT()
       toastSuccess(t('Your NFT has been sent to your wallet'))
       onDismiss?.()
     } catch (error: any) {

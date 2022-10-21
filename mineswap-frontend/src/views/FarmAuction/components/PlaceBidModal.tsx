@@ -9,7 +9,7 @@ import { formatNumber, getBalanceAmount, getBalanceNumber } from 'utils/formatBa
 import useTheme from 'hooks/useTheme'
 import useTokenBalance from 'hooks/useTokenBalance'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
-import { useCake, useFarmAuctionContract } from 'hooks/useContract'
+// import { useCake, useFarmAuctionContract } from 'hooks/useContract'
 import { DEFAULT_TOKEN_DECIMAL } from 'config'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import ApproveConfirmButtons, { ButtonArrangement } from 'components/ApproveConfirmButtons'
@@ -69,8 +69,8 @@ const PlaceBidModal: React.FC<React.PropsWithChildren<PlaceBidModalProps>> = ({
   const userCakeBalance = getBalanceAmount(userCake)
 
   const cakePriceBusd = usePriceCakeBusd()
-  const farmAuctionContract = useFarmAuctionContract()
-  const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
+  // const farmAuctionContract = useFarmAuctionContract()
+  // const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
 
   const { toastSuccess } = useToast()
 
@@ -104,10 +104,12 @@ const PlaceBidModal: React.FC<React.PropsWithChildren<PlaceBidModalProps>> = ({
   const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
     useApproveConfirmTransaction({
       onRequiresApproval: async () => {
-        return requiresApproval(cakeContractReader, account, farmAuctionContract.address)
+        // return requiresApproval(cakeContractReader, account, farmAuctionContract.address)
+        return null
       },
       onApprove: () => {
-        return callWithMarketGasPrice(cakeContractApprover, 'approve', [farmAuctionContract.address, MaxUint256])
+        // return callWithMarketGasPrice(cakeContractApprover, 'approve', [farmAuctionContract.address, MaxUint256])
+        return null
       },
       onApproveSuccess: async ({ receipt }) => {
         toastSuccess(
@@ -117,7 +119,8 @@ const PlaceBidModal: React.FC<React.PropsWithChildren<PlaceBidModalProps>> = ({
       },
       onConfirm: () => {
         const bidAmount = new BigNumber(bid).times(DEFAULT_TOKEN_DECIMAL).toString()
-        return callWithMarketGasPrice(farmAuctionContract, 'bid', [bidAmount])
+        // return callWithMarketGasPrice(farmAuctionContract, 'bid', [bidAmount])
+        return null
       },
       onSuccess: async ({ receipt }) => {
         refreshBidders()

@@ -14,7 +14,7 @@ import { getFarmsPriceHelperLpFiles } from 'config/constants/priceHelperLps'
 import stringify from 'fast-json-stable-stringify'
 import fromPairs from 'lodash/fromPairs'
 import type { AppState } from 'state'
-import { getMasterChefAddress } from 'utils/addressHelpers'
+// import { getMasterChefAddress } from 'utils/addressHelpers'
 import { getBalanceAmount } from 'utils/formatBalance'
 import multicall, { multicallv2 } from 'utils/multicall'
 import { chains } from 'utils/wagmi'
@@ -36,29 +36,30 @@ import getFarmsPrices from './getFarmsPrices'
  * @deprecated
  */
 const fetchFetchPublicDataOld = async ({ pids, chainId }): Promise<[SerializedFarm[], number, number]> => {
-  const [poolLength, [cakePerBlockRaw]] = await Promise.all([
-    fetchMasterChefFarmPoolLength(chainId),
-    multicall(masterchefABI, [
-      {
-        // BSC only
-        address: getMasterChefAddress(ChainId.ETHEREUM),
-        name: 'cakePerBlock',
-        params: [true],
-      },
-    ]),
-  ])
+  // const [poolLength, [cakePerBlockRaw]] = await Promise.all([
+  //   fetchMasterChefFarmPoolLength(chainId),
+  //   multicall(masterchefABI, [
+  //     {
+  //       // BSC only
+  //       address: getMasterChefAddress(ChainId.ETHEREUM),
+  //       name: 'cakePerBlock',
+  //       params: [true],
+  //     },
+  //   ]),
+  // ])
 
-  const poolLengthAsBigNumber = new BigNumber(poolLength)
-  const regularCakePerBlock = getBalanceAmount(new BigNumber(cakePerBlockRaw))
-  const farmsConfig = await getFarmConfig(chainId)
-  const farmsCanFetch = farmsConfig.filter(
-    (farmConfig) => pids.includes(farmConfig.pid) && poolLengthAsBigNumber.gt(farmConfig.pid),
-  )
-  const priceHelperLpsConfig = getFarmsPriceHelperLpFiles(chainId)
+  // const poolLengthAsBigNumber = new BigNumber(poolLength)
+  // const regularCakePerBlock = getBalanceAmount(new BigNumber(cakePerBlockRaw))
+  // const farmsConfig = await getFarmConfig(chainId)
+  // const farmsCanFetch = farmsConfig.filter(
+  //   (farmConfig) => pids.includes(farmConfig.pid) && poolLengthAsBigNumber.gt(farmConfig.pid),
+  // )
+  // const priceHelperLpsConfig = getFarmsPriceHelperLpFiles(chainId)
 
-  const farms = await fetchFarms(farmsCanFetch.concat(priceHelperLpsConfig), chainId)
-  const farmsWithPrices = farms.length > 0 ? getFarmsPrices(farms, chainId) : []
-  return [farmsWithPrices, poolLengthAsBigNumber.toNumber(), regularCakePerBlock.toNumber()]
+  // const farms = await fetchFarms(farmsCanFetch.concat(priceHelperLpsConfig), chainId)
+  // const farmsWithPrices = farms.length > 0 ? getFarmsPrices(farms, chainId) : []
+  // return [farmsWithPrices, poolLengthAsBigNumber.toNumber(), regularCakePerBlock.toNumber()]
+  return [,,,]
 }
 
 const fetchFarmPublicDataPkg = async ({ pids, chainId, chain }): Promise<[SerializedFarm[], number, number]> => {

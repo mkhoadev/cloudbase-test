@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useModal } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import { getBunnySpecialXmasContract } from 'utils/contractHelpers'
+// import { getBunnySpecialXmasContract } from 'utils/contractHelpers'
 import { bscRpcProvider } from 'utils/providers'
 import ClaimNftModal from 'components/ClaimNftModal/ClaimNftModal'
 import noop from 'lodash/noop'
@@ -14,11 +14,12 @@ const useNftClaimStatusCheck = () => {
   useEffect(() => {
     const checkClaimStatus = async () => {
       try {
-        const canClaim = await getBunnySpecialXmasContract(bscRpcProvider).canClaim(account)
-        if (canClaim) {
-          onPresentNftClaimModal()
-          setHasDisplayedModal(true)
-        }
+        // const canClaim = await getBunnySpecialXmasContract(bscRpcProvider).canClaim(account)
+        // if (canClaim) {
+        //   onPresentNftClaimModal()
+        //   setHasDisplayedModal(true)
+        // }
+        noop()
       } catch (error) {
         // User not registered throws here
         noop()

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useProfile } from 'state/profile/hooks'
 import { Flex, Box, useMatchBreakpoints } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTradingCompetitionContractEaster } from 'hooks/useContract'
+// import { useTradingCompetitionContractEaster } from 'hooks/useContract'
 import { API_PROFILE } from 'config/constants/endpoints'
 import useTheme from 'hooks/useTheme'
 import {
@@ -54,7 +54,7 @@ const EasterCompetition = () => {
   const { isMobile } = useMatchBreakpoints()
   const { profile, isLoading: isProfileLoading } = useProfile()
   const { isDark } = useTheme()
-  const tradingCompetitionContract = useTradingCompetitionContractEaster(false)
+  // const tradingCompetitionContract = useTradingCompetitionContractEaster(false)
   const [currentPhase, setCurrentPhase] = useState(CompetitionPhases.OVER)
   const { registrationSuccessful, claimSuccessful, onRegisterSuccess, onClaimSuccess } = useRegistrationClaimStatus()
   const [userTradingInformation, setUserTradingInformation] = useState({
@@ -94,45 +94,45 @@ const EasterCompetition = () => {
   const finishedAndPrizesClaimed = hasCompetitionEnded && account && hasUserClaimed
   const finishedAndNothingToClaim = hasCompetitionEnded && account && !userCanClaimPrizes
 
-  useEffect(() => {
-    const fetchCompetitionInfoContract = async () => {
-      const competitionStatus = await tradingCompetitionContract.currentStatus()
-      setCurrentPhase(SmartContractPhases[competitionStatus])
-    }
+  // useEffect(() => {
+  //   const fetchCompetitionInfoContract = async () => {
+  //     const competitionStatus = await tradingCompetitionContract.currentStatus()
+  //     setCurrentPhase(SmartContractPhases[competitionStatus])
+  //   }
 
-    const fetchUserContract = async () => {
-      const user = await tradingCompetitionContract.claimInformation(account)
-      const userObject = {
-        isLoading: false,
-        account,
-        hasRegistered: user[0],
-        hasUserClaimed: user[1],
-        userRewardGroup: user[2].toString(),
-        userCakeRewards: user[3].toString(),
-        userPointReward: user[4].toString(),
-        canClaimNFT: user[5],
-      }
-      setUserTradingInformation(userObject)
-    }
+  //   const fetchUserContract = async () => {
+  //     const user = await tradingCompetitionContract.claimInformation(account)
+  //     const userObject = {
+  //       isLoading: false,
+  //       account,
+  //       hasRegistered: user[0],
+  //       hasUserClaimed: user[1],
+  //       userRewardGroup: user[2].toString(),
+  //       userCakeRewards: user[3].toString(),
+  //       userPointReward: user[4].toString(),
+  //       canClaimNFT: user[5],
+  //     }
+  //     setUserTradingInformation(userObject)
+  //   }
 
-    if (chainId === ChainId.ETHEREUM) {
-      fetchCompetitionInfoContract()
-      if (account) {
-        fetchUserContract()
-      } else {
-        setUserTradingInformation({
-          isLoading: false,
-          account,
-          hasRegistered: false,
-          hasUserClaimed: false,
-          userRewardGroup: '0',
-          userCakeRewards: '0',
-          userPointReward: '0',
-          canClaimNFT: false,
-        })
-      }
-    }
-  }, [chainId, account, registrationSuccessful, claimSuccessful, tradingCompetitionContract])
+  //   if (chainId === ChainId.ETHEREUM) {
+  //     fetchCompetitionInfoContract()
+  //     if (account) {
+  //       fetchUserContract()
+  //     } else {
+  //       setUserTradingInformation({
+  //         isLoading: false,
+  //         account,
+  //         hasRegistered: false,
+  //         hasUserClaimed: false,
+  //         userRewardGroup: '0',
+  //         userCakeRewards: '0',
+  //         userPointReward: '0',
+  //         canClaimNFT: false,
+  //       })
+  //     }
+  //   }
+  // }, [chainId, account, registrationSuccessful, claimSuccessful, tradingCompetitionContract])
 
   useEffect(() => {
     const fetchUserTradingStats = async () => {

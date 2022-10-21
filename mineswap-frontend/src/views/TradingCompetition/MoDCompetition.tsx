@@ -3,7 +3,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useProfile } from 'state/profile/hooks'
 import { Flex, Box, useMatchBreakpoints } from '@pancakeswap/uikit'
 import Image from 'next/image'
-import { useTradingCompetitionContractMoD } from 'hooks/useContract'
+// import { useTradingCompetitionContractMoD } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
 import { PageMeta } from 'components/Layout/Page'
 import { TC_MOD_SUBGRAPH, API_PROFILE } from 'config/constants/endpoints'
@@ -50,7 +50,7 @@ const MoDCompetition = () => {
   const { profile, isLoading: isProfileLoading } = useProfile()
   const { isMobile } = useMatchBreakpoints()
   const { isDark, theme } = useTheme()
-  const tradingCompetitionContract = useTradingCompetitionContractMoD(false)
+  // const tradingCompetitionContract = useTradingCompetitionContractMoD(false)
   const [currentPhase, setCurrentPhase] = useState(CompetitionPhases.CLAIM)
   const { registrationSuccessful, claimSuccessful, onRegisterSuccess, onClaimSuccess } = useRegistrationClaimStatus()
   const [userTradingInformation, setUserTradingInformation] =
@@ -80,26 +80,26 @@ const MoDCompetition = () => {
   const finishedAndNothingToClaim = hasCompetitionEnded && account && !userCanClaimPrizes
 
   useEffect(() => {
-    const fetchCompetitionInfoContract = async () => {
-      const competitionStatus = await tradingCompetitionContract.currentStatus()
-      setCurrentPhase(SmartContractPhases[competitionStatus])
-    }
+    // const fetchCompetitionInfoContract = async () => {
+      // const competitionStatus = await tradingCompetitionContract.currentStatus()
+      // setCurrentPhase(SmartContractPhases[competitionStatus])
+    // }
 
     const fetchUserContract = async () => {
       try {
         const [user, [userClaimed]] = await multicallv2({
           abi: tradingCompetitionMoDAbi,
           calls: [
-            {
-              address: tradingCompetitionContract.address,
-              name: 'claimInformation',
-              params: [account],
-            },
-            {
-              address: tradingCompetitionContract.address,
-              name: 'userTradingStats',
-              params: [account],
-            },
+            // {
+            //   address: tradingCompetitionContract.address,
+            //   name: 'claimInformation',
+            //   params: [account],
+            // },
+            // {
+            //   address: tradingCompetitionContract.address,
+            //   name: 'userTradingStats',
+            //   params: [account],
+            // },
           ],
           options: { requireSuccess: false },
         })
@@ -123,15 +123,15 @@ const MoDCompetition = () => {
     }
 
     if (chainId === ChainId.ETHEREUM) {
-      fetchCompetitionInfoContract()
+      // fetchCompetitionInfoContract()
       if (account) {
         fetchUserContract()
       } else {
         setUserTradingInformation({ ...initialUserTradingInformation, isLoading: false })
       }
     }
-  }, [chainId, account, registrationSuccessful, claimSuccessful, tradingCompetitionContract])
-
+  }, [chainId, account, registrationSuccessful, claimSuccessful])
+  // tradingCompetitionContract
   useEffect(() => {
     const fetchUserTradingStats = async () => {
       const res = await fetch(`${API_PROFILE}/api/users/${account}`)

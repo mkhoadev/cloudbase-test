@@ -5,12 +5,12 @@ import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
-import { useProfileContract } from 'hooks/useContract'
+// import { useProfileContract } from 'hooks/useContract'
 import { useMemo, useState } from 'react'
 import { useApprovalNfts } from 'state/nftMarket/hooks'
 import { NftLocation } from 'state/nftMarket/types'
 import { useProfile } from 'state/profile/hooks'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
+// import { getPancakeProfileAddress } from 'utils/addressHelpers'
 import { getErc721Contract } from 'utils/contractHelpers'
 import SelectionCard from 'views/ProfileCreation/SelectionCard'
 import { useSigner } from 'wagmi'
@@ -33,7 +33,7 @@ const ChangeProfilePicPage: React.FC<React.PropsWithChildren<ChangeProfilePicPag
   const { data: signer } = useSigner()
   const { isLoading: isProfileLoading, profile, refresh: refreshProfile } = useProfile()
   const { nfts, isLoading } = useNftsForAddress(account, profile, isProfileLoading)
-  const profileContract = useProfileContract()
+  // const profileContract = useProfileContract()
   const { toastSuccess } = useToast()
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
   const nftsInWallet = useMemo(() => nfts.filter((nft) => nft.location === NftLocation.WALLET), [nfts])
@@ -44,40 +44,40 @@ const ChangeProfilePicPage: React.FC<React.PropsWithChildren<ChangeProfilePicPag
     return data ? !!data[selectedNft.tokenId] : false
   }, [data, selectedNft.tokenId])
 
-  const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
-    useApproveConfirmTransaction({
-      onApprove: () => {
-        const contract = getErc721Contract(selectedNft.collectionAddress, signer)
+  // const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
+  //   useApproveConfirmTransaction({
+  //     onApprove: () => {
+  //       const contract = getErc721Contract(selectedNft.collectionAddress, signer)
 
-        return callWithMarketGasPrice(contract, 'approve', [getPancakeProfileAddress(), selectedNft.tokenId])
-      },
-      onConfirm: () => {
-        if (!profile.isActive) {
-          return callWithMarketGasPrice(profileContract, 'reactivateProfile', [
-            selectedNft.collectionAddress,
-            selectedNft.tokenId,
-          ])
-        }
+  //       return callWithMarketGasPrice(contract, 'approve', [getPancakeProfileAddress(), selectedNft.tokenId])
+  //     },
+  //     onConfirm: () => {
+  //       if (!profile.isActive) {
+  //         return callWithMarketGasPrice(profileContract, 'reactivateProfile', [
+  //           selectedNft.collectionAddress,
+  //           selectedNft.tokenId,
+  //         ])
+  //       }
 
-        return callWithMarketGasPrice(profileContract, 'updateProfile', [
-          selectedNft.collectionAddress,
-          selectedNft.tokenId,
-        ])
-      },
-      onSuccess: async ({ receipt }) => {
-        // Re-fetch profile
-        refreshProfile()
-        toastSuccess(t('Profile Updated!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
-        onSuccess?.()
-        onDismiss?.()
-      },
-    })
+  //       return callWithMarketGasPrice(profileContract, 'updateProfile', [
+  //         selectedNft.collectionAddress,
+  //         selectedNft.tokenId,
+  //       ])
+  //     },
+  //     onSuccess: async ({ receipt }) => {
+  //       // Re-fetch profile
+  //       refreshProfile()
+  //       toastSuccess(t('Profile Updated!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
+  //       onSuccess?.()
+  //       onDismiss?.()
+  //     },
+  //   })
 
-  const alreadyApproved = isApproved || isAlreadyApproved
+  // const alreadyApproved = isApproved || isAlreadyApproved
 
   return (
     <>
-      <Text as="p" color="textSubtle" mb="24px">
+      {/* <Text as="p" color="textSubtle" mb="24px">
         {t('Choose a new Collectible to use as your profile pic.')}
       </Text>
       {isLoading ? (
@@ -126,7 +126,7 @@ const ChangeProfilePicPage: React.FC<React.PropsWithChildren<ChangeProfilePicPag
       />
       <Button mt="8px" variant="text" width="100%" onClick={onDismiss} disabled={isApproving || isConfirming}>
         {t('Close Window')}
-      </Button>
+      </Button> */}
     </>
   )
 }

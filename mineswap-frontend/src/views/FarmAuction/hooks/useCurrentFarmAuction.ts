@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import isEqual from 'lodash/isEqual'
 import useSWR from 'swr'
-import { useFarmAuctionContract } from 'hooks/useContract'
+// import { useFarmAuctionContract } from 'hooks/useContract'
 import { ConnectedBidder } from 'config/constants/types'
 import { getBidderInfo } from 'config/constants/farmAuctions'
 import { FAST_INTERVAL } from 'config/constants'
@@ -12,8 +12,9 @@ export const useCurrentFarmAuction = (account: string) => {
   const { data: currentAuctionId = null } = useSWR(
     ['farmAuction', 'currentAuctionId'],
     async () => {
-      const auctionId = await farmAuctionContract.currentAuctionId()
-      return auctionId.toNumber()
+      // const auctionId = await farmAuctionContract.currentAuctionId()
+      // return auctionId.toNumber()
+      return 0
     },
     { refreshInterval: FAST_INTERVAL },
   )
@@ -24,17 +25,17 @@ export const useCurrentFarmAuction = (account: string) => {
   } = useFarmAuction(currentAuctionId, { refreshInterval: FAST_INTERVAL })
   const [connectedBidder, setConnectedBidder] = useState<ConnectedBidder | null>(null)
 
-  const farmAuctionContract = useFarmAuctionContract(false)
+  // const farmAuctionContract = useFarmAuctionContract(false)
 
   // Check if connected wallet is whitelisted
   useEffect(() => {
     const checkAccount = async () => {
       try {
-        const whitelistedStatus = await farmAuctionContract.whitelisted(account)
-        setConnectedBidder({
-          account,
-          isWhitelisted: whitelistedStatus,
-        })
+        // const whitelistedStatus = await farmAuctionContract.whitelisted(account)
+        // setConnectedBidder({
+        //   account,
+        //   isWhitelisted: whitelistedStatus,
+        // })
       } catch (error) {
         console.error('Failed to check if account is whitelisted', error)
       }
@@ -46,8 +47,8 @@ export const useCurrentFarmAuction = (account: string) => {
     if (!account) {
       setConnectedBidder(null)
     }
-  }, [account, connectedBidder, farmAuctionContract])
-
+  }, [account, connectedBidder, ])
+  // farmAuctionContract
   // Attach bidder data to connectedBidder object
   useEffect(() => {
     const getBidderData = () => {

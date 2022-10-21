@@ -3,7 +3,7 @@ import { ChainId } from '@pancakeswap/sdk'
 import { useModal, useToast } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
-import { useAnniversaryAchievementContract } from 'hooks/useContract'
+// import { useAnniversaryAchievementContract } from 'hooks/useContract'
 import useCatchTxError from 'hooks/useCatchTxError'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useRouter } from 'next/router'
@@ -36,44 +36,45 @@ const GlobalCheckClaim: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusP
   const { toastSuccess } = useToast()
   const { t } = useTranslation()
   const [canClaimAnniversaryPoints, setCanClaimAnniversaryPoints] = useState(false)
-  const { claimAnniversaryPoints } = useAnniversaryAchievementContract()
-  const { canClaim } = useAnniversaryAchievementContract(false)
-  const { fetchWithCatchTxError } = useCatchTxError()
-  const [onPresentAnniversaryModal] = useModal(
-    <AnniversaryAchievementModal
-      onClick={async () => {
-        const receipt = await fetchWithCatchTxError(() => claimAnniversaryPoints())
-        if (receipt?.status) {
-          toastSuccess(t('Success!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
-        }
-      }}
-    />,
-  )
+  // const { claimAnniversaryPoints } = useAnniversaryAchievementContract()
+  // const { canClaim } = useAnniversaryAchievementContract(false)
+  const canClaim   = null
+  // const { fetchWithCatchTxError } = useCatchTxError()
+  // const [onPresentAnniversaryModal] = useModal(
+  //   <AnniversaryAchievementModal
+  //     onClick={async () => {
+  //       const receipt = await fetchWithCatchTxError(() => claimAnniversaryPoints())
+  //       if (receipt?.status) {
+  //         toastSuccess(t('Success!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
+  //       }
+  //     }}
+  //   />,
+  // )
 
   const { account } = useWeb3React()
   const { pathname } = useRouter()
   // Check claim status
-  useEffect(() => {
-    const fetchClaimAnniversaryStatus = async () => {
-      // const canClaimAnniversary = await canClaim(account)
-      // setCanClaimAnniversaryPoints(canClaimAnniversary)
-    }
+  // useEffect(() => {
+    // const fetchClaimAnniversaryStatus = async () => {
+    //   // const canClaimAnniversary = await canClaim(account)
+    //   // setCanClaimAnniversaryPoints(canClaimAnniversary)
+    // }
 
-    if (account) {
-      fetchClaimAnniversaryStatus()
-    }
-  }, [account, canClaim])
+    // if (account) {
+    //   fetchClaimAnniversaryStatus()
+    // }
+  // }, [account, canClaim])
 
   // // Check if we need to display the modal
   useEffect(() => {
     const matchesSomeLocations = excludeLocations.some((location) => pathname.includes(location))
 
     if (canClaimAnniversaryPoints && !matchesSomeLocations && !hasDisplayedModal.current) {
-      onPresentAnniversaryModal()
+      // onPresentAnniversaryModal()
       hasDisplayedModal.current = true
     }
-  }, [pathname, excludeLocations, hasDisplayedModal, canClaim, canClaimAnniversaryPoints, onPresentAnniversaryModal])
-
+  }, [pathname, excludeLocations, hasDisplayedModal, canClaim, canClaimAnniversaryPoints, ])
+  // onPresentAnniversaryModal
   // Reset the check flag when account changes
   useEffect(() => {
     hasDisplayedModal.current = false

@@ -3,7 +3,7 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import { useTranslation } from '@pancakeswap/localization'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { useTradingCompetitionContractMoD } from 'hooks/useContract'
+// import { useTradingCompetitionContractMoD } from 'hooks/useContract'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { modPrizes } from '../../../../config/constants/trading-competition/prizes'
@@ -27,7 +27,7 @@ const ClaimModal: React.FC<React.PropsWithChildren<CompetitionProps>> = ({
   onClaimSuccess,
   userTradingInformation,
 }) => {
-  const tradingCompetitionContract = useTradingCompetitionContractMoD()
+  // const tradingCompetitionContract = useTradingCompetitionContractMoD()
   const canClaimSpecialNFT = useCanClaimSpecialNFT()
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: isConfirming } = useCatchTxError()
@@ -43,7 +43,8 @@ const ClaimModal: React.FC<React.PropsWithChildren<CompetitionProps>> = ({
 
   const handleClaimClick = async () => {
     const receipt = await fetchWithCatchTxError(() => {
-      return callWithMarketGasPrice(tradingCompetitionContract, 'claimReward')
+      // return callWithMarketGasPrice(tradingCompetitionContract, 'claimReward')
+      return null
     })
     if (receipt?.status) {
       toastSuccess(t('You have claimed your rewards!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
