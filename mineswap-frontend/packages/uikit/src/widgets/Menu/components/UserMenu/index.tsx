@@ -112,8 +112,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
           setIsOpen((s) => !s);
         }}
       >
-        <MenuIcon avatarSrc={avatarSrc} variant={variant} />
-        <LabelText style={{ marginLeft: 16 }} title={typeof text === "string" ? text || account : account}>{text || accountEllipsis}</LabelText>
+        <Flex style={{ marginLeft: 10 }}>
+          <MenuIcon avatarSrc={avatarSrc} variant={variant} />
+        </Flex>
+
+        <LabelText title={typeof text === "string" ? text || account : account}>{text || accountEllipsis}</LabelText>
         {!disabled && <ChevronDownIcon color="text" width="24px" />}
       </StyledUserMenu>
 

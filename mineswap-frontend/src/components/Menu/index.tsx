@@ -9,8 +9,8 @@ import UserMenu from './UserMenu'
 import { useMenuItems } from './hooks/useMenuItems'
 import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
 import { footerLinks } from './config/footerConfig'
-import { SettingsMode } from './GlobalSettings/types'
-import SettingApp from './GlobalSettings/settingapp'
+// import { SettingsMode } from './GlobalSettings/types'
+// import SettingApp from './GlobalSettings/settingapp'
 
 const Menu = (props) => {
   const { isDark, setTheme } = useTheme()

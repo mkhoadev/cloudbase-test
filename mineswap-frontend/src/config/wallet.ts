@@ -45,9 +45,9 @@ const walletsConfig = ({
       icon: '/images/wallets/metamask.png',
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isMetaMask) && metaMaskConnector.ready,
       connectorId: ConnectorNames.MetaMask,
-      deepLink: 'https://metamask.app.link/dapp/pancakeswap.finance/',
+      deepLink: 'https://metamask.app.link/dapp/main.d1rte7tp3o8h7c.amplifyapp.com/',
       qrCode,
-      downloadLink: 'https://metamask.app.link/dapp/pancakeswap.finance/',
+      downloadLink: 'https://metamask.app.link/dapp/main.d1rte7tp3o8h7c.amplifyapp.com/',
     },
     {
       id: 'binance',
@@ -82,7 +82,7 @@ const walletsConfig = ({
         (Boolean(window.ethereum?.isTrust) ||
           // @ts-ignore
           Boolean(window.ethereum?.isTrustWallet)),
-      deepLink: 'https://link.trustwallet.com/open_url?coin_id=20000714&url=https://pancakeswap.finance/',
+      deepLink: 'https://link.trustwallet.com/open_url?coin_id=20000714&url=https://main.d1rte7tp3o8h7c.amplifyapp.com/',
       downloadLink: {
         desktop: 'https://chrome.google.com/webstore/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph/related',
       },
