@@ -6,18 +6,18 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
   const { account } = useWeb3React()
   const {isDark} = useTheme()
   return (
-    <div className="dflex mt-screen" style={{ marginLeft:'5%'}}>
+    <div className="dflex mt-screen">
       <div className="txt-banner">
-        <h3 className="comunioner">
+        <div className="comunioner line-height-home">
           <span className="color-trade">Trade</span> anything. No registration, no hassle.
-        </h3>
+        </div>
         <div className="trade-earn">
           Trade any token on BNB Smart Chain in seconds, just by connecting your wallet.
         </div>
-        <br />
-        <div className="dflex mt-5">
+        <div className="dflex">
+
           <div className="sc-cjibBx bquLPr">
-            {!account && <div className="btn-connect button-css" >
+            {!account && <div className="btn-connect button-css" style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)' }}>
               {/* <div className="txt-connect"></div> */}
               <ConnectWalletButtonHome   />
             </div>}

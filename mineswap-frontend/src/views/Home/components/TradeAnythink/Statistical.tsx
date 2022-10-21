@@ -5,7 +5,7 @@ const Statistical : React.FC<React.PropsWithChildren> = () => {
       <div className="statistical-div">
         <div className="statistical-div-info">
           <div className="txt-title">220K+</div>
-          <div className="stxt-span">Contract creators</div>
+          <div className="txt-span">Contract creators</div>
         </div>
         <div className="statistical-div-info">
           <div className="txt-title">$110M</div>
