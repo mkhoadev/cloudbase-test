@@ -23,7 +23,7 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
               color: isDark ? '#fff' : '#121212',
             }}
           >
-            LaunchApp
+            TRADE NOW
           </Link>
           <a className="sc-cabOPr imwMnF" style={{ marginLeft: '15px' }} href="#">
             Read the docs

@@ -97,6 +97,9 @@ const TabContainer = ({ children }: PropsWithChildren) => {
         width="full"
       >
         {children}
+        {/* {index === 0 && children}
+        {index === 1 && <StepIntro />} */}
+
         {/* {index === 1 && <StepIntro />} */}
       </AtomBox>
     </AtomBox>
@@ -166,7 +169,8 @@ function MobileModal<T>({
             {t('Haven’t got a crypto wallet yet?')}
           </Text>
         </AtomBox>
-        <Button as="a" href={getDocLink(code)} variant="subtle" width="100%" external>
+        <Button as="a" variant="subtle" width="100%" external>
+        {/* href={getDocLink(code)} */}
           {t('Learn How to Connect')}
         </Button>
       </AtomBox>
@@ -431,7 +435,7 @@ const Intro = () => {
         {t('Haven’t got a wallet yet?')}
       </Heading>
       <Image src="/img/walletImage.png" width={198} height={178} />
-      <Button as={LinkExternal} color="backgroundAlt" variant="subtle">
+      <Button as='a' color="backgroundAlt" variant="subtle">
         {/* href={getDocLink(code)} */}
         {t('Learn How to Connect')}
       </Button>

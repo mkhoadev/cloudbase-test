@@ -1,6 +1,8 @@
 import ConnectWalletButtonHome from "components/ConnectWalletButtonHome"
 import { useWeb3React } from '@pancakeswap/wagmi'
 import useTheme from "hooks/useTheme"
+import { Link } from '@pancakeswap/uikit'
+
 /* eslint import/newline-after-import: "off" */
 const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
   const { account } = useWeb3React()
@@ -22,9 +24,9 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
               <ConnectWalletButtonHome   />
             </div>}
           </div>
-          <a className="sc-cabOPr imwMnF" href="#">
+          <Link className="sc-cabOPr imwMnF" href="/swap">
             TRADE NOW
-          </a>
+          </Link>
         </div>
       </div>
       <div style={{ width: '40%' }}>
