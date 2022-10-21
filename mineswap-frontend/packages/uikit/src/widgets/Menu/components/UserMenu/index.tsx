@@ -6,6 +6,8 @@ import { ChevronDownIcon } from "../../../../components/Svg";
 import { UserMenuProps, variants } from "./types";
 import MenuIcon from "./MenuIcon";
 import { UserMenuItem } from "./styles";
+import { useTheme } from "styled-components";
+import { useMatchBreakpoints } from "../../../../contexts";
 
 export const StyledUserMenu = styled(Flex)`
   align-items: center;
@@ -14,6 +16,23 @@ export const StyledUserMenu = styled(Flex)`
   box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: inline-flex;
+  height: 40px;
+  padding-left: 32px;
+  padding-right: 8px;
+  position: relative;
+
+  &:hover {
+    opacity: 0.65;
+  }
+`;
+
+export const NewStyledUserMenu = styled(Flex)`
+  background-size: cover;
+  align-items: center;
+  // border-radius: 16px;
+  // box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  // display: inline-flex;
   height: 40px;
   padding-left: 32px;
   padding-right: 8px;
@@ -105,9 +124,18 @@ const UserMenu: React.FC<UserMenuProps> = ({
     };
   }, [targetRef, tooltipRef, setIsOpen]);
 
+  const { isDark } = useTheme();
+  const { isMobile } = useMatchBreakpoints();
+
   return (
     <Flex alignItems="center" height="100%" ref={setTargetRef} {...props}>
-      <StyledUserMenu
+      <NewStyledUserMenu
+        style={{
+          backgroundImage: isDark
+            ? `url(/img/Group41${isMobile ? "mb" : ""}.png)`
+            : `url(/img/Group22${isMobile ? "mb" : ""}.png)`,
+          color: isDark ? "" : "#121212",
+        }}
         onTouchStart={() => {
           setIsOpen((s) => !s);
         }}
@@ -118,7 +146,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
         <LabelText title={typeof text === "string" ? text || account : account}>{text || accountEllipsis}</LabelText>
         {!disabled && <ChevronDownIcon color="text" width="24px" />}
-      </StyledUserMenu>
+      </NewStyledUserMenu>
 
       {!disabled && (
         <Menu style={styles.popper} className="tranform" ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>

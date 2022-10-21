@@ -62,6 +62,7 @@ const UserMenu = ({ isDark }) => {
           {t('Recent Transactions')}
           {hasPendingTransactions && <RefreshIcon spin />}
         </UserMenuItem>
+        
         {/* <UserMenuDivider />
         <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
           <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.ETHEREUM}>
