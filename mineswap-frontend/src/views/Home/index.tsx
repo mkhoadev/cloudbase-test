@@ -16,33 +16,35 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <div className="dflex size-hearder">
           <div className="txt-banner-tt">
             <h6 className="intro-swap">INTRODUCING MINESWAP</h6>
-            <h3 className="comunioner" style={{ marginTop: '20px' }}>
-              Community-owned API of blockchains.
-            </h3>
-            <div className="trade-earn" style={{ marginTop: '20px' }}>
+            <h3 className="comunioner">Community-owned API of blockchains.</h3>
+            <span className="trade-earn">
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
-            </div>
+            </span>
+            <br />
+            <br />
             <br />
             <Link
               href="/swap"
               className="imgbutton"
               style={{
                 backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
-                color: isDark ? '' : '#121212',
+                color: isDark ? '#fff' : '#121212',
               }}
             >
               TRADE NOW
             </Link>
           </div>
           <div style={{ width: '100%' }}>
-            <img src="/img/hero-images@1x.svg" alt="hero images" style={{ width: '60%', float: 'right' }} />
+            <img src={isDark ? '/img/hero-images@1x.svg' : '/img/logolight.svg'} alt="hero images" style={{ width: '60%', float: 'right' }} />
           </div>
         </div>
         <div className="use-by">
           <div className="div_millions">
-            Used by millions.
-            <br />
-            Trusted with billions.
+            <h3>
+              Used by millions.
+              <br />
+              Trusted with billions.
+            </h3>
           </div>
           <div className="div-millions-colum">
             <Millionusers />
@@ -55,7 +57,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <Statistical />
         <div className="use-by" style={{ marginTop: '150px' }}>
           <div className="div_millions">
-            <h3>Scaling solutions, amplified.</h3>
+            <div className='h3-home'>Scaling solutions, amplified.</div>
             <span className="intro-swap">Onix`s complete suite of blockchain-scaling solutions.</span>
           </div>
           <div className="div-millions-colum">
@@ -77,14 +79,11 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           </div>
           <img src="/img/cube2@1x.png" alt="cube2" className="sc-djTcra hkipsh" />
         </div>
-        <div className="background-involved">
+        <div className="background-involved" style={{ backgroundImage: isDark ? 'url(/img/Footerdark1.svg)' : 'url(/img/Footer1.svg)' }}>
           <div className="involved">
             <div className="involved-div">
               <div
                 className="involved-txt"
-                style={{
-                  color: isDark ? '' : '#121212',
-                }}
               >
                 Want to get involved?
               </div>

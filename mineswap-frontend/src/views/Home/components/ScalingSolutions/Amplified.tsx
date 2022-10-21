@@ -31,7 +31,7 @@ const Amplified = ({ txt, span, type }: nftSaleType) => {
             {txt}
           
         </div> */}
-        <div className="sc-fpRgNi hpiEQ">{txt}</div>
+        <div className="sc-fpRgNi hpiEQ" style={{minHeight: type==='2'?'55px': ''}}>{txt}</div>
         <div className="sc-fpRgNi gltMei">{span}</div>
       </div>
       <div className="sc-iOMxnH dfbVyw">

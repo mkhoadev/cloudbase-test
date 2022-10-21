@@ -49,7 +49,7 @@ const Page: React.FC<
   return (
     <>
       <PageMeta />
-      <StyledPage className='bgr-page' $removePadding={removePadding} $noMinHeight={noMinHeight} {...props}>
+      <StyledPage  $removePadding={removePadding} $noMinHeight={noMinHeight} {...props}>
         {children}
         <Flex flexGrow={1} />
         <Box display={['block', null, null, hideFooterOnDesktop ? 'none' : 'block']} width="100%">

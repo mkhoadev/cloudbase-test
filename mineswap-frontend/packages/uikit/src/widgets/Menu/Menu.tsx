@@ -136,8 +136,8 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
     },
   ];
   const subLinksMobileOnly = subLinks?.filter((subLink) => subLink.isMobileOnly);
-  const active = window.location.href.split("/");
-  const linkActive = '/'+active[active.length - 1];
+  const active = window.location.href;
+  const linkActive = active.split('/swap').length > 1 ?  "/swap" : "/liquidity";
   return (
     <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>

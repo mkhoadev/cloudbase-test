@@ -35,7 +35,8 @@ export const pairHasEnoughLiquidity = (
 ) => {
   
   // const liquidityThreshold = 10000
-  const liquidityThreshold = 1000
+  // thanh khoan nho nhat
+  const liquidityThreshold = -1
 
   switch (timeWindow) {
     case PairDataTimeWindowEnum.DAY:

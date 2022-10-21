@@ -53,7 +53,7 @@
 
 .h6_font {
     color: var(--colors-primary);
-    font-family: "Kanit", sans-serif;
+    font-family: "Inter", Helvetica;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -65,7 +65,7 @@
 
 .tab_active {
     color: #ffc600;
-    font-family: "Kanit", sans-serif;
+    font-family: "Inter", Helvetica;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -97,8 +97,10 @@
     height: 32px;
     padding: 5px 20px;
     height: 40px;
+    font-family: var(--font-family-karla);
 }
-.imgbutton:hover{
+
+.imgbutton:hover {
     text-decoration: none !important;
 }
 
@@ -172,7 +174,7 @@
 .launch-app-c5ghsZ {
     background-color: transparent;
     color: var(--alto);
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-size: var(--font-size-xxs);
     font-style: normal;
     font-weight: 800;
@@ -272,7 +274,7 @@
 .title-JgtX10 {
     background-color: transparent;
     color: #dddddd;
-    font-family: "Kanit", sans-serif;
+    font-family: "Inter", Helvetica;
     font-size: 60px;
     font-style: normal;
     font-weight: 900;
@@ -289,7 +291,7 @@
 .or-learn-all-about-how-to-build-on-onix-JgtX10 {
     background-color: transparent;
     color: transparent;
-    font-family: "Kanit", sans-serif;
+    font-family: "Inter", Helvetica;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -380,12 +382,28 @@
 
 .intro-swap {
     width: fit-content;
-    margin-top: -1px;
     font-family: var(--font-family-karla);
-    font-weight: 800;
-    color: var(--shuttle-gray);
+    font-weight: 400;
+    color: var(--gray);
     font-size: var(--font-size-m);
-    letter-spacing: 0.9px;
+}
+
+.h3-home {
+    color: var(--alto);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 900;
+    font-style: normal;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-top: -1px;
+    text-align: center;
+    -webkit-letter-spacing: -1.2px;
+    -moz-letter-spacing: -1.2px;
+    -ms-letter-spacing: -1.2px;
+    letter-spacing: -1.2px;
+    line-height: 72px;
 }
 
 .comunioner {
@@ -393,15 +411,15 @@
     font-weight: 900;
     color: var(--colors-text);
     font-size: var(--font-size-xxl);
-    -webkit-letter-spacing: 0;
-    -moz-letter-spacing: 0;
-    -ms-letter-spacing: 0;
-    letter-spacing: 0;
+    gap: 32px;
+}
+
+.line-height-home {
     line-height: 65px;
 }
 
 .trade-earn {
-    color: var(--colors-text);
+    color: var(--alto);
     font-family: var(--font-family-karla);
     font-size: var(--font-size-m);
     font-weight: 200;
@@ -411,18 +429,20 @@
     -ms-letter-spacing: 0;
     letter-spacing: 0;
     line-height: 30px;
+    padding-top: 10px;
 }
 
 .div_millions {
     font-family: var(--font-family-inter) !important;
     color: var(--colors-text);
+    font-family: var(--font-family-inter);
     font-size: var(--font-size-xxl);
     font-weight: 900;
     font-style: normal;
     align-self: stretch;
     margin-top: -1px;
     text-align: center;
-    line-height: 72px;
+    line-height: 40px;
 }
 
 .txt-banner {
@@ -431,14 +451,18 @@
     /* position: absolute; */
     width: 60%;
     max-width: 900px;
+    gap: 48px;
+    display: grid;
 }
 
 .txt-banner-tt {
     align-self: center;
     margin-left: 100px;
     position: absolute;
-    width: 40%;
+    width: 45%;
     max-width: 900px;
+    gap: 20px;
+    display: grid;
 }
 
 .txt-banner-trade {
@@ -447,6 +471,8 @@
     /* position: absolute; */
     width: 50%;
     max-width: 900px;
+    gap: 48px;
+    display: grid;
 }
 
 .use-by {
@@ -472,6 +498,7 @@
     align-items: flex-start;
     position: relative;
     border: 1px none;
+    gap: 20px;
 }
 
 .div-millions-colum {
@@ -619,10 +646,15 @@
 
 .hkipsh {
     position: absolute;
-    width: 400px;
+    width: 300px;
     right: 0px;
     object-fit: cover;
     z-index: 10;
+}
+
+.bkuLtm {
+    background-color: unset !important;
+    color: var(--colors-text) !important;
 }
 
 .bZXvp {
@@ -634,7 +666,7 @@
 }
 
 .hpiEQ {
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
@@ -645,7 +677,7 @@
 }
 
 .hWpUlW {
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-weight: 900;
     color: var(--blue-marguerite);
     font-size: var(--font-size-xl);
@@ -726,19 +758,18 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 9px 14px;
+    padding: 10px 20px;
     position: relative;
     border-radius: 1px 2px 1px 1px;
     border-style: none;
-    margin-right: 10px;
     background-color: var(--deep-bronze);
 }
 
 .txt-connect {
     color: var(--alto);
     font-family: var(--font-family-karla);
-    font-size: var(--font-size-m);
-    font-weight: 600;
+    font-size: var(--font-size-xs);
+    font-weight: 800;
     font-style: normal;
     width: fit-content;
     letter-spacing: -0.28px;
@@ -811,7 +842,7 @@
     color: var(--supernova);
     font-family: var(--font-family-karla);
     font-size: var(--font-size-m);
-    font-weight: 700;
+    font-weight: 400;
     font-style: normal;
     width: fit-content;
     letter-spacing: 0;
@@ -820,14 +851,14 @@
 }
 
 .color-trade {
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-weight: 900;
     color: var(--porsche);
     font-size: var(--font-size-xxl);
 }
 
 .color-earn {
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-weight: 900;
     color: var(--blue-marguerite);
     font-size: var(--font-size-xxl);
@@ -879,7 +910,7 @@
 
 .txt-title {
     color: var(--alto);
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
@@ -904,7 +935,7 @@
 
 .txt-title2 {
     color: var(--alto);
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
@@ -917,7 +948,7 @@
 
 .txt-span2 {
     color: var(--shuttle-gray);
-    font-family: var(--font-family-karla);
+    font-family: var(--font-family-inter);
     font-size: var(--font-size-m);
     font-weight: 400;
     font-style: normal;
@@ -932,6 +963,7 @@
     width: 400px;
     left: -140px;
     object-fit: cover;
+    margin-top: -40px;
 }
 
 .margin-top {
@@ -944,6 +976,16 @@
 
 .size-hearder {
     min-height: 1000px;
+}
+
+.gXBlaY {
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--font-family-karla);
+    font-weight: 800;
+    color: var(--shuttle-gray);
+    font-size: var(--font-size-m);
+    letter-spacing: 0.9px;
 }
 
 .w-6 {
@@ -959,7 +1001,7 @@
 }
 
 .icon_footer {
-    justify-content: end;
+    justify-content: flex-end;
     display: flex;
 }
 
@@ -973,10 +1015,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
     border: 1px none;
     width: 90%;
     margin: 100px auto;
+    height: 500px;
 }
 
 .involved-div {
@@ -984,20 +1027,19 @@
     flex-direction: column;
     width: fit-content;
     align-items: center;
-    gap: 16px;
     border: 1px none;
     margin-top: 200px;
 }
 
 .involved-txt {
     color: var(--colors-text);
-    font-family: var(--font-family-karla);
-    font-size: var(--font-size-xxl);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
     margin-top: -1px;
     text-align: center;
-    line-height: 72px;
+    line-height: 60px;
     white-space: nowrap;
 }
 
@@ -1005,15 +1047,35 @@
     font-family: var(--font-family-karla);
     font-weight: 400;
     color: transparent;
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
     text-align: center;
     letter-spacing: -0.48px;
-    line-height: 36px;
     white-space: nowrap;
 }
 
 .color-span {
     color: var(--supernova);
+}
+
+.background-involved-swap {
+    background-color: unset !important;
+    background-repeat: round;
+    background-size: cover;
+    height: 800px;
+    margin-top: -290px;
+    margin-bottom: -170px;
+    position: sticky;
+    z-index: -1;
+}
+
+.involved-div-swap {
+    display: flex;
+    flex-direction: column;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-items: center;
+    border: 1px none;
+    margin-top: 325px;
 }
 
 .involved-btn {
@@ -1051,12 +1113,11 @@
 
 .background-involved {
     background-color: unset !important;
-    background-image: url(/img/Getinvolved.svg);
     background-repeat: round;
     background-size: cover;
     height: 600px;
-    margin-top: -231px;
-    margin-bottom: -67px;
+    margin-top: -275px;
+    margin-bottom: -75px;
     position: sticky;
 }
 
@@ -1064,6 +1125,15 @@
 /* ------------------------------------------------------------------------------------------ */
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
+    .gXBlaY {
+        line-height: 15px;
+        font-size: var(--font-size-xs);
+    }
+    .h3-home {
+        font-size: var(--font-size-l);
+        font-weight: 900;
+        line-height: 52px;
+    }
     .background-involved {
         visibility: hidden;
         display: none;
@@ -1092,10 +1162,10 @@
         font-size: var(--font-size-m);
         line-height: 30px;
     }
-    /* .trade-earn {
+    .trade-earn {
         font-size: 12px;
-        line-height: 10px;
-    } */
+        line-height: 15px;
+    }
     .txt-banner {
         margin-left: 5%;
         width: 60%;
@@ -1109,7 +1179,7 @@
         width: 60%;
     }
     .use-by {
-        margin-top: -20px;
+        margin-top: 0px;
         gap: 180px;
         border: 1px none;
         height: unset;
@@ -1173,9 +1243,9 @@
         font-weight: 900;
         font-style: normal;
         margin-top: -1px;
-        letter-spacing: -0.64px;
-        line-height: 38.4px;
-        white-space: nowrap;
+        letter-spacing: 0;
+        line-height: unset;
+        white-space: 0;
     }
     .inter-black-alto-32px {
         font-size: var(--font-size-l) !important;
@@ -1225,16 +1295,32 @@
     .imgbutton {
         height: 30px;
     }
+    .line-height-home {
+        line-height: 30px;
+    }
 }
 
 .frame_footers {}
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
+    .txt-banner-tt {
+        margin-left: 50px;
+        width: 60%;
+    }
+    .line-height-home {
+        line-height: 50px;
+    }
+    .h3-home {
+        font-size: var(--font-size-xl);
+        font-weight: 900;
+        line-height: 52px;
+    }
     .background-involved {
-        height: 600px;
-        margin-top: -250px;
-        margin-bottom: -157px;
+        width: 85%;
         position: sticky;
+        margin: auto;
+        margin-top: -265px;
+        margin-bottom: -179px;
     }
     .w-6 {
         width: 40px;
@@ -1245,7 +1331,7 @@
         margin-bottom: 40px;
     }
     .icon_footer {
-        justify-content: end;
+        justify-content: flex-end;
         display: flex;
     }
     .frame_footer {

@@ -30,7 +30,7 @@ const Milliontrades: React.FC<React.PropsWithChildren> = () => {
         </div>
       </div>
       <div className="sc-iOMxnH dfbVyw">
-        <div className="sc-knMLgv gfrNDX">Learn more</div>
+        <div className="sc-knMLgv gfrNDX" style={{color:'var(--inchworm)'}}>Learn more</div>
         <img src="/img/arrow@2x.svg" alt="arrow" className="sc-eVFARG cHSmpO" />
       </div>
     </div>
