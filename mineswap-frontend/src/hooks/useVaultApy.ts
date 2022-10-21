@@ -6,12 +6,12 @@ import masterChefAbi from 'config/abi/masterchef.json'
 import { useCallback, useMemo } from 'react'
 import { useCakeVault } from 'state/pools/hooks'
 import useSWRImmutable from 'swr/immutable'
-import { getMasterChefAddress } from 'utils/addressHelpers'
+// import { getMasterChefAddress } from 'utils/addressHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { BOOST_WEIGHT, DURATION_FACTOR, MAX_LOCK_DURATION } from 'config/constants/pools'
 import { multicallv2 } from '../utils/multicall'
 
-const masterChefAddress = getMasterChefAddress()
+// const masterChefAddress = getMasterChefAddress()
 
 // default
 const DEFAULT_PERFORMANCE_FEE_DECIMALS = 2
@@ -53,20 +53,20 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
 
   const { data: totalCakePoolEmissionPerYear } = useSWRImmutable('masterChef-total-cake-pool-emission', async () => {
     const calls = [
-      {
-        address: masterChefAddress,
-        name: 'cakePerBlock',
-        params: [false],
-      },
-      {
-        address: masterChefAddress,
-        name: 'poolInfo',
-        params: [cakePoolPID],
-      },
-      {
-        address: masterChefAddress,
-        name: 'totalSpecialAllocPoint',
-      },
+      // {
+      //   address: masterChefAddress,
+      //   name: 'cakePerBlock',
+      //   params: [false],
+      // },
+      // {
+      //   address: masterChefAddress,
+      //   name: 'poolInfo',
+      //   params: [cakePoolPID],
+      // },
+      // {
+      //   address: masterChefAddress,
+      //   name: 'totalSpecialAllocPoint',
+      // },
     ]
 
     const [[specialFarmsPerBlock], cakePoolInfo, [totalSpecialAllocPoint]] = await multicallv2({

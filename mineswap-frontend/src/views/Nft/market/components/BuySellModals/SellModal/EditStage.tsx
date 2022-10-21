@@ -1,8 +1,8 @@
 import { Flex, Grid, Text, Button, Link, LinkExternal, BinanceIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import { nftsBaseUrl, pancakeBunniesAddress } from 'views/Nft/market/constants'
+// import { nftsBaseUrl, pancakeBunniesAddress } from 'views/Nft/market/constants'
 import { NftToken } from 'state/nftMarket/types'
-import { getBscScanLinkForNft, isAddress } from 'utils'
+// import { getBscScanLinkForNft, isAddress } from 'utils'
 import DELIST_COLLECTIONS from 'config/constants/nftsCollections/delist'
 import { Divider, HorizontalDivider, RoundedImage } from '../shared/styles'
 
@@ -23,12 +23,12 @@ const EditStage: React.FC<React.PropsWithChildren<EditStageProps>> = ({
   const isDelist = Boolean(DELIST_COLLECTIONS[nftToSell?.collectionAddress])
 
   const { t } = useTranslation()
-  const itemPageUrlId =
-    isAddress(nftToSell.collectionAddress) === pancakeBunniesAddress ? nftToSell.attributes[0].value : nftToSell.tokenId
+  // const itemPageUrlId =
+  //   isAddress(nftToSell.collectionAddress) === pancakeBunniesAddress ? nftToSell.attributes[0].value : nftToSell.tokenId
 
   return (
     <>
-      <Flex p="16px">
+      {/* <Flex p="16px">
         <RoundedImage src={nftToSell.image.thumbnail} height={68} width={68} mr="8px" />
         <Grid flex="1" gridTemplateColumns="1fr 1fr" alignItems="center">
           <Text bold>{nftToSell.name}</Text>
@@ -91,7 +91,7 @@ const EditStage: React.FC<React.PropsWithChildren<EditStageProps>> = ({
         <Button variant="danger" onClick={continueToRemoveFromMarketStage}>
           {t('Remove from Market')}
         </Button>
-      </Flex>
+      </Flex> */}
     </>
   )
 }

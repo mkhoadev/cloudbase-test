@@ -1,14 +1,15 @@
 import useSWRImmutable from 'swr/immutable'
 import { useMemo } from 'react'
 import { SmartContractPhases, LIVE, REGISTRATION } from 'config/constants/trading-competition/phases'
-import { useTradingCompetitionContractMoD } from 'hooks/useContract'
+// import { useTradingCompetitionContractMoD } from 'hooks/useContract'
 
 export const useCompetitionStatus = () => {
-  const tradingCompetitionContract = useTradingCompetitionContractMoD(false)
+  // const tradingCompetitionContract = useTradingCompetitionContractMoD(false)
 
   const { data: state } = useSWRImmutable('competitionStatus', async () => {
-    const competitionStatus = await tradingCompetitionContract.currentStatus()
-    return SmartContractPhases[competitionStatus].state
+    // const competitionStatus = await tradingCompetitionContract.currentStatus()
+    // return SmartContractPhases[competitionStatus].state
+    return null
   })
 
   return useMemo(() => {

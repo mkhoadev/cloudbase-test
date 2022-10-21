@@ -5,7 +5,7 @@ import { LotteryUserGraphEntity, LotteryRoundGraphEntity } from 'state/types'
 import { multicallv2 } from 'utils/multicall'
 import lotteryV2Abi from 'config/abi/lotteryV2.json'
 import { NUM_ROUNDS_TO_CHECK_FOR_REWARDS } from 'config/constants/lottery'
-import { getLotteryV2Address } from 'utils/addressHelpers'
+// import { getLotteryV2Address } from 'utils/addressHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { fetchUserTicketsForMultipleRounds } from './getUserTicketsData'
 import { MAX_LOTTERIES_REQUEST_SIZE } from './getLotteriesData'
@@ -16,31 +16,32 @@ interface RoundDataAndUserTickets {
   finalNumber: string
 }
 
-const lotteryAddress = getLotteryV2Address()
+// const lotteryAddress = getLotteryV2Address()
 
 const fetchCakeRewardsForTickets = async (
   winningTickets: LotteryTicket[],
 ): Promise<{ ticketsWithUnclaimedRewards: LotteryTicket[]; cakeTotal: BigNumber }> => {
-  const calls = winningTickets.map((winningTicket) => {
-    const { roundId, id, rewardBracket } = winningTicket
-    return {
-      name: 'viewRewardsForTicketId',
-      address: lotteryAddress,
-      params: [roundId, id, rewardBracket],
-    }
-  })
+  // const calls = winningTickets.map((winningTicket) => {
+  //   const { roundId, id, rewardBracket } = winningTicket
+  //   return {
+  //     name: 'viewRewardsForTicketId',
+  //     address: lotteryAddress,
+  //     params: [roundId, id, rewardBracket],
+  //   }
+  // })
 
   try {
-    const cakeRewards = await multicallv2({ abi: lotteryV2Abi, calls })
+    // const cakeRewards = await multicallv2({ abi: lotteryV2Abi, calls })
 
-    const cakeTotal = cakeRewards.reduce((accum: BigNumber, cakeReward: EthersBigNumber[]) => {
-      return accum.plus(new BigNumber(cakeReward[0].toString()))
-    }, BIG_ZERO)
+    // const cakeTotal = cakeRewards.reduce((accum: BigNumber, cakeReward: EthersBigNumber[]) => {
+    //   return accum.plus(new BigNumber(cakeReward[0].toString()))
+    // }, BIG_ZERO)
 
-    const ticketsWithUnclaimedRewards = winningTickets.map((winningTicket, index) => {
-      return { ...winningTicket, cakeReward: cakeRewards[index] }
-    })
-    return { ticketsWithUnclaimedRewards, cakeTotal }
+    // const ticketsWithUnclaimedRewards = winningTickets.map((winningTicket, index) => {
+    //   return { ...winningTicket, cakeReward: cakeRewards[index] }
+    // })
+    // return { ticketsWithUnclaimedRewards, cakeTotal }
+    return null
   } catch (error) {
     console.error(error)
     return { ticketsWithUnclaimedRewards: null, cakeTotal: null }

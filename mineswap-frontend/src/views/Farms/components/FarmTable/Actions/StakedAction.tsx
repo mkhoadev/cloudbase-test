@@ -20,7 +20,7 @@ import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import BigNumber from 'bignumber.js'
 import { formatLpBalance } from 'utils/formatBalance'
 import { ChainId } from '@pancakeswap/sdk'
-import { getCrossFarmingSenderContract } from 'utils/contractHelpers'
+// import { getCrossFarmingSenderContract } from 'utils/contractHelpers'
 import useApproveFarm from '../../../hooks/useApproveFarm'
 import useStakeFarms from '../../../hooks/useStakeFarms'
 import useUnstakeFarms from '../../../hooks/useUnstakeFarms'
@@ -194,48 +194,48 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
   }
 
   const handleNonBscStake = async (amountValue: string) => {
-    const crossFarmingAddress = getCrossFarmingSenderContract(null, chainId)
-    const [receipt, isFirstTime] = await Promise.all([
-      fetchTxResponse(() => onStake(amountValue)),
-      crossFarmingAddress.is1st(account),
-    ])
+    // const crossFarmingAddress = getCrossFarmingSenderContract(null, chainId)
+    // const [receipt, isFirstTime] = await Promise.all([
+    //   fetchTxResponse(() => onStake(amountValue)),
+      // crossFarmingAddress.is1st(account),
+    // ])
     const amountAsBigNumber = new BigNumber(amountValue).times(DEFAULT_TOKEN_DECIMAL)
     const amount = formatLpBalance(new BigNumber(amountAsBigNumber))
 
-    if (receipt) {
-      addTransaction(receipt, {
-        type: 'non-bsc-farm',
-        translatableSummary: {
-          text: 'Stake %amount% %lpSymbol% Token',
-          data: { amount, lpSymbol },
-        },
-        nonBscFarm: {
-          type: NonBscFarmStepType.STAKE,
-          status: FarmTransactionStatus.PENDING,
-          amount,
-          lpSymbol,
-          lpAddress,
-          steps: [
-            {
-              step: 1,
-              chainId,
-              tx: receipt.hash,
-              isFirstTime: !isFirstTime,
-              status: FarmTransactionStatus.PENDING,
-            },
-            {
-              step: 2,
-              tx: '',
-              chainId: ChainId.ETHEREUM,
-              status: FarmTransactionStatus.PENDING,
-            },
-          ],
-        },
-      })
+    // if (receipt) {
+    //   addTransaction(receipt, {
+    //     type: 'non-bsc-farm',
+    //     translatableSummary: {
+    //       text: 'Stake %amount% %lpSymbol% Token',
+    //       data: { amount, lpSymbol },
+    //     },
+    //     nonBscFarm: {
+    //       type: NonBscFarmStepType.STAKE,
+    //       status: FarmTransactionStatus.PENDING,
+    //       amount,
+    //       lpSymbol,
+    //       lpAddress,
+    //       steps: [
+    //         {
+    //           step: 1,
+    //           chainId,
+    //           tx: receipt.hash,
+    //           isFirstTime: !isFirstTime,
+    //           status: FarmTransactionStatus.PENDING,
+    //         },
+    //         {
+    //           step: 2,
+    //           tx: '',
+    //           chainId: ChainId.ETHEREUM,
+    //           status: FarmTransactionStatus.PENDING,
+    //         },
+    //       ],
+    //     },
+    //   })
 
-      dispatch(pickFarmTransactionTx({ tx: receipt.hash, chainId }))
-      onDone()
-    }
+    //   dispatch(pickFarmTransactionTx({ tx: receipt.hash, chainId }))
+    //   onDone()
+    // }
   }
 
   const handleUnstake = async (amount: string) => {

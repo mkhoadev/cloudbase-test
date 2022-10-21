@@ -22,7 +22,8 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import { FetchStatus } from 'config/constants/types'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
-import { useCake, useLotteryV2Contract } from 'hooks/useContract'
+// import { useCake, useLotteryV2Contract } from 'hooks/useContract'
+import { useCake } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
 import useTokenBalance from 'hooks/useTokenBalance'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -82,7 +83,7 @@ const BuyTicketsModal: React.FC<React.PropsWithChildren<BuyTicketsModalProps>> =
   const [maxPossibleTicketPurchase, setMaxPossibleTicketPurchase] = useState(BIG_ZERO)
   const [maxTicketPurchaseExceeded, setMaxTicketPurchaseExceeded] = useState(false)
   const [userNotEnoughCake, setUserNotEnoughCake] = useState(false)
-  const lotteryContract = useLotteryV2Contract()
+  // const lotteryContract = useLotteryV2Contract()
   const { reader: cakeContractReader, signer: cakeContractApprover } = useCake()
   const { toastSuccess } = useToast()
   const { balance: userCake, fetchStatus } = useTokenBalance(ethereumTokens.weth.address)
@@ -244,10 +245,12 @@ const BuyTicketsModal: React.FC<React.PropsWithChildren<BuyTicketsModalProps>> =
   const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
     useApproveConfirmTransaction({
       onRequiresApproval: async () => {
-        return requiresApproval(cakeContractReader, account, lotteryContract.address)
+        // return requiresApproval(cakeContractReader, account, lotteryContract.address)
+        return null
       },
       onApprove: () => {
-        return callWithMarketGasPrice(cakeContractApprover, 'approve', [lotteryContract.address, MaxUint256])
+        // return callWithMarketGasPrice(cakeContractApprover, 'approve', [lotteryContract.address, MaxUint256])
+        return null
       },
       onApproveSuccess: async ({ receipt }) => {
         toastSuccess(
@@ -257,7 +260,8 @@ const BuyTicketsModal: React.FC<React.PropsWithChildren<BuyTicketsModalProps>> =
       },
       onConfirm: () => {
         const ticketsForPurchase = getTicketsForPurchase()
-        return callWithMarketGasPrice(lotteryContract, 'buyTickets', [currentLotteryId, ticketsForPurchase])
+        // return callWithMarketGasPrice(lotteryContract, 'buyTickets', [currentLotteryId, ticketsForPurchase])
+        return null
       },
       onSuccess: async ({ receipt }) => {
         onDismiss?.()

@@ -4,7 +4,7 @@ import { ContextApi } from '@pancakeswap/localization'
 import { AutoRenewIcon, Button, useModal, useToast } from '@pancakeswap/uikit'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { useNftSaleContract } from 'hooks/useContract'
+// import { useNftSaleContract } from 'hooks/useContract'
 import { useEffect, useState } from 'react'
 import { DefaultTheme } from 'styled-components'
 import { SaleStatusEnum } from '../../types'
@@ -27,7 +27,7 @@ const MintButton: React.FC<React.PropsWithChildren<PreEventProps>> = ({
   ticketsOfUser,
 }) => {
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
-  const nftSaleContract = useNftSaleContract()
+  // const nftSaleContract = useNftSaleContract()
   const [txHashMintingResult, setTxHashMintingResult] = useState(null)
   const canMintTickets = saleStatus === SaleStatusEnum.Claim && numberTicketsOfUser > 0
   const { toastSuccess } = useToast()
@@ -53,7 +53,8 @@ const MintButton: React.FC<React.PropsWithChildren<PreEventProps>> = ({
 
   const mintTokenCallBack = async () => {
     const receipt = await fetchWithCatchTxError(() => {
-      return callWithMarketGasPrice(nftSaleContract, 'mint', [ticketsOfUser])
+      // return callWithMarketGasPrice(nftSaleContract, 'mint', [ticketsOfUser])
+      return null
     })
     if (receipt?.status) {
       toastSuccess(t('Transaction has succeeded!'))

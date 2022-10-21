@@ -26,7 +26,7 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import useBUSDPrice from 'hooks/useBUSDPrice'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { usePredictionsContract } from 'hooks/useContract'
+// import { usePredictionsContract } from 'hooks/useContract'
 import { fetchNodeHistory, markAsCollected } from 'state/predictions'
 import { REWARD_RATE } from 'state/predictions/config'
 import { Bet } from 'state/types'
@@ -98,7 +98,7 @@ const CollectRoundWinningsModal: React.FC<React.PropsWithChildren<CollectRoundWi
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: isPendingTx } = useCatchTxError()
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
-  const predictionsContract = usePredictionsContract(predictionsAddress, token.symbol)
+  // const predictionsContract = usePredictionsContract(predictionsAddress, token.symbol)
   const bnbBusdPrice = useBUSDPrice(token)
 
   const { epochs, total } = calculateClaimableRounds(history)
@@ -113,79 +113,80 @@ const CollectRoundWinningsModal: React.FC<React.PropsWithChildren<CollectRoundWi
     }
   }, [account, history, dispatch, isV1Claim])
 
-  const handleClick = async () => {
-    const receipt = await fetchWithCatchTxError(() => {
-      return callWithMarketGasPrice(predictionsContract, 'claim', [epochs])
-    })
-    if (receipt?.status) {
-      if (!isV1Claim) {
-        // Immediately mark rounds as claimed
-        dispatch(
-          markAsCollected(
-            epochs.reduce((accum, epoch) => {
-              return { ...accum, [epoch]: true }
-            }, {}),
-          ),
-        )
-      }
+  // const handleClick = async () => {
+  //   const receipt = await fetchWithCatchTxError(() => {
+  //     return callWithMarketGasPrice(predictionsContract, 'claim', [epochs])
+  //   })
+  //   if (receipt?.status) {
+  //     if (!isV1Claim) {
+  //       // Immediately mark rounds as claimed
+  //       dispatch(
+  //         markAsCollected(
+  //           epochs.reduce((accum, epoch) => {
+  //             return { ...accum, [epoch]: true }
+  //           }, {}),
+  //         ),
+  //       )
+  //     }
 
-      await onSuccess?.()
+  //     await onSuccess?.()
 
-      toastSuccess(
-        t('Winnings collected!'),
-        <ToastDescriptionWithTx txHash={receipt.transactionHash}>
-          {t('Your prizes have been sent to your wallet')}
-        </ToastDescriptionWithTx>,
-      )
-      onDismiss()
-    }
-  }
+  //     toastSuccess(
+  //       t('Winnings collected!'),
+  //       <ToastDescriptionWithTx txHash={receipt.transactionHash}>
+  //         {t('Your prizes have been sent to your wallet')}
+  //       </ToastDescriptionWithTx>,
+  //     )
+  //     onDismiss()
+  //   }
+  // }
 
-  return (
-    <Modal $minWidth="288px" position="relative" mt="124px">
-      <BunnyDecoration>
-        <img src="/images/decorations/prize-bunny.png" alt="bunny decoration" height="124px" width="168px" />
-      </BunnyDecoration>
-      <ModalHeader>
-        <ModalTitle>
-          <Heading>{t('Collect Winnings')}</Heading>
-        </ModalTitle>
-        <ModalCloseButton onDismiss={onDismiss} />
-      </ModalHeader>
-      <ModalBody p="24px">
-        <TrophyGoldIcon width="96px" mx="auto" mb="24px" />
-        <Flex alignItems="start" justifyContent="space-between" mb="8px">
-          <Text>{t('Collecting')}</Text>
-          <Box style={{ textAlign: 'right' }}>
-            <Text>{`${formatNumber(total, 0, 4)} ${token.symbol}`}</Text>
-            <Text fontSize="12px" color="textSubtle">
-              {`~$${totalBnb.toFixed(2)}`}
-            </Text>
-          </Box>
-        </Flex>
-        <Flex alignItems="start" justifyContent="center" mb="24px">
-          {isLoading ? (
-            <Skeleton height="21" width="140px" />
-          ) : (
-            <Text color="textSubtle" fontSize="14px">
-              {epochs.length === 1
-                ? t('From round %round%', { round: epochs[0] })
-                : t('From rounds %rounds%', { rounds: epochs.join(', ') })}
-            </Text>
-          )}
-        </Flex>
-        <Button
-          width="100%"
-          mb="8px"
-          onClick={handleClick}
-          isLoading={isPendingTx || isLoading}
-          endIcon={isPendingTx ? <AutoRenewIcon spin color="currentColor" /> : null}
-        >
-          {t('Confirm')}
-        </Button>
-      </ModalBody>
-    </Modal>
-  )
+  // return (
+  //   <Modal $minWidth="288px" position="relative" mt="124px">
+  //     <BunnyDecoration>
+  //       <img src="/images/decorations/prize-bunny.png" alt="bunny decoration" height="124px" width="168px" />
+  //     </BunnyDecoration>
+  //     <ModalHeader>
+  //       <ModalTitle>
+  //         <Heading>{t('Collect Winnings')}</Heading>
+  //       </ModalTitle>
+  //       <ModalCloseButton onDismiss={onDismiss} />
+  //     </ModalHeader>
+  //     <ModalBody p="24px">
+  //       <TrophyGoldIcon width="96px" mx="auto" mb="24px" />
+  //       <Flex alignItems="start" justifyContent="space-between" mb="8px">
+  //         <Text>{t('Collecting')}</Text>
+  //         <Box style={{ textAlign: 'right' }}>
+  //           <Text>{`${formatNumber(total, 0, 4)} ${token.symbol}`}</Text>
+  //           <Text fontSize="12px" color="textSubtle">
+  //             {`~$${totalBnb.toFixed(2)}`}
+  //           </Text>
+  //         </Box>
+  //       </Flex>
+  //       <Flex alignItems="start" justifyContent="center" mb="24px">
+  //         {isLoading ? (
+  //           <Skeleton height="21" width="140px" />
+  //         ) : (
+  //           <Text color="textSubtle" fontSize="14px">
+  //             {epochs.length === 1
+  //               ? t('From round %round%', { round: epochs[0] })
+  //               : t('From rounds %rounds%', { rounds: epochs.join(', ') })}
+  //           </Text>
+  //         )}
+  //       </Flex>
+  //       <Button
+  //         width="100%"
+  //         mb="8px"
+  //         onClick={handleClick}
+  //         isLoading={isPendingTx || isLoading}
+  //         endIcon={isPendingTx ? <AutoRenewIcon spin color="currentColor" /> : null}
+  //       >
+  //         {t('Confirm')}
+  //       </Button>
+  //     </ModalBody>
+  //   </Modal>
+  // )
+  return null
 }
 
 export default CollectRoundWinningsModal

@@ -5,7 +5,7 @@ import { useWeb3React } from '@pancakeswap/wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
-import { useErc721CollectionContract, useNftMarketContract } from 'hooks/useContract'
+// import { useErc721CollectionContract, useNftMarketContract } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
 import { useState } from 'react'
 import { NftToken } from 'state/nftMarket/types'
@@ -91,10 +91,10 @@ const SellModal: React.FC<React.PropsWithChildren<SellModalProps>> = ({
   const { account } = useWeb3React()
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
   const { toastSuccess } = useToast()
-  const { reader: collectionContractReader, signer: collectionContractSigner } = useErc721CollectionContract(
-    nftToSell.collectionAddress,
-  )
-  const nftMarketContract = useNftMarketContract()
+  // const { reader: collectionContractReader, signer: collectionContractSigner } = useErc721CollectionContract(
+  //   nftToSell.collectionAddress,
+  // )
+  // const nftMarketContract = useNftMarketContract()
 
   const isInvalidTransferAddress = transferAddress.length > 0 && !isAddress(transferAddress)
 
@@ -168,42 +168,47 @@ const SellModal: React.FC<React.PropsWithChildren<SellModalProps>> = ({
   const { isApproving, isApproved, isConfirming, handleApprove, handleConfirm } = useApproveConfirmTransaction({
     onRequiresApproval: async () => {
       try {
-        const approvedForContract = await collectionContractReader.isApprovedForAll(account, nftMarketContract.address)
-        return !approvedForContract
+        // const approvedForContract = await collectionContractReader.isApprovedForAll(account, nftMarketContract.address)
+        // return !approvedForContract
+        return true
       } catch (error) {
         return true
       }
     },
     onApprove: () => {
-      return callWithMarketGasPrice(collectionContractSigner, 'setApprovalForAll', [nftMarketContract.address, true])
+      // return callWithMarketGasPrice(collectionContractSigner, 'setApprovalForAll', [nftMarketContract.address, true])
+      return null
     },
     onApproveSuccess: async ({ receipt }) => {
       toastSuccess(
         t('Contract approved - you can now put your NFT for sale!'),
-        <ToastDescriptionWithTx txHash={receipt.transactionHash} />,
+        <ToastDescriptionWithTx txHash={receipt.transactionHash} />, 
       )
     },
     onConfirm: () => {
       if (stage === SellingStage.CONFIRM_REMOVE_FROM_MARKET) {
-        return callWithMarketGasPrice(nftMarketContract, 'cancelAskOrder', [
-          nftToSell.collectionAddress,
-          nftToSell.tokenId,
-        ])
+        // return callWithMarketGasPrice(nftMarketContract, 'cancelAskOrder', [
+        //   nftToSell.collectionAddress,
+        //   nftToSell.tokenId,
+        // ])
+        return null
       }
       if (stage === SellingStage.CONFIRM_TRANSFER) {
-        return callWithMarketGasPrice(collectionContractSigner, 'safeTransferFrom(address,address,uint256)', [
-          account,
-          transferAddress,
-          nftToSell.tokenId,
-        ])
+        // return callWithMarketGasPrice(collectionContractSigner, 'safeTransferFrom(address,address,uint256)', [
+        //   account,
+        //   transferAddress,
+        //   nftToSell.tokenId,
+        // ])
+        return null
       }
       const methodName = variant === 'sell' ? 'createAskOrder' : 'modifyAskOrder'
       const askPrice = parseUnits(price)
-      return callWithMarketGasPrice(nftMarketContract, methodName, [
-        nftToSell.collectionAddress,
-        nftToSell.tokenId,
-        askPrice,
-      ])
+      // return callWithMarketGasPrice(nftMarketContract, methodName, [
+      //   nftToSell.collectionAddress,
+      //   nftToSell.tokenId,
+      //   askPrice,
+      // ])
+      return null
     },
     onSuccess: async ({ receipt }) => {
       toastSuccess(getToastText(variant, stage, t), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)

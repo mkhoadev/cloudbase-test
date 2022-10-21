@@ -2,7 +2,7 @@ import { useEffect, useReducer } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import BigNumber from 'bignumber.js'
 import { BidderAuction } from 'config/constants/types'
-import { useFarmAuctionContract } from 'hooks/useContract'
+// import { useFarmAuctionContract } from 'hooks/useContract'
 import { RECLAIM_AUCTIONS_TO_FETCH } from 'config'
 import { processBidderAuctions, sortAuctionBidders } from '../helpers'
 
@@ -83,7 +83,7 @@ const useReclaimAuctionBid = (): [ReclaimableAuction | null, () => void] => {
 
   const [state, dispatch] = useReducer(reclaimReducer, initialState)
 
-  const farmAuctionContract = useFarmAuctionContract(false)
+  // const farmAuctionContract = useFarmAuctionContract(false)
 
   const checkNextAuction = () => {
     dispatch({ type: 'checkNextAuction' })
@@ -98,18 +98,19 @@ const useReclaimAuctionBid = (): [ReclaimableAuction | null, () => void] => {
   useEffect(() => {
     const fetchBidderAuctions = async () => {
       try {
-        dispatch({ type: 'setLoading', payload: { loading: true } })
+        // dispatch({ type: 'setLoading', payload: { loading: true } })
 
-        const bidderAuctionsResponse = await farmAuctionContract.viewBidderAuctions(
-          account,
-          state.currentCursor,
-          RECLAIM_AUCTIONS_TO_FETCH,
-        )
+        // const bidderAuctionsResponse = await farmAuctionContract.viewBidderAuctions(
+        //   account,
+        //   state.currentCursor,
+        //   RECLAIM_AUCTIONS_TO_FETCH,
+        // )
 
-        const { auctions, nextCursor } = processBidderAuctions(bidderAuctionsResponse)
-        if (auctions.length > 0) {
-          dispatch({ type: 'setAuctions', payload: { auctions, nextCursor } })
-        }
+        // const { auctions, nextCursor } = processBidderAuctions(bidderAuctionsResponse)
+        // if (auctions.length > 0) {
+        //   dispatch({ type: 'setAuctions', payload: { auctions, nextCursor } })
+        // }
+        dispatch({ type: 'setLoading', payload: { loading: false } })
       } catch (error) {
         console.error('Failed to fetch auctions for bidder', error)
         dispatch({ type: 'setLoading', payload: { loading: false } })
@@ -119,23 +120,26 @@ const useReclaimAuctionBid = (): [ReclaimableAuction | null, () => void] => {
     if (!state.loading && account && state.currentCursor === state.nextCursor) {
       fetchBidderAuctions()
     }
-  }, [account, state, farmAuctionContract])
+  }, [account, state, ])
+  // farmAuctionContract
 
   useEffect(() => {
     const checkIfAuctionIsClaimable = async (auctionToCheck: BidderAuction) => {
       dispatch({ type: 'setLoading', payload: { loading: true } })
       try {
-        const isClaimable = await farmAuctionContract.claimable(auctionToCheck.id, account)
-        if (isClaimable) {
-          const [auctionBidders] = await farmAuctionContract.viewBidsPerAuction(auctionToCheck.id, 0, 500)
-          const sortedBidders = sortAuctionBidders(auctionBidders)
-          const accountBidderData = sortedBidders.find((bidder) => bidder.account === account)
-          const position = accountBidderData?.position
-          const auctionToReclaim = { id: auctionToCheck.id, amount: auctionToCheck.amount, position }
-          dispatch({ type: 'setAuctionToReclaim', payload: { auctionToReclaim } })
-        } else {
-          dispatch({ type: 'checkNextAuction' })
-        }
+        // const isClaimable = await farmAuctionContract.claimable(auctionToCheck.id, account)
+        // if (isClaimable) {
+        //   const [auctionBidders] = await farmAuctionContract.viewBidsPerAuction(auctionToCheck.id, 0, 500)
+        //   const sortedBidders = sortAuctionBidders(auctionBidders)
+        //   const accountBidderData = sortedBidders.find((bidder) => bidder.account === account)
+        //   const position = accountBidderData?.position
+        //   const auctionToReclaim = { id: auctionToCheck.id, amount: auctionToCheck.amount, position }
+          // dispatch({ type: 'setAuctionToReclaim', payload: { auctionToReclaim } })
+          
+        // } else {
+        //   dispatch({ type: 'checkNextAuction' })
+        // }
+        dispatch({ type: 'checkNextAuction' })
       } catch (error) {
         dispatch({ type: 'setLoading', payload: { loading: false } })
         console.error('Failed to check for unclaim bids', error)
@@ -146,7 +150,8 @@ const useReclaimAuctionBid = (): [ReclaimableAuction | null, () => void] => {
       const auctionToCheck = auctions[nextAuctionToCheck]
       checkIfAuctionIsClaimable(auctionToCheck)
     }
-  }, [account, state, farmAuctionContract])
+  }, [account, state, ])
+  // farmAuctionContract
 
   return [state.auctionToReclaim, checkNextAuction]
 }

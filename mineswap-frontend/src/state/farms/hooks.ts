@@ -8,7 +8,7 @@ import { useAppDispatch } from 'state'
 import useSWRImmutable from 'swr/immutable'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { useBCakeProxyContractAddress } from 'views/Farms/hooks/useBCakeProxyContractAddress'
-import { getMasterchefContract } from 'utils/contractHelpers'
+// import { getMasterchefContract } from 'utils/contractHelpers'
 import { useFastRefreshEffect } from 'hooks/useRefreshEffect'
 import { featureFarmApiAtom, useFeatureFlag } from 'hooks/useFeatureFlag'
 import { getFarmConfig } from '@pancakeswap/farms/constants'
@@ -26,8 +26,8 @@ import {
 export function useFarmsLength() {
   const { chainId } = useActiveWeb3React()
   return useSWRImmutable(chainId ? ['farmsLength', chainId] : null, async () => {
-    const mc = getMasterchefContract(undefined, chainId)
-    return (await mc.poolLength()).toNumber()
+    // const mc = getMasterchefContract(undefined, chainId)
+    // return (await mc.poolLength()).toNumber()
   })
 }
 

@@ -6,7 +6,7 @@ import { getTeam } from 'state/teams/helpers'
 import { NftToken } from 'state/nftMarket/types'
 import { getNftApi } from 'state/nftMarket/helpers'
 import { multicallv2 } from 'utils/multicall'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
+// import { getPancakeProfileAddress } from 'utils/addressHelpers'
 
 export interface GetProfileResponse {
   hasRegistered: boolean

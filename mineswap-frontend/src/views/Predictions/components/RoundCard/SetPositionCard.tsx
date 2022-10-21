@@ -22,7 +22,7 @@ import { parseUnits } from '@ethersproject/units'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useGetMinBetAmount } from 'state/predictions/hooks'
 import { useTranslation } from '@pancakeswap/localization'
-import { usePredictionsContract } from 'hooks/useContract'
+// import { usePredictionsContract } from 'hooks/useContract'
 import { useGetBnbBalance, useGetCakeBalance } from 'hooks/useTokenBalance'
 import { useCallWithMarketGasPrice } from 'hooks/useCallWithMarketGasPrice'
 import useCatchTxError from 'hooks/useCatchTxError'
@@ -98,7 +98,7 @@ const SetPositionCard: React.FC<React.PropsWithChildren<SetPositionCardProps>> =
   const { fetchWithCatchTxError, loading: isTxPending } = useCatchTxError()
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
   const { address: predictionsAddress, token } = useConfig()
-  const predictionsContract = usePredictionsContract(predictionsAddress, token.symbol)
+  // const predictionsContract = usePredictionsContract(predictionsAddress, token.symbol)
   const useTokenBalance = useMemo(() => {
     return TOKEN_BALANCE_CONFIG[token.symbol]
   }, [token.symbol])
@@ -177,12 +177,12 @@ const SetPositionCard: React.FC<React.PropsWithChildren<SetPositionCardProps>> =
 
     const args = token.symbol === 'CAKE' ? [epoch, valueAsBn.toString()] : [epoch]
 
-    const receipt = await fetchWithCatchTxError(() => {
-      return callWithMarketGasPrice(predictionsContract, betMethod, args, callOptions)
-    })
-    if (receipt?.status) {
-      onSuccess(receipt.transactionHash)
-    }
+    // const receipt = await fetchWithCatchTxError(() => {
+    //   return callWithMarketGasPrice(predictionsContract, betMethod, args, callOptions)
+    // })
+    // if (receipt?.status) {
+    //   onSuccess(receipt.transactionHash)
+    // }
   }
 
   // Warnings
