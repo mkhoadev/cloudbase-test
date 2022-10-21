@@ -78,12 +78,12 @@ const TabContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <AtomBox position="relative" zIndex="modal" className={modalWrapperClass}>
-      <AtomBox position="absolute" style={{ top: '-50px' }}>
+      {/* <AtomBox position="absolute" style={{ top: '-50px' }}>
         <TabMenu activeIndex={index} onItemClick={setIndex} gap="16px">
           <Tab>{t('Connect Wallet')}</Tab>
           <Tab>{t('What’s a Web3 Wallet?')}</Tab>
         </TabMenu>
-      </AtomBox>
+      </AtomBox> */}
       <AtomBox
         display="flex"
         position="relative"
@@ -96,8 +96,8 @@ const TabContainer = ({ children }: PropsWithChildren) => {
         zIndex="modal"
         width="full"
       >
-        {index === 0 && children}
-        {index === 1 && <StepIntro />}
+        {children}
+        {/* {index === 1 && <StepIntro />} */}
       </AtomBox>
     </AtomBox>
   )
@@ -430,8 +430,9 @@ const Intro = () => {
       <Heading as="h1" fontSize="20px" color="secondary">
         {t('Haven’t got a wallet yet?')}
       </Heading>
-      <Image src="https://cdn.pancakeswap.com/wallets/wallet_intro.png" width={198} height={178} />
-      <Button as={LinkExternal} color="backgroundAlt" variant="subtle" href={getDocLink(code)}>
+      <Image src="/img/walletImage.png" width={198} height={178} />
+      <Button as={LinkExternal} color="backgroundAlt" variant="subtle">
+        {/* href={getDocLink(code)} */}
         {t('Learn How to Connect')}
       </Button>
     </>
