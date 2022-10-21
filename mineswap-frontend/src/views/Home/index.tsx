@@ -20,9 +20,6 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <span className="trade-earn">
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
             </span>
-            <br />
-            <br />
-            <br />
             <Link
               href="/swap"
               className="imgbutton"
