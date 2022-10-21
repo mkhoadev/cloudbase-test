@@ -23,7 +23,7 @@ const getThemeColor = ({ theme, variant = variants.INFO }: ThemedIconLabel) => {
     case variants.WARNING:
       return theme.colors.warning;
     case variants.SUCCESS:
-      return theme.colors.success;
+      return theme.colors.primary;
     case variants.INFO:
     default:
       return theme.colors.secondary;
@@ -76,7 +76,6 @@ const StyledAlert = styled(Flex)`
 
 const Alert: React.FC<React.PropsWithChildren<AlertProps>> = ({ title, children, variant, onClick }) => {
   const Icon = getIcon(variant);
-
   return (
     <StyledAlert>
       <IconLabel variant={variant} hasDescription={!!children}>

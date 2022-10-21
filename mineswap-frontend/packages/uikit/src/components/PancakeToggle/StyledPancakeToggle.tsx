@@ -186,7 +186,7 @@ export const PancakeInput = styled.input<InputProps>`
 export const PancakeLabel = styled.label<PancakeToggleProps>`
   width: ${getScale("toggleWidth")};
   height: ${getScale("toggleHeight")};
-  background: ${({ theme, checked }) => theme.colors[checked ? "success" : "input"]};
+  background: ${({ theme, checked }) => theme.colors[checked ? "primary" : "input"]};
   box-shadow: ${({ theme }) => theme.shadows.inset};
   display: inline-block;
   border-radius: 50px;
