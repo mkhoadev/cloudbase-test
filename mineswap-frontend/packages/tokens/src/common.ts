@@ -6,7 +6,7 @@ export const CAKE_MAINNET = new Token(
   18,
   'CAKE',
   'MineSwap Token',
-  'https://pancakeswap.finance/',
+  'https://mineswap.finance/',
 )
 
 export const CAKE_TESTNET = new Token(
@@ -15,7 +15,7 @@ export const CAKE_TESTNET = new Token(
   18,
   'CAKE',
   'MineSwap Token',
-  'https://pancakeswap.finance/',
+  'https://mineswap.finance/',
 )
 
 export const USDC_ETH = new Token(ChainId.ETHEREUM, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD Coin')
