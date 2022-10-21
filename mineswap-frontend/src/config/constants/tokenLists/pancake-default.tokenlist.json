@@ -187,6 +187,22 @@
       "logoURI": "https://pancakeswap.finance/images/tokens/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png"
     },
     {
+      "name": "test USD Coin1",
+      "address": "0xfe54279Bd3faA2fAF8797C5973CA9FB5816Ef048",
+      "symbol": "USDT",
+      "decimals": 6,
+      "chainId": 5,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x55d398326f99059fF775485246999027B3197955.png"
+    },
+    {
+      "name": "WBTC",
+      "address": "0x9c556b18d2370d4c44f3b3153d340d9abfd8d995",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "chainId": 5,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c.png"
+    },
+    {
       "name": "Tether USD",
       "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
       "symbol": "USDT",
