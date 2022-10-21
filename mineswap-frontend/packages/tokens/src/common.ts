@@ -1,6 +1,6 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
 
-export const CAKE_MAINNET = new Token(
+export const MINE_MAINNET = new Token(
   ChainId.ETHEREUM,
   '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
   18,
@@ -9,11 +9,11 @@ export const CAKE_MAINNET = new Token(
   'https://pancakeswap.finance/',
 )
 
-export const CAKE_TESTNET = new Token(
+export const MINE_TESTNET = new Token(
   ChainId.GOERLI,
-  '0xFa60D973F7642B748046464e165A65B7323b0DEE',
+  '0x3F7a9178051f266C9d4834c1eBc68297b7a49172',
   18,
-  'CAKE',
+  'MINE',
   'MineSwap Token',
   'https://pancakeswap.finance/',
 )
@@ -70,8 +70,8 @@ export const BUSD: Record<ChainId, Token> = {
 }
 
 export const MINE = {
-  [ChainId.ETHEREUM]: CAKE_MAINNET,
-  [ChainId.GOERLI]: CAKE_TESTNET,
+  [ChainId.ETHEREUM]: MINE_MAINNET,
+  [ChainId.GOERLI]: MINE_TESTNET,
 }
 
 export const USDC = {
