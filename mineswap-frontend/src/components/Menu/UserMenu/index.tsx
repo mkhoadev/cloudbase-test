@@ -22,10 +22,10 @@ import { useAccount } from 'wagmi'
 import WalletModal, { WalletView } from './WalletModal'
 import WalletUserMenuItem from './WalletUserMenuItem'
 
-const UserMenu = ({isDark}) => {
+const UserMenu = ({ isDark }) => {
   const { t } = useTranslation()
   const { address: account } = useAccount()
-  const {  isWrongNetwork } = useActiveChainId()
+  const { isWrongNetwork } = useActiveChainId()
   const { logout } = useAuth()
   const { hasPendingTransactions, pendingNumber } = usePendingTransactions()
   const { profile } = useProfile()
@@ -35,6 +35,7 @@ const UserMenu = ({isDark}) => {
   const avatarSrc = profile?.nft?.image?.thumbnail
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
+  
   useEffect(() => {
     if (hasPendingTransactions) {
       setUserMenuText(t('%num% Pending', { num: pendingNumber }))
@@ -99,8 +100,19 @@ const UserMenu = ({isDark}) => {
     )
   }
   return (
-    <ConnectWalletButton scale="sm" style={{backgroundImage: isDark ? 'url(/img/Group40.png)': 'url(/img/Group21.png)',color: isDark ? '': '#121212',boxShadow:'unset', backgroundRepeat: 'round', backgroundColor:'unset', borderRadius: 'unset', height: '40px'}}>
-      <Box display={['none', , , 'block']} >
+    <ConnectWalletButton
+      scale="sm"
+      style={{
+        backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
+        color: isDark ? '' : '#121212',
+        boxShadow: 'unset',
+        backgroundRepeat: 'round',
+        backgroundColor: 'unset',
+        borderRadius: 'unset',
+        height: '40px',
+      }}
+    >
+      <Box display={['none', , , 'block']}>
         <Trans>Connect Wallet</Trans>
       </Box>
       <Box display={['block', , , 'none']}>
