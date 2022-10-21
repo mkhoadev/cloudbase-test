@@ -33,7 +33,7 @@ export const USDT_GOERLI = new Token(
   '0xfe54279Bd3faA2fAF8797C5973CA9FB5816Ef048',
   6,
   'USDT',
-  'test USD Coin',
+  'test USD Coin1',
 )
 
 export const USDT_ETH = new Token(
@@ -87,6 +87,13 @@ export const USDT = {
 export const WBTC_ETH = new Token(
   ChainId.ETHEREUM,
   '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
+  8,
+  'WBTC',
+  'Wrapped BTC',
+)
+export const WBTC_GOERLI = new Token(
+  ChainId.GOERLI,
+  '0x9c556b18d2370d4c44f3b3153d340d9abfd8d995',
   8,
   'WBTC',
   'Wrapped BTC',
