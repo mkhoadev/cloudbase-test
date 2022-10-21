@@ -45,9 +45,9 @@ const walletsConfig = ({
       icon: '/images/wallets/metamask.png',
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isMetaMask) && metaMaskConnector.ready,
       connectorId: ConnectorNames.MetaMask,
-      deepLink: 'https://metamask.app.link/dapp/mineswap.finance/',
+      deepLink: 'https://metamask.app.link/dapp/www.mineswap.finance/',
       qrCode,
-      downloadLink: 'https://metamask.app.link/dapp/mineswap.finance/',
+      downloadLink: 'https://metamask.app.link/dapp/www.mineswap.finance/',
     },
     {
       id: 'binance',
@@ -82,7 +82,7 @@ const walletsConfig = ({
         (Boolean(window.ethereum?.isTrust) ||
           // @ts-ignore
           Boolean(window.ethereum?.isTrustWallet)),
-      deepLink: 'https://link.trustwallet.com/open_url?coin_id=20000714&url=https://mineswap.finance/',
+      deepLink: 'https://link.trustwallet.com/open_url?coin_id=20000714&url=https://www.mineswap.finance/',
       downloadLink: {
         desktop: 'https://chrome.google.com/webstore/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph/related',
       },
