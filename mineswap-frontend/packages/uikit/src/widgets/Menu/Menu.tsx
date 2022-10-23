@@ -18,7 +18,7 @@ import { MenuContext } from "./context";
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1569px;
+  // max-width: 1569px;
   margin:auto;
 `;
 
@@ -34,7 +34,7 @@ const StyledNav = styled.nav`
 
   padding-left: 16px;
   padding-right: 16px;
-  max
+  max-width: 1569px;
 `;
 
 const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
@@ -44,7 +44,7 @@ const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
   height: ${({ height }) => `${height}px`};
   width: 100%;
   z-index: 20;
-  max-width: 1569px;
+  // max-width: 1569px;
   margin: auto;
 `;
 
