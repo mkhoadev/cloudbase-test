@@ -55,7 +55,7 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
 `;
 
 const ButtonMenu: React.FC<React.PropsWithChildren<ButtonMenuProps>> = ({
-  activeIndex = 0,
+  activeIndex=0,
   scale = scales.MD,
   variant = variants.PRIMARY,
   onItemClick,
@@ -64,6 +64,7 @@ const ButtonMenu: React.FC<React.PropsWithChildren<ButtonMenuProps>> = ({
   fullWidth = false,
   ...props
 }) => {
+  console.log(activeIndex)
   return (
     <StyledButtonMenu disabled={disabled} variant={variant} fullWidth={fullWidth} {...props}>
       {Children.map(children, (child: ReactElement, index) => {
