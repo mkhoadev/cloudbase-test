@@ -4,7 +4,7 @@ import { fetchCProxyAddress } from 'state/farms/fetchFarmUser'
 import { farmFetcher } from '../../../../apis/farms/src/helper'
 
 export const useFarmCProxyAddress = (account?: string, chainId?: number) => {
-  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.ETHEREUM : ChainId.ETHEREUM
+  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.ETHEREUMPOW : ChainId.ETHEREUMPOW
   const { data } = useSWR(account && chainId && ['proxyAddress'], async () =>
     fetchCProxyAddress(account, multiCallChainId),
   )

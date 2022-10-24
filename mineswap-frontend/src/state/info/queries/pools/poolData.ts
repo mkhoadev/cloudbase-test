@@ -89,7 +89,7 @@ export const fetchPoolData = async (
   block7d: number,
   block14d: number,
   poolAddresses: string[],
-  chainName: 'ETH' | 'GOERLI' = 'GOERLI',
+  chainName: 'ETHW' | 'GOERLI' = 'GOERLI',
 ) => {
   const weeksQuery = chainName === 'GOERLI' ? `twoWeeksAgo: ${POOL_AT_BLOCK(chainName, block14d, poolAddresses)}` : ''
   try {

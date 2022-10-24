@@ -19,12 +19,12 @@ const LP_HOLDERS_FEE = 0.0017
 const WEEKS_IN_A_YEAR = 52.1429
 
 const BLOCKS_CLIENT_WITH_CHAIN = {
-  [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
+  [ChainId.ETHEREUMPOW]: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
   [ChainId.GOERLI]: '',
 }
 
 const INFO_CLIENT_WITH_CHAIN = {
-  [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth',
+  [ChainId.ETHEREUMPOW]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth',
   [ChainId.GOERLI]: '',
 }
 
@@ -49,7 +49,7 @@ const getWeekAgoTimestamp = () => {
   return getUnixTime(weekAgo)
 }
 
-const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.ETHEREUM) => {
+const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.ETHEREUMPOW) => {
   try {
     const { blocks } = await blockClientWithChain(chainId).request<BlockResponse>(
       `query getBlock($timestampGreater: Int!, $timestampLess: Int!) {

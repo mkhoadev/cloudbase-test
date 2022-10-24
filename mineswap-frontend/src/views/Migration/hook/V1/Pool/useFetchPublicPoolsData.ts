@@ -6,7 +6,7 @@ export const useFetchPublicPoolsData = () => {
   
   useSlowRefreshEffect(() => {
     const fetchPoolsDataWithFarms = async () => {
-      const farmsConfig = await getFarmConfig(ChainId.ETHEREUM)
+      const farmsConfig = await getFarmConfig(ChainId.ETHEREUMPOW)
       farmsConfig.filter((farm) => farm.v1pid !== 0)
       // await dispatch(fetchFarmsPublicDataAsync(activeFarms.map((farm) => farm.v1pid)))
     }

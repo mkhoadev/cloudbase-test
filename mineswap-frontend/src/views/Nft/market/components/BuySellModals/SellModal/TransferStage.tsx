@@ -1,4 +1,4 @@
-import { Flex, Grid, Text, Button, Input, BinanceIcon, ErrorIcon } from '@pancakeswap/uikit'
+import { Flex, Grid, Text, Button, Input, EthereumPowIcon, ErrorIcon } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { NftToken } from 'state/nftMarket/types'
@@ -53,7 +53,7 @@ const TransferStage: React.FC<React.PropsWithChildren<TransferStageProps>> = ({
                 {t('Lowest price')}
               </Text>
               <Flex alignItems="center" justifyContent="flex-end">
-                <BinanceIcon width={16} height={16} mr="4px" />
+                <EthereumPowIcon width={16} height={16} mr="4px" />
                 <Text small>{lowestPrice}</Text>
               </Flex>
             </>

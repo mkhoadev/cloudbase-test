@@ -45,9 +45,9 @@ export const ACCESS_RISK_API = 'https://red.alert.pancakeswap.com/red-api'
 export const CELER_API = 'https://api.celerscan.com/scan'
 
 export const INFO_CLIENT_WITH_CHAIN = {
-  [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth',
+  [ChainId.ETHEREUMPOW]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth',
 }
 
 export const BLOCKS_CLIENT_WITH_CHAIN = {
-  [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
+  [ChainId.ETHEREUMPOW]: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
 }

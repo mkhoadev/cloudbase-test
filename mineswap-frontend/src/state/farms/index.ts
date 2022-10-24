@@ -41,7 +41,7 @@ const fetchFetchPublicDataOld = async ({ pids, chainId }): Promise<[SerializedFa
   //   multicall(masterchefABI, [
   //     {
   //       // BSC only
-  //       address: getMasterChefAddress(ChainId.ETHEREUM),
+  //       address: getMasterChefAddress(ChainId.ETHEREUMPOW),
   //       name: 'cakePerBlock',
   //       params: [true],
   //     },
@@ -235,7 +235,7 @@ async function getNormalFarmsStakeValue(farms, account, chainId) {
 // >(
 //   'farms/fetchFarmUserDataAsync',
 //   async ({ account, pids, proxyAddress, chainId }, config) => {
-//     const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.ETHEREUM))
+//     const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.ETHEREUMPOW))
 //     const farmsConfig = await getFarmConfig(chainId)
 //     const farmsCanFetch = farmsConfig.filter(
 //       (farmConfig) => pids.includes(farmConfig.pid) && poolLength > farmConfig.pid,

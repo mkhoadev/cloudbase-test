@@ -20,7 +20,7 @@ import { multiChainId, multiChainPaths } from 'state/info/constant'
 import { chains } from 'utils/wagmi'
 import { ChainLogo } from 'components/Logo/ChainLogo'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import { goerli, mainnet } from '@pancakeswap/wagmi/chains'
+import { goerli, ethpow } from '@pancakeswap/wagmi/chains'
 
 const NavWrapper = styled(Flex)`
   background: ${({ theme }) => theme.colors.gradientCardHeader};
@@ -75,7 +75,7 @@ const InfoNav: React.FC<{ isStableSwap: boolean }> = ({ isStableSwap }) => {
   )
 }
 
-const targetChains = [mainnet, goerli]
+const targetChains = [ethpow, goerli]
 
 export const NetworkSwitcher: React.FC<{ activeIndex: number }> = ({ activeIndex }) => {
   const { t } = useTranslation()

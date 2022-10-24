@@ -131,7 +131,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
     //         {
     //           step: 2,
     //           tx: '',
-    //           chainId: ChainId.ETHEREUM,
+    //           chainId: ChainId.ETHEREUMPOW,
     //           status: FarmTransactionStatus.PENDING,
     //         },
     //       ],
@@ -187,7 +187,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
             },
             {
               step: 2,
-              chainId: ChainId.ETHEREUM,
+              chainId: ChainId.ETHEREUMPOW,
               tx: '',
               status: FarmTransactionStatus.PENDING,
             },

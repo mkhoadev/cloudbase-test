@@ -122,7 +122,7 @@ type NextPageWithLayout = NextPage & {
   mp?: boolean
   /**
    * allow chain per page, empty array bypass chain block modal
-   * @default [ChainId.ETHEREUM]
+   * @default [ChainId.ETHEREUMPOW]
    * */
   chains?: number[]
 }

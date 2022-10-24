@@ -28,7 +28,7 @@ export const getBlocksFromTimestamps = async (
   sortDirection: 'asc' | 'desc' | undefined = 'desc',
   skipCount: number | undefined = 500,
   // chainName: MultiChainName | undefined = 'BSC',
-  chainName: MultiChainName | undefined = 'GOERLI',
+  chainName: MultiChainName | undefined = 'ETHW',
 ): Promise<Block[]> => {
   if (timestamps?.length === 0) {
     return []

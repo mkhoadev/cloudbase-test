@@ -66,6 +66,21 @@ export const fantomTestnet: Chain = {
   },
   testnet: true,
 }
+export const ethpow: Chain = {
+  id: 10001,
+  name: 'ETHW',
+  network: 'ETHW',
+  nativeCurrency: { name: 'ETHW', symbol: 'ETHW', decimals: 18 },
+  rpcUrls: {
+    default: 'https://mainnet.ethereumpow.org',
+  },
+  blockExplorers: {
+    default: {
+      name: 'ETHW',
+      url: 'https://mainnet.ethereumpow.org',
+    },
+  },
+  testnet: false,
+}
 
-
-export {  mainnet, goerli }
+export {  mainnet, goerli  }

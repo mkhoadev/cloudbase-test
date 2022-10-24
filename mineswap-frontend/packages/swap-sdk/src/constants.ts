@@ -5,7 +5,7 @@ import { Token } from './entities/token'
 export type BigintIsh = JSBI | number | string
 
 export enum ChainId {
-  ETHEREUM = 1,
+  ETHEREUMPOW = 10001,
   GOERLI = 5,
   // BSC = 56,
   // BSC_TESTNET = 97,
@@ -22,24 +22,20 @@ export enum Rounding {
   ROUND_UP,
 }
 
-export const FACTORY_ADDRESS = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73'
+export const FACTORY_ADDRESS_ETHPOW = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73'
 
 const FACTORY_ADDRESS_ETH = '0xFB08f181292492FeBA6cDF3fd4B153Bf59c460F5'
 
 export const FACTORY_ADDRESS_MAP: Record<number, string> = {
-  [ChainId.ETHEREUM]: FACTORY_ADDRESS_ETH,
+  [ChainId.ETHEREUMPOW]: FACTORY_ADDRESS_ETHPOW,
   [ChainId.GOERLI]: FACTORY_ADDRESS_ETH,
-  // [ChainId.ETHEREUM]: FACTORY_ADDRESS,
-  // [ChainId.GOERLI]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
 }
-export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
+export const INIT_CODE_HASH_ETHPOW = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
 const INIT_CODE_HASH_ETH = '0x4f400f00fd8e309993cbfe2eb6b8f3abf957d1b03ff7bf8dbeafc2d157685188'
 export const INIT_CODE_HASH_MAP: Record<number, string> = {
-  [ChainId.ETHEREUM]: INIT_CODE_HASH_ETH,
+  [ChainId.ETHEREUMPOW]: INIT_CODE_HASH_ETHPOW,
   [ChainId.GOERLI]: INIT_CODE_HASH_ETH,
-  // [ChainId.ETHEREUM]: INIT_CODE_HASH,
-  // [ChainId.GOERLI]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -68,11 +64,11 @@ export const SOLIDITY_TYPE_MAXIMA = {
 }
 
 export const WETH9 = {
-  [ChainId.ETHEREUM]: new Token(
-    ChainId.ETHEREUM,
-    '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+  [ChainId.ETHEREUMPOW]: new Token(
+    ChainId.ETHEREUMPOW,
+    '0x7bf88d2c0e32de92cdaf2d43ccdc23e8edfd5990',
     18,
-    'WETH',
+    'WETHW',
     'Wrapped Ether',
     'https://weth.io'
   ),
@@ -86,17 +82,17 @@ export const WETH9 = {
   ),
 }
 
-export const WBNB = {
-  // [ChainId.ETHEREUM]: new Token(
-  //   ChainId.ETHEREUM,
+export const WETH = {
+  // [ChainId.ETHEREUMPOW]: new Token(
+  //   ChainId.ETHEREUMPOW,
   //   '0x418D75f65a02b3D53B2418FB8E1fe493759c7605',
   //   18,
   //   'WBNB',
   //   'Wrapped BNB',
   //   'https://www.binance.org'
   // ),
-  // [ChainId.ETHEREUM]: new Token(
-  //   ChainId.ETHEREUM,
+  // [ChainId.ETHEREUMPOW]: new Token(
+  //   ChainId.ETHEREUMPOW,
   //   '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   //   18,
   //   'WBNB',
@@ -114,9 +110,9 @@ export const WBNB = {
 }
 
 export const WNATIVE: Record<number, Token> = {
-  [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
+  [ChainId.ETHEREUMPOW]: WETH9[ChainId.ETHEREUMPOW],
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
-  // [ChainId.ETHEREUM]: WBNB[ChainId.ETHEREUM],
+  // [ChainId.ETHEREUMPOW]: WBNB[ChainId.ETHEREUMPOW],
   // [ChainId.GOERLI]: WBNB[ChainId.GOERLI],
 }
 
@@ -128,9 +124,9 @@ export const NATIVE: Record<
     decimals: number
   }
 > = {
-  [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  [ChainId.ETHEREUMPOW]: { name: 'Ether', symbol: 'ETHW', decimals: 18 },
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
-  // [ChainId.ETHEREUM]: {
+  // [ChainId.ETHEREUMPOW]: {
   //   name: 'Binance Chain Native Token',
   //   symbol: 'BNB',
   //   decimals: 18,

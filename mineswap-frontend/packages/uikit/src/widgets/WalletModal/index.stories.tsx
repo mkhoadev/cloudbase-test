@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../components/Button/Button";
 import Flex from "../../components/Box/Flex";
 import useWalletModal from "./useWalletModal";
-import { BinanceChainIcon, CoinbaseWalletIcon, MetamaskIcon } from "../../components/Svg";
+import { EthereumPowChainIcon, CoinbaseWalletIcon, MetamaskIcon } from "../../components/Svg";
 
 enum ConnectorNames {
   MetaMask = "metaMask",
@@ -33,7 +33,7 @@ export const Wallet: React.FC<React.PropsWithChildren> = () => {
       },
       {
         title: "Binance Wallet",
-        icon: BinanceChainIcon,
+        icon: EthereumPowChainIcon,
         connectorId: ConnectorNames.BSC,
         priority: 2,
       },

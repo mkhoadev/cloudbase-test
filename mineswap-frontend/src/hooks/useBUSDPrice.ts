@@ -1,6 +1,6 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, Pair, Price, Token, WNATIVE, WBNB } from '@pancakeswap/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, Pair, Price, Token, WNATIVE, WETH } from '@pancakeswap/sdk'
 import { FAST_INTERVAL } from 'config/constants'
-import { BUSD, MINE, USDC } from '@pancakeswap/tokens'
+import { USDT, MINE, USDC } from '@pancakeswap/tokens'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import useSWR from 'swr'
@@ -19,7 +19,7 @@ export default function useBUSDPrice(currency?: Currency): Price<Currency, Curre
   const { chainId } = useActiveWeb3React()
   const wrapped = currency?.wrapped
   const wnative = WNATIVE[chainId]
-  const stable = BUSD[chainId] || USDC[chainId]
+  const stable = USDT[chainId] || USDC[chainId]
 
   const tokenPairs: [Currency | undefined, Currency | undefined][] = useMemo(
     () => [
@@ -156,8 +156,8 @@ export const useCakeBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pr
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet MINE if chain is testnet
-  const mine: Token = isTestnet ? MINE[ChainId.GOERLI] : MINE[ChainId.ETHEREUM]
-  return usePriceByPairs(BUSD[mine.chainId], mine)
+  const mine: Token = isTestnet ? MINE[ChainId.GOERLI] : MINE[ChainId.ETHEREUMPOW]
+  return usePriceByPairs(USDT[mine.chainId], mine)
 }
 
 // @Note: only fetch from one pair
@@ -165,6 +165,6 @@ export const useBNBBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pri
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet wbnb if chain is testnet
-  const wbnb: Token = isTestnet ? WBNB[ChainId.GOERLI] : WBNB[ChainId.ETHEREUM]
-  return usePriceByPairs(BUSD[wbnb.chainId], wbnb)
+  const weth: Token = isTestnet ? WETH[ChainId.GOERLI] : WETH[ChainId.ETHEREUMPOW]
+  return usePriceByPairs(USDT[weth.chainId], weth)
 }

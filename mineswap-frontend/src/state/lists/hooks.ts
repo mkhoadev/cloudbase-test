@@ -176,7 +176,7 @@ export function useAllLists(): {
 
 function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddressMap {
   return {
-    [ChainId.ETHEREUM]: { ...map1[ChainId.ETHEREUM], ...map2[ChainId.ETHEREUM] },
+    [ChainId.ETHEREUMPOW]: { ...map1[ChainId.ETHEREUMPOW], ...map2[ChainId.ETHEREUMPOW] },
     [ChainId.GOERLI]: { ...map1[ChainId.GOERLI], ...map2[ChainId.GOERLI] },
   }
 }

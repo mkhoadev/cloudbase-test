@@ -34,7 +34,7 @@ const getWeekAgoTimestamp = () => {
 const LP_HOLDERS_FEE = 0.0017
 const WEEKS_IN_A_YEAR = 52.1429
 
-const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.ETHEREUM) => {
+const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.ETHEREUMPOW) => {
   try {
     const { blocks } = await request<BlockResponse>(
       BLOCKS_CLIENT_WITH_CHAIN[chainId],
@@ -96,12 +96,12 @@ const getAprsForFarmGroup = async (addresses: string[], blockWeekAgo: number, ch
 }
 
 // Copy paste of Stable farm logic
-export const bscProvider = new StaticJsonRpcProvider(
+export const ethpowProvider = new StaticJsonRpcProvider(
   {
-    url: 'https://bsc-mainnet.nodereal.io/v1/5a516406afa140ffa546ee10af7c9b24',
+    url: 'https://mainnet.ethereumpow.org',
     skipFetchSetup: true,
   },
-  56,
+  10001,
 )
 
 interface SplitFarmResult {
@@ -166,7 +166,7 @@ function splitNormalAndStableFarmsReducer(result: SplitFarmResult, farm: any): S
 }
 // ====
 
-const FETCH_CHAIN_ID = [ChainId.ETHEREUM, ChainId.ETHEREUM]
+const FETCH_CHAIN_ID = [ChainId.ETHEREUMPOW, ChainId.ETHEREUMPOW]
 const fetchAndUpdateLPsAPR = async () => {
   Promise.all(
     FETCH_CHAIN_ID.map(async (chainId) => {

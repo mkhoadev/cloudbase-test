@@ -1,6 +1,6 @@
 import { useTranslation } from '@pancakeswap/localization'
 import {
-  BinanceChainIcon,
+  EthereumPowChainIcon,
   Button,
   ButtonProps,
   CoinbaseWalletIcon,
@@ -30,7 +30,7 @@ export interface AddToWalletButtonProps {
 
 const Icons = {
   // TODO: Brave
-  Binance: BinanceChainIcon,
+  Binance: EthereumPowChainIcon,
   'Coinbase Wallet': CoinbaseWalletIcon,
   Opera: OperaIcon,
   TokenPocket: TokenPocketIcon,

@@ -4,7 +4,7 @@ import { Address } from 'config/constants/types'
 import { VaultKey } from 'state/types'
 
 export const getAddress = (address: Address, chainId?: number): string => {
-  return address[chainId] ? address[chainId] : address[ChainId.ETHEREUM]
+  return address[chainId] ? address[chainId] : address[ChainId.ETHEREUMPOW]
 }
 
 // export const getMasterChefAddress = (chainId?: number) => {

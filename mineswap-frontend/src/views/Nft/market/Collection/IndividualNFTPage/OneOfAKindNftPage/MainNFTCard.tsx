@@ -1,4 +1,4 @@
-import { BinanceIcon, Box, Button, Card, CardBody, Flex, Skeleton, Text, useModal } from '@pancakeswap/uikit'
+import { EthereumPowIcon, Box, Button, Card, CardBody, Flex, Skeleton, Text, useModal } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 
@@ -80,7 +80,7 @@ const MainNFTCard: React.FC<React.PropsWithChildren<MainNFTCardProps>> = ({
               </Text>
               {currentAskPriceAsNumber > 0 ? (
                 <Flex alignItems="center" mt="8px">
-                  <BinanceIcon width={18} height={18} mr="4px" />
+                  <EthereumPowIcon width={18} height={18} mr="4px" />
                   <Text fontSize="24px" bold mr="4px">
                     {formatNumber(currentAskPriceAsNumber, 0, 5)}
                   </Text>
