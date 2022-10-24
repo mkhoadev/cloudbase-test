@@ -1,4 +1,4 @@
-export const BSC_RPC_URLS = [
+export const ETHW_RPC_URLS = [
   'https://mainnet.ethereumpow.org',
 ]
 

@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI } from '@pancakeswap/tokens'
+import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
@@ -38,10 +38,8 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.ETHEREUMPOW]: [USDC[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW], WNATIVE[ChainId.ETHEREUMPOW], WBTC_ETH],
+  [ChainId.ETHEREUMPOW]: [ WNATIVE[ChainId.ETHEREUMPOW],BUSD[ChainId.ETHEREUMPOW],USDC[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW], WBTC_ETH],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], USDT[ChainId.GOERLI]],
-  // [ChainId.ETHEREUMPOW]: [ethereumTokens.busd, ethereumTokens.weth, ethereumTokens.btcb],
-  // [ChainId.GOERLI]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -93,10 +91,10 @@ export const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(BASE_FEE)
 // BNB
 export const DEFAULT_INPUT_CURRENCY = 'ETHW'
 // CAKE
-export const DEFAULT_OUTPUT_CURRENCY = '0x3F7a9178051f266C9d4834c1eBc68297b7a49172'
+export const DEFAULT_OUTPUT_CURRENCY = '0xFd483e333cBe8fE7A418D9398d6BB81CC2B8e07B'
 
 // Handler string is passed to Gelato to use PCS router
-export const GELATO_HANDLER = 'pancakeswap'
+export const GELATO_HANDLER = 'mineswap'
 export const GENERIC_GAS_LIMIT_ORDER_EXECUTION = BigNumber.from(500000)
 
 export const LIMIT_ORDERS_DOCS_URL = 'https://docs.pancakeswap.finance/products/pancakeswap-exchange/limit-orders'

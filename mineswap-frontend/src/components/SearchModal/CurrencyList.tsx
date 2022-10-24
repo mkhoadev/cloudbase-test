@@ -76,8 +76,9 @@ function CurrencyRow({
   const selectedTokenList = useCombinedActiveList()
   const isOnSelectedList = isTokenOnList(selectedTokenList, currency)
   const customAdded = useIsUserAddedToken(currency)
+  console.log("account====",account)
   const balance = useCurrencyBalance(account ?? undefined, currency)
-
+  console.log("balance====",balance)
   // only show add or remove buttons if not on selected list
   return (
     <MenuItem

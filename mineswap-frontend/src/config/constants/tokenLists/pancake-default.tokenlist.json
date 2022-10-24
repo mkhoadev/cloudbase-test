@@ -11,20 +11,20 @@
   "keywords": ["pancake", "default"],
   "tokens": [
     {
-      "name": "Wrapped BNB",
-      "symbol": "WBNB",
-      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
-      "chainId": 56,
+      "name": "Wrapped ETHW",
+      "symbol": "WETHW",
+      "address": "0x7bf88d2c0e32de92cdaf2d43ccdc23e8edfd5990",
+      "chainId": 10001,
       "decimals": 18,
-      "logoURI": "https://mineswap.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png"
+      "logoURI": "/images/10001/tokens/0x7bf88d2c0e32de92cdaf2d43ccdc23e8edfd5990.png"
     },
     {
       "name": "BUSD Token",
       "symbol": "BUSD",
-      "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-      "chainId": 56,
+      "address": "0xf61eb8999f2F222f425d41dA4C2ff4b6D8320C87",
+      "chainId": 10001,
       "decimals": 18,
-      "logoURI": "https://mineswap.finance/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png"
+      "logoURI": "/images/10001/tokens/0xf61eb8999f2F222f425d41dA4C2ff4b6D8320C87.png"
     },
     {
       "name": "Ethereum Token",

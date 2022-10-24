@@ -119,7 +119,6 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
     }),
     [inputCurrency, outputCurrency],
   )
-
   const {
     v2Trade,
     currencyBalances,

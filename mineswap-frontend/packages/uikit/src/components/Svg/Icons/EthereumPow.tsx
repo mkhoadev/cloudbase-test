@@ -27,26 +27,26 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
       <path d="M4.60547 11.1094L10.048 18.9988V14.2868L4.60547 11.1094Z" fill="url(#paint4_linear_253_362)"></path>
       <path d="M15.4894 11.1094L10.0469 18.9988V14.2868L15.4894 11.1094Z" fill="url(#paint5_linear_253_362)"></path>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7.31997 11.4031L7.02344 5.99807L7.2018 5.98828L7.49834 11.3933L7.31997 11.4031Z"
         fill="#B0B4E9"
       ></path>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M12.4609 11.3933L12.7575 5.98828L12.9358 5.99807L12.6393 11.4031L12.4609 11.3933Z"
         fill="#B0B4E9"
       ></path>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7.33984 11.299L9.98452 7.73438L10.128 7.84081L7.48331 11.4055L7.33984 11.299Z"
         fill="#B0B4E9"
       ></path>
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M12.5275 11.4055L9.88281 7.84081L10.0263 7.73438L12.671 11.299L12.5275 11.4055Z"
         fill="#B0B4E9"
       ></path>
@@ -99,12 +99,12 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="2.69305"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3243" stop-color="#AC9CF2"></stop>
-          <stop offset="0.326" stop-color="#AC9CF2"></stop>
-          <stop offset="0.4645" stop-color="#B1B3EA"></stop>
-          <stop offset="0.6134" stop-color="#B4C3E5"></stop>
-          <stop offset="0.7803" stop-color="#B6CDE2"></stop>
-          <stop offset="1" stop-color="#B7D0E1"></stop>
+          <stop offset="0.3243" stopColor="#AC9CF2"></stop>
+          <stop offset="0.326" stopColor="#AC9CF2"></stop>
+          <stop offset="0.4645" stopColor="#B1B3EA"></stop>
+          <stop offset="0.6134" stopColor="#B4C3E5"></stop>
+          <stop offset="0.7803" stopColor="#B6CDE2"></stop>
+          <stop offset="1" stopColor="#B7D0E1"></stop>
         </linearGradient>
         <linearGradient
           id="paint1_linear_253_362"
@@ -114,11 +114,11 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="2.69305"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3243" stop-color="#B2DBF5"></stop>
-          <stop offset="0.4427" stop-color="#C4E3F4"></stop>
-          <stop offset="0.5977" stop-color="#D4EAF4"></stop>
-          <stop offset="0.7713" stop-color="#DEEFF3"></stop>
-          <stop offset="1" stop-color="#E1F0F3"></stop>
+          <stop offset="0.3243" stopColor="#B2DBF5"></stop>
+          <stop offset="0.4427" stopColor="#C4E3F4"></stop>
+          <stop offset="0.5977" stopColor="#D4EAF4"></stop>
+          <stop offset="0.7713" stopColor="#DEEFF3"></stop>
+          <stop offset="1" stopColor="#E1F0F3"></stop>
         </linearGradient>
         <linearGradient
           id="paint2_linear_253_362"
@@ -128,10 +128,10 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="10.4906"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3243" stop-color="#D6CDFB"></stop>
-          <stop offset="0.4284" stop-color="#D9D4FA"></stop>
-          <stop offset="0.6546" stop-color="#DCDEF9"></stop>
-          <stop offset="0.9528" stop-color="#DDE1F9"></stop>
+          <stop offset="0.3243" stopColor="#D6CDFB"></stop>
+          <stop offset="0.4284" stopColor="#D9D4FA"></stop>
+          <stop offset="0.6546" stopColor="#DCDEF9"></stop>
+          <stop offset="0.9528" stopColor="#DDE1F9"></stop>
         </linearGradient>
         <linearGradient
           id="paint3_linear_253_362"
@@ -141,10 +141,10 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="10.4906"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3243" stop-color="#ECF2F2"></stop>
-          <stop offset="0.3653" stop-color="#EEF4F3"></stop>
-          <stop offset="0.6187" stop-color="#F8FAF6"></stop>
-          <stop offset="0.9528" stop-color="#FBFCF7"></stop>
+          <stop offset="0.3243" stopColor="#ECF2F2"></stop>
+          <stop offset="0.3653" stopColor="#EEF4F3"></stop>
+          <stop offset="0.6187" stopColor="#F8FAF6"></stop>
+          <stop offset="0.9528" stopColor="#FBFCF7"></stop>
         </linearGradient>
         <linearGradient
           id="paint4_linear_253_362"
@@ -154,11 +154,11 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="15.0541"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3243" stop-color="#6E89D3"></stop>
-          <stop offset="0.3255" stop-color="#6E89D3"></stop>
-          <stop offset="0.5001" stop-color="#6A83E3"></stop>
-          <stop offset="0.6954" stop-color="#6880ED"></stop>
-          <stop offset="0.9528" stop-color="#677FF0"></stop>
+          <stop offset="0.3243" stopColor="#6E89D3"></stop>
+          <stop offset="0.3255" stopColor="#6E89D3"></stop>
+          <stop offset="0.5001" stopColor="#6A83E3"></stop>
+          <stop offset="0.6954" stopColor="#6880ED"></stop>
+          <stop offset="0.9528" stopColor="#677FF0"></stop>
         </linearGradient>
         <linearGradient
           id="paint5_linear_253_362"
@@ -168,9 +168,9 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="15.0541"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.3243" stop-color="#C4C5FC"></stop>
-          <stop offset="0.5439" stop-color="#C8CBF8"></stop>
-          <stop offset="0.9528" stop-color="#CACEF6"></stop>
+          <stop offset="0.3243" stopColor="#C4C5FC"></stop>
+          <stop offset="0.5439" stopColor="#C8CBF8"></stop>
+          <stop offset="0.9528" stopColor="#CACEF6"></stop>
         </linearGradient>
         <linearGradient
           id="paint6_linear_253_362"
@@ -180,14 +180,14 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="5.41689"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#718BD4"></stop>
-          <stop offset="0.0121" stop-color="#758ED5"></stop>
-          <stop offset="0.0579" stop-color="#7790D6"></stop>
-          <stop offset="0.099" stop-color="#7A92D7"></stop>
-          <stop offset="0.2589" stop-color="#889DDD"></stop>
-          <stop offset="0.473" stop-color="#9AAAE4"></stop>
-          <stop offset="0.695" stop-color="#AEB9EC"></stop>
-          <stop offset="1" stop-color="#C6CBF5"></stop>
+          <stop stopColor="#718BD4"></stop>
+          <stop offset="0.0121" stopColor="#758ED5"></stop>
+          <stop offset="0.0579" stopColor="#7790D6"></stop>
+          <stop offset="0.099" stopColor="#7A92D7"></stop>
+          <stop offset="0.2589" stopColor="#889DDD"></stop>
+          <stop offset="0.473" stopColor="#9AAAE4"></stop>
+          <stop offset="0.695" stopColor="#AEB9EC"></stop>
+          <stop offset="1" stopColor="#C6CBF5"></stop>
         </linearGradient>
         <radialGradient
           id="paint7_radial_253_362"
@@ -197,12 +197,12 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(7.46264 5.66587) rotate(42.0004) scale(0.144753)"
         >
-          <stop stop-color="#DADCF4"></stop>
-          <stop offset="0.00819061" stop-color="#DADCF4"></stop>
-          <stop offset="0.0579" stop-color="#DADCF4"></stop>
-          <stop offset="0.099" stop-color="#DADCF4"></stop>
-          <stop offset="0.473" stop-color="#DADCF4"></stop>
-          <stop offset="1" stop-color="#DADCF4"></stop>
+          <stop stopColor="#DADCF4"></stop>
+          <stop offset="0.00819061" stopColor="#DADCF4"></stop>
+          <stop offset="0.0579" stopColor="#DADCF4"></stop>
+          <stop offset="0.099" stopColor="#DADCF4"></stop>
+          <stop offset="0.473" stopColor="#DADCF4"></stop>
+          <stop offset="1" stopColor="#DADCF4"></stop>
         </radialGradient>
         <linearGradient
           id="paint8_linear_253_362"
@@ -212,14 +212,14 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="10.7254"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#718BD4"></stop>
-          <stop offset="0.0121" stop-color="#758ED5"></stop>
-          <stop offset="0.0579" stop-color="#7790D6"></stop>
-          <stop offset="0.099" stop-color="#7A92D7"></stop>
-          <stop offset="0.2589" stop-color="#889DDD"></stop>
-          <stop offset="0.473" stop-color="#9AAAE4"></stop>
-          <stop offset="0.695" stop-color="#AEB9EC"></stop>
-          <stop offset="1" stop-color="#C6CBF5"></stop>
+          <stop stopColor="#718BD4"></stop>
+          <stop offset="0.0121" stopColor="#758ED5"></stop>
+          <stop offset="0.0579" stopColor="#7790D6"></stop>
+          <stop offset="0.099" stopColor="#7A92D7"></stop>
+          <stop offset="0.2589" stopColor="#889DDD"></stop>
+          <stop offset="0.473" stopColor="#9AAAE4"></stop>
+          <stop offset="0.695" stopColor="#AEB9EC"></stop>
+          <stop offset="1" stopColor="#C6CBF5"></stop>
         </linearGradient>
         <radialGradient
           id="paint9_radial_253_362"
@@ -229,12 +229,12 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(7.74387 10.9741) rotate(42.0004) scale(0.144753)"
         >
-          <stop stop-color="#DADCF4"></stop>
-          <stop offset="0.00819061" stop-color="#DADCF4"></stop>
-          <stop offset="0.0579" stop-color="#DADCF4"></stop>
-          <stop offset="0.099" stop-color="#DADCF4"></stop>
-          <stop offset="0.473" stop-color="#DADCF4"></stop>
-          <stop offset="1" stop-color="#DADCF4"></stop>
+          <stop stopColor="#DADCF4"></stop>
+          <stop offset="0.00819061" stopColor="#DADCF4"></stop>
+          <stop offset="0.0579" stopColor="#DADCF4"></stop>
+          <stop offset="0.099" stopColor="#DADCF4"></stop>
+          <stop offset="0.473" stopColor="#DADCF4"></stop>
+          <stop offset="1" stopColor="#DADCF4"></stop>
         </radialGradient>
         <linearGradient
           id="paint10_linear_253_362"
@@ -244,14 +244,14 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="5.41689"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#718BD4"></stop>
-          <stop offset="0.0121" stop-color="#758ED5"></stop>
-          <stop offset="0.0579" stop-color="#7790D6"></stop>
-          <stop offset="0.099" stop-color="#7A92D7"></stop>
-          <stop offset="0.2589" stop-color="#889DDD"></stop>
-          <stop offset="0.473" stop-color="#9AAAE4"></stop>
-          <stop offset="0.695" stop-color="#AEB9EC"></stop>
-          <stop offset="1" stop-color="#C6CBF5"></stop>
+          <stop stopColor="#718BD4"></stop>
+          <stop offset="0.0121" stopColor="#758ED5"></stop>
+          <stop offset="0.0579" stopColor="#7790D6"></stop>
+          <stop offset="0.099" stopColor="#7A92D7"></stop>
+          <stop offset="0.2589" stopColor="#889DDD"></stop>
+          <stop offset="0.473" stopColor="#9AAAE4"></stop>
+          <stop offset="0.695" stopColor="#AEB9EC"></stop>
+          <stop offset="1" stopColor="#C6CBF5"></stop>
         </linearGradient>
         <radialGradient
           id="paint11_radial_253_362"
@@ -261,12 +261,12 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(13.1928 5.66591) rotate(42.0004) scale(0.144753)"
         >
-          <stop stop-color="#DADCF4"></stop>
-          <stop offset="0.00819061" stop-color="#DADCF4"></stop>
-          <stop offset="0.0579" stop-color="#DADCF4"></stop>
-          <stop offset="0.099" stop-color="#DADCF4"></stop>
-          <stop offset="0.473" stop-color="#DADCF4"></stop>
-          <stop offset="1" stop-color="#DADCF4"></stop>
+          <stop stopColor="#DADCF4"></stop>
+          <stop offset="0.00819061" stopColor="#DADCF4"></stop>
+          <stop offset="0.0579" stopColor="#DADCF4"></stop>
+          <stop offset="0.099" stopColor="#DADCF4"></stop>
+          <stop offset="0.473" stopColor="#DADCF4"></stop>
+          <stop offset="1" stopColor="#DADCF4"></stop>
         </radialGradient>
         <linearGradient
           id="paint12_linear_253_362"
@@ -276,14 +276,14 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="10.7254"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#718BD4"></stop>
-          <stop offset="0.0121" stop-color="#758ED5"></stop>
-          <stop offset="0.0579" stop-color="#7790D6"></stop>
-          <stop offset="0.099" stop-color="#7A92D7"></stop>
-          <stop offset="0.2589" stop-color="#889DDD"></stop>
-          <stop offset="0.473" stop-color="#9AAAE4"></stop>
-          <stop offset="0.695" stop-color="#AEB9EC"></stop>
-          <stop offset="1" stop-color="#C6CBF5"></stop>
+          <stop stopColor="#718BD4"></stop>
+          <stop offset="0.0121" stopColor="#758ED5"></stop>
+          <stop offset="0.0579" stopColor="#7790D6"></stop>
+          <stop offset="0.099" stopColor="#7A92D7"></stop>
+          <stop offset="0.2589" stopColor="#889DDD"></stop>
+          <stop offset="0.473" stopColor="#9AAAE4"></stop>
+          <stop offset="0.695" stopColor="#AEB9EC"></stop>
+          <stop offset="1" stopColor="#C6CBF5"></stop>
         </linearGradient>
         <radialGradient
           id="paint13_radial_253_362"
@@ -293,12 +293,12 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(12.8804 10.9741) rotate(42.0006) scale(0.144752)"
         >
-          <stop stop-color="#DADCF4"></stop>
-          <stop offset="0.00819061" stop-color="#DADCF4"></stop>
-          <stop offset="0.0579" stop-color="#DADCF4"></stop>
-          <stop offset="0.099" stop-color="#DADCF4"></stop>
-          <stop offset="0.473" stop-color="#DADCF4"></stop>
-          <stop offset="1" stop-color="#DADCF4"></stop>
+          <stop stopColor="#DADCF4"></stop>
+          <stop offset="0.00819061" stopColor="#DADCF4"></stop>
+          <stop offset="0.0579" stopColor="#DADCF4"></stop>
+          <stop offset="0.099" stopColor="#DADCF4"></stop>
+          <stop offset="0.473" stopColor="#DADCF4"></stop>
+          <stop offset="1" stopColor="#DADCF4"></stop>
         </radialGradient>
         <linearGradient
           id="paint14_linear_253_362"
@@ -308,14 +308,14 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           y2="7.1629"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#718BD4"></stop>
-          <stop offset="0.0121" stop-color="#758ED5"></stop>
-          <stop offset="0.0579" stop-color="#7790D6"></stop>
-          <stop offset="0.099" stop-color="#7A92D7"></stop>
-          <stop offset="0.2589" stop-color="#889DDD"></stop>
-          <stop offset="0.473" stop-color="#9AAAE4"></stop>
-          <stop offset="0.695" stop-color="#AEB9EC"></stop>
-          <stop offset="1" stop-color="#C6CBF5"></stop>
+          <stop stopColor="#718BD4"></stop>
+          <stop offset="0.0121" stopColor="#758ED5"></stop>
+          <stop offset="0.0579" stopColor="#7790D6"></stop>
+          <stop offset="0.099" stopColor="#7A92D7"></stop>
+          <stop offset="0.2589" stopColor="#889DDD"></stop>
+          <stop offset="0.473" stopColor="#9AAAE4"></stop>
+          <stop offset="0.695" stopColor="#AEB9EC"></stop>
+          <stop offset="1" stopColor="#C6CBF5"></stop>
         </linearGradient>
         <radialGradient
           id="paint15_radial_253_362"
@@ -325,12 +325,12 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(10.3883 7.41181) rotate(42.0006) scale(0.144752)"
         >
-          <stop stop-color="#DADCF4"></stop>
-          <stop offset="0.00819061" stop-color="#DADCF4"></stop>
-          <stop offset="0.0579" stop-color="#DADCF4"></stop>
-          <stop offset="0.099" stop-color="#DADCF4"></stop>
-          <stop offset="0.473" stop-color="#DADCF4"></stop>
-          <stop offset="1" stop-color="#DADCF4"></stop>
+          <stop stopColor="#DADCF4"></stop>
+          <stop offset="0.00819061" stopColor="#DADCF4"></stop>
+          <stop offset="0.0579" stopColor="#DADCF4"></stop>
+          <stop offset="0.099" stopColor="#DADCF4"></stop>
+          <stop offset="0.473" stopColor="#DADCF4"></stop>
+          <stop offset="1" stopColor="#DADCF4"></stop>
         </radialGradient>
       </defs>
     </Svg>

@@ -61,7 +61,7 @@ const config: (
     //     // {
     //     //   label: t('Limit'),
     //     //   href: '/limit-orders',
-    //     //   supportChainIds: SUPPORT_ONLY_BSC,
+    //     //   supportChainIds: SUPPORT_ONLY_ETHW,
     //     //   image: '/images/decorations/3d-coin.png',
     //     // },
     //     {
@@ -73,7 +73,7 @@ const config: (
     //     //   href: `https://perp.pancakeswap.finance/${perpLangMap(languageCode)}/futures/BTCUSDT?theme=${perpTheme(
     //     //     isDark,
     //     //   )}`,
-    //     //   supportChainIds: SUPPORT_ONLY_BSC,
+    //     //   supportChainIds: SUPPORT_ONLY_ETHW,
     //     //   type: DropdownMenuItemType.EXTERNAL_LINK,
     //     // },
     //     // {
@@ -97,7 +97,7 @@ const config: (
     //     {
     //       label: t('Pools'),
     //       href: '/pools',
-    //       supportChainIds: SUPPORT_ONLY_BSC,
+    //       supportChainIds: SUPPORT_ONLY_ETHW,
     //     },
     //   ].map((item) => addMenuItemSupported(item, chainId)),
     // },
@@ -106,7 +106,7 @@ const config: (
     //   href: '/prediction',
     //   icon: TrophyIcon,
     //   fillIcon: TrophyFillIcon,
-    //   supportChainIds: SUPPORT_ONLY_BSC,
+    //   supportChainIds: SUPPORT_ONLY_ETHW,
     //   items: [
     //     {
     //       label: t('Trading Competition'),
@@ -136,7 +136,7 @@ const config: (
     //   href: `${nftsBaseUrl}`,
     //   icon: NftIcon,
     //   fillIcon: NftFillIcon,
-    //   supportChainIds: SUPPORT_ONLY_BSC,
+    //   supportChainIds: SUPPORT_ONLY_ETHW,
     //   image: '/images/decorations/nft.png',
     //   items: [
     //     {
@@ -166,13 +166,13 @@ const config: (
     //     {
     //       label: t('IFO'),
     //       href: '/ifo',
-    //       supportChainIds: SUPPORT_ONLY_BSC,
+    //       supportChainIds: SUPPORT_ONLY_ETHW,
     //       image: '/images/ifos/ifo-bunny.png',
     //     },
     //     {
     //       label: t('Voting'),
     //       href: '/voting',
-    //       supportChainIds: SUPPORT_ONLY_BSC,
+    //       supportChainIds: SUPPORT_ONLY_ETHW,
     //       image: '/images/voting/voting-bunny.png',
     //     },
     //     {
@@ -181,7 +181,7 @@ const config: (
     //     {
     //       label: t('Leaderboard'),
     //       href: '/teams',
-    //       supportChainIds: SUPPORT_ONLY_BSC,
+    //       supportChainIds: SUPPORT_ONLY_ETHW,
     //       image: '/images/decorations/leaderboard.png',
     //     },
     //     {

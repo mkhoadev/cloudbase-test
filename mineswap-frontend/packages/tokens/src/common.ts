@@ -2,9 +2,9 @@ import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const MINE_MAINNET = new Token(
   ChainId.ETHEREUMPOW,
-  '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  '0xFd483e333cBe8fE7A418D9398d6BB81CC2B8e07B',
   18,
-  'CAKE',
+  'MINE',
   'MineSwap Token',
   'https://mineswap.finance/',
 )
@@ -45,9 +45,9 @@ export const USDT_ETH = new Token(
   'https://tether.to/',
 )
 
-export const BUSD_ETH = new Token(
+export const BUSD_ETHW = new Token(
   ChainId.ETHEREUMPOW,
-  '0x4Fabb145d64652a948d72533023f6E7A623C7C53',
+  '0xf61eb8999f2F222f425d41dA4C2ff4b6D8320C87',
   18,
   'BUSD',
   'Binance USD',
@@ -65,7 +65,7 @@ export const BUSD_GOERLI = new Token(
 )
 
 export const BUSD: Record<ChainId, Token> = {
-  [ChainId.ETHEREUMPOW]: BUSD_ETH,
+  [ChainId.ETHEREUMPOW]: BUSD_ETHW,
   [ChainId.GOERLI]: BUSD_GOERLI,
 }
 

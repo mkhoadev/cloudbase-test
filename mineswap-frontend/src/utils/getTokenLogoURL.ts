@@ -6,7 +6,9 @@ const mapping = {
 
 const getTokenLogoURL = (token?: Token) => {
   if (token && mapping[token.chainId]) {
-    return `https://assets-cdn.trustwallet.com/blockchains/${mapping[token.chainId]}/assets/${token.address}/logo.png`
+    // return `https://assets-cdn.trustwallet.com/blockchains/${mapping[token.chainId]}/assets/${token.address}/logo.png`
+    console.log('path:===',`/images/10001/tokens/${token.address}/.png`)
+    return `/images/10001/tokens/${token.address}.png`
   }
   return null
 }
