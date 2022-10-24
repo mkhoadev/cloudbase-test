@@ -26,7 +26,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <span className="trade-earn">
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
             </span>
-            <div className="dflex">
+            <div className="dflex justifyContent" style={{paddingTop:'10px'}}>
               <div
                 className="imgbutton"
                 style={{
@@ -43,11 +43,11 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <img
               src={isDark ? '/img/hero-images@1x.svg' : '/img/logolight.svg'}
               alt="hero images"
-              style={{ width: '60%', float: 'right' }}
+              className='style-img-home'
             />
           </div>
         </div>
-        <div className="use-by">
+        <div className="use-by mt-Used">
           <div className="div_millions">
             <h3 className="h3-home">
               Used by millions.
@@ -64,7 +64,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <Tradeanythink />
         <Earncrypto />
         <Statistical />
-        <div className="use-by" style={{ marginTop: '150px' }}>
+        <div className="use-by" style={{ marginTop: '100px' }}>
           <div className="div_millions">
             <div className="h3-home">Scaling solutions, amplified.</div>
             <span className="intro-swap">Onix`s complete suite of blockchain-scaling solutions.</span>
@@ -90,7 +90,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </div>
         <div
           className="background-involved"
-          style={{ backgroundImage: isDark ? 'url(/img/Footerdark1.svg)' : 'url(/img/Footer1.svg)' }}
+          style={{ backgroundImage: isDark ? 'url(/img/swapdark.svg)' : 'url(/img/swaplight.svg)' }}
         >
           <div className="involved">
             <div className="involved-div">

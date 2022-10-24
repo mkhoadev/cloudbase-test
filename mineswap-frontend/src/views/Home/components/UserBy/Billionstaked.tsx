@@ -2,7 +2,7 @@
 const Billionstaked : React.FC<React.PropsWithChildren> = () => {
   return (
     <div className="div-millions-user">
-      {/* <div className="txtmillionuser"></div> */}
+      <div className="txtmillionuser"></div>
       <div className="bEQugO">
         <div className="image-million">
           <div className="sc-eLdnOn color_trade"></div>
@@ -13,7 +13,7 @@ const Billionstaked : React.FC<React.PropsWithChildren> = () => {
             <div className="sc-iAEawV eojyCN">
               <div className="sc-eeMvmM jKblIE">
                 <img src="/img/crystal-shadow-1@2x.png" alt="slices" className="sc-cUEOzv imhWGR" />
-                <img src="/img/arrow@2x.png" alt="swirlcurl" className="sc-hAQmFe hpkbds"></img>
+                <img src="/img/arrow@2x.png" alt="swirlcurl" className="imhWGR"></img>
               </div>
             </div>
           </div>

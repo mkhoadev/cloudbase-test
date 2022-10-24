@@ -16,7 +16,7 @@ export const tokens = {
     dark: darkColors,
   },
   fonts: {
-    normal: "'Kanit', Helvetica",
+    normal: "'Karla', Helvetica",
     mono: 'SFMono, ui-monospace, monospace',
   },
   space: {
