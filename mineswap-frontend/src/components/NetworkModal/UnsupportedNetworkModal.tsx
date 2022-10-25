@@ -61,7 +61,6 @@ export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupported
             isLoading={isLoading}
             onClick={() => {
               if (supportedMainnetChains.map((c) => c.id).includes(chainId)) {
-                console.log("=======ChainId==========",chainId)
                 switchNetworkAsync(chainId)
               } else {
                 switchNetworkAsync(ChainId.ETHEREUMPOW)

@@ -120,11 +120,12 @@ export const getStaticProps: GetStaticProps = async () => {
         }
       }
     `)
-    const { totalLiquidityUSD } = result.pancakeFactories[0]
-    const cakeVaultV2 = getCakeVaultAddress()
-    const cakeContract = getCakeContract()
-    const totalCakeInVault = await cakeContract.balanceOf(cakeVaultV2)
-    results.tvl = parseFloat(formatEther(totalCakeInVault)) * result.token.derivedUSD + parseFloat(totalLiquidityUSD)
+    // const { totalLiquidityUSD } = result.pancakeFactories[0]
+    // const cakeVaultV2 = getCakeVaultAddress()
+    // const cakeContract = getCakeContract()
+    // const totalCakeInVault = await cakeContract.balanceOf(cakeVaultV2)
+    // results.tvl = parseFloat(formatEther(totalCakeInVault)) * result.token.derivedUSD + parseFloat(totalLiquidityUSD)
+    console.info('fetching tvl stats')
   } catch (error) {
     if (process.env.NODE_ENV === 'production') {
       console.error('Error when fetching tvl stats', error)
