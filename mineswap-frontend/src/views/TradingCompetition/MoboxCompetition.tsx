@@ -133,7 +133,7 @@ const MoboxCompetition = () => {
   //     }
   //   }
 
-  //   if (chainId === ChainId.ETHEREUM) {
+  //   if (chainId === ChainId.ETHEREUMPOW) {
   //     // fetchCompetitionInfoContract()
   //     if (account) {
   //       setUserTradingInformation({ ...initialUserTradingInformation })

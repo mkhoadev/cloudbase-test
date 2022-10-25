@@ -26,7 +26,7 @@ const useGetVotingPower = (block?: number, isActive = true): State & { isLoading
     async () => {
       const blockNumber = block || (await bscRpcProvider.getBlockNumber())
       const eligiblePools = await getActivePools(blockNumber)
-      const poolAddresses = eligiblePools.map(({ contractAddress }) => getAddress(contractAddress, ChainId.ETHEREUM))
+      const poolAddresses = eligiblePools.map(({ contractAddress }) => getAddress(contractAddress, ChainId.ETHEREUMPOW))
       const {
         cakeBalance,
         cakeBnbLpBalance,

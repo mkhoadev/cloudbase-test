@@ -21,9 +21,7 @@ export default {
   //   1:"0x5aF6D33DE2ccEC94efb1bDF8f92Bd58085432d2c"
   // },
   multiCall: {
-    97: '0x5790c3534F30437641541a0FA04C992799602998',
-    56: '0x5aF6D33DE2ccEC94efb1bDF8f92Bd58085432d2c',
-    1: '0xcA11bde05977b3631167028862bE2a173976CA11',
+    10001: '0xcA11bde05977b3631167028862bE2a173976CA11',
     5: '0xcA11bde05977b3631167028862bE2a173976CA11'
   },
   pancakeProfile: {
@@ -75,31 +73,28 @@ export default {
     // 97: '0x24ec6962dbe874F6B67B5C50857565667fA0854F',
   },
   cakeVault: {
-    56: '0x45c54210128a065de780C4B0Df3d16664f7f859e',
-    97: '0x683433ba14e8F26774D43D3E90DA6Dd7a22044Fe',
-    1:''
+    5: '0x45c54210128a065de780C4B0Df3d16664f7f859e',
+    10001 : '0x683433ba14e8F26774D43D3E90DA6Dd7a22044Fe',
   },
   cakeFlexibleSideVault: {
-    56: '0x615e896A8C2CA8470A2e9dc2E9552998f8658Ea0',
-    97: '',
-    1:'0x615e896A8C2CA8470A2e9dc2E9552998f8658Ea0'
+    5: '0x615e896A8C2CA8470A2e9dc2E9552998f8658Ea0',
+    10001:''
   },
   predictionsBNB: {
-    56: '0x18B2A687610328590Bc8F2e5fEdDe3b582A49cdA',
-    97: '',
+    5: '0x18B2A687610328590Bc8F2e5fEdDe3b582A49cdA',
+    10001: '',
   },
   predictionsCAKE: {
-    56: '0x0E3A8078EDD2021dadcdE733C6b4a86E51EE8f07',
-    97: '',
+    5: '0x0E3A8078EDD2021dadcdE733C6b4a86E51EE8f07',
+    10001: '',
   },
   chainlinkOracleBNB: {
-    56: '0xD276fCF34D54A926773c399eBAa772C12ec394aC',
-    97: '',
+    5: '0xD276fCF34D54A926773c399eBAa772C12ec394aC',
+    10001: '',
   },
   chainlinkOracleCAKE: {
-    56: '0xB6064eD41d4f67e353768aA239cA86f4F73665a1',
-    97: '',
-    1:''
+    5: '0xB6064eD41d4f67e353768aA239cA86f4F73665a1',
+    10001: '',
   },
   predictionsV1: {
     // 56: '0x516ffd7d1e0ca40b1879935b2de87cb20fc1124b',
@@ -170,7 +165,7 @@ export default {
     // 97: '',
   },
   nonBscVault: {
-    56: '0xE6c904424417D03451fADd6E3f5b6c26BcC43841', // Only for pass contracts test
+    10001: '0xE6c904424417D03451fADd6E3f5b6c26BcC43841', // Only for pass contracts test
     1: '0x2e71B2688019ebdFDdE5A45e6921aaebb15b25fb',
     5: '0xE6c904424417D03451fADd6E3f5b6c26BcC43841',
   },

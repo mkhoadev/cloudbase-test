@@ -23,7 +23,7 @@ export const useExtendEnable = () => {
 
   const parsedAmount = tryParseAmount(swapAmount, MINE[chainId])
 
-  const trade = useTradeExactOut(Native.onChain(ChainId.ETHEREUM), parsedAmount)
+  const trade = useTradeExactOut(Native.onChain(ChainId.ETHEREUMPOW), parsedAmount)
 
   const swapCalls = useSwapCallArguments(trade, INITIAL_ALLOWED_SLIPPAGE, null)
 

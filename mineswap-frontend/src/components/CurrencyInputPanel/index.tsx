@@ -122,7 +122,9 @@ export default function CurrencyInputPanel({
   showBUSD,
 }: CurrencyInputPanelProps) {
   const { account } = useActiveWeb3React()
+  console.log("currency",currency)
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
+
   const { t } = useTranslation()
 
   const token = pair ? pair.liquidityToken : currency?.isToken ? currency : null

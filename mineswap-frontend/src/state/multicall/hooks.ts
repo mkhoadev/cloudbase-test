@@ -231,7 +231,7 @@ export function useMultipleContractSingleData(
 
   const results = useCallsData(calls, options)
   const { chainId } = useActiveWeb3React()
-
+  console.log("results===",results)
   const { cache } = useSWRConfig()
 
   return useMemo(() => {

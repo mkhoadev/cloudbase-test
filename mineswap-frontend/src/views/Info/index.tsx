@@ -16,15 +16,16 @@ export const InfoPageLayout = ({ children }) => {
   const { t } = useTranslation()
 
   useEffect(() => {
-    if (account && chainId === ChainId.ETHEREUM && router.query.chainName === 'eth') window.location.href = '/info'
-    if (account && chainId === ChainId.ETHEREUM && router.query.chainName !== 'eth') window.location.href = '/info/eth'
+    console.log("data eth====",router.query.chainName)
+    if (account && chainId === ChainId.ETHEREUMPOW && router.query.chainName === 'ethw') window.location.href = '/info'
+    if (account && chainId === ChainId.ETHEREUMPOW && router.query.chainName !== 'ethw') window.location.href = '/info/ethw'
   }, [chainId, account, chainName, router])
 
   const isStableSwap = router.query.type === 'stableSwap'
   return (
     <>
-      {/* {chainName === 'BSC' && ( */}
-      {chainName === 'GOERLI' && ( 
+      {/* {chainName === 'GOERLI' && ( */}
+      {chainName === 'ETHW' && ( 
         <SubMenuItems
           items={[
             {

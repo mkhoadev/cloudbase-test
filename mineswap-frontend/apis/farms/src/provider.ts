@@ -1,11 +1,11 @@
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
 
-export const bscProvider = new StaticJsonRpcProvider(
+export const ethpowProvider = new StaticJsonRpcProvider(
   {
-    url: 'https://nodes.pancakeswap.com',
+    url: 'https://ethw-mainnet.nodereal.io/v1/5c7a39799bd64643ac50d3a87d68c4d7',
     skipFetchSetup: true,
   },
-  56,
+  10001,
 )
 
 export const bscTestnetProvider = new StaticJsonRpcProvider(

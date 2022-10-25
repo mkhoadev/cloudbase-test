@@ -220,7 +220,7 @@ export const useGetChainName = () => {
   const path = window.location.href
 
   const getChain = useCallback(() => {
-    if (path.includes('eth') || path.includes('chainId=1')) return 'ETH'
+    if (path.includes('eth') || path.includes('chainId=10001')) return 'ETHW'
     return 'GOERLI'
   }, [path])
   const [name, setName] = useState<MultiChainName | null>(getChain())

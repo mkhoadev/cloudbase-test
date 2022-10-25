@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Price, Currency } from '@pancakeswap/sdk'
-import { Button, Grid, Text, Flex, Box, BinanceIcon, useModal, Skeleton } from '@pancakeswap/uikit'
+import { Button, Grid, Text, Flex, Box, EthereumPowIcon, useModal, Skeleton } from '@pancakeswap/uikit'
 import { formatNumber } from 'utils/formatBalance'
 import { ContextApi, useTranslation } from '@pancakeswap/localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
@@ -44,7 +44,7 @@ const Row: React.FC<React.PropsWithChildren<RowProps>> = ({ t, nft, bnbBusdPrice
     <>
       <Box pl="24px">
         <Flex justifySelf="flex-start" alignItems="center" width="max-content">
-          <BinanceIcon width="24px" height="24px" mr="8px" />
+          <EthereumPowIcon width="24px" height="24px" mr="8px" />
           <Text bold>{formatNumber(parseFloat(nft?.marketData?.currentAskPrice), 0, 5)}</Text>
         </Flex>
         {bnbBusdPrice ? (

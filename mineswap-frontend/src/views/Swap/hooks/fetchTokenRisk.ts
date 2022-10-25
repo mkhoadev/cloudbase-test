@@ -63,7 +63,7 @@ export const fetchRiskToken = async (address: string, chainId: number): Promise<
     return {
       isSuccess: false,
       address: '',
-      chainId: ChainId.ETHEREUM,
+      chainId: ChainId.ETHEREUMPOW,
       riskLevel: TokenRiskPhases[0],
       riskResult: '',
       scannedTs: 0,

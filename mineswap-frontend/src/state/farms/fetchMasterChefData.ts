@@ -32,7 +32,7 @@ export const fetchMasterChefFarmPoolLength = async (chainId: number) => {
 
 const masterChefFarmCalls = async (farm: SerializedFarm) => {
   const { pid, quoteToken } = farm
-  const multiCallChainId = farmFetcher.isTestnet(quoteToken.chainId) ? ChainId.GOERLI : ChainId.ETHEREUM
+  const multiCallChainId = farmFetcher.isTestnet(quoteToken.chainId) ? ChainId.GOERLI : ChainId.ETHEREUMPOW
   // const masterChefAddress = getMasterChefAddress(multiCallChainId)
   const masterChefPid = pid
 
@@ -58,7 +58,7 @@ export const fetchMasterChefData = async (farms: SerializedFarmConfig[], chainId
     .filter((masterChefCall) => masterChefCall[0] !== null && masterChefCall[1] !== null)
     .flat()
 
-  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.GOERLI : ChainId.ETHEREUM
+  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.GOERLI : ChainId.ETHEREUMPOW
   const masterChefMultiCallResult = await multicallv2({
     abi: masterchefABI,
     calls: masterChefAggregatedCalls,

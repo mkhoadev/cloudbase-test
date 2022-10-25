@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import {  goerli, mainnet } from '@pancakeswap/wagmi/chains'
+import {  goerli,  ethpow } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -9,15 +9,14 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
-const CHAINS = [ mainnet,goerli]
+const CHAINS = [ ethpow,goerli]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null
-
   switch (networkName) {
-    case 'homestead':
+    case 'ETHW':
       if (process.env.NEXT_PUBLIC_NODE_REAL_API_ETH) {
-        host = `eth-mainnet.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_ETH}`
+        host = `ethw-mainnet.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_ETH}`
       }
       break
     case 'goerli':
@@ -43,9 +42,10 @@ const getNodeRealUrl = (networkName: string) => {
 export const { provider, chains } = configureChains(CHAINS, [
   jsonRpcProvider({
     rpc: (chain) => {
-      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === goerli.id) {
+      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === ethpow.id) {
         return { http: process.env.NEXT_PUBLIC_NODE_PRODUCTION }
       }
+      // console.log("===chain.network===",chain)
       return getNodeRealUrl(chain.network) || { http: chain.rpcUrls.default }
     },
   }),
@@ -105,6 +105,5 @@ export const client = createClient({
 })
 
 export const CHAIN_IDS = chains.map((c) => c.id)
-
 export const isChainSupported = memoize((chainId: number) => CHAIN_IDS.includes(chainId))
 export const isChainTestnet = memoize((chainId: number) => chains.find((c) => c.id === chainId)?.testnet)

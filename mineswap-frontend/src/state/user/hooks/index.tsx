@@ -407,8 +407,8 @@ export function useGasPrice(chainIdOverride?: number): string {
   const { chainId: chainId_, chain } = useActiveWeb3React()
   const library = useWeb3LibraryContext()
   const chainId = chainIdOverride ?? chainId_
-  const { data: bscProviderGasPrice = GAS_PRICE_GWEI.default } = useSWR(
-    library && library.provider && chainId === ChainId.ETHEREUM && ['bscProviderGasPrice', library.provider],
+  const { data: ethpowProviderGasPrice = GAS_PRICE_GWEI.default } = useSWR(
+    library && library.provider && chainId === ChainId.ETHEREUMPOW && ['ethpowProviderGasPrice', library.provider],
     async () => {
       const gasPrice = await library.getGasPrice()
       return gasPrice.toString()
@@ -420,13 +420,13 @@ export function useGasPrice(chainIdOverride?: number): string {
   )
   const { data } = useFeeData({
     chainId,
-    enabled: chainId !== ChainId.ETHEREUM ,
+    enabled: chainId !== ChainId.ETHEREUMPOW ,
     watch: true,
   })
-  if (chainId === ChainId.ETHEREUM) {
-    return bscProviderGasPrice
+  if (chainId === ChainId.ETHEREUMPOW) {
+    return ethpowProviderGasPrice
   }
-  if (chainId === ChainId.ETHEREUM) {
+  if (chainId === ChainId.ETHEREUMPOW) {
     return GAS_PRICE_GWEI.testnet
   }
   if (chain?.testnet) {

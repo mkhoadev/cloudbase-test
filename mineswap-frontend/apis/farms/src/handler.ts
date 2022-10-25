@@ -6,7 +6,7 @@ import { BUSD, MINE } from '@pancakeswap/tokens'
 import { farmFetcher } from './helper'
 import { FarmKV, FarmResult } from './kv'
 import { updateLPsAPR } from './lpApr'
-import { bscProvider, bscTestnetProvider } from './provider'
+import { ethpowProvider, bscTestnetProvider } from './provider'
 
 const pairAbi = [
   {
@@ -35,10 +35,10 @@ const pairAbi = [
 ]
 
 const cakeBusdPairMap = {
-  [ChainId.ETHEREUM]: {
-    address: Pair.getAddress(MINE[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM]),
-    tokenA: MINE[ChainId.ETHEREUM],
-    tokenB: BUSD[ChainId.ETHEREUM],
+  [ChainId.ETHEREUMPOW]: {
+    address: Pair.getAddress(MINE[ChainId.ETHEREUMPOW], BUSD[ChainId.ETHEREUMPOW]),
+    tokenA: MINE[ChainId.ETHEREUMPOW],
+    tokenB: BUSD[ChainId.ETHEREUMPOW],
   },
   [ChainId.GOERLI]: {
     address: Pair.getAddress(MINE[ChainId.GOERLI], BUSD[ChainId.GOERLI]),
@@ -48,8 +48,8 @@ const cakeBusdPairMap = {
 }
 
 const getCakePrice = async (isTestnet: boolean) => {
-  const pairConfig = cakeBusdPairMap[isTestnet ? ChainId.GOERLI : ChainId.ETHEREUM]
-  const pairContract = new Contract(pairConfig.address, pairAbi, isTestnet ? bscTestnetProvider : bscProvider)
+  const pairConfig = cakeBusdPairMap[isTestnet ? ChainId.GOERLI : ChainId.ETHEREUMPOW]
+  const pairContract = new Contract(pairConfig.address, pairAbi, isTestnet ? bscTestnetProvider : ethpowProvider)
   const reserves = await pairContract.getReserves()
   const { reserve0, reserve1 } = reserves
   const { tokenA, tokenB } = pairConfig

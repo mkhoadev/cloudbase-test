@@ -1,5 +1,5 @@
 import { ChainId, Currency } from '@pancakeswap/sdk'
-import { BinanceIcon } from '@pancakeswap/uikit'
+import { EthereumPowIcon } from '@pancakeswap/uikit'
 import { useMemo } from 'react'
 import { WrappedTokenInfo } from '@pancakeswap/tokens'
 import styled from 'styled-components'
@@ -41,8 +41,8 @@ export default function CurrencyLogo({
   }, [currency, uriLocations])
 
   if (currency?.isNative) {
-    if (currency.chainId === ChainId.ETHEREUM) {
-      return <BinanceIcon width={size} style={style} />
+    if (currency.chainId === ChainId.ETHEREUMPOW) {
+      return <EthereumPowIcon width={size} style={style} />
     }
     return <StyledLogo size={size} srcs={[`/images/chains/${currency.chainId}.png`]} width={size} style={style} />
   }

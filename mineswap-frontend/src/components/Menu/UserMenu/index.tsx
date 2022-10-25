@@ -65,14 +65,14 @@ const UserMenu = ({ isDark }) => {
         
         {/* <UserMenuDivider />
         <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
-          <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.ETHEREUM}>
+          <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.ETHEREUMPOW}>
             {t('Your NFTs')}
           </UserMenuItem>
         </NextLink>
         <ProfileUserMenuItem
           isLoading={isLoading}
           hasProfile={hasProfile}
-          disabled={isWrongNetwork || chainId !== ChainId.ETHEREUM}
+          disabled={isWrongNetwork || chainId !== ChainId.ETHEREUMPOW}
         /> */}
         <UserMenuDivider />
         <UserMenuItem as="button" onClick={logout}>

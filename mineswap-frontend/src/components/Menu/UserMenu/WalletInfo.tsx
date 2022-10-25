@@ -27,8 +27,8 @@ interface WalletInfoProps {
 const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss }) => {
   const { t } = useTranslation()
   const { account, chainId, chain } = useActiveWeb3React()
-  const isBSC = chainId === ChainId.ETHEREUM
-  const bnbBalance = useBalance({ addressOrName: account, chainId: ChainId.ETHEREUM })
+  const isBSC = chainId === ChainId.ETHEREUMPOW
+  const bnbBalance = useBalance({ addressOrName: account, chainId: ChainId.ETHEREUMPOW })
   const nativeBalance = useBalance({ addressOrName: account, enabled: !isBSC })
   const native = useNativeCurrency()
   const { balance: cakeBalance, fetchStatus: cakeFetchStatus } = useGetCakeBalance()
@@ -89,17 +89,17 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
       <Box mb="24px">
         <Flex justifyContent="space-between" alignItems="center" mb="8px">
           <Flex bg={COLORS.BNB} borderRadius="16px" pl="4px" pr="8px" py="2px">
-            <ChainLogo chainId={ChainId.ETHEREUM} />
+            <ChainLogo chainId={ChainId.ETHEREUMPOW} />
             <Text color="white" ml="4px">
-              ETH Chain
+              ETHW Chain
             </Text>
           </Flex>
-          <LinkExternal href={getBlockExploreLink(account, 'address', ChainId.ETHEREUM)}>
-            {getBlockExploreName(ChainId.ETHEREUM)}
+          <LinkExternal href={getBlockExploreLink(account, 'address', ChainId.ETHEREUMPOW)}>
+            {getBlockExploreName(ChainId.ETHEREUMPOW)}
           </LinkExternal>
         </Flex>
         <Flex alignItems="center" justifyContent="space-between">
-          <Text color="textSubtle">ETH {t('Balance')}</Text>
+          <Text color="textSubtle">ETHW {t('Balance')}</Text>
           {!bnbBalance.isFetched ? (
             <Skeleton height="22px" width="60px" />
           ) : (

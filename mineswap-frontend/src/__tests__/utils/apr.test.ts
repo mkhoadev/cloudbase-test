@@ -25,18 +25,18 @@ describe('getPoolApr', () => {
 
 describe('getFarmApr', () => {
   it(`returns null when parameters are missing`, () => {
-    const { cakeRewardsApr, lpRewardsApr } = getFarmApr(ChainId.ETHEREUM, null, null, null, null, 40)
+    const { cakeRewardsApr, lpRewardsApr } = getFarmApr(ChainId.ETHEREUMPOW, null, null, null, null, 40)
     expect(cakeRewardsApr).toBeNull()
     expect(lpRewardsApr).toEqual(0)
   })
   it(`returns null when APR is infinite`, () => {
-    const { cakeRewardsApr, lpRewardsApr } = getFarmApr(ChainId.ETHEREUM, BIG_ZERO, BIG_ZERO, BIG_ZERO, '', 40)
+    const { cakeRewardsApr, lpRewardsApr } = getFarmApr(ChainId.ETHEREUMPOW, BIG_ZERO, BIG_ZERO, BIG_ZERO, '', 40)
     expect(cakeRewardsApr).toBeNull()
     expect(lpRewardsApr).toEqual(0)
   })
   it(`get the correct pool APR`, () => {
     const { cakeRewardsApr, lpRewardsApr } = getFarmApr(
-      ChainId.ETHEREUM,
+      ChainId.ETHEREUMPOW,
       BIG_TEN,
       new BigNumber(1),
       new BigNumber(100000),
@@ -48,7 +48,7 @@ describe('getFarmApr', () => {
   })
   it(`get the correct pool APR combined with LP APR`, () => {
     const { cakeRewardsApr, lpRewardsApr } = getFarmApr(
-      ChainId.ETHEREUM,
+      ChainId.ETHEREUMPOW,
       BIG_TEN,
       new BigNumber(1),
       new BigNumber(100000),

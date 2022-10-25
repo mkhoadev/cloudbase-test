@@ -8,7 +8,7 @@ import {
   SellIcon,
   WalletFilledIcon,
   CameraIcon,
-  BinanceIcon,
+  EthereumPowIcon,
   Skeleton,
   useModal,
 } from '@pancakeswap/uikit'
@@ -82,7 +82,7 @@ const CollectibleRow: React.FC<React.PropsWithChildren<CollectibleRowProps>> = (
               {t('Lowest price')}
             </Text>
             <Flex justifySelf="flex-end" width="max-content">
-              <BinanceIcon width="16px" height="16px" mr="4px" />
+              <EthereumPowIcon width="16px" height="16px" mr="4px" />
               <Text small>{formatNumber(parseFloat(lowestPrice), 0, 5)}</Text>
             </Flex>
           </>
@@ -93,7 +93,7 @@ const CollectibleRow: React.FC<React.PropsWithChildren<CollectibleRowProps>> = (
               {t('Your price')}
             </Text>
             <Flex justifySelf="flex-end" width="max-content">
-              <BinanceIcon width="16px" height="16px" mr="4px" />
+              <EthereumPowIcon width="16px" height="16px" mr="4px" />
               <Text small>{nft?.marketData?.currentAskPrice}</Text>
             </Flex>
           </>

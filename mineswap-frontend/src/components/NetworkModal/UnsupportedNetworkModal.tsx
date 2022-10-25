@@ -18,7 +18,7 @@ export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupported
   const { switchNetworkAsync, isLoading, canSwitch } = useSwitchNetwork()
   const switchNetworkLocal = useSwitchNetworkLocal()
   const { chains } = useNetwork()
-  const chainId = useLocalNetworkChain() || ChainId.ETHEREUM
+  const chainId = useLocalNetworkChain() || ChainId.ETHEREUMPOW
   const { isConnected } = useAccount()
   const { logout } = useAuth()
   const { t } = useTranslation()
@@ -61,9 +61,10 @@ export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupported
             isLoading={isLoading}
             onClick={() => {
               if (supportedMainnetChains.map((c) => c.id).includes(chainId)) {
+                console.log("=======ChainId==========",chainId)
                 switchNetworkAsync(chainId)
               } else {
-                switchNetworkAsync(ChainId.ETHEREUM)
+                switchNetworkAsync(ChainId.ETHEREUMPOW)
               }
             }}
           >
@@ -79,7 +80,7 @@ export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupported
             variant="secondary"
             onClick={() =>
               logout().then(() => {
-                switchNetworkLocal(ChainId.ETHEREUM)
+                switchNetworkLocal(ChainId.ETHEREUMPOW)
               })
             }
           >
