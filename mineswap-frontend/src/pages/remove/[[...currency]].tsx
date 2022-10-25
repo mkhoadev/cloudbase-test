@@ -49,13 +49,12 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currency = (params.currency as string[]) || []
-
   if (currency.length === 0) {
     return {
       notFound: true,
     }
   }
-
+  console.log("currency=====",currency)
   if (currency.length === 1) {
     if (!OLD_PATH_STRUCTURE.test(currency[0])) {
       return {
@@ -67,6 +66,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
 
     const split = currency[0].split('-')
+    console.log("splits=====",split)
     if (split.length > 1) {
       const [currency0, currency1] = split
       return {
