@@ -323,6 +323,7 @@
     justify-content: space-between;
     position: relative;
     width: 90%;
+    max-width: 1569px;
     margin: 50px auto;
 }
 

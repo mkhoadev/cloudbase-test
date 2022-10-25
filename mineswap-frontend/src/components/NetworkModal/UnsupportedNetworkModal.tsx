@@ -45,11 +45,11 @@ export function UnsupportedNetworkModal({ pageSupportedChains }: { pageSupported
           {supportedMainnetChains?.map((c) => c.name).join(', ')}
         </Text>
         <div style={{ textAlign: 'center' }}>
-          <Image
-            layout="fixed"
-            width="194px"
-            height="175px"
-            src="/images/check-your-network.png"
+          <img
+            // layout="fixed"
+            width="150px"
+            // height="175px"
+            src="/img/logo-clear.png"
             alt="check your network"
           />
         </div>

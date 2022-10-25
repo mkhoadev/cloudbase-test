@@ -257,7 +257,7 @@ function ManageLists({
   return (
     <Wrapper>
       <AutoColumn gap="14px">
-        <Row>
+        <Row style={{ padding: '0 5px 5px 5px' }}>
           <Input
             id="list-add-input"
             scale="lg"
@@ -299,13 +299,13 @@ function ManageLists({
           </Card>
         </AutoColumn>
       )}
-      <ListContainer>
+      {/* <ListContainer>
         <AutoColumn gap="md">
           {sortedLists.map((listUrl) => (
             <ListRow key={listUrl} listUrl={listUrl} />
           ))}
         </AutoColumn>
-      </ListContainer>
+      </ListContainer> */}
     </Wrapper>
   )
 }
