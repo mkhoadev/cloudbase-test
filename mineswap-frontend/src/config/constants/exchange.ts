@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD } from '@pancakeswap/tokens'
+import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,MINE } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
@@ -38,7 +38,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.ETHEREUMPOW]: [ WNATIVE[ChainId.ETHEREUMPOW],BUSD[ChainId.ETHEREUMPOW],USDC[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW], WBTC_ETH],
+  [ChainId.ETHEREUMPOW]: [ WNATIVE[ChainId.ETHEREUMPOW],MINE[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW]],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], USDT[ChainId.GOERLI]],
 }
 

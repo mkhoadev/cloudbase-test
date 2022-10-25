@@ -13,10 +13,10 @@
     {
       "name": "Wrapped ETHW",
       "symbol": "WETHW",
-      "address": "0x7bf88d2c0e32de92cdaf2d43ccdc23e8edfd5990",
+      "address": "0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990",
       "chainId": 10001,
       "decimals": 18,
-      "logoURI": "/images/10001/tokens/0x7bf88d2c0e32de92cdaf2d43ccdc23e8edfd5990.png"
+      "logoURI": "/images/10001/tokens/0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990.png"
     },
     {
       "name": "BUSD Token",
@@ -45,10 +45,10 @@
     {
       "name": "BTCB Token",
       "symbol": "BTCB",
-      "address": "0x4bbd68d8b1f25ae7b460e3347c637fe9e7338e0c",
+      "address": "0x4bBd68D8B1F25Ae7b460E3347C637FE9E7338E0C",
       "chainId": 10001,
       "decimals": 8,
-      "logoURI": "/images/10001/tokens/0x4bbd68d8b1f25ae7b460e3347c637fe9e7338e0c.png"
+      "logoURI": "/images/10001/tokens/0x4bBd68D8B1F25Ae7b460E3347C637FE9E7338E0C.png"
     },
     {
       "name": "MineSwap Token",
