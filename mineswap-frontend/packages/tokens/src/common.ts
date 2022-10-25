@@ -2,7 +2,7 @@ import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const MINE_MAINNET = new Token(
   ChainId.ETHEREUMPOW,
-  '0xFd483e333cBe8fE7A418D9398d6BB81CC2B8e07B',
+  '0x3B927FF20F783D78AFF1a5227E23737E3325490F',
   18,
   'MINE',
   'MineSwap Token',
@@ -18,7 +18,7 @@ export const MINE_TESTNET = new Token(
   'https://mineswap.finance/',
 )
 
-export const USDC_ETH = new Token(ChainId.ETHEREUMPOW, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD Coin')
+export const USDC_ETH = new Token(ChainId.ETHEREUMPOW, '0x25DE68ef588cb0c2c8F3537861E828Ae699CD0DB', 6, 'USDC', 'USD Coin')
 
 
 export const USDC_GOERLI = new Token(
@@ -38,7 +38,7 @@ export const USDT_GOERLI = new Token(
 
 export const USDT_ETH = new Token(
   ChainId.ETHEREUMPOW,
-  '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+  '0x2AD7868CA212135C6119FD7AD1Ce51CFc5702892',
   6,
   'USDT',
   'Tether USD',
