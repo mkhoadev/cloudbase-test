@@ -114,11 +114,6 @@ const config = {
         permanent: true,
       },
       {
-        source: '/farms/archived',
-        destination: '/farms/history',
-        permanent: true,
-      },
-      {
         source: '/pool',
         destination: '/liquidity',
         permanent: true,
