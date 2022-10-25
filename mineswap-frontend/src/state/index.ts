@@ -37,9 +37,7 @@ const persistedReducer = persistReducer(
     // lottery: lotteryReducer,
     info: infoReducer,
     // pottery: potteryReducer,
-
     // limitOrders,
-
     // Exchange
     user,
     transactions,
