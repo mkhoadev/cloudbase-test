@@ -25,14 +25,15 @@ const getOverviewChartData = async (
   skip: number,
 ): Promise<{ data?: ChartEntry[]; error: boolean }> => {
   try {
-    const { pancakeDayDatas } = await getMultiChainQueryEndPointWithStableSwap(
-      chainName,
-    ).request<PancakeDayDatasResponse>(PANCAKE_DAY_DATAS, {
-      startTime: multiChainStartTime[chainName],
-      skip,
-    })
-    const data = pancakeDayDatas.map(mapDayData)
-    return { data, error: false }
+    // const { pancakeDayDatas } = await getMultiChainQueryEndPointWithStableSwap(
+    //   chainName,
+    // ).request<PancakeDayDatasResponse>(PANCAKE_DAY_DATAS, {
+    //   startTime: multiChainStartTime[chainName],
+    //   skip,
+    // })
+    // const data = pancakeDayDatas.map(mapDayData)
+    // return { data, error: false }
+    return { error: true }
   } catch (error) {
     console.error('Failed to fetch overview chart data', error)
     return { error: true }

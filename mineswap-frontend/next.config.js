@@ -37,7 +37,7 @@ const config = {
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     // !! WARN !!
-    ignoreBuildErrors: true,
+    // ignoreBuildErrors: true,
   },
   experimental: {
     scrollRestoration: true,
@@ -122,22 +122,7 @@ const config = {
         source: '/pool',
         destination: '/liquidity',
         permanent: true,
-      },
-      {
-        source: '/staking',
-        destination: '/pools',
-        permanent: true,
-      },
-      {
-        source: '/syrup',
-        destination: '/pools',
-        permanent: true,
-      },
-      {
-        source: '/collectibles',
-        destination: '/nfts',
-        permanent: true,
-      },
+      }
     ]
   },
   webpack: (webpackConfig, { webpack }) => {

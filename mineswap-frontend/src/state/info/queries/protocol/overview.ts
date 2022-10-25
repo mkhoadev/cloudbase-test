@@ -36,8 +36,9 @@ const getOverviewData = async (
         totalLiquidityUSD
       }
     }`
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<OverviewResponse>(query)
-    return { data, error: false }
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<OverviewResponse>(query)
+    // return { data, error: false }
+    return { data: null, error: true }
   } catch (error) {
     console.error('Failed to fetch info overview', error)
     return { data: null, error: true }

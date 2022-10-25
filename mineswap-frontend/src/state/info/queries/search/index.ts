@@ -90,22 +90,28 @@ const useFetchSearchResults = (
   useEffect(() => {
     const search = async () => {
       try {
-        const tokens = await queryClient.request<TokenSearchResponse>(tokenQuery, {
-          symbol: searchString.toUpperCase(),
-          // Most well known tokens have first letter capitalized
-          name: searchString.charAt(0).toUpperCase() + searchString.slice(1),
-          id: searchString.toLowerCase(),
-        })
-        const tokenIds = getIds([tokens.asAddress, tokens.asSymbol, tokens.asName])
-        const pools = await queryClient.request<PoolSearchResponse>(poolQuery, {
-          tokens: tokenIds,
-          id: searchString.toLowerCase(),
-        })
+        // const tokens = await queryClient.request<TokenSearchResponse>(tokenQuery, {
+        //   symbol: searchString.toUpperCase(),
+        //   // Most well known tokens have first letter capitalized
+        //   name: searchString.charAt(0).toUpperCase() + searchString.slice(1),
+        //   id: searchString.toLowerCase(),
+        // })
+        // const tokenIds = getIds([tokens.asAddress, tokens.asSymbol, tokens.asName])
+        // const pools = await queryClient.request<PoolSearchResponse>(poolQuery, {
+        //   tokens: tokenIds,
+        //   id: searchString.toLowerCase(),
+        // })
+        // setSearchResults({
+        //   tokens: tokenIds,
+        //   pools: getIds([pools.asAddress, pools.as0, pools.as1]),
+        //   loading: false,
+        //   error: false,
+        // })
         setSearchResults({
-          tokens: tokenIds,
-          pools: getIds([pools.asAddress, pools.as0, pools.as1]),
+          tokens: [],
+          pools: [],
           loading: false,
-          error: false,
+          error: true,
         })
       } catch (error) {
         console.error(`Search failed for ${searchString}`, error)

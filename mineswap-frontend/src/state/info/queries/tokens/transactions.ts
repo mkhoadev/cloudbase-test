@@ -143,22 +143,25 @@ const fetchTokenTransactions = async (
   address: string,
 ): Promise<{ data?: Transaction[]; error: boolean }> => {
   try {
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TransactionResults>(
-      TOKEN_TRANSACTIONS(),
-      {
-        address,
-      },
-    )
-    const mints0 = data.mintsAs0.map(mapMints)
-    const mints1 = data.mintsAs1.map(mapMints)
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TransactionResults>(
+    //   TOKEN_TRANSACTIONS(),
+    //   {
+    //     address,
+    //   },
+    // )
+    // const mints0 = data.mintsAs0.map(mapMints)
+    // const mints1 = data.mintsAs1.map(mapMints)
 
-    const burns0 = data.burnsAs0.map(mapBurns)
-    const burns1 = data.burnsAs1.map(mapBurns)
+    // const burns0 = data.burnsAs0.map(mapBurns)
+    // const burns1 = data.burnsAs1.map(mapBurns)
 
-    const swaps0 = data.swapsAs0.map(mapSwaps)
-    const swaps1 = data.swapsAs1.map(mapSwaps)
+    // const swaps0 = data.swapsAs0.map(mapSwaps)
+    // const swaps1 = data.swapsAs1.map(mapSwaps)
 
-    return { data: [...mints0, ...mints1, ...burns0, ...burns1, ...swaps0, ...swaps1], error: false }
+    // return { data: [...mints0, ...mints1, ...burns0, ...burns1, ...swaps0, ...swaps1], error: false }
+    return {
+      error: true,
+    }
   } catch (error) {
     console.error(`Failed to fetch transactions for token ${address}`, error)
     return {

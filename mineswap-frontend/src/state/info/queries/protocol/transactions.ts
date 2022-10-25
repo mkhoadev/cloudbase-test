@@ -76,20 +76,21 @@ interface TransactionResults {
 
 const fetchTopTransactions = async (chainName: MultiChainName): Promise<Transaction[] | undefined> => {
   try {
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TransactionResults>(
-      GLOBAL_TRANSACTIONS,
-    )
-    if (!data) {
-      return undefined
-    }
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TransactionResults>(
+    //   GLOBAL_TRANSACTIONS,
+    // )
+    // if (!data) {
+    //   return undefined
+    // }
 
-    const mints = data.mints.map(mapMints)
-    const burns = data.burns.map(mapBurns)
-    const swaps = data.swaps.map(mapSwaps)
+    // const mints = data.mints.map(mapMints)
+    // const burns = data.burns.map(mapBurns)
+    // const swaps = data.swaps.map(mapSwaps)
 
-    return [...mints, ...burns, ...swaps].sort((a, b) => {
-      return parseInt(b.timestamp, 10) - parseInt(a.timestamp, 10)
-    })
+    // return [...mints, ...burns, ...swaps].sort((a, b) => {
+    //   return parseInt(b.timestamp, 10) - parseInt(a.timestamp, 10)
+    // })
+    return undefined
   } catch {
     return undefined
   }

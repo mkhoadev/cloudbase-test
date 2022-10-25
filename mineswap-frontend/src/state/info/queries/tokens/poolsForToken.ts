@@ -46,16 +46,19 @@ const fetchPoolsForToken = async (
   addresses?: string[]
 }> => {
   try {
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PoolsForTokenResponse>(
-      POOLS_FOR_TOKEN(chainName),
-      {
-        address,
-        blacklist: TOKEN_BLACKLIST,
-      },
-    )
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PoolsForTokenResponse>(
+    //   POOLS_FOR_TOKEN(chainName),
+    //   {
+    //     address,
+    //     blacklist: TOKEN_BLACKLIST,
+    //   },
+    // )
+    // return {
+    //   error: false,
+    //   addresses: data.asToken0.concat(data.asToken1).map((p) => p.id),
+    // }
     return {
-      error: false,
-      addresses: data.asToken0.concat(data.asToken1).map((p) => p.id),
+      error: true,
     }
   } catch (error) {
     console.error(`Failed to fetch pools for token ${address}`, error)
