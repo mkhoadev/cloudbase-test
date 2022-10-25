@@ -25,14 +25,13 @@ const RemoveLiquidityPage = () => {
     currencyB,
   }
 
-  // return stableSwapConfig && router.query.stable === '1' ? (
-  //   <StableConfigContext.Provider value={{ stableSwapConfig, ...config }}>
-  //     <RemoveStableLiquidity {...props} />
-  //   </StableConfigContext.Provider>
-  // ) : (
-  //   <RemoveLiquidity {...props} />
-  // )
-  return <RemoveLiquidity {...props} />
+  return stableSwapConfig && router.query.stable === '1' ? (
+    <StableConfigContext.Provider value={{ stableSwapConfig, ...config }}>
+      <RemoveStableLiquidity {...props} />
+    </StableConfigContext.Provider>
+  ) : (
+    <RemoveLiquidity {...props} />
+  )
 }
 
 RemoveLiquidityPage.chains = CHAIN_IDS
