@@ -13,10 +13,10 @@ const RemoveLiquidityPage = () => {
 
   const [currencyA, currencyB] = [useCurrency(currencyIdA) ?? undefined, useCurrency(currencyIdB) ?? undefined]
 
-  const { stableSwapConfig, ...config } = useStableConfig({
-    tokenA: currencyA,
-    tokenB: currencyB,
-  })
+  // const { stableSwapConfig, ...config } = useStableConfig({
+  //   tokenA: currencyA,
+  //   tokenB: currencyB,
+  // })
 
   const props = {
     currencyIdA,
@@ -24,14 +24,15 @@ const RemoveLiquidityPage = () => {
     currencyA,
     currencyB,
   }
-
-  return stableSwapConfig && router.query.stable === '1' ? (
-    <StableConfigContext.Provider value={{ stableSwapConfig, ...config }}>
-      <RemoveStableLiquidity {...props} />
-    </StableConfigContext.Provider>
-  ) : (
-    <RemoveLiquidity {...props} />
-  )
+  console.log("=====props",props)
+  // return stableSwapConfig && router.query.stable === '1' ? (
+  //   <StableConfigContext.Provider value={{ stableSwapConfig, ...config }}>
+  //     <RemoveStableLiquidity {...props} />
+  //   </StableConfigContext.Provider>
+  // ) : (
+  //   <RemoveLiquidity {...props} />
+  // )
+  return <RemoveLiquidity {...props} />
 }
 
 RemoveLiquidityPage.chains = CHAIN_IDS
