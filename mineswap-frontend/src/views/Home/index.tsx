@@ -26,7 +26,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <span className="trade-earn">
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
             </span>
-            <div className="dflex justifyContent" style={{paddingTop:'10px'}}>
+            <div className="dflex justifyContent" style={{ paddingTop: '10px' }}>
               <div
                 className="imgbutton"
                 style={{
@@ -43,8 +43,8 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <img
               src={isDark ? '/img/logoDark.webp' : '/img/logolight.webp'}
               alt="hero images"
-              className='style-img-home'
-            /> 
+              className="style-img-home"
+            />
           </div>
         </div>
         <div className="use-by mt-Used">
@@ -67,7 +67,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <div className="use-by" style={{ marginTop: '100px' }}>
           <div className="div_millions">
             <div className="h3-home">Scaling solutions, amplified.</div>
-            <span className="intro-swap">Onix's complete suite of blockchain-scaling solutions.</span>
+            <span className="intro-swap">Onix&apos;s complete suite of blockchain-scaling solutions.</span>
           </div>
           <div className="div-millions-colum">
             <Amplified
@@ -90,7 +90,12 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </div>
         <div
           className="background-involved"
-          style={{ background: isDark ? 'url(/img/swapdark.webp) no-repeat center' : 'url(/img/swaplight.webp) no-repeat center', backgroundSize:"75%" }}
+          style={{
+            background: isDark
+              ? 'url(/img/swapdark.webp) no-repeat center'
+              : 'url(/img/swaplight.webp) no-repeat center',
+            backgroundSize: '75%',
+          }}
         >
           <div className="involved">
             <div className="involved-div">
