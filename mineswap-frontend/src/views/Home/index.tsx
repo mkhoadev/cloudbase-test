@@ -41,10 +41,10 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           </div>
           <div style={{ width: '100%' }}>
             <img
-              src={isDark ? '/img/hero-images@1x.svg' : '/img/logolight.svg'}
+              src={isDark ? '/img/logoDark.webp' : '/img/logolight.webp'}
               alt="hero images"
               className='style-img-home'
-            />
+            /> 
           </div>
         </div>
         <div className="use-by mt-Used">
@@ -67,7 +67,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <div className="use-by" style={{ marginTop: '100px' }}>
           <div className="div_millions">
             <div className="h3-home">Scaling solutions, amplified.</div>
-            <span className="intro-swap">Onix`s complete suite of blockchain-scaling solutions.</span>
+            <span className="intro-swap">Onix's complete suite of blockchain-scaling solutions.</span>
           </div>
           <div className="div-millions-colum">
             <Amplified
@@ -90,7 +90,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </div>
         <div
           className="background-involved"
-          style={{ backgroundImage: isDark ? 'url(/img/swapdark.svg)' : 'url(/img/swaplight.svg)' }}
+          style={{ background: isDark ? 'url(/img/swapdark.webp) no-repeat center' : 'url(/img/swaplight.webp) no-repeat center', backgroundSize:"75%" }}
         >
           <div className="involved">
             <div className="involved-div">

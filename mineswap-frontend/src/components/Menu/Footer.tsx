@@ -6,7 +6,7 @@ type FooterVariant = 'default' | 'side'
 const Footer: React.FC<React.PropsWithChildren<{ variant?: FooterVariant; helpUrl?: string }>> = () => {
   const {isDark} = useTheme()
   return (
-    <div className="background-involved-swap" style={{ backgroundImage: isDark ? 'url(/img/swapdark.svg)' : 'url(/img/swaplight.svg)' }}>
+    <div className="background-involved-swap" style={{ backgroundImage: isDark ? 'url(/img/swapdark.webp)' : 'url(/img/swaplight.webp)',backgroundSize:"60%",backgroundRepeat:"no-repeat",backgroundPosition:"center" } }>
     <div className="involved">
       <div className="involved-div-swap">
         <div
