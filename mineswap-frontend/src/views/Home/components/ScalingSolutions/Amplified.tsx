@@ -11,7 +11,7 @@ const Amplified = ({ txt, span, type }: nftSaleType) => {
       {type === '2' ? <div className="txtmillionofark"></div> : <div className="txtmillionother"></div>}
       <div className="bEQugO">
         <div className="image-million">
-          <div className="color_staked"></div>
+          <div className={type === '1' ? 'eAGDqQ' : type === '0' ? 'color_staked' : 'color_trade'}></div>
           <img src="/img/subtract-4@1x.svg" alt="Subtract" className="sc-fyJLnQ ldtVzV" />
           <img src="/img/subtract@1x.png" alt="Subtract" className="sc-iXFbOp gdNydd" />
           <div className="sc-CqDOO boWQZJ"></div>

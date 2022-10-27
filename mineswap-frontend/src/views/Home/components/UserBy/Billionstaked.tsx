@@ -5,7 +5,7 @@ const Billionstaked : React.FC<React.PropsWithChildren> = () => {
       <div className="txtmillionuser"></div>
       <div className="bEQugO">
         <div className="image-million">
-          <div className="sc-eLdnOn color_trade"></div>
+          <div className="sc-eLdnOn color_staked"></div>
           <img src="/img/subtract-4@1x.svg" alt="Subtract" className="sc-fyJLnQ ldtVzV" />
           <img src="/img/subtract@1x.png" alt="Subtract" className="sc-iXFbOp gdNydd" />
           <div className="sc-CqDOO boWQZJ"></div>
@@ -22,7 +22,7 @@ const Billionstaked : React.FC<React.PropsWithChildren> = () => {
       <div className="sc-eblUpn kAIfLV">
         <div className="sc-eOSrOQ hpiEQ">
           <span className="inter-black-alto-32px">$4 billion </span>
-          <span className="sc-inNIpp hWpUlW" style={{color:'var(--porsche)'}}>staked</span>
+          <span className="sc-inNIpp hWpUlW" style={{color:'var(--inchworm)'}}>staked</span>
         </div>
         <div className="sc-fpRgNi gltMei">
           Your data can be transformed, organized, and shared across applications for anyone to query with just a few
@@ -30,7 +30,7 @@ const Billionstaked : React.FC<React.PropsWithChildren> = () => {
         </div>
       </div>
       <div className="sc-iOMxnH dfbVyw">
-        <div className="sc-knMLgv gfrNDX" style={{color:'var(--porsche)'}}>Learn more</div>
+        <div className="sc-knMLgv gfrNDX" style={{color:'var(--inchworm)'}}>Learn more</div>
         <img src="/img/arrow@2x.svg" alt="arrow" className="sc-eVFARG cHSmpO" />
       </div>
     </div>

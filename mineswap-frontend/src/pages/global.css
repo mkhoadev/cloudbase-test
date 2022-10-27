@@ -559,9 +559,9 @@
 .eAGDqQ {
     position: absolute;
     width: 80px;
-    height: 90px;
-    top: 170px;
-    right: 1px;
+    height: 80px;
+    top: 177px;
+    right: 8px;
     background-color: var(--blue-marguerite);
     border-radius: 23px;
     border: 1px none;
@@ -570,9 +570,9 @@
 .color_trade {
     position: absolute;
     width: 80px;
-    height: 90px;
-    top: 170px;
-    right: 1px;
+    height: 80px;
+    top: 177px;
+    right: 8px;
     background-color: var(--porsche);
     border-radius: 23px;
     border: 1px none;
@@ -582,8 +582,8 @@
     position: absolute;
     width: 80px;
     height: 80px;
-    top: 170px;
-    right: 1px;
+    top: 177px;
+    right: 8px;
     background-color: var(--inchworm);
     border-radius: 23px;
     border: 1px none;
