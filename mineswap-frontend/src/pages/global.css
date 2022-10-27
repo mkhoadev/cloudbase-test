@@ -384,7 +384,7 @@
 .intro-swap {
     /* width: fit-content; */
     font-family: var(--font-family-karla);
-    font-weight: 400;
+    font-weight: 800;
     color: var(--gray);
     font-size: var(--font-size-m);
 }
@@ -422,7 +422,7 @@
 .trade-earn {
     color: var(--gray);
     font-family: var(--font-family-karla);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-l);
     font-weight: 200;
     font-style: normal;
     -webkit-letter-spacing: 0;
@@ -601,7 +601,7 @@
     position: absolute;
     width: 524px;
     height: 420px;
-    top: 170px;
+    top: 173px;
     left: 0;
 }
 
