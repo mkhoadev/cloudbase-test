@@ -1091,9 +1091,8 @@
 }
 
 .background-involved-swap {
-    background-color: unset !important;
-    background-repeat: round;
-    background-size: cover;
+    /* background-color: unset !important;
+    background-repeat: round; */
     height: 800px;
     margin-top: -290px;
     margin-bottom: -170px;
