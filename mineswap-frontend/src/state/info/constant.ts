@@ -8,23 +8,24 @@ export type MultiChainName = 'ETHW' | 'GOERLI'
 
 export const multiChainQueryMainToken = {
   // BSC: 'BNB',
-  ETH: 'ETHW',
+  ETHW: 'ETHW',
   GOERLI: 'GOERLI',
 }
 
 export const multiChainBlocksClient = {
   // BSC: BLOCKS_CLIENT,
-  ETH: BLOCKS_CLIENT_ETH,
+  ETHW: BLOCKS_CLIENT_ETH,
   GOERLI: BLOCKS_CLIENT_GOERLI,
 }
 
 export const multiChainStartTime = {
   // BSC: PCS_V2_START,
-  ETH: PCS_ETH_START,
+  ETHW: PCS_ETH_START,
+  GOERLI: PCS_ETH_START,
 }
 
 export const multiChainId = {
-  ETH: ChainId.ETHEREUMPOW,
+  ETHW: ChainId.ETHEREUMPOW,
 }
 
 export const multiChainPaths = {
@@ -33,24 +34,25 @@ export const multiChainPaths = {
 
 export const multiChainQueryClient = {
   // BSC: infoClient,
-  ETH: infoClientETH,
+  ETHW: infoClientETH,
   GOERLI: infoClienGOERLI,
 }
 
 export const multiChainQueryEndPoint = {
   // BSC: INFO_CLIENT,
   GOERLI: INFO_CLIENT,
-  ETH: INFO_CLIENT_ETH,
+  ETHW: INFO_CLIENT_ETH,
 }
 
 export const multiChainScan = {
   // BSC: 'BscScan',
-  ETH: 'EtherScan',
+  ETHW: 'EtherScan',
+  GOERLI: 'EtherScan',
 }
 
 export const multiChainTokenBlackList = {
-  BSC: TOKEN_BLACKLIST,
-  ETH: ETH_TOKEN_BLACKLIST,
+  GOERLI: ETH_TOKEN_BLACKLIST,
+  ETHW: ETH_TOKEN_BLACKLIST,
 }
 
 export const getMultiChainQueryEndPointWithStableSwap = (chainName: MultiChainName) => {
