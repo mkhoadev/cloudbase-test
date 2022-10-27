@@ -149,12 +149,12 @@ export default {
   },
   // TODO: multi
   zap: {
-    56: '0xD4c4a7C55c9f7B3c48bafb6E8643Ba79F42418dF',
-    97: '0xD85835207054F25620109bdc745EC1D1f84F04e1',
+    // 56: '0xD4c4a7C55c9f7B3c48bafb6E8643Ba79F42418dF',
+    // 97: '0xD85835207054F25620109bdc745EC1D1f84F04e1',
   },
   iCake: {
-    56: '0x3C458828D1622F5f4d526eb0d24Da8C4Eb8F07b1',
-    97: '',
+    // 56: '0x3C458828D1622F5f4d526eb0d24Da8C4Eb8F07b1',
+    // 97: '',
   },
   bCakeFarmBooster: {
     // 56: '0xE4FAa3Ef5A9708C894435B0F39c2B440936A3A52',
