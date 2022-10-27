@@ -25,15 +25,16 @@ const getPoolChartData = async (
         }
       }
     `
-    const { pairDayDatas } = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PairDayDatasResponse>(
-      query,
-      {
-        startTime: multiChainStartTime[chainName],
-        skip,
-        address,
-      },
-    )
-    const data = pairDayDatas.map(mapPairDayData)
+    // const { pairDayDatas } = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PairDayDatasResponse>(
+    //   query,
+    //   {
+    //     startTime: multiChainStartTime[chainName],
+    //     skip,
+    //     address,
+    //   },
+    // )
+    // const data = pairDayDatas.map(mapPairDayData)
+    const data = null
     return { data, error: false }
   } catch (error) {
     console.error('Failed to fetch pool chart data', error)

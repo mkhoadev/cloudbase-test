@@ -41,11 +41,12 @@ const fetchTopTokens = async (chainName: MultiChainName, timestamp24hAgo: number
         }
       }
     `
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TopTokensResponse>(query, {
-      blacklist: multiChainTokenBlackList[chainName],
-    })
-    // tokenDayDatas id has compound id "0xTOKENADDRESS-NUMBERS", extracting token address with .split('-')
-    return data.tokenDayDatas.map((t) => t.id.split('-')[0])
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TopTokensResponse>(query, {
+    //   blacklist: multiChainTokenBlackList[chainName],
+    // })
+    // // tokenDayDatas id has compound id "0xTOKENADDRESS-NUMBERS", extracting token address with .split('-')
+    // return data.tokenDayDatas.map((t) => t.id.split('-')[0])
+    return []
   } catch (error) {
     console.warn('fetchTopTokens', { chainName, timestamp24hAgo })
     console.error('Failed to fetch top tokens', error)

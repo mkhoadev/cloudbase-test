@@ -78,16 +78,19 @@ const fetchPoolTransactions = async (
   address: string,
 ): Promise<{ data?: Transaction[]; error: boolean }> => {
   try {
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TransactionResults>(
-      POOL_TRANSACTIONS,
-      {
-        address,
-      },
-    )
-    const mints = data.mints.map(mapMints)
-    const burns = data.burns.map(mapBurns)
-    const swaps = data.swaps.map(mapSwaps)
-    return { data: [...mints, ...burns, ...swaps], error: false }
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TransactionResults>(
+    //   POOL_TRANSACTIONS,
+    //   {
+    //     address,
+    //   },
+    // )
+    // const mints = data.mints.map(mapMints)
+    // const burns = data.burns.map(mapBurns)
+    // const swaps = data.swaps.map(mapSwaps)
+    // return { data: [...mints, ...burns, ...swaps], error: false }
+    return {
+      error: true,
+    }
   } catch (error) {
     console.error(`Failed to fetch transactions for pool ${address}`, error)
     return {

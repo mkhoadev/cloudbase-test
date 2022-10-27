@@ -103,7 +103,9 @@ export const fetchPoolData = async (
       }
     `
 
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PoolsQueryResponse>(query)
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PoolsQueryResponse>(query)
+    // return { data, error: false }
+    const data = null
     return { data, error: false }
   } catch (error) {
     console.error('Failed to fetch pool data', error)

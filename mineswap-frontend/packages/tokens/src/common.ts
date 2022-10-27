@@ -86,10 +86,10 @@ export const USDT = {
 
 export const WBTC_ETH = new Token(
   ChainId.ETHEREUMPOW,
-  '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
+  '0x4bbd68d8b1f25ae7b460e3347c637fe9e7338e0c',
   8,
-  'WBTC',
-  'Wrapped BTC',
+  'BTCB',
+  'BTCB Token',
 )
 export const WBTC_GOERLI = new Token(
   ChainId.GOERLI,

@@ -16,7 +16,8 @@ const useGelatoLimitOrdersLib = (): GelatoLimitOrders | undefined => {
     }
     if (chainId !== ChainId.ETHEREUMPOW) return undefined
     try {
-      return new GelatoLimitOrders(chainId as ChainIdType, providerOrSigner, GELATO_HANDLER, false)
+      // return new GelatoLimitOrders(chainId as ChainIdType, providerOrSigner, GELATO_HANDLER, false)
+      return null
     } catch (error: any) {
       console.error(`Could not instantiate GelatoLimitOrders: ${error.message}`)
       return undefined

@@ -45,10 +45,11 @@ const config = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['static-nft.pancakeswap.com'],
+    domains: ['https://'],
     loader: 'imgix',
-    path: 'https://static-nft.pancakeswap.com',
+    path: '/',
   },
+  // distDir: 'build',
   async rewrites() {
     return [
       {
@@ -114,30 +115,10 @@ const config = {
         permanent: true,
       },
       {
-        source: '/farms/archived',
-        destination: '/farms/history',
-        permanent: true,
-      },
-      {
         source: '/pool',
         destination: '/liquidity',
         permanent: true,
-      },
-      {
-        source: '/staking',
-        destination: '/pools',
-        permanent: true,
-      },
-      {
-        source: '/syrup',
-        destination: '/pools',
-        permanent: true,
-      },
-      {
-        source: '/collectibles',
-        destination: '/nfts',
-        permanent: true,
-      },
+      }
     ]
   },
   webpack: (webpackConfig, { webpack }) => {

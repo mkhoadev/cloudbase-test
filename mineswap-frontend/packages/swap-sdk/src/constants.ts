@@ -7,8 +7,7 @@ export type BigintIsh = JSBI | number | string
 export enum ChainId {
   ETHEREUMPOW = 10001,
   GOERLI = 5,
-  // BSC = 56,
-  // BSC_TESTNET = 97,
+
 }
 
 export enum TradeType {
@@ -66,7 +65,7 @@ export const SOLIDITY_TYPE_MAXIMA = {
 export const WETH9 = {
   [ChainId.ETHEREUMPOW]: new Token(
     ChainId.ETHEREUMPOW,
-    '0x7bf88d2c0e32de92cdaf2d43ccdc23e8edfd5990',
+    '0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990',
     18,
     'WETHW',
     'Wrapped Ether',

@@ -39,11 +39,12 @@ const fetchTopPools = async (chainName: MultiChainName, timestamp24hAgo: number)
         }
       }
     `
-    const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TopPoolsResponse>(query, {
-      blacklist: multiChainTokenBlackList[chainName],
-    })
-    // pairDayDatas id has compound id "0xPOOLADDRESS-NUMBERS", extracting pool address with .split('-')
-    return data.pairDayDatas.map((p) => p.id.split('-')[0])
+    // const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<TopPoolsResponse>(query, {
+    //   blacklist: multiChainTokenBlackList[chainName],
+    // })
+    // // pairDayDatas id has compound id "0xPOOLADDRESS-NUMBERS", extracting pool address with .split('-')
+    // return data.pairDayDatas.map((p) => p.id.split('-')[0])
+    return []
   } catch (error) {
     console.error('Failed to fetch top pools', error)
     return []

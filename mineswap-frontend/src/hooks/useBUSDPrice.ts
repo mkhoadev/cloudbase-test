@@ -155,7 +155,6 @@ export const useBUSDCakeAmount = (amount: number): number | undefined => {
 export const useCakeBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Price<Currency, Currency> | undefined => {
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
-  console.log("isTestnet",isTestnet)
   // Return bsc testnet MINE if chain is testnet
   const mine: Token = isTestnet ? MINE[ChainId.GOERLI] : MINE[ChainId.ETHEREUMPOW]
   return usePriceByPairs(USDT[mine.chainId], mine)
