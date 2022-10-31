@@ -52,6 +52,7 @@ export const lightColors = {
   gradientVioletAlt: 'linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)',
   gradientGold: 'linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)',
   backgroundImage: 'url(/img/Group11.png)',
+  backgroundBtn: '#E7E7E7',
 }
 
 export const darkColors = {
@@ -85,4 +86,5 @@ export const darkColors = {
   gradientVioletAlt: 'linear-gradient(180deg, #434575 0%, #66578D 100%)',
   gradientGold: 'linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)',
   backgroundImage: 'url(/img/Group.png)',
+  backgroundBtn: '#463701',
 }

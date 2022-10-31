@@ -29,9 +29,12 @@ const ConnectWalletButton = ({ children, ...props }: ButtonProps) => {
 
   return (
     <>
-      <Button onClick={handleClick} {...props} >
+      {/* <Button onClick={handleClick} {...props} >
         {children || <Trans>Connect Wallet</Trans>}
-      </Button>
+      </Button> */}
+      <span className="arrowBg" onClick={handleClick} {...props}>
+        <span className="arrow arrowLeft">{children || <Trans>Connect Wallet</Trans>}</span>
+      </span>
       <WalletModalV2 isOpen={open} wallets={wallets} login={login} onDismiss={() => setOpen(false)} />
     </>
   )

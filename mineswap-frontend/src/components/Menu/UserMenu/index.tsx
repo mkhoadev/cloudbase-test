@@ -103,18 +103,10 @@ const UserMenu = ({ isDark }) => {
   return (
     <ConnectWalletButton
       scale="sm"
-      style={{
-        backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
-        color: isDark ? '' : '#121212',
-        boxShadow: 'unset',
-        backgroundRepeat: 'round',
-        backgroundColor: 'unset',
-        borderRadius: 'unset',
-        height: '40px',
-      }}
     >
       <Box display={['none', , , 'block']}>
         <Trans>Connect Wallet</Trans>
+        
       </Box>
       <Box display={['block', , , 'none']}>
         <Trans>Connect</Trans>

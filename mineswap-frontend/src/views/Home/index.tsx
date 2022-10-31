@@ -27,7 +27,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
               Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
             </span>
             <div className="dflex justifyContent" style={{ paddingTop: '10px' }}>
-              <div
+              {/* <div
                 className="imgbutton"
                 style={{
                   backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
@@ -36,7 +36,10 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                 onClick={() => handleClick(`/swap`)}
               >
                 TRADE NOW
-              </div>
+              </div> */}
+              <span className="arrowBg">
+                <span className="arrow arrowLeft">TRADE NOW</span>
+              </span>
             </div>
           </div>
           <div style={{ width: '100%' }}>
@@ -106,14 +109,9 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                 <span className="color-span ">.</span>
               </div>
             </div>
-            <div
-              className="btn-connect button-css"
-              style={{ backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)' }}
-            >
-              <div className="txt-connect" style={{ color: isDark ? '' : '#121212' }}>
-                JOIN THE COMMUNITY
-              </div>
-            </div>
+            <span className="arrowBg">
+              <span className="arrow arrowLeft">JOIN THE COMMUNITY</span>
+            </span>
           </div>
         </div>
       </div>

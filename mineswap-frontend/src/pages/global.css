@@ -593,7 +593,7 @@
     position: absolute;
     width: 420px;
     height: 542px;
-    top: 170px;
+    top: 173px;
     left: 0;
 }
 
@@ -602,14 +602,14 @@
     width: 524px;
     height: 420px;
     top: 173px;
-    left: 0;
+    left: -1px;
 }
 
 .boWQZJ {
     position: absolute;
     width: 86%;
     height: 160px;
-    top: 170px;
+    top: 173px;
     background-color: var(--shark);
     border-top-left-radius: 37px;
 }
@@ -1556,16 +1556,6 @@
     .mb-5s {
         margin-bottom: 40px;
     }
-    .icon_footer {
-        justify-content: flex-end;
-        display: flex;
-    }
-    .frame_footer {
-        display: block;
-    }
-    .frame_footers {
-        display: flex;
-    }
     .group-9-7oP3YL {
         text-align-last: center;
     }
@@ -1635,4 +1625,25 @@
         width: 90%;
         margin-left: 5%;
     }
+}
+
+
+/*------------------css button-----------------------*/
+
+.arrowBg {
+    background-color: var(--supernova);
+    padding: 2px;
+    -webkit-clip-path: polygon( 0px 0%, calc(100% - 15px) 0%, 100% 12px, 100% calc(100% - 0px), calc(100% - 0px) 100%, 20px 100%, 0 calc(100% - 0px));
+    clip-path: polygon( 0px 0%, calc(100% - 15px) 0%, 100% 12px, 100% calc(100% - 0px), calc(100% - 0px) 100%, 20px 100%, 0 calc(100% - 0px));
+    border-radius: 5px;
+}
+
+.arrowLeft {
+    background: var(--colors-backgroundBtn);
+    padding: 10px 15px;
+    clip-path: polygon( 0px 0%, calc(100% - 15px) 0%, 100% 12px, 100% calc(100% - 0px), calc(100% - 0px) 100%, 20px 100%, 0 calc(100% - 0px));
+    border-radius: 3px;
+    display: block;
+    color: var(--colors-text);
+    font-weight: 600;
 }

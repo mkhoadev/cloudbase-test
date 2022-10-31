@@ -77,7 +77,7 @@ export const ethpow: Chain = {
   blockExplorers: {
     default: {
       name: 'ETHW',
-      url: 'https://mainnet.ethereumpow.org',
+      url: 'https://www.oklink.com',
     },
   },
   testnet: false,
