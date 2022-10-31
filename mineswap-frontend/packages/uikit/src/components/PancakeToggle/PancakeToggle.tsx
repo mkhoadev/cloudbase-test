@@ -11,7 +11,7 @@ const PancakeToggle: React.FC<React.PropsWithChildren<PancakeToggleProps>> = ({
     <PancakeInput id={props.id || "pancake-toggle"} scale={scale} type="checkbox" checked={checked} {...props} />
     <PancakeLabel style={{background: 'var(--colors-input)'}} scale={scale} checked={checked} htmlFor={props.id || "pancake-toggle"}>
       <div className="pancakes">
-        <div className="pancake" style={{background: 'unset', boxShadow: '0 1.5px 0 1.5px var(--colors-textDisabled)'}}  />
+        <div className="pancake"  />
         {/* <div className="pancake" />
         <div className="pancake" /> */}
         {/* <div className="butter" /> */}
