@@ -35,7 +35,6 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
     placement: isBottomNav ? "top" : "bottom-start",
     modifiers: [{ name: "offset", options: { offset: [0, isBottomNav ? 6 : 0] } }],
   });
-
   const isMenuShow = isOpen && ((isBottomNav && showItemsOnMobile) || !isBottomNav);
 
   useEffect(() => {
@@ -106,7 +105,7 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
                 );
                 const isActive = href === activeItem;
                 return (
-                  <StyledDropdownMenuItemContainer key={itemItem}>
+                  <StyledDropdownMenuItemContainer key={itemItem} >
                     {type === DropdownMenuItemType.BUTTON && (
                       <DropdownMenuItem
                         $isActive={isActive}

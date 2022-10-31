@@ -87,7 +87,7 @@ export const PancakeStack = styled.div<HandleProps>`
     height: ${getScale("pancakeSize")};
     position: absolute;
     transition: 0.4s ease;
-    top: 2px;
+    top: 3px;
     left: 4px;
     box-shadow: 0 ${getScale("pancakeThickness")} 0 ${getScale("pancakeThickness")} #fbbe7c;
   }

@@ -23,7 +23,7 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
         <div className="trade-earn">PancakeSwap makes it easy to make your crypto work for you.</div>
         <div className="dflex justifyContent">
           <span className="arrowBg">
-            <span className="arrow arrowLeft">TRADE NOW</span>
+            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
           </span>
         </div>
       </div>

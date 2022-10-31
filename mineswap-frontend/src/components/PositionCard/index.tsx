@@ -12,6 +12,7 @@ import {
   AddIcon,
   TooltipText,
   useTooltip,
+  CardLiqi,
 } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { NextLinkFromReactRouter } from 'components/NextLink'
@@ -288,8 +289,8 @@ function FullPositionCard({
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <Card {...props}>
-      <Flex justifyContent="space-between" role="button" onClick={() => setShowMore(!showMore)} p="16px">
+    <CardLiqi {...props} >
+      <Flex justifyContent="space-between" style={{backgroundImage: 'unset'}} role="button" onClick={() => setShowMore(!showMore)} p="16px">
         <Flex flexDirection="column">
           <Flex alignItems="center" mb="4px">
             <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={20} />
@@ -398,7 +399,7 @@ function FullPositionCard({
           )}
         </AutoColumn>
       )}
-    </Card>
+    </CardLiqi>
   )
 }
 

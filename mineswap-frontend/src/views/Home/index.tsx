@@ -38,7 +38,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                 TRADE NOW
               </div> */}
               <span className="arrowBg">
-                <span className="arrow arrowLeft">TRADE NOW</span>
+                <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
               </span>
             </div>
           </div>
@@ -49,6 +49,11 @@ const Home: React.FC<React.PropsWithChildren> = () => {
               className="style-img-home"
             />
           </div>
+        </div>
+        <div className='div-scroll'>
+          <div className="scroll-down"></div>
+          <div className='intro-swap txt-scroll'>SCROLL TO EXPLORE</div>
+          
         </div>
         <div className="use-by mt-Used">
           <div className="div_millions">

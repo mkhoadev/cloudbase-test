@@ -9,7 +9,7 @@ interface LogoProps extends SvgProps {
 const Logo: React.FC<React.PropsWithChildren<LogoProps>> = ({ isDark, ...props }) => {
   const textColor = isDark ? "#FFFFFF" : "#000000";
   return (
-    <img src={isDark ? "/logoMineswaps.png" : "/logoMineswap.png" } alt="MineSwap" className="mobile-icon" />
+    <img src={!isDark ? "/img/favicon.png" : "/img/favicon-light.png" } alt="MineSwap" className="mobile-icon" />
   );
 };
 

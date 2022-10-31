@@ -53,6 +53,7 @@ export const lightColors = {
   gradientGold: 'linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)',
   backgroundImage: 'url(/img/Group11.png)',
   backgroundBtn: '#E7E7E7',
+  textcard: '#FFFFFF',
 }
 
 export const darkColors = {
@@ -87,4 +88,5 @@ export const darkColors = {
   gradientGold: 'linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)',
   backgroundImage: 'url(/img/Group.png)',
   backgroundBtn: '#463701',
+  textcard: '#3E3E3E',
 }

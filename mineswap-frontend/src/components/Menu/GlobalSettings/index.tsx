@@ -1,4 +1,5 @@
 import { Flex, IconButton, CogIcon, useModal } from '@pancakeswap/uikit'
+import { useTheme } from 'styled-components'
 import SettingsModal from './SettingsModal'
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
 
 const GlobalSettings = ({ color, mr = '8px', mode }: Props) => {
   const [onPresentSettingsModal] = useModal(<SettingsModal mode={mode} />)
-
+  const { isDark } = useTheme()
   return (
     // <img src="/img/Menubutton.png" alt="" onClick={onPresentSettingsModal} style={{ marginRight: '20px', height:'32px'}} id={`open-settings-dialog-button-${mode}`}/>
     <Flex>
@@ -20,7 +21,14 @@ const GlobalSettings = ({ color, mr = '8px', mode }: Props) => {
         mr={mr}
         id={`open-settings-dialog-button-${mode}`}
       >
-        <CogIcon height={24} width={24} color={color || 'textSubtle'} />
+        {/* <CogIcon height={24} width={24} color={color || 'textSubtle'} /> */}
+        <img
+          src={isDark ? '/icon/icondark.png' : '/icon/iconlight.png'}
+          height={20}
+          width={20}
+          color={color || 'textSubtle'}
+          alt=""
+        />
       </IconButton>
     </Flex>
   )

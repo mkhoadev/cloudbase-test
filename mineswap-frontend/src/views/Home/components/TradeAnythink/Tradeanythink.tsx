@@ -24,7 +24,7 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
         <div className="trade-earn">Trade any token on BNB Smart Chain in seconds, just by connecting your wallet.</div>
         <div className="dflex justifyContent">
           <span className="arrowBg">
-            <span className="arrow arrowLeft">TRADE NOW</span>
+            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
           </span>
         </div>
       </div>
