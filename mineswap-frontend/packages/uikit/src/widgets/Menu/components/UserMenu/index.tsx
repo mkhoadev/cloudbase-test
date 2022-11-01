@@ -33,7 +33,7 @@ export const NewStyledUserMenu = styled(Flex)`
   // box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   // display: inline-flex;
-  height: 40px;
+  height: 35px;
   padding-left: 32px;
   padding-right: 8px;
   position: relative;
@@ -129,24 +129,29 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
   return (
     <Flex alignItems="center" height="100%" ref={setTargetRef} {...props}>
-      <NewStyledUserMenu
-        style={{
-          backgroundImage: isDark
-            ? `url(/img/Group41${isMobile ? "mb" : ""}.png)`
-            : `url(/img/Group22${isMobile ? "mb" : ""}.png)`,
-          color: isDark ? "" : "#121212",
-        }}
+      <span
+        className="arrowBg"
         onTouchStart={() => {
           setIsOpen((s) => !s);
         }}
       >
-        <Flex style={{ marginLeft: 10 }}>
-          <MenuIcon avatarSrc={avatarSrc} variant={variant} />
-        </Flex>
+        <span className="arrow arrowLeft" style={{padding: '0'}}>
+          <NewStyledUserMenu
+            onTouchStart={() => {
+              setIsOpen((s) => !s);
+            }}
+          >
+            <Flex style={{ marginLeft: 10 }}>
+              <MenuIcon avatarSrc={avatarSrc} variant={variant} />
+            </Flex>
 
-        <LabelText title={typeof text === "string" ? text || account : account}>{text || accountEllipsis}</LabelText>
-        {!disabled && <ChevronDownIcon color="text" width="24px" />}
-      </NewStyledUserMenu>
+            <LabelText title={typeof text === "string" ? text || account : account}>
+              {text || accountEllipsis}
+            </LabelText>
+            {!disabled && <ChevronDownIcon color="text" width="24px" />}
+          </NewStyledUserMenu>
+        </span>
+      </span>
 
       {!disabled && (
         <Menu style={styles.popper} className="tranform" ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>

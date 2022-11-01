@@ -13,9 +13,10 @@ export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`
         position: absolute;
         bottom: 0;
         height: 4px;
-        width: 100%;
+        width: 60%;
         background-color: ${theme.colors.primary};
-        border-radius: 2px 2px 0 0;
+        border-radius: 2px;
+        margin-left: 20%;
       }
     `};
 `;
@@ -25,7 +26,7 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   display: flex;
   align-items: center;
 
-  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.secondary : theme.colors.textSubtle)};
+  color: ${({ theme, $isActive }) => ($isActive ?theme.colors.primary : theme.colors.textSubtle)};
   font-size: 16px;
   font-weight: ${({ $isActive }) => ($isActive ? "600" : "400")};
   opacity: ${({ $isDisabled }) => ($isDisabled ? 0.5 : 1)};

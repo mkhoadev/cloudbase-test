@@ -35,7 +35,7 @@ const UserMenu = ({ isDark }) => {
   const avatarSrc = profile?.nft?.image?.thumbnail
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
-  
+
   useEffect(() => {
     if (hasPendingTransactions) {
       setUserMenuText(t('%num% Pending', { num: pendingNumber }))
@@ -62,7 +62,7 @@ const UserMenu = ({ isDark }) => {
           {t('Recent Transactions')}
           {hasPendingTransactions && <RefreshIcon spin />}
         </UserMenuItem>
-        
+
         {/* <UserMenuDivider />
         <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
           <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.ETHEREUMPOW}>
@@ -101,24 +101,17 @@ const UserMenu = ({ isDark }) => {
     )
   }
   return (
-    <ConnectWalletButton
-      scale="sm"
-      style={{
-        backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
-        color: isDark ? '' : '#121212',
-        boxShadow: 'unset',
-        backgroundRepeat: 'round',
-        backgroundColor: 'unset',
-        borderRadius: 'unset',
-        height: '40px',
-      }}
-    >
-      <Box display={['none', , , 'block']}>
-        <Trans>Connect Wallet</Trans>
-      </Box>
-      <Box display={['block', , , 'none']}>
-        <Trans>Connect</Trans>
-      </Box>
+    <ConnectWalletButton scale="sm" style={{backgroundColor: 'unset', boxShadow: 'unset'}}>
+      <span className="arrowBg">
+        <span className="arrow arrowLeft">
+          <Box display={['none', , , 'block']}>
+            <Trans>Connect Wallet</Trans>
+          </Box>
+          <Box display={['block', , , 'none']}>
+            <Trans>Connect</Trans>
+          </Box>
+        </span>
+      </span>
     </ConnectWalletButton>
   )
 }

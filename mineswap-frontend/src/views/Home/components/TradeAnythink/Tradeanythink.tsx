@@ -14,7 +14,7 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
 
   return (
     <div className="dflex mt-screen">
-      <div style={{order: '1', textAlign:'center'}} className='width-screen'>
+      <div style={{ order: '1', textAlign: 'center' }} className="width-screen">
         <img src="/img/stick-6@3x.png" alt="hero images" style={{ width: '80%' }} />
       </div>
       <div className="txt-banner">
@@ -23,16 +23,9 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
         </div>
         <div className="trade-earn">Trade any token on BNB Smart Chain in seconds, just by connecting your wallet.</div>
         <div className="dflex justifyContent">
-          <div
-            className="imgbutton"
-            style={{
-              backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
-              color: isDark ? '#fff' : '#121212',
-            }}
-            onClick={() => handleClick(`/swap`)}
-          >
-            TRADE NOW
-          </div>
+          <span className="arrowBg">
+            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
+          </span>
         </div>
       </div>
     </div>

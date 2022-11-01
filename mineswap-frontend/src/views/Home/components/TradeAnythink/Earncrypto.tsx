@@ -13,28 +13,21 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
 
   return (
     <div className="dflex mt-screen">
-    <div style={{order: '-1'}} className='width-screen txtAlign'>
-      <img src="/img/stick-7@3x.png" alt="hero images" style={{ width: '80%' }} />
-    </div>
-    <div className="txt-banner">
-      <div className="comunioner line-height-home">
-      <span className="color-earn">Earn</span> passive income with crypto.
+      <div style={{ order: '-1' }} className="width-screen txtAlign">
+        <img src="/img/stick-7@3x.png" alt="hero images" style={{ width: '80%' }} />
       </div>
-      <div className="trade-earn">PancakeSwap makes it easy to make your crypto work for you.</div>
-      <div className="dflex justifyContent">
-        <div
-          className="imgbutton"
-          style={{
-            backgroundImage: isDark ? 'url(/img/Group40.png)' : 'url(/img/Group21.png)',
-            color: isDark ? '#fff' : '#121212',
-          }}
-          onClick={() => handleClick(`/swap`)}
-        >
-          TRADE NOW
+      <div className="txt-banner">
+        <div className="comunioner line-height-home">
+          <span className="color-earn">Earn</span> passive income with crypto.
+        </div>
+        <div className="trade-earn">PancakeSwap makes it easy to make your crypto work for you.</div>
+        <div className="dflex justifyContent">
+          <span className="arrowBg">
+            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
+          </span>
         </div>
       </div>
     </div>
-  </div>
   )
 }
 

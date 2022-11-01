@@ -64,10 +64,12 @@ export const StyledCardInner = styled(Box)<{ background?: string; hasCustomBorde
   width: 100%;
   height: 100%;
   overflow: ${({ hasCustomBorder }) => (hasCustomBorder ? "initial" : "inherit")};
-  background-color: unset !important;
+  // background-color: unset !important;
   background-image: ${({ theme }) => `${theme.colors.backgroundImage}`};
   background-repeat: round;
+  border-radius: 20px;
 `;
+
 
 StyledCard.defaultProps = {
   isActive: false,

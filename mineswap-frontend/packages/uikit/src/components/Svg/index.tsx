@@ -34,6 +34,7 @@ export { default as ChevronRightIcon } from "./Icons/ChevronRight";
 export { default as ChevronUpIcon } from "./Icons/ChevronUp";
 export { default as CircleOutlineIcon } from "./Icons/CircleOutline";
 export { default as CloseIcon } from "./Icons/Close";
+export { default as Setting } from "./Icons/Setting";
 export { default as CogIcon } from "./Icons/Cog";
 export { default as Coin98Icon } from "./Icons/Coin98";
 export { default as CoinbaseWalletIcon } from "./Icons/CoinbaseWallet";
