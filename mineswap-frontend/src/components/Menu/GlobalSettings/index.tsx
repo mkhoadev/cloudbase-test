@@ -6,9 +6,10 @@ type Props = {
   color?: string
   mr?: string
   mode?: string
+  local?: string
 }
 
-const GlobalSettings = ({ color, mr = '8px', mode }: Props) => {
+const GlobalSettings = ({ color, mr = '8px', mode, local }: Props) => {
   const [onPresentSettingsModal] = useModal(<SettingsModal mode={mode} />)
   const { isDark } = useTheme()
   return (
@@ -20,6 +21,7 @@ const GlobalSettings = ({ color, mr = '8px', mode }: Props) => {
         scale="sm"
         mr={mr}
         id={`open-settings-dialog-button-${mode}`}
+        style={{ padding: local === '1' ? '0' : '' }}
       >
         {/* <CogIcon height={24} width={24} color={color || 'textSubtle'} /> */}
         <img

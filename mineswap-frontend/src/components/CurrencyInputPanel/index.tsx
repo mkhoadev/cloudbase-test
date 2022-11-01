@@ -60,7 +60,7 @@ const Container = styled.div<{ zapStyle?: ZapStyle; error?: boolean }>`
   ${({ zapStyle }) =>
     !!zapStyle &&
     css`
-      border-radius: 0px 16px 16px 16px;
+      // border-radius: 0px 16px 16px 16px;
     `};
 `
 
@@ -150,6 +150,7 @@ export default function CurrencyInputPanel({
         <Flex>
           {beforeButton}
           <CurrencySelectButton
+            // style={{background: 'var(--colors-input)', borderRadius: '0px 8px 0px 0px',border: '1px solid var(--colors-cardBorder)'}}
             zapStyle={zapStyle}
             className="open-currency-select-button"
             selected={!!currency}
@@ -159,7 +160,7 @@ export default function CurrencyInputPanel({
               }
             }}
           >
-            <Flex alignItems="center" justifyContent="space-between">
+            <Flex alignItems="center" justifyContent="space-between" >
               {pair ? (
                 <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={16} margin />
               ) : currency ? (

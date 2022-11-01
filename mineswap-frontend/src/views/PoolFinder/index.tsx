@@ -1,5 +1,5 @@
 import { Currency, JSBI } from '@pancakeswap/sdk'
-import { AddIcon, Button, ChevronDownIcon, Text, useModal } from '@pancakeswap/uikit'
+import { AddIcon, ArrowDropDownIcon, Button, ChevronDownIcon, Text, useModal } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { NextLinkFromReactRouter } from 'components/NextLink'
@@ -27,11 +27,28 @@ enum Fields {
   TOKEN1 = 1,
 }
 
-const StyledButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.input};
-  color: ${({ theme }) => theme.colors.text};
-  box-shadow: none;
+const StyledButton = styled('button')`
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px 16px;
+  box-shadow: var(--shadows-inset);
+  border: 1px solid var(--colors-inputSecondary);
   border-radius: 16px;
+  background: var(--colors-input);
+  -webkit-transition: border-radius 0.15s;
+  transition: border-radius 0.15s;
 `
 
 export default function PoolFinder() {
@@ -114,6 +131,7 @@ export default function PoolFinder() {
             ) : (
               <Text ml="8px">{t('Select a Token')}</Text>
             )}
+            <ArrowDropDownIcon color="text" className="down-icon" />
           </StyledButton>
 
           <ColumnCenter>
@@ -135,6 +153,7 @@ export default function PoolFinder() {
             ) : (
               <Text as={Row}>{t('Select a Token')}</Text>
             )}
+            <ArrowDropDownIcon color="text" className="down-icon" />
           </StyledButton>
 
           {currency0 && currency1 ? (
