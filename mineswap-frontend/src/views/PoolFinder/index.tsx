@@ -117,7 +117,7 @@ export default function PoolFinder() {
         <AppHeader title={t('Import Pool')} subtitle={t('Import an existing pool')} backTo="/liquidity" />
         <AutoColumn style={{ padding: '1rem' }} gap="md">
           <StyledButton
-            endIcon={<ChevronDownIcon />}
+            // endIcon={<ChevronDownIcon />}
             onClick={() => {
               onPresentCurrencyModal()
               setActiveField(Fields.TOKEN0)
@@ -139,7 +139,7 @@ export default function PoolFinder() {
           </ColumnCenter>
 
           <StyledButton
-            endIcon={<ChevronDownIcon />}
+            // endIcon={<ChevronDownIcon />}
             onClick={() => {
               onPresentCurrencyModal()
               setActiveField(Fields.TOKEN1)
