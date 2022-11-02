@@ -16,7 +16,7 @@
       "address": "0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990",
       "chainId": 10001,
       "decimals": 18,
-      "logoURI": "/images/10001/tokens/0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990.png"
+      "logoURI": "https://www.mineswap.finance/images/10001/tokens/0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990.png"
     },
     {
       "name": "BUSD Token",
@@ -24,7 +24,7 @@
       "address": "0xf61eb8999f2F222f425d41dA4C2ff4b6D8320C87",
       "chainId": 10001,
       "decimals": 18,
-      "logoURI": "/images/10001/tokens/0xf61eb8999f2F222f425d41dA4C2ff4b6D8320C87.png"
+      "logoURI": "https://www.mineswap.finance/images/10001/tokens/0xf61eb8999f2F222f425d41dA4C2ff4b6D8320C87.png"
     },
     {
       "name": "Ethereum Token",
@@ -32,7 +32,7 @@
       "address": "0x34a9c05b638020A07bB153BF624C8763bf8B4A86",
       "chainId": 10001,
       "decimals": 18,
-      "logoURI": "/images/10001/tokens/0x34a9c05b638020A07bB153BF624C8763bf8B4A86.png"
+      "logoURI": "https://www.mineswap.finance/images/10001/tokens/0x34a9c05b638020A07bB153BF624C8763bf8B4A86.png"
     },
     {
       "name": "Tether USD",
@@ -40,7 +40,7 @@
       "address": "0x2AD7868CA212135C6119FD7AD1Ce51CFc5702892",
       "chainId": 10001,
       "decimals": 6,
-      "logoURI": "/images/10001/tokens/0x2AD7868CA212135C6119FD7AD1Ce51CFc5702892.png"
+      "logoURI": "https://www.mineswap.finance/images/10001/tokens/0x2AD7868CA212135C6119FD7AD1Ce51CFc5702892.png"
     },
     {
       "name": "BTCB Token",
@@ -48,7 +48,7 @@
       "address": "0x4bBd68D8B1F25Ae7b460E3347C637FE9E7338E0C",
       "chainId": 10001,
       "decimals": 8,
-      "logoURI": "/images/10001/tokens/0x4bBd68D8B1F25Ae7b460E3347C637FE9E7338E0C.png"
+      "logoURI": "https://www.mineswap.finance/images/10001/tokens/0x4bBd68D8B1F25Ae7b460E3347C637FE9E7338E0C.png"
     },
     {
       "name": "MineSwap Token",
@@ -56,7 +56,7 @@
       "address": "0x3B927FF20F783D78AFF1a5227E23737E3325490F",
       "chainId": 10001,
       "decimals": 18,
-      "logoURI": "/images/10001/tokens/0x3B927FF20F783D78AFF1a5227E23737E3325490F.png"
+      "logoURI": "https://www.mineswap.finance/images/10001/tokens/0x3B927FF20F783D78AFF1a5227E23737E3325490F.png"
     },
     {
       "name": "USD Coin",
@@ -64,7 +64,7 @@
       "symbol": "USDC",
       "decimals": 6,
       "chainId": 10001,
-      "logoURI": "/images/10001/tokens/0x25DE68ef588cb0c2c8F3537861E828Ae699CD0DB.png"
+      "logoURI": "https://www.mineswap.finance/images/10001/tokens/0x25DE68ef588cb0c2c8F3537861E828Ae699CD0DB.png"
     },
     {
       "name": "Test USD Coin",
