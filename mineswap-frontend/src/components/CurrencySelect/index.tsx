@@ -80,8 +80,9 @@ export const CurrencySelect = ({
               </Flex>
             )}
           </Text>
+          <ArrowDropDownIcon color="text" className="down-icon" />
         </DropDownHeader>
-        <ArrowDropDownIcon color="text" className="down-icon" />
+        {/* <ArrowDropDownIcon color="text" className="down-icon" /> */}
       </div>
       {account && !!selectedCurrency && !hideBalance && (
         <Box>

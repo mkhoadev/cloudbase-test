@@ -102,7 +102,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             background: isDark
               ? 'url(/img/swapdark.webp) no-repeat center'
               : 'url(/img/swaplight.webp) no-repeat center',
-            backgroundSize: '75%',
+            backgroundSize: '85%',
           }}
         >
           <div className="involved">

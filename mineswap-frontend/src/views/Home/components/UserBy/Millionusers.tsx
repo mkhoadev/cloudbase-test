@@ -2,7 +2,7 @@
 const Millionusers  = () => {
   return (
     <div className="div-millions-user">
-      <div className="txtmillionuser"></div>
+      {/* <div className="txtmillionuser"></div> */}
       <div className="bEQugO">
         <div className="image-million">
           <div className="sc-eLdnOn eAGDqQ"></div>

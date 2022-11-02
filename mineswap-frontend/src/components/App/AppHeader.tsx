@@ -33,12 +33,12 @@ const AppHeader: React.FC<React.PropsWithChildren<Props>> = ({ title, subtitle, 
           (typeof backTo === 'string' ? (
             <Link passHref href={backTo}>
               <IconButton as="a" scale="sm">
-                <ArrowBackIcon width="32px" />
+                <ArrowBackIcon width="30px" />
               </IconButton>
             </Link>
           ) : (
             <IconButton scale="sm" variant="text" onClick={backTo}>
-              <ArrowBackIcon width="32px" />
+              <ArrowBackIcon width="30px" />
             </IconButton>
           ))}
         <Flex flexDirection="column" width="100%">
@@ -50,7 +50,7 @@ const AppHeader: React.FC<React.PropsWithChildren<Props>> = ({ title, subtitle, 
             {!noConfig && (
               <Flex alignItems="center">
                 <NotificationDot show={expertMode}>
-                  <GlobalSettings mode={SettingsMode.SWAP_LIQUIDITY} />
+                  <GlobalSettings mode={SettingsMode.SWAP_LIQUIDITY} local={'1'} />
                 </NotificationDot>
                 <Transactions />
               </Flex>
