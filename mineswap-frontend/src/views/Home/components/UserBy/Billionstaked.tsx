@@ -2,7 +2,7 @@
 const Billionstaked : React.FC<React.PropsWithChildren> = () => {
   return (
     <div className="div-millions-user">
-      <div className="txtmillionuser"></div>
+      {/* <div className="txtmillionuser"></div> */}
       <div className="bEQugO">
         <div className="image-million">
           <div className="sc-eLdnOn color_staked"></div>
