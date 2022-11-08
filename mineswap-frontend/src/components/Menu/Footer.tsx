@@ -10,17 +10,17 @@ const Footer: React.FC<React.PropsWithChildren<{ variant?: FooterVariant; helpUr
       className="background-involved-swap"
       style={{
         backgroundImage: isDark ? 'url(/img/swapdark.webp)' : 'url(/img/swaplight.webp)',
-        backgroundSize: '720px',
+        backgroundSize: '900px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
       }}
     >
       <div className="involved-involved">
         <div className="involved-div-swap">
-          <div className="involved-txt-involved">Want to get involved?</div>
+          <div className="involved-txt-involved">Want to join us?</div>
           <div className="involved-div-involved">
-            <span className="color-span ">Or learn all about </span>
-            <span className="color-span ">how to build on Onix</span>
+            <span style={{color: 'var(--shuttle-gray)'}}>Learn more from our </span>
+            <span className="color-span ">Whitepaper</span>
             <span className="color-span ">.</span>
           </div>
         </div>

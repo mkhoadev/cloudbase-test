@@ -459,7 +459,7 @@
     align-self: center;
     margin-left: 100px;
     position: absolute;
-    width: 40%;
+    width: 37%;
     max-width: 900px;
     gap: 20px;
     display: grid;
@@ -536,11 +536,12 @@
 }
 
 .div-millions-colum {
-    display: -ms-flexbox;
-    display: flex;
+    display: grid;
     align-items: flex-start;
     gap: 40px;
     border: 1px none;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .bEQugO {
@@ -600,7 +601,7 @@
 .gdNydd {
     position: absolute;
     width: 524px;
-    height: 420px;
+    height: 390px;
     top: 173px;
     left: -1px;
 }
@@ -659,10 +660,10 @@
 
 .imhWGR {
     position: absolute;
-    width: 340px;
-    height: 340px;
-    top: 0;
-    left: 0;
+    width: 300px;
+    height: 300px;
+    top: 20px;
+    left: 20px;
     object-fit: cover;
 }
 
@@ -684,6 +685,15 @@
     right: 0px;
     object-fit: cover;
     z-index: 10;
+}
+
+.footer-img {
+    position: absolute;
+    width: 300px;
+    left: 55px;
+    object-fit: cover;
+    z-index: 10;
+    top: 150px;
 }
 
 .bkuLtm {
@@ -731,7 +741,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 55px 40px 40px;
+    padding: 70px 40px 40px;
     align-self: stretch;
     border-radius: 0px 0px 24px 24px;
     overflow: hidden;
@@ -1022,9 +1032,9 @@
 }
 
 .w-6 {
-    width: 40px;
-    height: 40px;
-    margin-left: 50px;
+    width: 35px;
+    height: 35px;
+    margin-left: 33px;
     cursor: pointer;
 }
 
@@ -1062,7 +1072,7 @@
     width: fit-content;
     align-items: center;
     border: 1px none;
-    margin-top: 260px;
+    margin-top: 290px;
 }
 
 .involved-txt {
@@ -1106,7 +1116,7 @@
     color: transparent;
     font-size: var(--font-size-l);
     text-align: center;
-    letter-spacing: -2px;
+    letter-spacing: 0px;
     white-space: nowrap;
 }
 
@@ -1116,7 +1126,6 @@
     color: transparent;
     font-size: var(--font-size-m);
     text-align: center;
-    letter-spacing: -2px;
     white-space: nowrap;
 }
 
@@ -1141,7 +1150,7 @@
     width: fit-content;
     align-items: center;
     border: 1px none;
-    margin-top: 250px;
+    margin-top: 270px;
 }
 
 .involved-btn {
@@ -1214,6 +1223,10 @@
     background-position-y: 150px;
     background-repeat: no-repeat;
     background-size: cover !important;
+}
+
+.padding-min-swap {
+    padding: 40px 35px;
 }
 
 
@@ -1308,7 +1321,7 @@
         height: unset;
     }
     .gdNydd {
-        height: 379px;
+        height: 350px;
     }
     .div_millions {
         font-size: var(--font-size-s);
@@ -1319,7 +1332,7 @@
         margin-bottom: -50px;
     }
     .div-millions-colum {
-        display: contents;
+        grid-template-columns: repeat(1, 1fr);
     }
     .image-million {
         width: 100%;
@@ -1327,6 +1340,7 @@
     }
     .dfbVyw {
         width: 100%;
+        padding: 55px 25px 40px;
         margin: auto;
     }
     .color-trade {
@@ -1364,6 +1378,10 @@
     .hkipsh {
         width: 200px;
         margin-top: 70px;
+        display: none;
+    }
+    .footer-img {
+        display: none;
     }
     .txtmillionother {
         bottom: 21px;
@@ -1380,7 +1398,7 @@
         font-weight: 900;
         font-style: normal;
         margin-top: -1px;
-        line-height: unset;
+        line-height: 30px;
     }
     .inter-black-alto-32px {
         font-size: var(--font-size-l) !important;
@@ -1397,10 +1415,11 @@
         font-size: var(--font-size-l);
     }
     .icon_footer {
-        justify-content: flex-start;
+        justify-content: inherit;
         display: flex;
         height: 150px;
         margin-left: 0;
+        margin: auto;
     }
     .frame_footer {
         display: block;
@@ -1423,7 +1442,8 @@
     .w-6 {
         width: 30px;
         height: 30px;
-        margin-left: 35px;
+        margin-left: 30px;
+        margin-right: 30px;
     }
     .imgbutton {
         height: 25px;
@@ -1448,6 +1468,9 @@
     .div-scroll {
         visibility: hidden;
     }
+    .padding-min-swap {
+        padding: 30px 25px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 900px) {
@@ -1464,7 +1487,7 @@
         width: fit-content;
         align-items: center;
         border: 1px none;
-        margin-top: 320px;
+        margin-top: 330px;
     }
     .involved-txt {
         font-size: var(--font-size-xl);
@@ -1473,7 +1496,7 @@
     .involved-div-span {
         font-size: var(--font-size-m);
         text-align: center;
-        letter-spacing: -1.5px;
+        letter-spacing: 0px;
         white-space: nowrap;
     }
     .div-scroll {
@@ -1523,6 +1546,7 @@
     }
     .menu-items-iEyiFd {
         justify-content: center;
+        margin-top: 30px;
     }
     .size-hearder {
         min-height: 500px;
@@ -1592,6 +1616,14 @@
     }
     .txtmillionother {
         bottom: 8px;
+    }
+    .footer-img {
+        position: absolute;
+        width: 150px;
+        left: 22px;
+        object-fit: cover;
+        z-index: 10;
+        top: 268px;
     }
 }
 
@@ -1639,6 +1671,7 @@
     }
     .menu-items-iEyiFd {
         justify-content: center;
+        margin-top: 30px;
     }
     .size-hearder {
         min-height: 500px;
@@ -1702,6 +1735,14 @@
         z-index: 9;
         width: 90%;
         margin-left: 5%;
+    }
+    .footer-img {
+        position: absolute;
+        width: 150px;
+        left: 22px;
+        object-fit: cover;
+        z-index: 10;
+        top: 268px;
     }
 }
 

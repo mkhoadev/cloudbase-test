@@ -18,12 +18,12 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
       </div>
       <div className="txt-banner">
         <div className="comunioner line-height-home">
-          <span className="color-earn">Earn</span> passive income with crypto.
+          <span className="color-earn">Connect</span> the most popular blockchains
         </div>
-        <div className="trade-earn">PancakeSwap makes it easy to make your crypto work for you.</div>
+        <div className="trade-earn">Exploit the values accross networks.</div>
         <div className="dflex justifyContent">
           <span className="arrowBg">
-            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
+            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>Read the docs</span>
           </span>
         </div>
       </div>

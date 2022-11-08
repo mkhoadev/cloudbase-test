@@ -22,10 +22,8 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <div className="dflex size-hearder">
           <div className="txt-banner-tt">
             <h6 className="intro-swap">INTRODUCING MINESWAP</h6>
-            <h3 className="comunioner">Community-owned API of blockchains.</h3>
-            <span className="trade-earn">
-              Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.
-            </span>
+            <h3 className="comunioner">Swap, Farm & Launch on EthereumPoW</h3>
+            <span className="trade-earn">An all-inclusive Defi platform for ETHW</span>
             <div className="dflex justifyContent" style={{ paddingTop: '10px' }}>
               {/* <div
                 className="imgbutton"
@@ -36,9 +34,12 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                 onClick={() => handleClick(`/swap`)}
               >
                 TRADE NOW
+                Connect Wallet onClick={() => window.stargate.ui.connectWalletPopup.open()}
               </div> */}
               <span className="arrowBg">
-                <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
+                <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>
+                  TRADE NOW
+                </span>
               </span>
             </div>
           </div>
@@ -50,18 +51,13 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             />
           </div>
         </div>
-        <div className='div-scroll'>
+        <div className="div-scroll">
           <div className="scroll-down"></div>
-          <div className='intro-swap txt-scroll'>SCROLL TO EXPLORE</div>
-          
+          <div className="intro-swap txt-scroll">SCROLL TO EXPLORE</div>
         </div>
         <div className="use-by mt-Used">
           <div className="div_millions">
-            <h3 className="h3-home">
-              Used by millions.
-              <br />
-              Trusted with billions.
-            </h3>
+            <h3 className="h3-home">A one-stop station</h3>
           </div>
           <div className="div-millions-colum">
             <Millionusers />
@@ -71,46 +67,36 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </div>
         <Tradeanythink />
         <Earncrypto />
-        <Statistical />
+        {/* <Statistical /> */}
         <div className="use-by" style={{ marginTop: '100px' }}>
           <div className="div_millions">
-            <div className="h3-home">Scaling solutions, amplified.</div>
-            <span className="intro-swap">Onix&apos;s complete suite of blockchain-scaling solutions.</span>
+            <div className="h3-home">Mine & swap</div>
+            {/* <span className="intro-swap">Onix&apos;s complete suite of blockchain-scaling solutions.</span> */}
           </div>
           <div className="div-millions-colum">
-            <Amplified
-              txt={'$820 million in BNB + MINE won so far'}
-              span={'Predict the price trend of BNB or MINE to win'}
-              type={'0'}
-            />
-            <Amplified
-              txt={'$64,883 in MINE prizes this round'}
-              span={'Buy tickets with MINE, win MINE if your numbers match'}
-              type={'1'}
-            />
-            <Amplified
-              txt={'mineswap Fraktal'}
-              span={'EVM-compatible block sidechain, secured by a permissionless set of PoS validators.'}
-              type={'2'}
-            />
+            <Amplified txt={'20+ cryptoassets supported'} span={'And more to be added to the platform'} type={'0'} />
+            <Amplified txt={'$68686 of liquidity locked'} span={'Used and trusted globally'} type={'1'} />
+            <Amplified txt={'20,000+ transactions'} span={'Secured by a permissionless system'} type={'2'} />
           </div>
           <img src="/img/cube2@1x.png" alt="cube2" className="sc-djTcra hkipsh" />
         </div>
+
         <div
           className="background-involved"
           style={{
-            background: isDark
-              ? 'url(/img/swapdark.webp) no-repeat center'
-              : 'url(/img/swaplight.webp) no-repeat center',
-            backgroundSize: '85%',
+            backgroundImage: isDark ? 'url(/img/swapdark.webp)' : 'url(/img/swaplight.webp)',
+            backgroundSize: '90%',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
           }}
         >
           <div className="involved">
+            <img src="/img/sphere2.svg" alt="cube2" className="footer-img" />
             <div className="involved-div">
-              <div className="involved-txt">Want to get involved?</div>
+              <div className="involved-txt">Want to join us?</div>
               <div className="involved-div-span">
-                <span className="color-span ">Or learn all about </span>
-                <span className="color-span ">how to build on Onix</span>
+                <span style={{ color: 'var(--shuttle-gray)' }}>Learn more from our </span>
+                <span className="color-span ">Whitepaper</span>
                 <span className="color-span ">.</span>
               </div>
             </div>

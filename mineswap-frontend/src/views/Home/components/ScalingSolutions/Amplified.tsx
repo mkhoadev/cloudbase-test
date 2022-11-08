@@ -17,21 +17,21 @@ const Amplified = ({ txt, span, type }: nftSaleType) => {
           <div className="sc-CqDOO boWQZJ"></div>
         </div>
       </div>
-      <div className="sc-eblUpn kAIfLV">
+      <div className="sc-eblUpn kAIfLV" style={{minHeight: '120px' }}>
         <img src="/img/icon@2x.svg" alt="slices" className="img-qr" />
         {/* <div className="sc-eOSrOQ hpiEQ">
          
             {txt}
           
         </div> */}
-        <div className="sc-fpRgNi hpiEQ" style={{ minHeight: type === '2' ? '55px' : '' }}>
+        <div className="sc-fpRgNi hpiEQ">
           {txt}
         </div>
-        <div className="sc-fpRgNi gltMei" style={{ minHeight: type === '0' ? '54px' : '' }}>
+        <div className="sc-fpRgNi gltMei" >
           {span}
         </div>
       </div>
-      <div className="sc-iOMxnH dfbVyw">
+      <div className="sc-iOMxnH dfbVyw padding-min-swap">
         <div
           className="cLuDOM"
           style={{

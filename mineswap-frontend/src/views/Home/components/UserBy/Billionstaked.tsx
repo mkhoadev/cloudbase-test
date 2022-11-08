@@ -1,5 +1,5 @@
 /* eslint import/newline-after-import: "off" */
-const Billionstaked : React.FC<React.PropsWithChildren> = () => {
+const Billionstaked: React.FC<React.PropsWithChildren> = () => {
   return (
     <div className="div-millions-user">
       {/* <div className="txtmillionuser"></div> */}
@@ -21,20 +21,19 @@ const Billionstaked : React.FC<React.PropsWithChildren> = () => {
       </div>
       <div className="sc-eblUpn kAIfLV">
         <div className="sc-eOSrOQ hpiEQ">
-          <span className="inter-black-alto-32px">$4 billion </span>
-          <span className="sc-inNIpp hWpUlW" style={{color:'var(--inchworm)'}}>staked</span>
+          <span className="inter-black-alto-32px">Marketplace and more </span>
+          {/* <span className="sc-inNIpp hWpUlW" style={{color:'var(--inchworm)'}}>staked</span> */}
         </div>
-        <div className="sc-fpRgNi gltMei">
-          Your data can be transformed, organized, and shared across applications for anyone to query with just a few
-          keystrokes. 
-        </div>
+        <div className="sc-fpRgNi gltMei">NFT trading, cross-chain bridge and more to come on Mineswap</div>
       </div>
       <div className="sc-iOMxnH dfbVyw">
-        <div className="sc-knMLgv gfrNDX" style={{color:'var(--inchworm)'}}>Learn more</div>
+        <div className="sc-knMLgv gfrNDX" style={{ color: 'var(--inchworm)' }}>
+          Learn more
+        </div>
         <img src="/img/arrow@2x.svg" alt="arrow" className="sc-eVFARG cHSmpO" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Billionstaked;
+export default Billionstaked
