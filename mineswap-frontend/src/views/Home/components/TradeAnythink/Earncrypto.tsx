@@ -23,7 +23,7 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
         <div className="trade-earn">Exploit the values accross networks.</div>
         <div className="dflex justifyContent">
           <span className="arrowBg">
-            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>Read the docs</span>
+            <span className="arrow arrowLeft" >Read the docs</span>
           </span>
         </div>
       </div>
