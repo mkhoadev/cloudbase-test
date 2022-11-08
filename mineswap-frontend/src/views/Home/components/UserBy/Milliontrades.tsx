@@ -24,7 +24,7 @@ const Milliontrades: React.FC<React.PropsWithChildren> = () => {
           <span className="inter-black-alto-32px">Launchpad </span>
           {/* <span className="sc-inNIpp hWpUlW" style={{color:'var(--porsche)'}}>trades</span> */}
         </div>
-        <div className="sc-fpRgNi gltMei">Connect with Mineswap's massive investor community</div>
+        <div className="sc-fpRgNi gltMei">Connect with Mineswap`s massive investor community</div>
       </div>
       <div className="sc-iOMxnH dfbVyw">
         <div className="sc-knMLgv gfrNDX" style={{ color: 'var(--porsche)' }}>
