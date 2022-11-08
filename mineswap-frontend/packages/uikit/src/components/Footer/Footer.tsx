@@ -50,7 +50,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
         </div>
         <div className="frame_footer frame_footers">
           <div className="group-iEyiFd group-iEyiFds">
-            <span style={{ lineHeight: "100px", color: "white" }}>© 2022 mineswap. All rights reserved.</span>
+            <span style={{ lineHeight: "100px", color: "#5E6B7E" }}>© 2022 mineswap. All rights reserved.</span>
           </div>
           <div className="icon_footer">
             <img
