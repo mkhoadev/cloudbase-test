@@ -21,7 +21,6 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   const openInNewTab = (url: any) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
-  const link = window.location.href.split("/")[3];
   return (
     <StyledFooter>
       <div style={{ width: "100%", background: "#101010" }}>
@@ -31,22 +30,12 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
               <img src="/logoMineswaps.png" width={"180px"} alt="" />
             </div>
           </div>
-          {link === "" ? (
-            <div className="menu-items-iEyiFd">
-              <div className="community">Docs</div>
-              <div className="community">Pitch Deck</div>
-              <div className="community">FAQ</div>
-            </div>
-          ) : (
-            <div className="menu-items-iEyiFd">
-              <div className="community">Community</div>
-              <div className="community">Technology</div>
-              <div className="community">About us</div>
-              <div className="community">Blog</div>
-              <div className="community">Careers</div>
-              <div className="community">Contact</div>
-            </div>
-          )}
+
+          <div className="menu-items-iEyiFd">
+            <div className="community">Docs</div>
+            <div className="community">Pitch Deck</div>
+            <div className="community">FAQ</div>
+          </div>
         </div>
         <div className="frame_footer frame_footers">
           <div className="group-iEyiFd group-iEyiFds">
