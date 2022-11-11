@@ -8,7 +8,7 @@ import { PageMeta } from 'components/Layout/Page'
 import { TC_MOBOX_SUBGRAPH, API_PROFILE } from 'config/constants/endpoints'
 import orderBy from 'lodash/orderBy'
 import {
-  SmartContractPhases,
+  // SmartContractPhases,
   CompetitionPhases,
   LIVE,
   FINISHED,
@@ -18,7 +18,7 @@ import {
 } from 'config/constants/trading-competition/phases'
 import PageSection from 'components/PageSection'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { ChainId } from '@pancakeswap/sdk'
+// import { ChainId } from '@pancakeswap/sdk'
 import { MIDBLUEBG, MIDBLUEBG_DARK, TRADINGCOMPETITIONBANNER } from './pageSectionStyles'
 import { RulesIcon } from './svgs'
 import Countdown from './components/Countdown'

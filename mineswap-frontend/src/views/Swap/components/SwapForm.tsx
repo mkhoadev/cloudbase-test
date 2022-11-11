@@ -46,6 +46,7 @@ import TradePrice from './TradePrice'
 import { ArrowWrapper, Wrapper } from './styleds'
 import { useStableFarms } from '../StableSwap/hooks/useStableConfig'
 import { isAddress } from '../../../utils'
+import { useCurrencyBalance } from 'state/wallet/hooks'
 
 const Label = styled(Text)`
   font-size: 12px;
@@ -99,6 +100,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
     [Field.INPUT]: { currencyId: inputCurrencyId },
     [Field.OUTPUT]: { currencyId: outputCurrencyId },
   } = useSwapState()
+  
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
   const hasStableSwapAlternative = useMemo(() => {

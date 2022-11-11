@@ -3,10 +3,10 @@ import useLastTruthy from 'hooks/useLast'
 import { AdvancedSwapDetails, AdvancedSwapDetailsProps } from './AdvancedSwapDetails'
 
 const AdvancedDetailsFooter = styled.div<{ show: boolean }>`
-  margin-top: ${({ show }) => (show ? '16px' : 0)};
+  margin: 3%;
   padding-top: 16px;
   padding-bottom: 16px;
-  width: 100%;
+  width: 94%;
   max-width: 400px;
   border-radius: 20px;
   background-color: ${({ theme }) => theme.colors.invertedContrast};

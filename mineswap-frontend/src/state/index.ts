@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { useMemo } from 'react'
-import { useDispatch } from 'react-redux'
+import { TypedUseSelectorHook, useDispatch } from 'react-redux'
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import burn from './burn/reducer'
@@ -17,7 +17,9 @@ import user from './user/reducer'
 // import limitOrders from './limitOrders/reducer'
 // import potteryReducer from './pottery'
 import globalReducer from './global/reducer'
-
+import { useSelector } from 'react-redux'
+import  presaleReducer  from './presale/reducer'
+import  authReducer  from './auth/reducer'
 const PERSISTED_KEYS: string[] = ['user', 'transactions']
 
 const persistConfig = {
@@ -45,6 +47,8 @@ const persistedReducer = persistReducer(
     mint,
     burn,
     multicall,
+    presale: presaleReducer,
+    auth: authReducer
   }),
 )
 
@@ -99,6 +103,8 @@ store = initializeStore()
 export type AppDispatch = typeof store.dispatch
 export type AppState = ReturnType<typeof store.getState>
 export const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
+
 
 export default store
 
@@ -109,3 +115,14 @@ export const persistor = persistStore(store, undefined, () => {
 export function useStore(initialState) {
   return useMemo(() => initializeStore(initialState), [initialState])
 }
+
+export const sssas = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: true,
+      immutableCheck: true,
+      serializableCheck: false,
+    }),
+  devTools: process.env.NODE_ENV === "development",
+});

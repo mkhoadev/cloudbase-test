@@ -8,7 +8,7 @@
   "extends": ["@pancakeswap/eslint-config-pancake", "plugin:react/jsx-runtime", "plugin:@next/next/recommended"],
   "rules": {
     "import/no-unresolved": 0,
-    "no-console": ["warn", { "allow": ["info", "warn", "error", "debug"] }],
+    "no-console": ["off"],
     "no-plusplus": 0,
     "prefer-destructuring": ["warn", { "object": true, "array": false }],
     "no-underscore-dangle": 0,
@@ -17,25 +17,26 @@
     "no-sparse-arrays": 0,
     "react-hooks/rules-of-hooks": ["off"],
     "jsx-a11y/no-noninteractive-element-interactions":["off"],
-    "react/self-closing-comp": [
-      "error",
-      {
-        "component": true,
-        "html": false
-      }
-    ],
+    // "react/self-closing-comp": [
+    //   "error",
+    //   {
+    //     "component": true,
+    //     "html": false
+    //   }
+    // ],
     "jsx-a11y/anchor-is-valid": ["off"],
     "jsx-a11y/click-events-have-key-events":["off"],
     "jsx-a11y/no-static-element-interactions":["off"],
     "import/newline-after-import": ["off"],
     "react/jsx-curly-brace-presence": ["off"],
     "import/order": ["off"],
-    "react-hooks/exhaustive-deps": [
-      "warn",
-      {
-        "additionalHooks": "(useFastRefreshEffect|useSlowRefreshEffect)"
-      }
-    ],
+    "@typescript-eslint/no-shadow": ["off"],
+    // "react-hooks/exhaustive-deps": [
+    //   "warn",
+    //   {
+    //     "additionalHooks": "(useFastRefreshEffect|useSlowRefreshEffect)"
+    //   }
+    // ],
     // Start temporary rules
     // These rules are here just to keep the lint error to 0 during the migration to the new rule set
     // They need to be removed and fixed as soon as possible
@@ -50,7 +51,29 @@
     "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state", "memo"] }],
     "react/require-default-props": 0,
     "no-nested-ternary": 0,
-    "max-classes-per-file": 0
+    "max-classes-per-file": 0,
+    "prefer-const": ["off"],
+    "react/no-array-index-key": ["off"],
+    "no-unneeded-ternary": ["off"],
+    "no-unused-expressions": ["off"],
+    "consistent-return": ["off"],
+    "prefer-template": ["off"],
+    "spaced-comment":["off"],
+    "dot-notation": ["off"],
+    "object-shorthand": ["off"],
+    "no-useless-computed-key": ["off"],
+    "default-case": ["off"],
+    "react/self-closing-comp": ["off"],
+    "array-callback-return": ["off"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["off"],
+    "@typescript-eslint/no-var-requires": ["off"],
+    "@typescript-eslint/no-inferrable-types": ["off"],
+    "import/no-duplicates":["off"],
+    "import/no-cycle":["off"],
+    "react-hooks/exhaustive-deps":["off"],
+    "global-require": ["off"],
+    "noImplicitAny": ["off"]
     // End temporary rules
   }
 }

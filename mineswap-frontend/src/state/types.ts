@@ -14,7 +14,9 @@ import {
   Team,
   TranslatableText,
 } from 'config/constants/types'
+import { AuthState } from './auth/reducer'
 import { NftToken } from './nftMarket/types'
+import { PreSaleState } from './presale/reducer'
 
 export enum GAS_PRICE {
   default = '5',
@@ -709,4 +711,6 @@ export interface State {
   predictions: PredictionsState
   lottery: LotteryState
   pottery: PotteryState
+  presale: PreSaleState
+  auth: AuthState
 }

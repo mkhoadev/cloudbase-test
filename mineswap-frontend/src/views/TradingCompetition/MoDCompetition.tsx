@@ -12,7 +12,7 @@ import { ChainId } from '@pancakeswap/sdk'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import tradingCompetitionMoDAbi from 'config/abi/tradingCompetitionMoD.json'
 import {
-  SmartContractPhases,
+  // SmartContractPhases,
   CompetitionPhases,
   LIVE,
   FINISHED,
@@ -51,7 +51,7 @@ const MoDCompetition = () => {
   const { isMobile } = useMatchBreakpoints()
   const { isDark, theme } = useTheme()
   // const tradingCompetitionContract = useTradingCompetitionContractMoD(false)
-  const [currentPhase, setCurrentPhase] = useState(CompetitionPhases.CLAIM)
+  const [currentPhase, ] = useState(CompetitionPhases.CLAIM)
   const { registrationSuccessful, claimSuccessful, onRegisterSuccess, onClaimSuccess } = useRegistrationClaimStatus()
   const [userTradingInformation, setUserTradingInformation] =
     useState<UserTradingInformation>(initialUserTradingInformation)

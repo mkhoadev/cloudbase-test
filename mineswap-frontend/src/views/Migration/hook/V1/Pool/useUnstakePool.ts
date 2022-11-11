@@ -1,18 +1,18 @@
-import BigNumber from 'bignumber.js'
-import { useCallback } from 'react'
-import { DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from 'config'
-import { parseUnits } from '@ethersproject/units'
+// import BigNumber from 'bignumber.js'
+// import { useCallback } from 'react'
+// import { DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from 'config'
+// import { parseUnits } from '@ethersproject/units'
 // import { useMasterchefV1, useSousChef } from 'hooks/useContract'
 
-const sousUnstake = (sousChefContract: any, amount: string, decimals: number) => {
-  const units = parseUnits(amount, decimals)
+// const sousUnstake = (sousChefContract: any, amount: string, decimals: number) => {
+//   const units = parseUnits(amount, decimals)
 
-  return sousChefContract.withdraw(units.toString())
-}
+//   return sousChefContract.withdraw(units.toString())
+// }
 
-const sousEmergencyUnstake = (sousChefContract: any) => {
-  return sousChefContract.emergencyWithdraw()
-}
+// const sousEmergencyUnstake = (sousChefContract: any) => {
+//   return sousChefContract.emergencyWithdraw()
+// }
 
 const useUnstakePool = (sousId: number, enableEmergencyWithdraw = false) => {
   // const masterChefV1Contract = useMasterchefV1()

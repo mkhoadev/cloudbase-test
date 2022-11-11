@@ -2,6 +2,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import {
   Box,
   Flex,
+  Link,
   LogoutIcon,
   RefreshIcon,
   useModal,
@@ -21,7 +22,7 @@ import { usePendingTransactions } from 'state/transactions/hooks'
 import { useAccount } from 'wagmi'
 import WalletModal, { WalletView } from './WalletModal'
 import WalletUserMenuItem from './WalletUserMenuItem'
-
+import { useRouter } from 'next/router'
 const UserMenu = ({ isDark }) => {
   const { t } = useTranslation()
   const { address: account } = useAccount()
@@ -53,7 +54,11 @@ const UserMenu = ({ isDark }) => {
       onPresentWalletModal()
     }
   }
+  const router = useRouter()
 
+  const handleClick = (to: string) => {
+    router.push(to)
+  }
   const UserMenuItems = () => {
     return (
       <>
@@ -62,7 +67,9 @@ const UserMenu = ({ isDark }) => {
           {t('Recent Transactions')}
           {hasPendingTransactions && <RefreshIcon spin />}
         </UserMenuItem>
-
+        <UserMenuItem as="button" disabled={isWrongNetwork} onClick={() => handleClick(`/my-project`)}>
+          {t('My LaunchPad')}
+        </UserMenuItem>
         {/* <UserMenuDivider />
         <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
           <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.ETHEREUMPOW}>

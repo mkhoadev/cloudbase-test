@@ -54,6 +54,7 @@ export const lightColors = {
   backgroundImage: 'url(/img/Group11.png)',
   backgroundBtn: '#E7E7E7',
   textcard: '#FFFFFF',
+  bgrcard: 'rgb(254 255 255)',
 }
 
 export const darkColors = {
@@ -89,4 +90,5 @@ export const darkColors = {
   backgroundImage: 'url(/img/Group.png)',
   backgroundBtn: '#463701',
   textcard: '#3E3E3E',
+  bgrcard: '#0B2029',
 }

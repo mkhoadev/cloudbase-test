@@ -1873,3 +1873,19 @@
         opacity: 0;
     }
 }
+
+.MuiPaginationItem-root {
+    color: white !important;
+}
+
+.css-fvipm8 {
+    color: unset;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: unset !important;
+}
+
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+    color: unset !important;
+}

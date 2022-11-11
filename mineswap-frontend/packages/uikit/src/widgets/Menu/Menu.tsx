@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   // max-width: 1569px;
-  margin:auto;
+  margin: auto;
 `;
 
 const StyledNav = styled.nav`
@@ -125,19 +125,22 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
-  const subLinksWithoutMobile = [
-    {
-      label: "Swap",
-      href: "/swap",
-    },
-    {
-      label: "Liquidity",
-      href: "/liquidity",
-    },
-  ];
+  // const subLinksWithoutMobile = [
+  //   {
+  //     label: "Swap",
+  //     href: "/swap",
+  //   },
+  //   {
+  //     label: "Liquidity",
+  //     href: "/liquidity",
+  //   },
+  // ];
+  // const subLinksMobileOnly = subLinks?.filter((subLink) => subLink.isMobileOnly);
+  const subLinksWithoutMobile = subLinks?.filter((subLink) => !subLink.isMobileOnly);
   const subLinksMobileOnly = subLinks?.filter((subLink) => subLink.isMobileOnly);
   const active = window.location.href;
-  const linkActive = active.split('/swap').length > 1 ?  "/swap" : "/liquidity";
+  const linkActive = active.split("/swap").length > 1 ? "/swap" : "/liquidity";
+  const launchpad = active.split("/launchpad").length;
   return (
     <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>
@@ -146,50 +149,28 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
           <StyledNav>
             <Flex>
               <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
-              {/* {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />} */}
-              {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={linkActive} ml="24px" />}
+              {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
             </Flex>
             <Flex alignItems="center" height="100%">
-              {/* {!isMobile && !isMd && (
-                <Box mr="12px">
-                  <CakePrice showSkeleton={false} cakePriceUsd={cakePriceUsd} />
-                </Box>
-              )}
-              <Box mt="4px">
-                <LangSelector
-                  currentLang={currentLang}
-                  langs={langs}
-                  setLang={setLang}
-                  buttonScale="xs"
-                  color="textSubtle"
-                  hideLanguage
-                />
-              </Box> */}
               {rightSide}
             </Flex>
           </StyledNav>
         </FixedContainer>
-        {subLinks && (
-          <Flex justifyContent="space-around">
-            {/* <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={activeSubItem} /> */}
-            <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={linkActive} />
-            {/* {subLinksMobileOnly?.length > 0 && (
+        {subLinks ? (
+          <Flex justifyContent="space-around" overflow="hidden">
+            <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={activeSubItem} />
+
+            {launchpad < 2 && subLinksMobileOnly && subLinksMobileOnly?.length > 0 && (
               <SubMenuItems
                 items={subLinksMobileOnly}
                 mt={`${totalTopMenuHeight + 1}px`}
                 activeItem={activeSubItem}
                 isMobileOnly
               />
-            )} */}
-            {subLinksMobileOnly?.length > 0 && (
-              <SubMenuItems
-                items={subLinksMobileOnly}
-                mt={`${totalTopMenuHeight + 1}px`}
-                activeItem={linkActive}
-                isMobileOnly
-              />
             )}
           </Flex>
+        ) : (
+          <div />
         )}
         <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
           <Inner isPushed={false} showMenu={showMenu}>
