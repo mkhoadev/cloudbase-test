@@ -67,9 +67,9 @@ const UserMenu = ({ isDark }) => {
           {t('Recent Transactions')}
           {hasPendingTransactions && <RefreshIcon spin />}
         </UserMenuItem>
-        <UserMenuItem as="button" disabled={isWrongNetwork} onClick={() => handleClick(`/my-project`)}>
+        {/* <UserMenuItem as="button" disabled={isWrongNetwork} onClick={() => handleClick(`/my-project`)}>
           {t('My LaunchPad')}
-        </UserMenuItem>
+        </UserMenuItem> */}
         {/* <UserMenuDivider />
         <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
           <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.ETHEREUMPOW}>
