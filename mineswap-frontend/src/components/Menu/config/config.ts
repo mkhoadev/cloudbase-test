@@ -39,7 +39,7 @@ const config: (
       icon: SwapIcon,
       fillIcon: SwapFillIcon,
       href: '/swap',
-      showItemsOnMobile: false,
+      showItemsOnMobile: true,
       items: [
         {
           label: t('Swap'),
@@ -77,10 +77,11 @@ const config: (
       label: '',
       icon: MoreIcon,
       hideSubNav: true,
+      disabled: true,
       items: [
         {
           label: t('LaunchPad'),
-          href: '/launchpad',
+          href: '#',
           status: { text: t('Soon'), color: 'warning' },
           disabled: true,
         },
