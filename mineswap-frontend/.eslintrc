@@ -73,7 +73,8 @@
     "import/no-cycle":["off"],
     "react-hooks/exhaustive-deps":["off"],
     "global-require": ["off"],
-    "noImplicitAny": ["off"]
+    "noImplicitAny": ["off"],
+    "react/no-unknown-property": ["off"]
     // End temporary rules
   }
 }
