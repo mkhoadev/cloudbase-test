@@ -68,10 +68,10 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <Tradeanythink />
         <Earncrypto />
         {/* <Statistical /> */}
-        <div className="use-by" style={{ marginTop: '100px' }}>
+        {/* <div className="use-by" style={{ marginTop: '100px' }}>
           <div className="div_millions">
             <div className="h3-home">Mine & swap</div>
-            {/* <span className="intro-swap">Onix&apos;s complete suite of blockchain-scaling solutions.</span> */}
+            <span className="intro-swap">Onix&apos;s complete suite of blockchain-scaling solutions.</span>
           </div>
           <div className="div-millions-colum">
             <Amplified txt={'20+ cryptoassets supported'} span={'And more to be added to the platform'} type={'0'} />
@@ -79,7 +79,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <Amplified txt={'20,000+ transactions'} span={'Secured by a permissionless system'} type={'2'} />
           </div>
           <img src="/img/cube2@1x.png" alt="cube2" className="sc-djTcra hkipsh" />
-        </div>
+        </div> */}
 
         <div
           className="background-involved"
@@ -90,7 +90,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             backgroundPosition: 'center',
           }}
         >
-          <div className="involved">
+          {/* <div className="involved">
             <img src="/img/sphere2.svg" alt="cube2" className="footer-img" />
             <div className="involved-div">
               <div className="involved-txt">Want to join us?</div>
@@ -103,7 +103,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <span className="arrowBg">
               <span className="arrow arrowLeft">JOIN THE COMMUNITY</span>
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
