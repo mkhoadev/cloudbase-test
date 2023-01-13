@@ -117,18 +117,32 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
                       </DropdownMenuItem>
                     )}
                     {type === DropdownMenuItemType.INTERNAL_LINK && (
-                      <DropdownMenuItem
+                      label === "Swap" ? <DropdownMenuItem
                         $isActive={isActive}
                         disabled={disabled || isDisabled}
                         as={linkComponent}
-                        href={href}
+                        href={'#'}
                         onClick={() => {
                           setIsOpen(false);
+                          window.open("https://app.mineswap.finance/#/trade", "_blank")
                         }}
                         {...itemProps}
                       >
                         {MenuItemContent}
-                      </DropdownMenuItem>
+                      </DropdownMenuItem> :
+                        <DropdownMenuItem
+                          $isActive={isActive}
+                          disabled={disabled || isDisabled}
+                          as={linkComponent}
+                          href={href}
+                          onClick={() => {
+                            setIsOpen(false);
+                          }}
+                          {...itemProps}
+                        >
+                          {MenuItemContent}
+                        </DropdownMenuItem>
+
                     )}
                     {type === DropdownMenuItemType.EXTERNAL_LINK && (
                       <DropdownMenuItem
