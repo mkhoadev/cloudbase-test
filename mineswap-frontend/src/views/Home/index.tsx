@@ -45,7 +45,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           </div>
           <div style={{ width: '100%' }}>
             <img
-              src={isDark ? '/img/logoDark.webp' : '/img/logolight.webp'}
+              src={isDark ? '/img/logoDark.webp' : '/img/logolight.svg'}
               alt="hero images"
               className="style-img-home"
             />
