@@ -4,7 +4,7 @@ import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,MINE } from '@pan
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.BASE]: '0x326d8a6Cde559e60958462fcf69fA9502cb4A347', // TODO: add base address
+  [ChainId.BASE]: '0xf0A16722F92a5E8853718c901e3Ac80e80F3D7e7', // TODO: add base address
   [ChainId.BASE_GOERLI]: '0xf0A16722F92a5E8853718c901e3Ac80e80F3D7e7',
 }
 
