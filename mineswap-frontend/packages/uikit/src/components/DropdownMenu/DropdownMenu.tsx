@@ -121,10 +121,10 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
                         $isActive={isActive}
                         disabled={disabled || isDisabled}
                         as={linkComponent}
-                        href={'#'}
+                        href={href}
                         onClick={() => {
                           setIsOpen(false);
-                          window.open("https://app.mineswap.finance/#/trade", "_blank")
+                          // window.open("https://app.mineswap.finance/#/trade", "_blank")
                         }}
                         {...itemProps}
                       >
