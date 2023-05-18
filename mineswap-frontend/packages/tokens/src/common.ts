@@ -1,21 +1,21 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
 
-export const MINE_MAINNET = new Token(
+export const TCOIN_MAINNET = new Token(
   ChainId.BASE,
-  '0x3B927FF20F783D78AFF1a5227E23737E3325490F',
+  '0x76df9878b5f980cC3BddF66f89042455634f6C41',
   18,
-  'MINE',
-  'MineSwap Token',
-  'https://mineswap.finance/',
+  'TCOIN',
+  'TCOIN',
+  'https://coingen20.netlify.app/',
 )
 
-export const MINE_TESTNET = new Token(
+export const TCOIN_TESTNET = new Token(
   ChainId.BASE_GOERLI,
-  '0x3F7a9178051f266C9d4834c1eBc68297b7a49172',
+  '0x76df9878b5f980cC3BddF66f89042455634f6C41',
   18,
-  'MINE',
-  'MineSwap Token',
-  'https://mineswap.finance/',
+  'TCOIN',
+  'TCOIN',
+  'https://coingen20.netlify.app/',
 )
 
 export const USDC_ETH = new Token(ChainId.BASE, '0x25DE68ef588cb0c2c8F3537861E828Ae699CD0DB', 6, 'USDC', 'USD Coin')
@@ -69,9 +69,9 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.BASE_GOERLI]: BUSD_GOERLI,
 }
 
-export const MINE = {
-  [ChainId.BASE]: MINE_MAINNET,
-  [ChainId.BASE_GOERLI]: MINE_TESTNET,
+export const TCOIN = {
+  [ChainId.BASE]: TCOIN_MAINNET,
+  [ChainId.BASE_GOERLI]: TCOIN_TESTNET,
 }
 
 export const USDC = {

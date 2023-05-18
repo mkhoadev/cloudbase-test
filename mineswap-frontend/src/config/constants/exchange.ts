@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,MINE } from '@pancakeswap/tokens'
+import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,TCOIN } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
@@ -10,8 +10,8 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
-  [ChainId.BASE]: [WNATIVE[ChainId.BASE], USDC[ChainId.BASE], USDT[ChainId.BASE], WBTC_ETH],
-  [ChainId.BASE_GOERLI]: [WNATIVE[ChainId.BASE_GOERLI], USDC[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI],WBTC_GOERLI]
+  [ChainId.BASE]: [WNATIVE[ChainId.BASE], USDT[ChainId.BASE]],
+  [ChainId.BASE_GOERLI]: [WNATIVE[ChainId.BASE], USDT[ChainId.BASE]]
 }
 
 /**
@@ -36,29 +36,20 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.BASE]: [ WNATIVE[ChainId.BASE],MINE[ChainId.BASE], USDT[ChainId.BASE]],
-  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
+  [ChainId.BASE]: [ WNATIVE[ChainId.BASE],TCOIN[ChainId.BASE]],
+  [ChainId.BASE_GOERLI]: [ WNATIVE[ChainId.BASE],TCOIN[ChainId.BASE]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.BASE]: [USDC[ChainId.BASE], WNATIVE[ChainId.BASE], USDT[ChainId.BASE], WBTC_ETH],
   [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
-  // [ChainId.ETHEREUMPOW]: [ethereumTokens.weth, ethereumTokens.dai, ethereumTokens.busd, ethereumTokens.usdt, ethereumTokens.weth],
-  // [ChainId.GOERLI]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.BASE]: [
-    [WNATIVE[ChainId.BASE], USDC[ChainId.BASE]],
-    [WBTC_ETH, WNATIVE[ChainId.BASE]],
-    [WNATIVE[ChainId.BASE], USDT[ChainId.BASE]],
+    [WNATIVE[ChainId.BASE], TCOIN[ChainId.BASE]],
   ],
-  // [ChainId.ETHEREUMPOW]: [
-  //   [ethereumTokens.weth, ethereumTokens.weth],
-  //   [ethereumTokens.busd, ethereumTokens.usdt],
-  //   [ethereumTokens.dai, ethereumTokens.usdt],
-  // ],
 }
 
 export const BIG_INT_ZERO = JSBI.BigInt(0)

@@ -64,9 +64,9 @@ export const SOLIDITY_TYPE_MAXIMA = {
 
 export const WETH9 = {
   [ChainId.BASE]: new Token(
-    // TODO: add base address
+    // TODO: add WETH address
     ChainId.BASE,
-    '0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990',
+    '0x4200000000000000000000000000000000000006',
     18,
     'WETHW',
     'Wrapped Ether',
