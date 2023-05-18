@@ -67,17 +67,17 @@ export const fantomTestnet: Chain = {
   testnet: true,
 }
 export const base: Chain = {
-  id: 8453,
+  id: 84531,
   name: 'Base',
   network: 'Base',
   nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
-    default: '', // TODO: add base RPC
+    default: 'https://goerli.base.org', // TODO: add base RPC
   },
   blockExplorers: {
     default: {
       name: 'ETH',
-      url: '', // TODO: add base explorer
+      url: 'https://goerli.basescan.org', // TODO: add base explorer
     },
   },
   testnet: false,
