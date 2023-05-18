@@ -84,7 +84,7 @@ export const base: Chain = {
 }
 
 export const baseGoerli: Chain = {
-  id: 10001,
+  id: 84531,
   name: 'Base goerli',
   network: 'ETH',
   nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
