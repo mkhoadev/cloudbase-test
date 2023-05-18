@@ -44,7 +44,7 @@ export type TokenAddressMap = Readonly<{
  */
 export const EMPTY_LIST: TokenAddressMap = {
   [ChainId.BASE]: {},
-  [ChainId.GOERLI]: {},
+  [ChainId.BASE_GOERLI]: {},
 }
 
 export function deserializeToken(serializedToken: SerializedWrappedToken): Token {

@@ -5,8 +5,8 @@ import { Token } from './entities/token'
 export type BigintIsh = JSBI | number | string
 
 export enum ChainId {
-  BASE = 10001,
-  GOERLI = 84531,
+  BASE = 8453,
+  BASE_GOERLI = 84531,
 
 }
 
@@ -23,18 +23,18 @@ export enum Rounding {
 
 export const FACTORY_ADDRESS_BASE = '0xA3960E10A2604d41F2647059d3F474F194fe56e7' // TODO: Add base address
 
-const FACTORY_ADDRESS_GOERLI = '0x3601503d707987FD9B2362E2b73AdEE2D6890b5D'
+const FACTORY_ADDRESS_BASE_GOERLI = '0x3601503d707987FD9B2362E2b73AdEE2D6890b5D'
 
 export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.BASE]: FACTORY_ADDRESS_BASE,
-  [ChainId.GOERLI]: FACTORY_ADDRESS_GOERLI,
+  [ChainId.BASE_GOERLI]: FACTORY_ADDRESS_BASE_GOERLI,
 }
 export const INIT_CODE_HASH_BASE = '0x4f400f00fd8e309993cbfe2eb6b8f3abf957d1b03ff7bf8dbeafc2d157685188' // TODO: Add base hash
 
 const INIT_CODE_HASH_GOERLI = '0x6485c117a4d9930b8fe3e738f007721cb08c1f2f23b2a6e9e5fd15c31d449957'
 export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.BASE]: INIT_CODE_HASH_BASE,
-  [ChainId.GOERLI]: INIT_CODE_HASH_GOERLI,
+  [ChainId.BASE_GOERLI]: INIT_CODE_HASH_GOERLI,
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -72,8 +72,8 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io'
   ),
-  [ChainId.GOERLI]: new Token(
-    ChainId.GOERLI,
+  [ChainId.BASE_GOERLI]: new Token(
+    ChainId.BASE_GOERLI,
     '0x4200000000000000000000000000000000000006',
     18,
     'WETH',
@@ -86,7 +86,7 @@ export const WETH = {}
 
 export const WNATIVE: Record<number, Token> = {
   [ChainId.BASE]: WETH9[ChainId.BASE],
-  [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
+  [ChainId.BASE_GOERLI]: WETH9[ChainId.BASE_GOERLI],
 }
 
 export const NATIVE: Record<
@@ -98,5 +98,5 @@ export const NATIVE: Record<
   }
 > = {
   [ChainId.BASE]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-  [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'ETH', decimals: 18 },
+  [ChainId.BASE_GOERLI]: { name: 'Goerli Ether', symbol: 'ETH', decimals: 18 },
 }

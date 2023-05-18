@@ -3,8 +3,8 @@ import { sortedInsert } from '../src/utils'
 
 describe('miscellaneous', () => {
   it('getLiquidityMinted:0', async () => {
-    const tokenA = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000001', 18)
-    const tokenB = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000002', 18)
+    const tokenA = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000001', 18)
+    const tokenB = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000002', 18)
     const pair = new Pair(CurrencyAmount.fromRawAmount(tokenA, '0'), CurrencyAmount.fromRawAmount(tokenB, '0'))
 
     expect(() => {
@@ -33,8 +33,8 @@ describe('miscellaneous', () => {
   })
 
   it('getLiquidityMinted:!0', async () => {
-    const tokenA = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000001', 18)
-    const tokenB = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000002', 18)
+    const tokenA = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000001', 18)
+    const tokenB = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000002', 18)
     const pair = new Pair(CurrencyAmount.fromRawAmount(tokenA, '10000'), CurrencyAmount.fromRawAmount(tokenB, '10000'))
 
     expect(
@@ -49,8 +49,8 @@ describe('miscellaneous', () => {
   })
 
   it('getLiquidityValue:!feeOn', async () => {
-    const tokenA = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000001', 18)
-    const tokenB = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000002', 18)
+    const tokenA = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000001', 18)
+    const tokenB = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000002', 18)
     const pair = new Pair(CurrencyAmount.fromRawAmount(tokenA, '1000'), CurrencyAmount.fromRawAmount(tokenB, '1000'))
 
     {
@@ -90,8 +90,8 @@ describe('miscellaneous', () => {
   })
 
   it('getLiquidityValue:feeOn', async () => {
-    const tokenA = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000001', 18)
-    const tokenB = new Token(ChainId.GOERLI, '0x0000000000000000000000000000000000000002', 18)
+    const tokenA = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000001', 18)
+    const tokenB = new Token(ChainId.BASE_GOERLI, '0x0000000000000000000000000000000000000002', 18)
     const pair = new Pair(CurrencyAmount.fromRawAmount(tokenA, '1000'), CurrencyAmount.fromRawAmount(tokenB, '1000'))
 
     const liquidityValue = pair.getLiquidityValue(

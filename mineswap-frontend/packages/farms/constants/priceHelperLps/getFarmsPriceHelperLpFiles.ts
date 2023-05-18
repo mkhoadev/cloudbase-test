@@ -6,7 +6,7 @@ export const getFarmsPriceHelperLpFiles = (chainId: ChainId) => {
   switch (chainId) {
     case ChainId.BASE:
       return FarmsEthereumPowPriceHelper
-    case ChainId.GOERLI:
+    case ChainId.BASE_GOERLI:
       return FarmsGoerliPriceHelper
     default:
       return []

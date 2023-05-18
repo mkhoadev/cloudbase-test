@@ -5,13 +5,13 @@ import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.BASE]: '0x326d8a6Cde559e60958462fcf69fA9502cb4A347', // TODO: add base address
-  [ChainId.GOERLI]: '0xf0A16722F92a5E8853718c901e3Ac80e80F3D7e7',
+  [ChainId.BASE_GOERLI]: '0xf0A16722F92a5E8853718c901e3Ac80e80F3D7e7',
 }
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.BASE]: [WNATIVE[ChainId.BASE], USDC[ChainId.BASE], USDT[ChainId.BASE], WBTC_ETH],
-  [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], USDT[ChainId.GOERLI],WBTC_GOERLI]
+  [ChainId.BASE_GOERLI]: [WNATIVE[ChainId.BASE_GOERLI], USDC[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI],WBTC_GOERLI]
 }
 
 /**
@@ -37,13 +37,13 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.BASE]: [ WNATIVE[ChainId.BASE],MINE[ChainId.BASE], USDT[ChainId.BASE]],
-  [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], USDT[ChainId.GOERLI]],
+  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.BASE]: [USDC[ChainId.BASE], WNATIVE[ChainId.BASE], USDT[ChainId.BASE], WBTC_ETH],
-  [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], USDT[ChainId.GOERLI]],
+  [ChainId.BASE_GOERLI]: [USDC[ChainId.BASE_GOERLI], WNATIVE[ChainId.BASE_GOERLI], USDT[ChainId.BASE_GOERLI]],
   // [ChainId.ETHEREUMPOW]: [ethereumTokens.weth, ethereumTokens.dai, ethereumTokens.busd, ethereumTokens.usdt, ethereumTokens.weth],
   // [ChainId.GOERLI]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
 }
