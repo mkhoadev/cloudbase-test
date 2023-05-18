@@ -5,8 +5,8 @@ import { Token } from './entities/token'
 export type BigintIsh = JSBI | number | string
 
 export enum ChainId {
-  ETHEREUMPOW = 10001,
-  GOERLI = 5,
+  BASE = 10001,
+  GOERLI = 84531,
 
 }
 
@@ -21,20 +21,20 @@ export enum Rounding {
   ROUND_UP,
 }
 
-export const FACTORY_ADDRESS_ETHPOW = '0xA3960E10A2604d41F2647059d3F474F194fe56e7'
+export const FACTORY_ADDRESS_BASE = '0xA3960E10A2604d41F2647059d3F474F194fe56e7' // TODO: Add base address
 
-const FACTORY_ADDRESS_ETH = '0xFB08f181292492FeBA6cDF3fd4B153Bf59c460F5'
+const FACTORY_ADDRESS_GOERLI = '0x3601503d707987FD9B2362E2b73AdEE2D6890b5D'
 
 export const FACTORY_ADDRESS_MAP: Record<number, string> = {
-  [ChainId.ETHEREUMPOW]: FACTORY_ADDRESS_ETHPOW,
-  [ChainId.GOERLI]: FACTORY_ADDRESS_ETH,
+  [ChainId.BASE]: FACTORY_ADDRESS_BASE,
+  [ChainId.GOERLI]: FACTORY_ADDRESS_GOERLI,
 }
-export const INIT_CODE_HASH_ETHPOW = '0x4f400f00fd8e309993cbfe2eb6b8f3abf957d1b03ff7bf8dbeafc2d157685188'
+export const INIT_CODE_HASH_BASE = '0x4f400f00fd8e309993cbfe2eb6b8f3abf957d1b03ff7bf8dbeafc2d157685188' // TODO: Add base hash
 
-const INIT_CODE_HASH_ETH = '0x4f400f00fd8e309993cbfe2eb6b8f3abf957d1b03ff7bf8dbeafc2d157685188'
+const INIT_CODE_HASH_GOERLI = '0x6485c117a4d9930b8fe3e738f007721cb08c1f2f23b2a6e9e5fd15c31d449957'
 export const INIT_CODE_HASH_MAP: Record<number, string> = {
-  [ChainId.ETHEREUMPOW]: INIT_CODE_HASH_ETHPOW,
-  [ChainId.GOERLI]: INIT_CODE_HASH_ETH,
+  [ChainId.BASE]: INIT_CODE_HASH_BASE,
+  [ChainId.GOERLI]: INIT_CODE_HASH_GOERLI,
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -63,8 +63,9 @@ export const SOLIDITY_TYPE_MAXIMA = {
 }
 
 export const WETH9 = {
-  [ChainId.ETHEREUMPOW]: new Token(
-    ChainId.ETHEREUMPOW,
+  [ChainId.BASE]: new Token(
+    // TODO: add base address
+    ChainId.BASE,
     '0x7Bf88d2c0e32dE92CdaF2D43CcDc23e8Edfd5990',
     18,
     'WETHW',
@@ -73,46 +74,19 @@ export const WETH9 = {
   ),
   [ChainId.GOERLI]: new Token(
     ChainId.GOERLI,
-    '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6',
+    '0x4200000000000000000000000000000000000006',
     18,
     'WETH',
     'Wrapped Ether',
-    'https://weth.io'
+    'https://goerli.basescan.org/token/0x4200000000000000000000000000000000000006'
   ),
 }
 
-export const WETH = {
-  // [ChainId.ETHEREUMPOW]: new Token(
-  //   ChainId.ETHEREUMPOW,
-  //   '0x418D75f65a02b3D53B2418FB8E1fe493759c7605',
-  //   18,
-  //   'WBNB',
-  //   'Wrapped BNB',
-  //   'https://www.binance.org'
-  // ),
-  // [ChainId.ETHEREUMPOW]: new Token(
-  //   ChainId.ETHEREUMPOW,
-  //   '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
-  //   18,
-  //   'WBNB',
-  //   'Wrapped BNB',
-  //   'https://www.binance.org'
-  // ),
-  // [ChainId.GOERLI]: new Token(
-  //   ChainId.GOERLI,
-  //   '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
-  //   18,
-  //   'WBNB',
-  //   'Wrapped BNB',
-  //   'https://www.binance.org'
-  // ),
-}
+export const WETH = {}
 
 export const WNATIVE: Record<number, Token> = {
-  [ChainId.ETHEREUMPOW]: WETH9[ChainId.ETHEREUMPOW],
+  [ChainId.BASE]: WETH9[ChainId.BASE],
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
-  // [ChainId.ETHEREUMPOW]: WBNB[ChainId.ETHEREUMPOW],
-  // [ChainId.GOERLI]: WBNB[ChainId.GOERLI],
 }
 
 export const NATIVE: Record<
@@ -123,16 +97,6 @@ export const NATIVE: Record<
     decimals: number
   }
 > = {
-  [ChainId.ETHEREUMPOW]: { name: 'Ether', symbol: 'ETHW', decimals: 18 },
-  [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
-  // [ChainId.ETHEREUMPOW]: {
-  //   name: 'Binance Chain Native Token',
-  //   symbol: 'BNB',
-  //   decimals: 18,
-  // },
-  // [ChainId.GOERLI]: {
-  //   name: 'Binance Chain Native Token',
-  //   symbol: 'tBNB',
-  //   decimals: 18,
-  // },
+  [ChainId.BASE]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'ETH', decimals: 18 },
 }

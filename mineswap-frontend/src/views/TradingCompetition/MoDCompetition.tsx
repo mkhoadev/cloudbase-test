@@ -122,7 +122,7 @@ const MoDCompetition = () => {
       }
     }
 
-    if (chainId === ChainId.ETHEREUMPOW) {
+    if (chainId === ChainId.BASE) {
       // fetchCompetitionInfoContract()
       if (account) {
         fetchUserContract()

@@ -7,16 +7,16 @@ import { calculateSlippageAmount, basisPointsToPercent } from 'utils/exchange'
 describe('utils', () => {
   describe('#getBscScanLink', () => {
     it('correct for tx', () => {
-      expect(getBlockExploreLink('abc', 'transaction', ChainId.ETHEREUMPOW)).toEqual('https://bscscan.com/tx/abc')
+      expect(getBlockExploreLink('abc', 'transaction', ChainId.BASE)).toEqual('https://bscscan.com/tx/abc')
     })
     it('correct for token', () => {
-      expect(getBlockExploreLink('abc', 'token', ChainId.ETHEREUMPOW)).toEqual('https://bscscan.com/token/abc')
+      expect(getBlockExploreLink('abc', 'token', ChainId.BASE)).toEqual('https://bscscan.com/token/abc')
     })
     it('correct for address', () => {
-      expect(getBlockExploreLink('abc', 'address', ChainId.ETHEREUMPOW)).toEqual('https://bscscan.com/address/abc')
+      expect(getBlockExploreLink('abc', 'address', ChainId.BASE)).toEqual('https://bscscan.com/address/abc')
     })
     it('enum', () => {
-      expect(getBlockExploreLink('abc', 'address', ChainId.ETHEREUMPOW)).toEqual(
+      expect(getBlockExploreLink('abc', 'address', ChainId.BASE)).toEqual(
         'https://testnet.bscscan.com/address/abc',
       )
     })
@@ -24,7 +24,7 @@ describe('utils', () => {
 
   describe('#calculateSlippageAmount', () => {
     it('bounds are correct', () => {
-      const tokenAmount = CurrencyAmount.fromRawAmount(new Token(ChainId.ETHEREUMPOW, AddressZero, 0), '100')
+      const tokenAmount = CurrencyAmount.fromRawAmount(new Token(ChainId.BASE, AddressZero, 0), '100')
       expect(() => calculateSlippageAmount(tokenAmount, -1)).toThrow()
       expect(calculateSlippageAmount(tokenAmount, 0).map((bound) => bound.toString())).toEqual(['100', '100'])
       expect(calculateSlippageAmount(tokenAmount, 100).map((bound) => bound.toString())).toEqual(['99', '101'])

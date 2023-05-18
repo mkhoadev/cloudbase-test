@@ -1,5 +1,5 @@
 import { formatEther } from '@ethersproject/units'
-import { FACTORY_ADDRESS_ETHPOW } from '@pancakeswap/sdk'
+import { FACTORY_ADDRESS_BASE } from '@pancakeswap/sdk'
 import { getUnixTime, sub } from 'date-fns'
 import { gql } from 'graphql-request'
 import { GetStaticProps } from 'next'

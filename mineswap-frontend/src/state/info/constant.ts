@@ -25,11 +25,11 @@ export const multiChainStartTime = {
 }
 
 export const multiChainId = {
-  ETHW: ChainId.ETHEREUMPOW,
+  ETHW: ChainId.BASE,
 }
 
 export const multiChainPaths = {
-  [ChainId.ETHEREUMPOW]: '/eth',
+  [ChainId.BASE]: '/eth',
 }
 
 export const multiChainQueryClient = {

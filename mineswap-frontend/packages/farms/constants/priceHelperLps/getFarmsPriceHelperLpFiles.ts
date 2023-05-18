@@ -4,7 +4,7 @@ import FarmsGoerliPriceHelper from './5'
 
 export const getFarmsPriceHelperLpFiles = (chainId: ChainId) => {
   switch (chainId) {
-    case ChainId.ETHEREUMPOW:
+    case ChainId.BASE:
       return FarmsEthereumPowPriceHelper
     case ChainId.GOERLI:
       return FarmsGoerliPriceHelper

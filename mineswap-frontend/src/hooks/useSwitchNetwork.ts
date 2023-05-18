@@ -14,7 +14,7 @@ export function useSwitchNetworkLocal() {
   return useCallback(
     (chainId: number) => {
       setSessionChainId(chainId)
-      replaceBrowserHistory('chainId', chainId === ChainId.ETHEREUMPOW ? null : chainId)
+      replaceBrowserHistory('chainId', chainId === ChainId.BASE ? null : chainId)
     },
     [setSessionChainId],
   )

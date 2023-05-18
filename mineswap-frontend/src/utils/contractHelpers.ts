@@ -156,7 +156,7 @@ import { ChainId } from '@pancakeswap/sdk'
 export const getContract = ({
   abi,
   address,
-  chainId = ChainId.ETHEREUMPOW,
+  chainId = ChainId.BASE,
   signer,
 }: {
   abi: any
@@ -202,7 +202,7 @@ export const getSouschefV2Contract = (id: number, signer?: Signer | Provider) =>
 export const getCakeContract = (signer?: Signer | Provider, chainId?: number) => {
   return getContract({
     abi: cakeAbi,
-    address: chainId ? MINE[chainId].address : MINE[ChainId.ETHEREUMPOW].address,
+    address: chainId ? MINE[chainId].address : MINE[ChainId.BASE].address,
     signer,
   }) as Cake
 }

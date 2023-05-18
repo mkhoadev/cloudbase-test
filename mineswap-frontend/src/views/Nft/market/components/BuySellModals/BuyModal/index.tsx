@@ -48,7 +48,7 @@ const BuyModal: React.FC<React.PropsWithChildren<BuyModalProps>> = ({ nftToBuy, 
   const { callWithMarketGasPrice } = useCallWithMarketGasPrice()
 
   const { account, chainId } = useActiveWeb3React()
-  const wbnbAddress = chainId === ChainId.ETHEREUMPOW ? TESTNET_WBNB_NFT_ADDRESS : ethereumTokens.weth.address
+  const wbnbAddress = chainId === ChainId.BASE ? TESTNET_WBNB_NFT_ADDRESS : ethereumTokens.weth.address
   const wbnbContractReader = useERC20(wbnbAddress, false)
   const wbnbContractApprover = useERC20(wbnbAddress)
   // const nftMarketContract = useNftMarketContract()

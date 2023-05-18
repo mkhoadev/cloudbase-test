@@ -19,7 +19,7 @@ const enable = true
 
 const GlobalCheckClaimStatus: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusProps>> = (props) => {
   const { account, chainId } = useActiveWeb3React()
-  if (!enable || chainId !== ChainId.ETHEREUMPOW) {
+  if (!enable || chainId !== ChainId.BASE) {
     return null
   }
   return <GlobalCheckClaim key={account} {...props} />

@@ -4,7 +4,7 @@ import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,MINE } from '@pan
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.ETHEREUMPOW]: '0x326d8a6Cde559e60958462fcf69fA9502cb4A347',
+  [ChainId.BASE]: '0x326d8a6Cde559e60958462fcf69fA9502cb4A347',
   [ChainId.GOERLI]: '0xf66315F5e281326a9c8d10bb49c9743911236E3A',
   // [ChainId.ETHEREUMPOW]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
   // [ChainId.GOERLI]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
@@ -12,7 +12,7 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
-  [ChainId.ETHEREUMPOW]: [WNATIVE[ChainId.ETHEREUMPOW], USDC[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW], WBTC_ETH],
+  [ChainId.BASE]: [WNATIVE[ChainId.BASE], USDC[ChainId.BASE], USDT[ChainId.BASE], WBTC_ETH],
   [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], USDT[ChainId.GOERLI],WBTC_GOERLI]
 }
 
@@ -21,7 +21,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
  * @example { [WBTC.address]: [renBTC], [renBTC.address]: [WBTC] }
  */
 export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
-  [ChainId.ETHEREUMPOW]: {
+  [ChainId.BASE]: {
     // SNFTS-SFUND
     [ethereumTokens.usdc.address]: [ethereumTokens.usdc],
   },
@@ -33,28 +33,28 @@ export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]
  * @example [AMPL.address]: [DAI, WNATIVE[ChainId.ETHEREUMPOW]]
  */
 export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
-  [ChainId.ETHEREUMPOW]: {},
+  [ChainId.BASE]: {},
 }
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.ETHEREUMPOW]: [ WNATIVE[ChainId.ETHEREUMPOW],MINE[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW]],
+  [ChainId.BASE]: [ WNATIVE[ChainId.BASE],MINE[ChainId.BASE], USDT[ChainId.BASE]],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], USDT[ChainId.GOERLI]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  [ChainId.ETHEREUMPOW]: [USDC[ChainId.ETHEREUMPOW], WNATIVE[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW], WBTC_ETH],
+  [ChainId.BASE]: [USDC[ChainId.BASE], WNATIVE[ChainId.BASE], USDT[ChainId.BASE], WBTC_ETH],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], USDT[ChainId.GOERLI]],
   // [ChainId.ETHEREUMPOW]: [ethereumTokens.weth, ethereumTokens.dai, ethereumTokens.busd, ethereumTokens.usdt, ethereumTokens.weth],
   // [ChainId.GOERLI]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
-  [ChainId.ETHEREUMPOW]: [
-    [WNATIVE[ChainId.ETHEREUMPOW], USDC[ChainId.ETHEREUMPOW]],
-    [WBTC_ETH, WNATIVE[ChainId.ETHEREUMPOW]],
-    [WNATIVE[ChainId.ETHEREUMPOW], USDT[ChainId.ETHEREUMPOW]],
+  [ChainId.BASE]: [
+    [WNATIVE[ChainId.BASE], USDC[ChainId.BASE]],
+    [WBTC_ETH, WNATIVE[ChainId.BASE]],
+    [WNATIVE[ChainId.BASE], USDT[ChainId.BASE]],
   ],
   // [ChainId.ETHEREUMPOW]: [
   //   [ethereumTokens.weth, ethereumTokens.weth],

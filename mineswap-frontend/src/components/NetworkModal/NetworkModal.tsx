@@ -18,7 +18,7 @@ export const NetworkModal = ({ pageSupportedChains = SUPPORT_ONLY_ETHW }: { page
   const [dismissWrongNetwork, setDismissWrongNetwork] = useAtom(hideWrongNetworkModalAtom)
 
   const isBNBOnlyPage = useMemo(() => {
-    return pageSupportedChains?.length === 1 && pageSupportedChains[0] === ChainId.ETHEREUMPOW
+    return pageSupportedChains?.length === 1 && pageSupportedChains[0] === ChainId.BASE
   }, [pageSupportedChains])
 
   const isPageNotSupported = useMemo(

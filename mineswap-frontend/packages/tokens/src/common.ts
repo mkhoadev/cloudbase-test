@@ -1,7 +1,7 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const MINE_MAINNET = new Token(
-  ChainId.ETHEREUMPOW,
+  ChainId.BASE,
   '0x3B927FF20F783D78AFF1a5227E23737E3325490F',
   18,
   'MINE',
@@ -18,7 +18,7 @@ export const MINE_TESTNET = new Token(
   'https://mineswap.finance/',
 )
 
-export const USDC_ETH = new Token(ChainId.ETHEREUMPOW, '0x25DE68ef588cb0c2c8F3537861E828Ae699CD0DB', 6, 'USDC', 'USD Coin')
+export const USDC_ETH = new Token(ChainId.BASE, '0x25DE68ef588cb0c2c8F3537861E828Ae699CD0DB', 6, 'USDC', 'USD Coin')
 
 
 export const USDC_GOERLI = new Token(
@@ -37,7 +37,7 @@ export const USDT_GOERLI = new Token(
 )
 
 export const USDT_ETH = new Token(
-  ChainId.ETHEREUMPOW,
+  ChainId.BASE,
   '0x2AD7868CA212135C6119FD7AD1Ce51CFc5702892',
   6,
   'USDT',
@@ -46,7 +46,7 @@ export const USDT_ETH = new Token(
 )
 
 export const BUSD_ETHW = new Token(
-  ChainId.ETHEREUMPOW,
+  ChainId.BASE,
   '0xf61eb8999f2F222f425d41dA4C2ff4b6D8320C87',
   18,
   'BUSD',
@@ -65,27 +65,27 @@ export const BUSD_GOERLI = new Token(
 )
 
 export const BUSD: Record<ChainId, Token> = {
-  [ChainId.ETHEREUMPOW]: BUSD_ETHW,
+  [ChainId.BASE]: BUSD_ETHW,
   [ChainId.GOERLI]: BUSD_GOERLI,
 }
 
 export const MINE = {
-  [ChainId.ETHEREUMPOW]: MINE_MAINNET,
+  [ChainId.BASE]: MINE_MAINNET,
   [ChainId.GOERLI]: MINE_TESTNET,
 }
 
 export const USDC = {
-  [ChainId.ETHEREUMPOW]: USDC_ETH,
+  [ChainId.BASE]: USDC_ETH,
   [ChainId.GOERLI]: USDC_GOERLI,
 }
 
 export const USDT = {
   [ChainId.GOERLI]: USDT_GOERLI,
-  [ChainId.ETHEREUMPOW]: USDT_ETH,
+  [ChainId.BASE]: USDT_ETH,
 }
 
 export const WBTC_ETH = new Token(
-  ChainId.ETHEREUMPOW,
+  ChainId.BASE,
   '0x4bbd68d8b1f25ae7b460e3347c637fe9e7338e0c',
   8,
   'BTCB',

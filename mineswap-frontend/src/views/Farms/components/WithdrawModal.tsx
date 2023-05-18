@@ -64,7 +64,7 @@ const WithdrawModal: React.FC<React.PropsWithChildren<WithdrawModalProps>> = ({
             </MessageText>
           </Message>
         ) : null}
-        {chainId !== ChainId.ETHEREUMPOW  && (
+        {chainId !== ChainId.BASE  && (
           <Box mt="15px">
             <Message variant="warning">
               <MessageText>

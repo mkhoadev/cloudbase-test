@@ -187,7 +187,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
             },
             {
               step: 2,
-              chainId: ChainId.ETHEREUMPOW,
+              chainId: ChainId.BASE,
               tx: '',
               status: FarmTransactionStatus.PENDING,
             },

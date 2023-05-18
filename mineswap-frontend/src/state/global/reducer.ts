@@ -15,7 +15,7 @@ export const initialState: GlobalState = {
   showFarmTransactionModal: false,
   pickedFarmTransactionModalTx: {
     tx: '',
-    chainId: ChainId.ETHEREUMPOW,
+    chainId: ChainId.BASE,
   },
 }
 
