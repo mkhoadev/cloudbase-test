@@ -4,10 +4,8 @@ import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,MINE } from '@pan
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.BASE]: '0x326d8a6Cde559e60958462fcf69fA9502cb4A347',
-  [ChainId.GOERLI]: '0xf66315F5e281326a9c8d10bb49c9743911236E3A',
-  // [ChainId.ETHEREUMPOW]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
-  // [ChainId.GOERLI]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
+  [ChainId.BASE]: '0x326d8a6Cde559e60958462fcf69fA9502cb4A347', // TODO: add base address
+  [ChainId.GOERLI]: '0xf0A16722F92a5E8853718c901e3Ac80e80F3D7e7',
 }
 
 // used to construct intermediary pairs for trading
@@ -89,7 +87,7 @@ export const BASE_FEE = new Percent(JSBI.BigInt(25), BIPS_BASE)
 export const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(BASE_FEE)
 
 // BNB
-export const DEFAULT_INPUT_CURRENCY = 'ETHW'
+export const DEFAULT_INPUT_CURRENCY = 'ETH'
 // CAKE
 export const DEFAULT_OUTPUT_CURRENCY = '0x3B927FF20F783D78AFF1a5227E23737E3325490F'
 
