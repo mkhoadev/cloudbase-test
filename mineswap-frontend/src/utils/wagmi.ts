@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import {  goerli,  base } from '@pancakeswap/wagmi/chains'
+import {  baseGoerli,  base } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -9,19 +9,19 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
-const CHAINS = [ base,goerli]
+const CHAINS = [ base, baseGoerli]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null
   switch (networkName) {
-    case 'ETHW':
+    case 'Base':
       if (process.env.NEXT_PUBLIC_NODE_REAL_API_ETH) {
-        host = `ethw-mainnet.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_ETH}`
+        host = `ethw-mainnet.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_ETH}` // TODO: check this config
       }
       break
-    case 'goerli':
+    case 'Base goerli':
       if (process.env.NEXT_PUBLIC_NODE_REAL_API_GOERLI) {
-        host = `eth-goerli.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_GOERLI}`
+        host = `eth-goerli.nodereal.io/v1/${process.env.NEXT_PUBLIC_NODE_REAL_API_GOERLI}` // TODO: check this config
       }
       break
     default:
@@ -62,7 +62,7 @@ export const injectedConnector = new InjectedConnector({
 export const coinbaseConnector = new CoinbaseWalletConnector({
   chains,
   options: {
-    appName: 'MineSwap',
+    appName: 'Cloudbase',
     appLogoUrl: 'https://pancakeswap.com/logo.png',
   },
 })
