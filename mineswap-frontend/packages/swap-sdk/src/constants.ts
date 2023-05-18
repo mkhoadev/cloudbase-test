@@ -31,6 +31,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
 }
 export const INIT_CODE_HASH_ETHPOW = '0x4f400f00fd8e309993cbfe2eb6b8f3abf957d1b03ff7bf8dbeafc2d157685188'
 
+
 const INIT_CODE_HASH_ETH = '0x4f400f00fd8e309993cbfe2eb6b8f3abf957d1b03ff7bf8dbeafc2d157685188'
 export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.ETHEREUMPOW]: INIT_CODE_HASH_ETHPOW,
