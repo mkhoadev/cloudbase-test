@@ -27,7 +27,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
         <div className="frame_footer">
           <div className="group-iEyiFd">
             <div className="group-9-7oP3YL">
-              <img src="/logoMineswaps.png" width={"180px"} alt="" />
+              <img src="/logoMineswaps.svg" width={"180px"} alt="" />
             </div>
           </div>
 

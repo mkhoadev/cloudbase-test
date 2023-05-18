@@ -9,7 +9,7 @@ const Footer: React.FC<React.PropsWithChildren<{ variant?: FooterVariant; helpUr
     <div
       className="background-involved-swap"
       style={{
-        backgroundImage: isDark ? 'url(/img/swapdark.webp)' : 'url(/img/swaplight.webp)',
+        backgroundImage: isDark ? 'url(/img/swapdark.webp)' : 'url(/img/swaplight.svg)',
         backgroundSize: '900px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',

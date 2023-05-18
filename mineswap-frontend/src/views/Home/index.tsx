@@ -84,7 +84,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <div
           className="background-involved"
           style={{
-            backgroundImage: isDark ? 'url(/img/swapdark.webp)' : 'url(/img/swaplight.webp)',
+            backgroundImage: isDark ? 'url(/img/swapdark.webp)' : 'url(/img/swaplight.svg)',
             backgroundSize: '90%',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
