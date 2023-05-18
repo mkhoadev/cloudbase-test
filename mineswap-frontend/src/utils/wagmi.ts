@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import {  goerli,  ethpow } from '@pancakeswap/wagmi/chains'
+import {  goerli,  base } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -9,7 +9,7 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
-const CHAINS = [ ethpow,goerli]
+const CHAINS = [ base,goerli]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null
@@ -42,7 +42,7 @@ const getNodeRealUrl = (networkName: string) => {
 export const { provider, chains } = configureChains(CHAINS, [
   jsonRpcProvider({
     rpc: (chain) => {
-      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === ethpow.id) {
+      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === base.id) {
         return { http: process.env.NEXT_PUBLIC_NODE_PRODUCTION }
       }
       // console.log("===chain.network===",chain)

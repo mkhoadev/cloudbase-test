@@ -66,21 +66,38 @@ export const fantomTestnet: Chain = {
   },
   testnet: true,
 }
-export const ethpow: Chain = {
-  id: 10001,
-  name: 'ETHW',
-  network: 'ETHW',
-  nativeCurrency: { name: 'ETHW', symbol: 'ETHW', decimals: 18 },
+export const base: Chain = {
+  id: 8453,
+  name: 'Base',
+  network: 'Base',
+  nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
-    default: 'https://mainnet.ethereumpow.org',
+    default: '', // TODO: add base RPC
   },
   blockExplorers: {
     default: {
-      name: 'ETHW',
-      url: 'https://www.oklink.com/en/ethw',
+      name: 'ETH',
+      url: '', // TODO: add base explorer
     },
   },
   testnet: false,
+}
+
+export const baseGoerli: Chain = {
+  id: 10001,
+  name: 'Base goerli',
+  network: 'ETH',
+  nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
+  rpcUrls: {
+    default: 'https://goerli.base.org',
+  },
+  blockExplorers: {
+    default: {
+      name: 'ETH',
+      url: 'https://goerli.basescan.org',
+    },
+  },
+  testnet: true,
 }
 
 export {  mainnet, goerli  }

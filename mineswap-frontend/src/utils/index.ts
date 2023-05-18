@@ -5,7 +5,7 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import type { Provider } from '@ethersproject/providers'
 import { ChainId, Currency } from '@pancakeswap/sdk'
-import { ethpow } from '@pancakeswap/wagmi/chains'
+import { base } from '@pancakeswap/wagmi/chains'
 import memoize from 'lodash/memoize'
 import { TokenAddressMap } from '@pancakeswap/tokens'
 import { chains } from './wagmi'
@@ -26,7 +26,7 @@ export function getBlockExploreLink(
 ): string {
   const chainId = chainIdOverride || ChainId.BASE
   const chain = chains.find((c) => c.id === chainId)
-  if (!chain) return ethpow.blockExplorers.default.url
+  if (!chain) return base.blockExplorers.default.url
   switch (type) {
     case 'transaction': {
       return `${chain.blockExplorers.default.url}/tx/${data}`
@@ -50,11 +50,11 @@ export function getBlockExploreName(chainIdOverride?: number) {
   const chainId = chainIdOverride || ChainId.BASE
   const chain = chains.find((c) => c.id === chainId)
 
-  return chain?.blockExplorers?.default.name || ethpow.blockExplorers.default.name
+  return chain?.blockExplorers?.default.name || base.blockExplorers.default.name
 }
 
 export function getBscScanLinkForNft(collectionAddress: string, tokenId: string): string {
-  return `${ethpow.blockExplorers.default.url}/token/${collectionAddress}?a=${tokenId}`
+  return `${base.blockExplorers.default.url}/token/${collectionAddress}?a=${tokenId}`
 }
 
 // add 10%
