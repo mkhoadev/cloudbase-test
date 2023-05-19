@@ -15,7 +15,11 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
   return (
     <div className="dflex mt-screen">
       <div style={{ order: '1', textAlign: 'center' }} className="width-screen">
-        <img src="/img/stick-6@3x.png" alt="hero images" style={{ width: '80%' }} />
+        <img
+          src={isDark ? '/img/stick-6@3x.png' : '/img/hujan_berangin.png'}
+          alt="hero images"
+          style={{ width: '80%' }}
+        />
       </div>
       <div className="txt-banner">
         <div className="comunioner line-height-home">
@@ -24,7 +28,14 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
         <div className="trade-earn">Automated and fully-audited trading mechanism in an understandable interface.</div>
         <div className="dflex justifyContent">
           <span className="arrowBg">
-            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>TRADE NOW</span>
+            <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>
+              TRADE NOW
+            </span>
+          </span>
+          <span>
+            <span className="arrow arrowRight" onClick={() => handleClick(`/swap`)}>
+              TRADE NOW
+            </span>
           </span>
         </div>
       </div>

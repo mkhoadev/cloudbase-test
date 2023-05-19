@@ -55,6 +55,16 @@ export const lightColors = {
   backgroundBtn: '#E7E7E7',
   textcard: '#FFFFFF',
   bgrcard: 'rgb(254 255 255)',
+  introduce: '#ffffff',
+  bgScroll: '#32A7FF',
+  bgAfterScroll: '#5CB8FD',
+  dotScroll: '#FFFFFF',
+  text1: '#2D2D2D',
+  text2: '#62FFD9',
+  text3: '#FFFFFF',
+  bg1: '#F8FCFF',
+  btnBorder: '#FFFFFF',
+  btnBackground: '#0081E2'
 }
 
 export const darkColors = {
@@ -62,7 +72,7 @@ export const darkColors = {
   ...additionalColors,
   secondary: '#9A6AFF',
   secondary80: '#9A6AFF80',
-  background: '#1e1e1e',
+  background: '#090B34',
   backgroundDisabled: '#3c3742',
   backgroundAlt: '#27262c',
   backgroundAlt2: 'rgba(39, 38, 44, 0.7)',
@@ -91,4 +101,14 @@ export const darkColors = {
   backgroundBtn: '#463701',
   textcard: '#3E3E3E',
   bgrcard: '#0B2029',
+  introduce: '#5E6B7E',
+  bgScroll: '#070924',
+  bgAfterScroll: '#101537',
+  dotScroll: '#0090FD',
+  text1: '#DDDDDD',
+  text2: '#EBB15B',
+  text3: '#0090FD',
+  bg1: '#0F1840',
+  btnBorder: '#0081E2',
+  btnBackground: '#062B46'
 }
