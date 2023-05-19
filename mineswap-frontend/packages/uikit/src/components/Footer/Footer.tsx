@@ -23,18 +23,21 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   };
   return (
     <StyledFooter>
-      <div style={{ width: "100%", background: "#101010" }}>
+      <div style={{ width: "100%", background: "#F8FCFF" }}>
         <div className="frame_footer">
           <div className="group-iEyiFd">
             <div className="group-9-7oP3YL">
-              <img src="/logoMineswaps.svg" width={"180px"} alt="" />
+              <img src="/img/group_footer.png" width={"135px"} alt="" />
             </div>
           </div>
 
           <div className="menu-items-iEyiFd">
-            <div className="community w-6" onClick={() => openInNewTab("https://mineswap.gitbook.io/mineswap/")}>Docs</div>
-            <div className="community">Pitch Deck</div>
-            <div className="community">FAQ</div>
+            <div className="community w-6" onClick={() => openInNewTab("https://mineswap.gitbook.io/mineswap/")}>Community</div>
+            <div className="community">Technology</div>
+            <div className="community">About us</div>
+            <div className="community">Blog</div>
+            <div className="community">Careers</div>
+            <div className="community">Contact</div>
           </div>
         </div>
         <div className="frame_footer frame_footers">
@@ -43,13 +46,13 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
           </div>
           <div className="icon_footer">
             <img
-              src="/img/discord.png"
+              src="/img/Community_discord.png"
               onClick={() => openInNewTab("https://discord.gg/nBPtAv7QY6")}
               className="w-6"
               alt="Discord"
             />
             <img
-              src="/img/telegram.png"
+              src="/img/community_telegram.png"
               onClick={() => openInNewTab("https://t.me/MineswapGlobal")}
               className="w-6"
               alt="Telegram channel"
@@ -57,13 +60,13 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
             {/* <img src="/img/telegram.png" onClick={() => openInNewTab("https://t.me/Mineswap_en")} className="w-6" alt="Telegram group" /> */}
 
             <img
-              src="/img/twitter.png"
+              src="/img/community_twitter.png"
               onClick={() => openInNewTab("https://twitter.com/MineswapGlobal")}
               className="w-6"
               alt="Twitter"
             />
             <img
-              src="/img/facebook.png"
+              src="/img/Community_facebook.png"
               onClick={() => openInNewTab("https://www.facebook.com/MineswapGlobal/")}
               className="w-6"
               alt="Facebook"

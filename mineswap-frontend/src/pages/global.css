@@ -352,7 +352,8 @@
     position: relative;
     text-align: right;
     width: fit-content;
-    color: white;
+    color: var(--black1);
+    font-weight: 700;
 }
 
 .turbo-progress-bar {
@@ -690,7 +691,7 @@
 .hkipsh {
     position: absolute;
     width: 300px;
-    top: -30px;
+    top: -100px;
     right: 0px;
     object-fit: cover;
     z-index: 10;
