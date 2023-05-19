@@ -28,6 +28,7 @@ const StyledPage = styled.div<{ $removePadding: boolean; $noMinHeight }>`
     padding-bottom: 0;
     min-height: ${({ $noMinHeight }) => ($noMinHeight ? 'initial' : 'calc(100vh - 100px)')};
   }
+  z-index:10;
 `
 
 const Page: React.FC<
@@ -51,7 +52,7 @@ const Page: React.FC<
   return (
     <>
       <PageMeta />
-      <ContainerBg/>
+      {/* <ContainerBg/> */}
       <StyledPage  $removePadding={removePadding} $noMinHeight={noMinHeight} {...props}>
         {children}
         {/* <Flex flexGrow={1} /> */}
