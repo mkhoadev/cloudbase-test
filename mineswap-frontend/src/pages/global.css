@@ -352,7 +352,8 @@
     position: relative;
     text-align: right;
     width: fit-content;
-    color: white;
+    color: var(--black1);
+    font-weight: 700;
 }
 
 .turbo-progress-bar {
@@ -690,7 +691,7 @@
 .hkipsh {
     position: absolute;
     width: 300px;
-    top: -30px;
+    top: -100px;
     right: 0px;
     object-fit: cover;
     z-index: 10;
@@ -1166,9 +1167,9 @@
 .background-involved-swap {
     /* background-color: unset !important;
     background-repeat: round; */
-    height: 665px;
-    margin-top: -230px;
-    margin-bottom: -160px;
+    height: 700px;
+    margin-top: -360px;
+    margin-bottom: -100px;
     position: sticky;
     z-index: -1;
 }
@@ -1180,7 +1181,7 @@
     width: fit-content;
     align-items: center;
     border: 1px none;
-    margin-top: 270px;
+    margin-top: 325px;
 }
 
 .involved-btn {
