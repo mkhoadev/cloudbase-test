@@ -91,7 +91,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
           <Flex bg={COLORS.BNB} borderRadius="16px" pl="4px" pr="8px" py="2px">
             <ChainLogo chainId={ChainId.BASE} />
             <Text color="white" ml="4px">
-              ETHW Chain
+              ETH Chain
             </Text>
           </Flex>
           <LinkExternal href={getBlockExploreLink(account, 'address', ChainId.BASE)}>
@@ -99,7 +99,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
           </LinkExternal>
         </Flex>
         <Flex alignItems="center" justifyContent="space-between">
-          <Text color="textSubtle">ETHW {t('Balance')}</Text>
+          <Text color="textSubtle">ETH {t('Balance')}</Text>
           {!bnbBalance.isFetched ? (
             <Skeleton height="22px" width="60px" />
           ) : (
