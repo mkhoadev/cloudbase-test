@@ -1359,10 +1359,7 @@
         height: unset;
     }
     .gdNydd {
-        height: 350px;
-        @media screen and (max-width:600px) {
-            height:400px;
-        }
+        height:400px;
     }
     .div_millions {
         font-size: var(--font-size-s);
