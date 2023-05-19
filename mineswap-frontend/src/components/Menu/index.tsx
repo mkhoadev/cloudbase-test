@@ -40,17 +40,16 @@ const Menu = (props) => {
         rightSide={
           <>
             {/* <SettingApp mode={SettingsMode.GLOBAL} /> */}
-            <Flex mr={'24px'}>
+            {/* <Flex mr={'24px'}>
               <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
-            </Flex>
+            </Flex> */}
 
-            {/* <NetworkSwitcher /> */}
-            <UserMenu isDark={isDark} />
+            <UserMenu isDark={!false} />
           </>
         }
         // banner={showPhishingWarningBanner && typeof window !== 'undefined' && <PhishingWarningBanner />}
         isDark={isDark}
-        toggleTheme={toggleTheme}
+        // toggleTheme={toggleTheme}
         currentLang={currentLanguage.code}
         langs={languageList}
         setLang={setLanguage}
@@ -60,7 +59,7 @@ const Menu = (props) => {
         footerLinks={getFooterLinks}
         activeItem={activeMenuItem?.href}
         activeSubItem={activeSubMenuItem?.href}
-        buyCakeLabel={t('Buy MINS')}
+        // buyCakeLabel={t('Buy MINS')}
         {...props}
       />
     </>

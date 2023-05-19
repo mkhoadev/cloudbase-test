@@ -29,7 +29,6 @@ const StyledNav = styled.nav`
   width: 95%;
   margin: auto;
   height: ${MENU_HEIGHT}px;
-
   transform: translate3d(0, 0, 0);
 
   padding-left: 16px;
@@ -44,6 +43,7 @@ const FixedContainer = styled.div<{ showMenu: boolean; height: number }>`
   height: ${({ height }) => `${height}px`};
   width: 100%;
   z-index: 20;
+  background:${({ theme }) => theme.colors.background};
   // max-width: 1569px;
   margin: auto;
 `;
@@ -175,7 +175,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
         <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
           <Inner isPushed={false} showMenu={showMenu}>
             {children}
-            <Footer
+            {/* <Footer
               items={footerLinks}
               isDark={isDark}
               toggleTheme={toggleTheme}
@@ -185,7 +185,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               cakePriceUsd={cakePriceUsd}
               buyCakeLabel={buyCakeLabel}
               mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
-            />
+            /> */}
           </Inner>
         </BodyWrapper>
         {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}

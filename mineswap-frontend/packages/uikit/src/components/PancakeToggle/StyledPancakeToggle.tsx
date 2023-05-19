@@ -154,7 +154,7 @@ export const PancakeInput = styled.input<InputProps>`
   width: 40px;
 
   &:focus + label {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    box-shadow: none !important;
   }
 
   &:checked + label .pancakes {

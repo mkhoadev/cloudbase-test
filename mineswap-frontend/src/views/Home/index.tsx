@@ -36,7 +36,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                 TRADE NOW
                 Connect Wallet onClick={() => window.stargate.ui.connectWalletPopup.open()}
               </div> */}
-              <span className="arrowBg">
+              {/* <span className="arrowBg">
                 <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>
                   CONNECT WALLET
                 </span>
@@ -45,7 +45,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                 <span className="arrow arrowRight" onClick={() => handleClick(`/swap`)}>
                   TRADE NOW
                 </span>
-              </span>
+              </span> */}
             </div>
           </div>
           <div style={{ width: '100%' }}>

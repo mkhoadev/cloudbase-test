@@ -1128,15 +1128,16 @@
 }
 
 .involved-txt-involved {
-    color: var(--colors-text);
+    color: var(--colors-white);
     font-family: var(--font-family-inter);
     font-size: var(--font-size-xl);
     font-weight: 900;
     font-style: normal;
     margin-top: -1px;
     text-align: center;
-    line-height: 60px;
+    line-height: 70px;
     white-space: nowrap;
+    font-size: 60px;
 }
 
 .involved-div-span {

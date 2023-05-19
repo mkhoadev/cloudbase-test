@@ -67,19 +67,15 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-        <meta
-          name="description"
-          content="MineSwap"
-        />
         <meta name="theme-color" content="#1FC7D4" />
-        <meta name="twitter:image" content="/logoMineswap.png" />
+        <meta name="twitter:image" content="/peview.png" />
         <meta
           name="twitter:description"
-          content="MineSwap"
+          content="CloudBase is a one-stop decentralized trading protocol that utilizes the security, scalability, and decentralization of the BASE blockchain, creating an open and safe marketplace for traders, liquidity providers, and developers."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🥞 MineSwap" />
-        <title>MineSwap | Swap, Farm & Launch on EthereumPoW</title>
+        <meta name="twitter:title" content="🥞 CloudBase" />
+        <title>CloudBase</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />

@@ -25,7 +25,7 @@ export const additionalColors = {
 export const lightColors = {
   ...baseColors,
   ...additionalColors,
-  secondary: '#7645D9',
+  secondary: '#0090FD',
   secondary80: '#7645D980',
   background: '#0090FD',
   backgroundDisabled: '#E9EAEB',
@@ -36,7 +36,7 @@ export const lightColors = {
   dropdown: '#F6F6F6',
   dropdownDeep: '#EEEEEE',
   invertedContrast: '#FFFFFF',
-  input: '#eeeaf4',
+  input: '#D8E5F0',
   inputSecondary: '#d7caec',
   tertiary: '#EFF4F5',
   text: '#3E3E3E',

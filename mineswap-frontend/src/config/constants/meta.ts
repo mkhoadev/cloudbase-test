@@ -3,10 +3,10 @@ import { ContextApi } from '@pancakeswap/localization'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'MineSwap',
+  title: 'CloudBase',
   description:
-    'MineSwap',
-  image: '/logoMineswap.png',
+    'CloudBase is a one-stop decentralized trading protocol that utilizes the security, scalability, and decentralization of the BASE blockchain, creating an open and safe marketplace for traders, liquidity providers, and developers.',
+  image: '/peview.png',
 }
 
 interface PathList {
@@ -36,16 +36,16 @@ const getPathList = (t: ContextApi['t']): PathList => {
       // '/voting': { basePath: true, title: t('Voting') },
       // '/voting/proposal': { title: t('Proposals') },
       // '/voting/proposal/create': { title: t('Make a Proposal') },
-      '/info': { title: t('Overview'), description: 'View statistics for MineSwap exchanges.' },
-      '/info/pools': { title: t('Pools'), description: 'View statistics for MineSwap exchanges.' },
-      '/info/tokens': { title: t('Tokens'), description: 'View statistics for MineSwap exchanges.' },
+      '/info': { title: t('Overview'), description: 'View statistics for CloudBase exchanges.' },
+      '/info/pools': { title: t('Pools'), description: 'View statistics for CloudBase exchanges.' },
+      '/info/tokens': { title: t('Tokens'), description: 'View statistics for CloudBase exchanges.' },
       // '/nfts/collections': { basePath: true, title: t('Collections') },
       // '/nfts/activity': { title: t('Activity') },
       '/profile': { basePath: true, title: t('Profile') },
-      '/pancake-squad': { basePath: true, title: t('MineSwap Squad') },
+      '/pancake-squad': { basePath: true, title: t('CloudBase Squad') },
       // '/pottery': { basePath: true, title: t('Pottery') },
     },
-    defaultTitleSuffix: t('MineSwap'),
+    defaultTitleSuffix: t('CloudBase'),
   }
 }
 

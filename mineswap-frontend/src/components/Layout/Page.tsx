@@ -56,9 +56,25 @@ const Page: React.FC<React.PropsWithChildren<PageProps>> = ({ children, symbol, 
   return (
     <>
       <PageMeta symbol={symbol} />
+      <ContainerBg/>
       <StyledPage {...props}>{children}</StyledPage>
     </>
   )
 }
 
 export default Page
+
+
+const ContainerBg = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background:url('/images/cloudbase/bg.png?version=1.0');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+`

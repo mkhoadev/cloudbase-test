@@ -44,17 +44,14 @@ function Balance({ balance }: { balance: CurrencyAmount<Currency> }) {
 }
 
 const MenuItem = styled(RowBetween)<{ disabled: boolean; selected: boolean }>`
-  padding: 4px 20px;
-  height: 56px;
-  display: grid;
-  grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);
-  grid-gap: 8px;
-  cursor: ${({ disabled }) => !disabled && 'pointer'};
-  pointer-events: ${({ disabled }) => disabled && 'none'};
-  :hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.colors.background};
-  }
-  opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
+    padding: 4px 20px;
+    height: 56px;
+    display: grid;
+    grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);
+    grid-gap: 8px;
+    cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
+    pointer-events: ${({ disabled }) => disabled && 'none'};
+    opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
 `
 
 function CurrencyRow({

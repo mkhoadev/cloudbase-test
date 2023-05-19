@@ -26,7 +26,7 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
           <span className="color-trade">Explore</span> opportunities from BASE ecosystem
         </div>
         <div className="trade-earn">Automated and fully-audited trading mechanism in an understandable interface.</div>
-        <div className="dflex justifyContent">
+        {/* <div className="dflex justifyContent">
           <span className="arrowBg">
             <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>
               CONNECT WALLET
@@ -37,7 +37,7 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
               TRADE NOW
             </span>
           </span>
-        </div>
+        </div> */}
       </div>
     </div>
   )

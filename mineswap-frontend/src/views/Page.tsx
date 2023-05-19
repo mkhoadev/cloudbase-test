@@ -13,7 +13,7 @@ const StyledPage = styled.div<{ $removePadding: boolean; $noMinHeight }>`
   padding: ${({ $removePadding }) => ($removePadding ? '0' : '16px')};
   // padding-bottom: 0;
   min-height: ${({ $noMinHeight }) => ($noMinHeight ? 'initial' : '')};
-
+  
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;
   }
@@ -51,6 +51,7 @@ const Page: React.FC<
   return (
     <>
       <PageMeta />
+      <ContainerBg/>
       <StyledPage  $removePadding={removePadding} $noMinHeight={noMinHeight} {...props}>
         {children}
         {/* <Flex flexGrow={1} /> */}
@@ -63,3 +64,17 @@ const Page: React.FC<
 }
 
 export default Page
+
+const ContainerBg = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background:url('/images/cloudbase/bg.png?version=1.0');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+`

@@ -34,17 +34,17 @@ export const NewStyledUserMenu = styled(Flex)`
   cursor: pointer;
   // display: inline-flex;
   height: 35px;
-  padding-left: 32px;
+  padding-left:32px;
   padding-right: 8px;
   position: relative;
-
+  justify-content: center;
   &:hover {
     opacity: 0.65;
   }
 `;
 
 export const LabelText = styled.div`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.white};
   display: none;
   font-weight: 600;
 
@@ -148,7 +148,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
             <LabelText title={typeof text === "string" ? text || account : account}>
               {text || accountEllipsis}
             </LabelText>
-            {!disabled && <ChevronDownIcon color="text" width="24px" />}
+            {!disabled && <ChevronDownIcon color="white" width="24px" />}
           </NewStyledUserMenu>
         </span>
       </span>

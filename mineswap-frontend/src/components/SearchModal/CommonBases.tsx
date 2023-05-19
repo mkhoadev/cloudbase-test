@@ -18,17 +18,19 @@ const ButtonWrapper = styled.div`
 `
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
-  border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.dropdown)};
+  border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.colors.secondary)};
   border-radius: 10px;
   display: flex;
   padding: 6px;
   align-items: center;
-  :hover {
+  cursor: ${({ disable }) => disable ? "not-allowed" : 'pointer'};
+  /* :hover {
     cursor: ${({ disable }) => !disable && 'pointer'};
     background-color: ${({ theme, disable }) => !disable && theme.colors.background};
-  }
+  } */
   background-color: ${({ theme, disable }) => disable && theme.colors.dropdown};
   opacity: ${({ disable }) => disable && '0.4'};
+  
 `
 
 const RowWrapper = styled.div`
@@ -78,7 +80,7 @@ export default function CommonBases({
             disable={selectedCurrency?.isNative}
           >
             <CurrencyLogo currency={native} style={{ marginRight: 8 }} />
-            <Text>{native?.symbol}</Text>
+            <Text fontWeight="bold">{native?.symbol}</Text>
           </BaseWrapper>
         </ButtonWrapper>
         {(chainId ? SUGGESTED_BASES[chainId] || [] : []).map((token: Token) => {
