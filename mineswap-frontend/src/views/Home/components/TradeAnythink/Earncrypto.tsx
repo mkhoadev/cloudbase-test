@@ -14,7 +14,7 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
   return (
     <div className="dflex mt-screen">
       <div style={{ order: '-1' }} className="width-screen txtAlign">
-        <img src="/img/stick-7@3x.png" alt="hero images" style={{ width: '80%' }} />
+        <img src={isDark ? '/img/stick-7@3x.png' : '/img/hujan_petir.png'} alt="hero images" style={{ width: '80%' }} />
       </div>
       <div className="txt-banner">
         <div className="comunioner line-height-home">
@@ -23,7 +23,10 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
         <div className="trade-earn">Exploit the values accross networks.</div>
         <div className="dflex justifyContent">
           <span className="arrowBg">
-            <span className="arrow arrowLeft" >Read the docs</span>
+            <span className="arrow arrowLeft">Launchpad</span>
+          </span>
+          <span>
+            <span className="arrow arrowRight">Read the docs</span>
           </span>
         </div>
       </div>

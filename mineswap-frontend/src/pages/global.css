@@ -385,12 +385,12 @@
     /* width: fit-content; */
     font-family: var(--font-family-karla);
     font-weight: 800;
-    color: var(--gray);
+    color: var(--colors-introduce);
     font-size: var(--font-size-m);
 }
 
 .h3-home {
-    color: var(--colors-text);
+    color: var(--colors-white);
     font-family: var(--font-family-inter);
     font-size: var(--font-size-xxl);
     font-weight: 900;
@@ -410,7 +410,7 @@
 .comunioner {
     font-family: var(--font-family-inter);
     font-weight: 900;
-    color: var(--colors-text);
+    /* color: var(--colors-text); */
     font-size: var(--font-size-xxl);
     gap: 32px;
 }
@@ -420,7 +420,7 @@
 }
 
 .trade-earn {
-    color: var(--gray);
+    /* color: var(--gray); */
     font-family: var(--font-family-karla);
     font-size: var(--font-size-l);
     font-weight: 200;
@@ -574,7 +574,7 @@
     height: 80px;
     top: 177px;
     right: 8px;
-    background-color: var(--porsche);
+    background-color: var(--yellow);
     border-radius: 23px;
     border: 1px none;
 }
@@ -611,7 +611,7 @@
     width: 86%;
     height: 160px;
     top: 173px;
-    background-color: var(--shark);
+    background-color: var(--colors-bg1);
     border-top-left-radius: 37px;
 }
 
@@ -665,6 +665,14 @@
     top: 20px;
     left: 20px;
     object-fit: cover;
+}
+
+.imhWGR.light {
+    width: 240px !important;
+    height: 240px !important;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .kAIfLV {
@@ -727,7 +735,7 @@
 }
 
 .gltMei {
-    color: var(--alto);
+    color: var(--colors-text1);
     font-family: var(--font-family-karla);
     font-size: var(--font-size-m);
     font-weight: 400;
@@ -896,14 +904,14 @@
 .color-trade {
     font-family: var(--font-family-inter);
     font-weight: 900;
-    color: var(--porsche);
+    color: var(--colors-text2);
     font-size: var(--font-size-xxl);
 }
 
 .color-earn {
     font-family: var(--font-family-inter);
     font-weight: 900;
-    color: var(--blue-marguerite);
+    color: #62FFD9;
     font-size: var(--font-size-xxl);
 }
 
@@ -1750,7 +1758,7 @@
 /*------------------css button-----------------------*/
 
 .arrowBg {
-    background-color: var(--supernova);
+    background-color: var(--colors-btnBorder);
     padding: 2px;
     -webkit-clip-path: polygon( 0px 0%, calc(100% - 15px) 0%, 100% 12px, 100% calc(100% - 0px), calc(100% - 0px) 100%, 20px 100%, 0 calc(100% - 0px));
     clip-path: polygon( 0px 0%, calc(100% - 15px) 0%, 100% 12px, 100% calc(100% - 0px), calc(100% - 0px) 100%, 20px 100%, 0 calc(100% - 0px));
@@ -1759,14 +1767,26 @@
 }
 
 .arrowLeft {
-    background: var(--colors-backgroundBtn);
+    background: var(--colors-btnBackground);
     padding: 10px 15px;
     clip-path: polygon( 0px 0%, calc(100% - 15px) 0%, 100% 12px, 100% calc(100% - 0px), calc(100% - 0px) 100%, 20px 100%, 0 calc(100% - 0px));
-    border-radius: 3px;
+    /* border-radius: 3px; */
     display: block;
-    color: var(--colors-text);
+    /* color: var(--colors-text); */
+    color: var(--alto);
     font-weight: 600;
 }
+
+.arrowRight {
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-top: 2px;
+    font-size: 18px;
+    color: var(--colors-text3);
+}
+
 
 .arrowBg-close {
     background-color: var(--supernova);
@@ -1836,17 +1856,17 @@
     padding: 10px;
     align-items: flex-start;
     min-width: 38px;
-    background-color: var(--licorice);
-    border-radius: 10px;
+    background-color: var(--colors-bgScroll);
+    border-radius: 16px;
     border: 7px solid;
-    border-color: #1d181d;
+    border-color: var(--colors-bgAfterScroll);
     width: 40px;
     margin: auto;
 }
 
 .scroll-down::before {
     animation: scrollDownAnimation 3s infinite;
-    background-color: var(--supernova);
+    background-color: var(--colors-dotScroll);
     border-radius: 10px;
     content: '';
     height: 12px;

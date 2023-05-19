@@ -38,6 +38,11 @@ const Home: React.FC<React.PropsWithChildren> = () => {
               </div> */}
               <span className="arrowBg">
                 <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>
+                  CONNECT WALLET
+                </span>
+              </span>
+              <span>
+                <span className="arrow arrowRight" onClick={() => handleClick(`/swap`)}>
                   TRADE NOW
                 </span>
               </span>

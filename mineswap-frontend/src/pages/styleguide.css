@@ -9,6 +9,7 @@
     --gray: #808080;
     --inchworm: #89eb5b;
     --inchworm-2: #89eb5b0d;
+    --yellow:#FFC600;
     --licorice: #151515;
     --porsche: #ffffff;
     --shark: #FFFFFF;
@@ -26,7 +27,7 @@
 }
 
 .inter-black-alto-32px {
-    color: var(--alto);
+    color: var(--colors-text1);
     font-family: var(--font-family-karla);
     font-size: var(--font-size-xl);
     font-style: normal;

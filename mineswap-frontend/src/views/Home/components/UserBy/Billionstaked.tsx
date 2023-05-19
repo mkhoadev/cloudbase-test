@@ -1,19 +1,22 @@
+import useTheme from "hooks/useTheme"
+
 /* eslint import/newline-after-import: "off" */
 const Billionstaked: React.FC<React.PropsWithChildren> = () => {
+  const { isDark } = useTheme()
   return (
     <div className="div-millions-user">
-      {/* <div className="txtmillionuser"></div> */}
+      <div className="txtmillionuser"></div>
       <div className="bEQugO">
         <div className="image-million">
           <div className="sc-eLdnOn color_staked"></div>
           <img src="/img/subtract-4@1x.svg" alt="Subtract" className="sc-fyJLnQ ldtVzV" />
-          <img src="/img/subtract@1x.png" alt="Subtract" className="sc-iXFbOp gdNydd" />
+          <img src={isDark ? "/img/subtract_dark.png" : "/img/subtract@1x.png"} alt="Subtract" className="sc-iXFbOp gdNydd" />
           <div className="sc-CqDOO boWQZJ"></div>
           <div className="sc-jOiSOi gIUHqg">
             <div className="sc-iAEawV eojyCN">
               <div className="sc-eeMvmM jKblIE">
                 <img src="/img/crystal-shadow-1@2x.png" alt="slices" className="sc-cUEOzv imhWGR" />
-                <img src="/img/arrow@2x.png" alt="swirlcurl" className="imhWGR"></img>
+                <img src={isDark ? "/img/arrow@2x.png" : '/img/arah_angin.png'} alt="swirlcurl" className="imhWGR light"></img>
               </div>
             </div>
           </div>

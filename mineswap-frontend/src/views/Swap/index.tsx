@@ -65,7 +65,7 @@ export default function Swap() {
   const isAccessTokenSupported = useMemo(() => ACCESS_TOKEN_SUPPORT_CHAIN_IDS.includes(chainId), [chainId])
 
   return (
-    <Page removePadding={isChartExpanded} hideFooterOnDesktop={isChartExpanded} >
+    <Page removePadding={isChartExpanded} hideFooterOnDesktop={isChartExpanded}>
       <Flex width="100%" justifyContent="center" position="relative">
         {!isMobile && isChartSupported && (
           <PriceChartContainer
@@ -110,7 +110,7 @@ export default function Swap() {
                         isChartDisplayed={isChartDisplayed}
                       />
                     ) : (
-                      <SwapForm 
+                      <SwapForm
                         isAccessTokenSupported={isAccessTokenSupported}
                         setIsChartDisplayed={setIsChartDisplayed}
                         isChartDisplayed={isChartDisplayed}

@@ -1,5 +1,8 @@
+import useTheme from "hooks/useTheme"
+
 /* eslint import/newline-after-import: "off" */
 const Millionusers = () => {
+  const {isDark} = useTheme()
   return (
     <div className="div-millions-user">
       {/* <div className="txtmillionuser"></div> */}
@@ -7,13 +10,13 @@ const Millionusers = () => {
         <div className="image-million">
           <div className="sc-eLdnOn eAGDqQ"></div>
           <img src="/img/subtract-4@1x.svg" alt="Subtract" className="sc-fyJLnQ ldtVzV" />
-          <img src="/img/subtract@1x.png" alt="Subtract" className="sc-iXFbOp gdNydd" />
+          <img src={isDark ? "/img/subtract_dark.png" : "/img/subtract@1x.png"} alt="Subtract" className="sc-iXFbOp gdNydd" />
           <div className="sc-CqDOO boWQZJ"></div>
           <div className="sc-jOiSOi gIUHqg">
             <div className="sc-iAEawV eojyCN">
               <div className="sc-eeMvmM jKblIE">
                 <img src="/img/crystal-shadow-1@2x.png" alt="slices" className="sc-cUEOzv imhWGR" />
-                <img src="/img/slices@2x.png" alt="slices" className="sc-cUEOzv imhWGR" />
+                <img src={isDark ? "/img/slices@2x.png" : '/img/angin_puyuh.png'} alt="slices" className="sc-cUEOzv imhWGR light" />
               </div>
             </div>
           </div>

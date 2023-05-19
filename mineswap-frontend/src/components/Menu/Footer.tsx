@@ -19,7 +19,7 @@ const Footer: React.FC<React.PropsWithChildren<{ variant?: FooterVariant; helpUr
         <div className="involved-div-swap">
           <div className="involved-txt-involved">Want to join us?</div>
           <div className="involved-div-involved">
-            <span style={{color: 'var(--shuttle-gray)'}}>Learn more from our </span>
+            <span style={{ color: 'var(--shuttle-gray)' }}>Learn more from our </span>
             <span className="color-span ">Whitepaper</span>
             <span className="color-span ">.</span>
           </div>
