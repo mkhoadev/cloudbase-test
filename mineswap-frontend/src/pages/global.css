@@ -532,8 +532,12 @@
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    border: 1px none;
     gap: 20px;
+    height: 400px;
+    /* width: 100%; */
+    @media screen and (max-width:1280px) and (min-width:769px) {
+        padding:24px;
+    }
 }
 
 .div-millions-colum {
@@ -631,6 +635,9 @@
     align-items: flex-start;
     min-width: 340px;
     border: 1px none;
+    @media screen and (max-width:600px) {
+        height:100%;
+    }
 }
 
 .eojyCN {
@@ -1353,6 +1360,9 @@
     }
     .gdNydd {
         height: 350px;
+        @media screen and (max-width:600px) {
+            height:400px;
+        }
     }
     .div_millions {
         font-size: var(--font-size-s);

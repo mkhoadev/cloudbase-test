@@ -6,7 +6,7 @@ export const DEFAULT_META: PageMeta = {
   title: 'CloudBase',
   description:
     'CloudBase is a one-stop decentralized trading protocol that utilizes the security, scalability, and decentralization of the BASE blockchain, creating an open and safe marketplace for traders, liquidity providers, and developers.',
-  image: '/peview.png',
+  image: 'https://cloudbase.finance/images/peview.png?version=1.0',
 }
 
 interface PathList {

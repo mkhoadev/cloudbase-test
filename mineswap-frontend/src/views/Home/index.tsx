@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import Millionusers from './components/UserBy/Millionusers'
 import Milliontrades from './components/UserBy/Milliontrades'
 import Tradeanythink from './components/TradeAnythink/Tradeanythink'
@@ -64,11 +65,11 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           <div className="div_millions">
             <h3 className="h3-home">Why CloudBase</h3>
           </div>
-          <div className="div-millions-colum">
+          <GridLayout isMaxHeight isMargintop>
             <Millionusers />
             <Milliontrades />
             <Billionstaked />
-          </div>
+          </GridLayout>
         </div>
         <Tradeanythink />
         <Earncrypto />
@@ -79,11 +80,11 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             <div className="h3-home">STATISTIC</div>
             {/* <span className="intro-swap">Onix&apos;s complete suite of blockchain-scaling solutions.</span> */}
           </div>
-          <div className="div-millions-colum">
+          <GridLayout>
             <Amplified txt={'20+ cryptoassets supported'} span={'And more to be added to the platform'} type={'0'} />
             <Amplified txt={'$_________ of liquidity locked'} span={'Used and trusted globally'} type={'1'} />
             <Amplified txt={'20,000+ transactions'} span={'Secured by a permissionless system'} type={'2'} />
-          </div>
+          </GridLayout>
           <img src="/img/salju.png" alt="cube2" className="sc-djTcra hkipsh" />
         </div>
 
@@ -118,3 +119,30 @@ const Home: React.FC<React.PropsWithChildren> = () => {
 }
 
 export default Home
+
+
+const GridLayout = styled.div<{isMaxHeight?:boolean, isMargintop?:boolean}>`
+    width: 100%;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    height: auto;
+    @media screen and (max-width: 1280px) and (min-width: 769px){
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: ${({ isMaxHeight }) => isMaxHeight ? "10rem" : "3rem"};
+
+    }
+    @media screen and (max-width: 768px) and (min-width:601px){
+        display: flex;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        grid-row-gap: ${({ isMaxHeight }) => isMaxHeight ? "10rem" : "3rem"};
+    }
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10rem;
+        grid-row-gap: ${({ isMaxHeight }) => isMaxHeight ? "10rem" : "3rem"};
+        margin-top:${({ isMargintop }) => isMargintop ? "5rem" : "0rem"};
+    }
+`

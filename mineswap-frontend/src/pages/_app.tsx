@@ -68,7 +68,7 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
         <meta name="theme-color" content="#1FC7D4" />
-        <meta name="twitter:image" content="/peview.png" />
+        <meta name="twitter:image" content="https://cloudbase.finance/images/peview.png?version=1.0" />
         <meta
           name="twitter:description"
           content="CloudBase is a one-stop decentralized trading protocol that utilizes the security, scalability, and decentralization of the BASE blockchain, creating an open and safe marketplace for traders, liquidity providers, and developers."
