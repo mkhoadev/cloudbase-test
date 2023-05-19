@@ -161,7 +161,7 @@ const MultiChainHarvestModal: React.FC<MultiChainHarvestModalProp> = ({
               </Button>
             ) : (
               <Button width="100%" variant="secondary" onClick={handleSwitchNetwork}>
-                {t('Switch to EthereumPoW Chain')}
+                {t('Switch to Goerli Base')}
               </Button>
             )}
           </Box>

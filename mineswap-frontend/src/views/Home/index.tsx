@@ -72,7 +72,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </div>
         <Tradeanythink />
         <Earncrypto />
-        <Statistical />
+        {/* <Statistical /> */}
 
         <div className="use-by" style={{ marginTop: '100px' }}>
           <div className="div_millions">

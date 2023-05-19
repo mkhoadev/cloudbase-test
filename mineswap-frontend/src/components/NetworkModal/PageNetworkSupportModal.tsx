@@ -42,7 +42,7 @@ export function PageNetworkSupportModal() {
   return (
     <Modal title={title || t('Check your network')} hideCloseButton className={isDark ? 'test': 'test1'}>
       <Grid style={{ gap: '16px' }} maxWidth="360px">
-        <Text bold>{t('It’s a EthereumPoW Chain only feature')}</Text>
+        <Text bold>{t('It’s a Goerli Base only feature')}</Text>
 
         {image && (
           <Box mx="auto" my="8px" position="relative" width="100%" minHeight="250px">
@@ -51,7 +51,7 @@ export function PageNetworkSupportModal() {
         )}
         <Text small>
           {t(
-            'Our features are currently available only on EthereumPoW Chain! Come over and join the community in the fun!',
+            'Our features are currently available only on Goerli Base! Come over and join the community in the fun!',
           )}
         </Text>
         {canSwitch ? (
@@ -60,7 +60,7 @@ export function PageNetworkSupportModal() {
             isLoading={isLoading}
             onClick={() => (isWrongNetwork ? switchNetworkLocal(ChainId.BASE) : switchNetworkAsync(ChainId.BASE))}
           >
-            {t('Switch to %chain%', { chain: 'EthereumPoW Chain' })}
+            {t('Switch to %chain%', { chain: 'Goerli Base' })}
           </Button>
         ) : (
           <Message variant="danger">

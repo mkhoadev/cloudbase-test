@@ -68,7 +68,7 @@ export const fantomTestnet: Chain = {
 }
 export const base: Chain = {
   id: 84531,
-  name: 'ETHW Chain',
+  name: 'Goerli Base',
   network: 'Base',
   nativeCurrency: { name: 'ETH', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
