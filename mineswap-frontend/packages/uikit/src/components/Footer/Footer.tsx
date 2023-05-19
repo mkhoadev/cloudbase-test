@@ -32,7 +32,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
           </div>
 
           <div className="menu-items-iEyiFd">
-            <div className="community w-6" onClick={() => openInNewTab("https://mineswap.gitbook.io/mineswap/")}>Community</div>
+            <div className="community" onClick={() => openInNewTab("https://mineswap.gitbook.io/mineswap/")}>Community</div>
             <div className="community">Technology</div>
             <div className="community">About us</div>
             <div className="community">Blog</div>

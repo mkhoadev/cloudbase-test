@@ -1129,7 +1129,7 @@
 }
 
 .involved-txt-involved {
-    color: var(--colors-text);
+    color: var(--supernova);
     font-family: var(--font-family-inter);
     font-size: var(--font-size-xl);
     font-weight: 900;
@@ -1166,9 +1166,9 @@
 .background-involved-swap {
     /* background-color: unset !important;
     background-repeat: round; */
-    height: 665px;
-    margin-top: -230px;
-    margin-bottom: -160px;
+    height: 700px;
+    margin-top: -360px;
+    margin-bottom: -100px;
     position: sticky;
     z-index: -1;
 }
@@ -1180,7 +1180,7 @@
     width: fit-content;
     align-items: center;
     border: 1px none;
-    margin-top: 270px;
+    margin-top: 325px;
 }
 
 .involved-btn {
