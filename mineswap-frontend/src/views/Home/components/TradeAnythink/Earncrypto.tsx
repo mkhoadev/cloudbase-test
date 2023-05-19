@@ -18,7 +18,7 @@ const Earncrypto: React.FC<React.PropsWithChildren> = () => {
       </div>
       <div className="txt-banner">
         <div className="comunioner line-height-home">
-          <span className="color-earn">Connect</span> the most popular blockchains
+          <span className="color-earn">Connect</span> to the next journey on BASE
         </div>
         <div className="trade-earn">Exploit the values accross networks.</div>
         <div className="dflex justifyContent">

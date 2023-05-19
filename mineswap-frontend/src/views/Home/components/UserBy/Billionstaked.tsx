@@ -24,13 +24,13 @@ const Billionstaked: React.FC<React.PropsWithChildren> = () => {
       </div>
       <div className="sc-eblUpn kAIfLV">
         <div className="sc-eOSrOQ hpiEQ">
-          <span className="inter-black-alto-32px">Marketplace and more </span>
+          <span className="inter-black-alto-32px">AMM NFT Marketplace</span>
           {/* <span className="sc-inNIpp hWpUlW" style={{color:'var(--inchworm)'}}>staked</span> */}
         </div>
-        <div className="sc-fpRgNi gltMei">NFT trading, cross-chain bridge and more to come on Mineswap</div>
+        <div className="sc-fpRgNi gltMei">AMM NFT Marketplace allows users to trade NFTs in Liquidity Pool thereby fostering more Defi to NFTs and enabling easy trading of assets.</div>
       </div>
-      <div className="sc-iOMxnH dfbVyw">
-        <div className="sc-knMLgv gfrNDX" style={{ color: 'var(--inchworm)' }}>
+      <div className="sc-iOMxnH dfbVyw learn_more">
+        <div className="sc-knMLgv gfrNDX " style={{ color: 'var(--inchworm)' }}>
           Learn more
         </div>
         <img src="/img/arrow@2x.svg" alt="arrow" className="sc-eVFARG cHSmpO" />

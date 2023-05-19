@@ -24,12 +24,12 @@ const Milliontrades: React.FC<React.PropsWithChildren> = () => {
       </div>
       <div className="sc-eblUpn kAIfLV">
         <div className="sc-eOSrOQ hpiEQ">
-          <span className="inter-black-alto-32px">Launchpad </span>
+          <span className="inter-black-alto-32px">Earn passive income</span>
           {/* <span className="sc-inNIpp hWpUlW" style={{color:'var(--porsche)'}}>trades</span> */}
         </div>
-        <div className="sc-fpRgNi gltMei">Connect with Mineswap`s massive investor community</div>
+        <div className="sc-fpRgNi gltMei">CloudBase makes it easy to make your crypto work for you. Let your Clouds work for you.</div>
       </div>
-      <div className="sc-iOMxnH dfbVyw">
+      <div className="sc-iOMxnH dfbVyw learn_more">
         <div className="sc-knMLgv gfrNDX" style={{ color: 'var(--yellow)' }}>
           Learn more
         </div>

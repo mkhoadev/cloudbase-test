@@ -24,12 +24,12 @@ const Millionusers = () => {
       </div>
       <div className="sc-eblUpn kAIfLV">
         <div className="sc-eOSrOQ hpiEQ">
-          <span className="inter-black-alto-32px">Dex </span>
+          <span className="inter-black-alto-32px">Trade Anything</span>
           {/* <span className="sc-inNIpp hWpUlW" >users</span> */}
         </div>
-        <div className="sc-fpRgNi gltMei">Swap tokens on ETHW easily Provide liquidity for rewards</div>
+        <div className="sc-fpRgNi gltMei">Trade any token on BASE in seconds, just by connecting your wallet.</div>
       </div>
-      <div className="sc-iOMxnH dfbVyw">
+      <div className="sc-iOMxnH dfbVyw learn_more">
         <div className="sc-knMLgv gfrNDX">Learn more</div>
         <img src="/img/arrow@2x.svg" alt="arrow" className="sc-eVFARG cHSmpO" />
       </div>

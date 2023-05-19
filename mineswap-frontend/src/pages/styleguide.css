@@ -13,6 +13,9 @@
     --licorice: #151515;
     --porsche: #ffffff;
     --shark: #FFFFFF;
+    --blue: #0081E2;
+    --blue-2:#62FFD9;
+    --black-1: #2D2D2D;
     --shuttle-gray: #5e6b7e;
     --supernova: #FFFFFF;
     --font-size-l: 24px;
@@ -20,6 +23,7 @@
     --font-size-s: 16px;
     --font-size-xl: 32px;
     --font-size-xs: 14px;
+    --font-size-xss: 12px;
     --font-size-xxl: 60px;
     --font-size-xxxl: 80px;
     --font-family-inter: "Inter", Helvetica;

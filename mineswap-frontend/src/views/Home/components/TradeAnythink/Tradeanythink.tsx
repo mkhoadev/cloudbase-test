@@ -23,13 +23,13 @@ const Tradeanythink: React.FC<React.PropsWithChildren> = () => {
       </div>
       <div className="txt-banner">
         <div className="comunioner line-height-home">
-          <span className="color-trade">Explore</span> opportunities from ETHW ecosystem
+          <span className="color-trade">Explore</span> opportunities from BASE ecosystem
         </div>
         <div className="trade-earn">Automated and fully-audited trading mechanism in an understandable interface.</div>
         <div className="dflex justifyContent">
           <span className="arrowBg">
             <span className="arrow arrowLeft" onClick={() => handleClick(`/swap`)}>
-              TRADE NOW
+              CONNECT WALLET
             </span>
           </span>
           <span>

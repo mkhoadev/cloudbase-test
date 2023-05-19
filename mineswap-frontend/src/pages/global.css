@@ -386,7 +386,7 @@
     font-family: var(--font-family-karla);
     font-weight: 800;
     color: var(--colors-introduce);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-xss);
 }
 
 .h3-home {
@@ -690,6 +690,7 @@
 .hkipsh {
     position: absolute;
     width: 300px;
+    top: -30px;
     right: 0px;
     object-fit: cover;
     z-index: 10;
@@ -697,11 +698,19 @@
 
 .footer-img {
     position: absolute;
-    width: 300px;
-    left: 55px;
+    width: 200px;
+    left: 0;
     object-fit: cover;
     z-index: 10;
     top: 150px;
+}
+
+.footer-pelangi{
+    position: absolute;
+    top: 90px;
+    left: 250px;
+    width: 125px;
+    height: 125px;
 }
 
 .bkuLtm {
@@ -720,6 +729,7 @@
 .hpiEQ {
     font-family: var(--font-family-inter);
     font-size: var(--font-size-xl);
+    color: var(--black-1);
     font-weight: 900;
     font-style: normal;
     margin-top: -1px;
@@ -757,6 +767,14 @@
     z-index: 9;
 }
 
+.dfbVyw.learn_more{
+    width: 80%;
+    padding: 3px !important;
+    position: absolute !important;
+    top: 350px;
+    left: 50px;
+}
+
 .gfrNDX {
     width: fit-content;
     margin-top: -1px;
@@ -783,6 +801,8 @@
     background-color: var(--inchworm-2);
     border-radius: 119px;
     border: 1px none;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .cHSmpO {
@@ -938,7 +958,7 @@
     padding: 40px 135px;
     position: relative;
     align-self: stretch;
-    background-color: var(--shark);
+    background-color: var(--blue);
     border-radius: 16px;
     border: 1px none;
 }
@@ -960,7 +980,7 @@
 }
 
 .txt-title {
-    color: var(--alto);
+    color: var(--white);
     font-family: var(--font-family-inter);
     font-size: var(--font-size-xl);
     font-weight: 900;
@@ -973,7 +993,7 @@
 }
 
 .txt-span {
-    color: var(--shuttle-gray);
+    color: var(--blue-2);
     font-family: var(--font-family-karla);
     font-size: var(--font-size-m);
     font-weight: 400;
@@ -1011,8 +1031,9 @@
 
 .img-statistical {
     position: absolute;
-    width: 400px;
-    left: -140px;
+    width: 225px;
+    top: 60px;
+    left: -50px;
     object-fit: cover;
     margin-top: -40px;
 }
@@ -1022,7 +1043,7 @@
 }
 
 .mt-screen {
-    margin: 0 50px;
+    margin: 100px 50px;
 }
 
 .size-hearder {
@@ -1084,7 +1105,7 @@
 }
 
 .involved-txt {
-    color: var(--colors-text);
+    color: var(--supernova);
     font-family: var(--font-family-inter);
     font-size: var(--font-size-xxl);
     font-weight: 900;
@@ -1199,7 +1220,7 @@
     background-repeat: round;
     background-size: cover;
     height: 800px;
-    margin-top: -270px;
+    margin-top: -250px;
     margin-bottom: -130px;
     position: sticky;
     z-index: -1;
@@ -1857,10 +1878,10 @@
     align-items: flex-start;
     min-width: 38px;
     background-color: var(--colors-bgScroll);
-    border-radius: 16px;
+    border-radius: 18px;
     border: 7px solid;
     border-color: var(--colors-bgAfterScroll);
-    width: 40px;
+    width: 20px;
     margin: auto;
 }
 

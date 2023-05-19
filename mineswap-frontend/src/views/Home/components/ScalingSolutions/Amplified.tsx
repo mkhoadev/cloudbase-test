@@ -5,7 +5,6 @@ type nftSaleType = {
   type?: string
 }
 const Amplified = ({ txt, span, type }: nftSaleType) => {
-  console.log(txt, span)
   return (
     <div className={type === '2' ? 'div-millions-user mb-5s' : 'div-millions-user'}>
       {/* {type === '2' ? <div className="txtmillionofark"></div> : <div className="txtmillionother"></div>} */}
@@ -35,7 +34,7 @@ const Amplified = ({ txt, span, type }: nftSaleType) => {
         <div
           className="cLuDOM"
           style={{
-            color: type === '0' ? 'var(--inchworm)' : type === '1' ? 'var(--blue-marguerite)' : 'var(--porsche)',
+            color: type === '0' ? 'var(--inchworm)' : type === '1' ? 'var(--blue-marguerite)' : 'var(--yellow)',
           }}
         >
           Online
