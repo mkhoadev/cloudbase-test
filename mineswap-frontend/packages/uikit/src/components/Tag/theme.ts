@@ -33,7 +33,7 @@ export const styleVariants = {
     backgroundColor: "binance",
   },
   [variants.FAILURE]: {
-    backgroundColor: "failure",
+    backgroundColor: "transparent",
   },
   [variants.WARNING]: {
     backgroundColor: "warning",

@@ -8,13 +8,13 @@ export const StyledBottomNavItem = styled.button`
   cursor: pointer;
   height: 44px;
   padding: 4px 12px;
-  &:hover {
+  /* &:hover {
     border-radius: 16px;
   }
   &:hover,
   &:hover div {
     background: ${({ theme }) => theme.colors.tertiary};
-  }
+  } */
 `;
 
 export const StyledBottomNavText = styled(Text)`
