@@ -26,11 +26,13 @@ const StyledMenuItem = styled.a<StyledMenuItemProps>`
   display: flex;
   align-items: center;
 
-  color: ${({ theme, $isActive }) => ($isActive ?theme.colors.primary : theme.colors.textSubtle)};
-  font-size: 16px;
+  /* color: ${({ theme, $isActive }) => ($isActive ? theme.colors.primary : theme.colors.textSubtle)}; */
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 20px;
   font-weight: ${({ $isActive }) => ($isActive ? "600" : "400")};
   opacity: ${({ $isDisabled }) => ($isDisabled ? 0.5 : 1)};
-
+  text-decoration: ${({ $isActive }) => ($isActive ? "underline" : "none")};
+  text-decoration-color: ${({ $isActive, theme }) => ($isActive ? theme.colors.white : "none")};
   ${({ $statusColor, theme }) =>
     $statusColor &&
     `
