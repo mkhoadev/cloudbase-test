@@ -4,8 +4,8 @@ import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,CLOUD } from '@pa
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
-  [ChainId.BASE]: '0xf0A16722F92a5E8853718c901e3Ac80e80F3D7e7', // TODO: add base address
-  [ChainId.BASE_GOERLI]: '0xf0A16722F92a5E8853718c901e3Ac80e80F3D7e7',
+  [ChainId.BASE]: '0x22E9e33Ed834a6E9AC980e62137eDa891e2498b6', // TODO: add base address
+  [ChainId.BASE_GOERLI]: '0x22E9e33Ed834a6E9AC980e62137eDa891e2498b6',
 }
 
 // used to construct intermediary pairs for trading
