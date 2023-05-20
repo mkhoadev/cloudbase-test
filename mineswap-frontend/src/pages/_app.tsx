@@ -74,7 +74,7 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           content="CloudBase is a one-stop decentralized trading protocol that utilizes the security, scalability, and decentralization of the BASE blockchain, creating an open and safe marketplace for traders, liquidity providers, and developers."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🥞 CloudBase" />
+        <meta name="twitter:title" content="CloudBase" />
         <title>CloudBase</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
