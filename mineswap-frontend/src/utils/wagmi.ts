@@ -63,7 +63,7 @@ export const coinbaseConnector = new CoinbaseWalletConnector({
   chains,
   options: {
     appName: 'Cloudbase',
-    appLogoUrl: 'https://pancakeswap.com/logo.png',
+    appLogoUrl: 'https://cloudbase.finance/images/logo_couldbase.png',
   },
 })
 
