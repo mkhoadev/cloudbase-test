@@ -105,6 +105,26 @@
       "chainId": 97,
       "decimals": 18,
       "logoURI": "https://mineswap.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png"
+    },
+
+    
+    {
+      "name": "Wrapped ETH Goerli",
+      "symbol": "WETH",
+      "address": "0x4200000000000000000000000000000000000006",
+      "chainId": 84531,
+      "decimals": 18,
+      "logoURI": "/images/84531/tokens/0x4200000000000000000000000000000000000006.png"
+    },
+    
+    {
+      "name": "CloudBase",
+      "symbol": "CLOUD",
+      "address": "0x8ae3d0E14Fe5BC0533a5Ca5e764604442d574a00",
+      "chainId": 84531,
+      "decimals": 18,
+      "logoURI": ""
     }
+
   ]
 }
