@@ -54,7 +54,7 @@ const Spinner: React.FC<React.PropsWithChildren<SpinnerProps>> = ({ size = 128 }
   return (
     <Container>
       <RotatingMineIcon>
-        <img src="/images/cloudbase/pelangi.png?version=1.0" style={{width:"120px"}} alt="loading"/>
+        <img src="/images/cloudbase/bg_loadtx.png?version=1.0" style={{width:"120px"}} alt="loading"/>
       </RotatingMineIcon>
       {/* <FloatingPanIcon width={`${size}px`} /> */}
     </Container>
