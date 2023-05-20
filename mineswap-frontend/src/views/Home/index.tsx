@@ -81,9 +81,9 @@ const Home: React.FC<React.PropsWithChildren> = () => {
             {/* <span className="intro-swap">Onix&apos;s complete suite of blockchain-scaling solutions.</span> */}
           </div>
           <GridLayout>
-            <Amplified txt={'20+ cryptoassets supported'} span={'And more to be added to the platform'} type={'0'} />
-            <Amplified txt={'$_________ of liquidity locked'} span={'Used and trusted globally'} type={'1'} />
-            <Amplified txt={'20,000+ transactions'} span={'Secured by a permissionless system'} type={'2'} />
+            <Amplified txt={'0 cryptoassets supported'} span={'And more to be added to the platform'} type={'0'} />
+            <Amplified txt={'$0 of liquidity locked'} span={'Used and trusted globally'} type={'1'} />
+            <Amplified txt={'0 transactions'} span={'Secured by a permissionless system'} type={'2'} />
           </GridLayout>
           <img src="/img/salju.png" alt="cube2" className="sc-djTcra hkipsh" />
         </div>
