@@ -5,7 +5,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'
 import { usePotteryData, useLatestVaultAddress } from 'state/pottery/hook'
 import { Input as NumericalInput } from 'components/CurrencyInputPanel/NumericalInput'
-import { TCOIN } from '@pancakeswap/tokens'
+import { CLOUD } from '@pancakeswap/tokens'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useTokenBalance from 'hooks/useTokenBalance'
 import { getFullDisplayBalance, getBalanceNumber } from 'utils/formatBalance'
@@ -45,7 +45,7 @@ const DepositAction: React.FC<React.PropsWithChildren<DepositActionProps>> = ({ 
   const maxTotalDepositToNumber = getBalanceNumber(publicData.maxTotalDeposit)
   const remainingCakeCanStake = new BigNumber(maxTotalDepositToNumber).minus(totalValueLockedValue).toString()
 
-  const { balance: userCake } = useTokenBalance(TCOIN[chainId]?.address)
+  const { balance: userCake } = useTokenBalance(CLOUD[chainId]?.address)
   const userCakeDisplayBalance = getFullDisplayBalance(userCake, 18, 3)
   const { userNotEnoughCake, notEnoughErrorMessage } = useUserEnoughCakeValidator(depositAmount, userCake)
 

@@ -1,25 +1,25 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
 
-export const TCOIN_MAINNET = new Token(
+// TODO: change this to the correct address
+export const CLOUD_MAINNET = new Token(
   ChainId.BASE,
-  '0x76df9878b5f980cC3BddF66f89042455634f6C41',
+  '0x8ae3d0E14Fe5BC0533a5Ca5e764604442d574a00',
   18,
-  'TCOIN',
-  'TCOIN',
-  'https://coingen20.netlify.app/',
+  'CLOUD',
+  'CloudBase',
+  'https://cloudbase.finance',
 )
 
-export const TCOIN_TESTNET = new Token(
+export const CLOUD_TESTNET = new Token(
   ChainId.BASE_GOERLI,
-  '0x76df9878b5f980cC3BddF66f89042455634f6C41',
+  '0x8ae3d0E14Fe5BC0533a5Ca5e764604442d574a00',
   18,
-  'TCOIN',
-  'TCOIN',
-  'https://coingen20.netlify.app/',
+  'CLOUD',
+  'CloudBase',
+  'https://cloudbase.finance',
 )
 
 export const USDC_ETH = new Token(ChainId.BASE, '0x25DE68ef588cb0c2c8F3537861E828Ae699CD0DB', 6, 'USDC', 'USD Coin')
-
 
 export const USDC_GOERLI = new Token(
   ChainId.BASE_GOERLI,
@@ -69,9 +69,9 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.BASE_GOERLI]: BUSD_GOERLI,
 }
 
-export const TCOIN = {
-  [ChainId.BASE]: TCOIN_MAINNET,
-  [ChainId.BASE_GOERLI]: TCOIN_TESTNET,
+export const CLOUD = {
+  [ChainId.BASE]: CLOUD_MAINNET,
+  [ChainId.BASE_GOERLI]: CLOUD_TESTNET,
 }
 
 export const USDC = {

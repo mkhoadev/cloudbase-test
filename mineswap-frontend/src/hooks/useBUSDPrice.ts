@@ -1,6 +1,6 @@
 import { ChainId, Currency, CurrencyAmount, JSBI, Pair, Price, Token, WNATIVE, WETH } from '@pancakeswap/sdk'
 import { FAST_INTERVAL } from 'config/constants'
-import { USDT, TCOIN, USDC } from '@pancakeswap/tokens'
+import { USDT, CLOUD, USDC } from '@pancakeswap/tokens'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import useSWR from 'swr'
@@ -156,7 +156,7 @@ export const useCakeBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pr
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet MINE if chain is testnet
-  const mine: Token = isTestnet ? TCOIN[ChainId.BASE_GOERLI] : TCOIN[ChainId.BASE]
+  const mine: Token = isTestnet ? CLOUD[ChainId.BASE_GOERLI] : CLOUD[ChainId.BASE]
   return usePriceByPairs(USDT[mine.chainId], mine)
 }
 

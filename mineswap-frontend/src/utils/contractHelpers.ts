@@ -4,7 +4,7 @@ import { provider } from 'utils/wagmi'
 import { Contract } from '@ethersproject/contracts'
 import poolsConfig from 'config/constants/pools'
 import { PoolCategory } from 'config/constants/types'
-import { TCOIN } from '@pancakeswap/tokens'
+import { CLOUD } from '@pancakeswap/tokens'
 
 // Addresses
 import {
@@ -202,7 +202,7 @@ export const getSouschefV2Contract = (id: number, signer?: Signer | Provider) =>
 export const getCakeContract = (signer?: Signer | Provider, chainId?: number) => {
   return getContract({
     abi: cakeAbi,
-    address: chainId ? TCOIN[chainId].address : TCOIN[ChainId.BASE].address,
+    address: chainId ? CLOUD[chainId].address : CLOUD[ChainId.BASE].address,
     signer,
   }) as Cake
 }

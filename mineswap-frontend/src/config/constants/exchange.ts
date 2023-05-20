@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,TCOIN } from '@pancakeswap/tokens'
+import { ethereumTokens, USDC, USDT, WBTC_ETH,WBTC_GOERLI,BUSD,CLOUD } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
@@ -36,8 +36,8 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.BASE]: [ WNATIVE[ChainId.BASE],TCOIN[ChainId.BASE]],
-  [ChainId.BASE_GOERLI]: [ WNATIVE[ChainId.BASE],TCOIN[ChainId.BASE]],
+  [ChainId.BASE]: [ WNATIVE[ChainId.BASE],CLOUD[ChainId.BASE]],
+  [ChainId.BASE_GOERLI]: [ WNATIVE[ChainId.BASE],CLOUD[ChainId.BASE]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -48,7 +48,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.BASE]: [
-    [WNATIVE[ChainId.BASE], TCOIN[ChainId.BASE]],
+    [WNATIVE[ChainId.BASE], CLOUD[ChainId.BASE]],
   ],
 }
 
