@@ -8,7 +8,7 @@ import {
   EarnFillIcon,
 } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
-import { DropdownMenuItems } from '@pancakeswap/uikit/src/components/DropdownMenu/types'
+import { DropdownMenuItemType, DropdownMenuItems } from '@pancakeswap/uikit/src/components/DropdownMenu/types'
 export type ConfigMenuDropDownItemsType = DropdownMenuItems & { hideSubNav?: boolean }
 export type ConfigMenuItemsType = Omit<MenuItemsType, 'items'> & { hideSubNav?: boolean; image?: string } & {
   items?: ConfigMenuDropDownItemsType[]
@@ -49,6 +49,17 @@ const config: (
           label: t('Liquidity'),
           href: '/liquidity',
         },
+        {
+          label: t('Bridge'),
+          href: 'https://bridge.base.org',
+          type: DropdownMenuItemType.EXTERNAL_LINK,
+          isActive: true
+        },
+        {
+          label: t('Perpetual'),
+          href: '#',
+          disabled: true,
+        }
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
     {
@@ -87,6 +98,12 @@ const config: (
         },
         {
           label: t('NFT MarketPlace'),
+          href: '#',
+          status: { text: t('Soon'), color: 'warning' },
+          disabled: true,
+        },
+        {
+          label: t('AMM NFT'),
           href: '#',
           status: { text: t('Soon'), color: 'warning' },
           disabled: true,
