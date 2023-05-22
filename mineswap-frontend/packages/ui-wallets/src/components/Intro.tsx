@@ -7,7 +7,7 @@ import { getDocLink } from '../docLangCodeMapping'
 const IntroSteps = [
   {
     title: <Trans>Your first step in the DeFi world</Trans>,
-    icon: '/img/walletImage.png',
+    icon: '/images/cloudbase/bg_loadtx.png?version=1.0',
     description: (
       <Trans>
         A Web3 Wallet allows you to send and receive crypto assets like bitcoin, BNB, ETH, NFTs and much more.

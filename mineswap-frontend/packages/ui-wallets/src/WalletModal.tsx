@@ -434,7 +434,7 @@ const Intro = () => {
       <Heading as="h1" fontSize="20px" color="secondary">
         {t('Haven’t got a wallet yet?')}
       </Heading>
-      <Image src="/img/walletImage.png" width={198} height={178} />
+      <Image src="/images/cloudbase/bg_loadtx.png?version=1.0" width={198} height={178} />
       <Button as='a' color="backgroundAlt" variant="subtle">
         {/* href={getDocLink(code)} */}
         {t('Learn How to Connect')}
