@@ -201,8 +201,10 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
       primaryType: 'Permit',
       message,
     })
-
-    library
+    if (ChainId.BASE === chainId) {
+      approveCallback()
+    } else {
+      library
       .send('eth_signTypedData_v4', [account, data])
       .then(splitSignature)
       .then((signature) => {
@@ -219,6 +221,8 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
           approveCallback()
         }
       })
+    }
+    
   }
 
   // wrapped onUserInput to clear signatures
