@@ -56,7 +56,7 @@ const Page: React.FC<React.PropsWithChildren<PageProps>> = ({ children, symbol, 
   return (
     <>
       <PageMeta symbol={symbol} />
-      <ContainerBg />
+      <ContainerBg className="bg_not-found" />
       <StyledPage {...props}>{children}</StyledPage>
     </>
   )
@@ -67,13 +67,16 @@ export default Page
 const ContainerBg = styled.div`
   width: 100%;
   height: 100%;
+  max-width: 1000px;
+  max-height: 1000px;
   position: absolute;
-  background: url('/images/cloudbase/bg.png?version=1.0');
+  background: url('/img/not_found.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: bottom;
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 50%;
+  transform: translate(-50%);
   z-index: -1;
 `
