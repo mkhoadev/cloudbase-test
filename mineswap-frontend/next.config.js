@@ -49,6 +49,7 @@ const config = {
     loader: 'imgix',
     path: '/',
   },
+
   // distDir: 'build',
   async rewrites() {
     return [
@@ -118,7 +119,7 @@ const config = {
         source: '/pool',
         destination: '/liquidity',
         permanent: true,
-      }
+      },
     ]
   },
   webpack: (webpackConfig, { webpack }) => {

@@ -19,7 +19,7 @@ const AddLiquidityPage = () => {
 
   const native = useNativeCurrency()
 
-  const [currencyIdA, currencyIdB] = router.query.currency || [
+  const [currencyIdA, currencyIdB] = router?.query?.currency || [
     native.symbol,
     CLOUD[chainId]?.address ?? USDC[chainId]?.address,
   ]
@@ -52,39 +52,41 @@ AddLiquidityPage.chains = CHAIN_IDS
 
 export default AddLiquidityPage
 
-// const OLD_PATH_STRUCTURE = /^(0x[a-fA-F0-9]{40}|BNB)-(0x[a-fA-F0-9]{40}|BNB)$/
+//=============================================================================
 
-// export const getStaticPaths: GetStaticPaths = () => {
-//   return {
-//     paths: [{ params: { currency: [] } }],
-//     fallback: true,
-//   }
-// }
+const OLD_PATH_STRUCTURE = /^(0x[a-fA-F0-9]{40}|WETH)-(0x[a-fA-F0-9]{40}|WETH)$/
 
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//   const { currency = [] } = params
-//   const [currencyIdA, currencyIdB] = currency
-//   const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: [{ params: { currency: [] } }],
+    fallback: true,
+  }
+}
 
-//   if (match?.length) {
-//     return {
-//       redirect: {
-//         statusCode: 301,
-//         destination: `/add/${match[1]}/${match[2]}`,
-//       },
-//     }
-//   }
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { currency = [] } = params
+  const [currencyIdA, currencyIdB] = currency
+  const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
 
-//   if (currencyIdA && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
-//     return {
-//       redirect: {
-//         statusCode: 303,
-//         destination: `/add/${currencyIdA}`,
-//       },
-//     }
-//   }
+  if (match?.length) {
+    return {
+      redirect: {
+        statusCode: 301,
+        destination: `/add/${match[1]}/${match[2]}`,
+      },
+    }
+  }
 
-//   return {
-//     props: {},
-//   }
-// }
+  if (currencyIdA && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
+    return {
+      redirect: {
+        statusCode: 303,
+        destination: `/add/${currencyIdA}`,
+      },
+    }
+  }
+
+  return {
+    props: {},
+  }
+}
