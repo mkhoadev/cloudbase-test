@@ -1932,3 +1932,45 @@
 .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
     color: unset !important;
 }
+
+/* .bg_not-found::after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 63%;
+    width: 152px;
+    height: 152px;
+    background: url('../../public/img/awan_malam.png');
+    background-position: "center";
+    background-repeat: no-repeat;
+    background-size: 65%;
+}
+
+.bg_not-found::before{
+    content: '';
+    position: absolute;
+    bottom: 17%;
+    left: 72%;
+    width: 152px;
+    height: 152px;
+    background: url('../../public/img/payung.png');
+    background-position: "center";
+    background-repeat: no-repeat;
+    background-size: 60%;
+} */
+
+@media screen and (max-width: 768px) {
+    .bg_not-found{
+        max-width: 500px !important;
+        max-height: 500px !important;
+        top: 20% !important
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .bg_not-found{
+        max-width: 400px !important;
+        max-height: 400px !important;
+        top: 20% !important
+    }
+}
