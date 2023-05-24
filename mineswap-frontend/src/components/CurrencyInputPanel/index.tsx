@@ -159,7 +159,7 @@ export default function CurrencyInputPanel({
               }
             }}
           >
-            <Flex alignItems="center" justifyContent="space-between" >
+            <Flex alignItems="center" justifyContent="space-between">
               {pair ? (
                 <DoubleCurrencyLogo currency0={pair.token0} currency1={pair.token1} size={16} margin />
               ) : currency ? (

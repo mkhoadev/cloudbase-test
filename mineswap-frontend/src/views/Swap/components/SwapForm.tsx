@@ -47,6 +47,7 @@ import { ArrowWrapper, Wrapper } from './styleds'
 import { useStableFarms } from '../StableSwap/hooks/useStableConfig'
 import { isAddress } from '../../../utils'
 import { useCurrencyBalance } from 'state/wallet/hooks'
+import { getSwapSound } from '../../../components/SearchModal/swapSound'
 
 const Label = styled(Text)`
   font-size: 12px;
@@ -100,7 +101,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
     [Field.INPUT]: { currencyId: inputCurrencyId },
     [Field.OUTPUT]: { currencyId: outputCurrencyId },
   } = useSwapState()
-  
+
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
   const hasStableSwapAlternative = useMemo(() => {
@@ -276,6 +277,7 @@ export default function SwapForm({ setIsChartDisplayed, isChartDisplayed, isAcce
                     onSwitchTokens()
                     replaceBrowserHistory('inputCurrency', outputCurrencyId)
                     replaceBrowserHistory('outputCurrency', inputCurrencyId)
+                    getSwapSound().play()
                   }}
                 >
                   {/* <ArrowDownIcon
