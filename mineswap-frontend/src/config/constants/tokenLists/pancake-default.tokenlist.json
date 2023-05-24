@@ -124,6 +124,22 @@
       "chainId": 84531,
       "decimals": 18,
       "logoURI": ""
+    },
+    {
+      "name": "USDT",
+      "symbol": "USDT",
+      "address": "0x6Cab4A1c5ec3C8ab63ff8C4e5cb802207745471e",
+      "chainId": 84531,
+      "decimals": 18,
+      "logoURI": "https://cloudbase.finance/images/84531/tokens/usdt.png"
+    },
+    {
+      "name": "USDC",
+      "symbol": "USDC",
+      "address": "0x585b34473CEac1D60BD9B9381D6aBaF122008504",
+      "chainId": 84531,
+      "decimals": 18,
+      "logoURI": "https://cloudbase.finance/images/84531/tokens/usdc.png"
     }
 
   ]
