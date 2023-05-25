@@ -43,7 +43,7 @@ const getWalletText = (textOptions: AddToWalletTextOptions, tokenSymbol: string,
     textOptions !== AddToWalletTextOptions.NO_TEXT &&
     (textOptions === AddToWalletTextOptions.TEXT
       ? t('Add to Wallet')
-      : t('Add LP to Wallet', { asset: tokenSymbol }))
+      : t('Add %asset% to Wallet', { asset: tokenSymbol }))
   )
 }
 
