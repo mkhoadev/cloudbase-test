@@ -140,6 +140,14 @@
       "chainId": 84531,
       "decimals": 18,
       "logoURI": "https://cloudbase.finance/images/84531/tokens/usdc.png"
+    },
+    {
+      "name": "PunkBase",
+      "symbol": "PunkBase",
+      "address": "0xeb31E4B4beDfb0df00B5dA90f30501d263b37691",
+      "chainId": 84531,
+      "decimals": 18,
+      "logoURI": "https://cloudbase.finance/images/84531/tokens/punkbase.jpg"
     }
 
   ]
