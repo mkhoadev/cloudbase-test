@@ -91,7 +91,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <div
           className="background-involved"
           style={{
-            backgroundImage:  'url(/img/hero_images_footer.png)',
+            backgroundImage: 'url(/img/hero_images_footer.png)',
             backgroundSize: '100%',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
@@ -104,7 +104,9 @@ const Home: React.FC<React.PropsWithChildren> = () => {
               <div className="involved-txt">Join us now</div>
               <div className="involved-div-span">
                 <span style={{ color: 'var(--supernova)' }}>Read our </span>
-                <span className="color-span" style={{ fontWeight: '600' }}>Whitepaper</span>
+                <span className="color-span" style={{ fontWeight: '600' }}>
+                  Whitepaper
+                </span>
                 <span className="color-span ">.</span>
               </div>
             </div>
@@ -120,29 +122,21 @@ const Home: React.FC<React.PropsWithChildren> = () => {
 
 export default Home
 
-
-const GridLayout = styled.div<{isMaxHeight?:boolean, isMargintop?:boolean}>`
-    width: 100%;
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    height: auto;
-    @media screen and (max-width: 1280px) and (min-width: 769px){
-        grid-template-columns: repeat(2, 1fr);
-        grid-row-gap: ${({ isMaxHeight }) => isMaxHeight ? "10rem" : "3rem"};
-
-    }
-    @media screen and (max-width: 768px) and (min-width:601px){
-        display: flex;
-        justify-content: space-around;
-        flex-wrap:wrap;
-        grid-row-gap: ${({ isMaxHeight }) => isMaxHeight ? "10rem" : "3rem"};
-    }
-    @media screen and (max-width: 600px) {
-        grid-template-columns: 1fr;
-        grid-row-gap: 10rem;
-        grid-row-gap: ${({ isMaxHeight }) => isMaxHeight ? "10rem" : "3rem"};
-        margin-top:${({ isMargintop }) => isMargintop ? "5rem" : "0rem"};
-    }
+const GridLayout = styled.div<{ isMaxHeight?: boolean; isMargintop?: boolean }>`
+  width: 100%;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  height: auto;
+  @media screen and (max-width: 1380px) and (min-width: 921px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: ${({ isMaxHeight }) => (isMaxHeight ? '10rem' : '3rem')};
+  }
+  @media screen and (max-width: 920px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 10rem;
+    grid-row-gap: ${({ isMaxHeight }) => (isMaxHeight ? '10rem' : '3rem')};
+    margin-top: ${({ isMargintop }) => (isMargintop ? '5rem' : '0rem')};
+  }
 `

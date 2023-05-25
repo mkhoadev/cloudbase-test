@@ -108,14 +108,14 @@ const UserMenu = ({ isDark }) => {
     )
   }
   return (
-    <ConnectWalletButton scale="sm" style={{backgroundColor: 'unset', boxShadow: 'unset'}}>
+    <ConnectWalletButton scale="sm" style={{ backgroundColor: 'unset', boxShadow: 'unset' }}>
       <span className="arrowBg">
         <span className="arrow arrowLeft">
           <Box display={['none', , , 'block']}>
             <Trans>Connect Wallet</Trans>
           </Box>
           <Box display={['block', , , 'none']}>
-            <Trans>Connect</Trans>
+            <Trans>Connect Wallet</Trans>
           </Box>
         </span>
       </span>
