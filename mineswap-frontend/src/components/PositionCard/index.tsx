@@ -289,8 +289,14 @@ function FullPositionCard({
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <CardLiqi {...props} >
-      <Flex justifyContent="space-between" style={{backgroundImage: 'unset'}} role="button" onClick={() => setShowMore(!showMore)} p="16px">
+    <CardLiqi {...props}>
+      <Flex
+        justifyContent="space-between"
+        style={{ backgroundImage: 'unset' }}
+        role="button"
+        onClick={() => setShowMore(!showMore)}
+        p="16px"
+      >
         <Flex flexDirection="column">
           <Flex alignItems="center" mb="4px">
             <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={20} />
