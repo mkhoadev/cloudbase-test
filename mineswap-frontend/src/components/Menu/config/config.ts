@@ -1,12 +1,4 @@
-import {
-  MenuItemsType,
-  SwapIcon,
-  SwapFillIcon,
-  EarnIcon,
-  MoreIcon,
-  TrophyIcon,
-  EarnFillIcon,
-} from '@pancakeswap/uikit'
+import { MenuItemsType, SwapIcon, SwapFillIcon, EarnIcon, MoreIcon, TrophyIcon, EarnFillIcon } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
 import { DropdownMenuItemType, DropdownMenuItems } from '@pancakeswap/uikit/src/components/DropdownMenu/types'
 export type ConfigMenuDropDownItemsType = DropdownMenuItems & { hideSubNav?: boolean }
@@ -53,13 +45,13 @@ const config: (
           label: t('Bridge'),
           href: 'https://bridge.base.org',
           type: DropdownMenuItemType.EXTERNAL_LINK,
-          isActive: true
+          isActive: true,
         },
         {
           label: t('Perpetual'),
           href: '#',
           disabled: true,
-        }
+        },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
     {
