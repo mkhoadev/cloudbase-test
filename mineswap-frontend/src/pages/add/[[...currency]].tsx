@@ -67,24 +67,27 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { currency = [] } = params
   const [currencyIdA, currencyIdB] = currency
   const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
+  console.log('currency', currency)
 
-  if (match?.length) {
-    return {
-      redirect: {
-        statusCode: 301,
-        destination: `/add/${match[1]}/${match[2]}`,
-      },
-    }
-  }
+  // if (match?.length) {
+  //   console.log('YES')
 
-  if (currencyIdA && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
-    return {
-      redirect: {
-        statusCode: 303,
-        destination: `/add/${currencyIdA}`,
-      },
-    }
-  }
+  //   return {
+  //     redirect: {
+  //       statusCode: 301,
+  //       destination: `/add/${match[1]}/${match[2]}`,
+  //     },
+  //   }
+  // }
+
+  // if (currencyIdB && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
+  //   return {
+  //     redirect: {
+  //       statusCode: 303,
+  //       destination: `/add/${currencyIdA}`,
+  //     },
+  //   }
+  // }
 
   return {
     props: {},
