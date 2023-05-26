@@ -24,18 +24,7 @@ const Body = styled(CardBody)`
 export default function Pool() {
   const { account } = useWeb3React()
   const { t } = useTranslation()
-  // ================
-  const router = useRouter()
-  const { chainId } = useActiveWeb3React()
 
-  const native = useNativeCurrency()
-
-  const [currencyIdA, currencyIdB] = router?.query?.currency || [
-    native.symbol,
-    CLOUD[chainId]?.address ?? USDC[chainId]?.address,
-  ]
-
-  // ================
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
   const tokenPairsWithLiquidityTokens = useMemo(
@@ -144,7 +133,7 @@ export default function Pool() {
           )}
         </Body>
         <CardFooter style={{ textAlign: 'center' }}>
-          <Link href={`/add/${currencyIdA}/${currencyIdB}`} passHref>
+          <Link href={`/add`} passHref>
             <Button id="join-pool-button" width="100%" startIcon={<AddIcon color="white" />}>
               {t('Add Liquidity')}
             </Button>

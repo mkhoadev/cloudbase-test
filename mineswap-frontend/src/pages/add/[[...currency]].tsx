@@ -26,14 +26,14 @@ import { GetServerSideProps } from 'next'
 //   }
 // }
 
-const AddLiquidityPage = ({ dynamicParams = '' }) => {
+const AddLiquidityPage = () => {
   const router = useRouter()
   const { chainId } = useActiveWeb3React()
   const dispatch = useAppDispatch()
 
   const native = useNativeCurrency()
 
-  const [currencyIdA, currencyIdB] = dynamicParams?.split('/') || [
+  const [currencyIdA, currencyIdB] = router.query?.currency || [
     native.symbol,
     CLOUD[chainId]?.address ?? USDC[chainId]?.address,
   ]
@@ -74,13 +74,12 @@ export default AddLiquidityPage
 export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths: [{ params: { currency: [] } }],
-    fallback: true,
+    fallback: 'blocking',
   }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { currency = [] }: any = params
-  const dynamicParams = currency?.join('/') // Combine the dynamic parameters into a single string if needed
+  // const { currency = [] }: any = params
   // const [currencyIdA, currencyIdB] = currency
   // const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
 
@@ -103,6 +102,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // }
 
   return {
-    props: { dynamicParams },
+    props: {},
   }
 }
