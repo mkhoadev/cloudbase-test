@@ -137,3 +137,7 @@ const config = {
 module.exports = withBundleAnalyzer(
   withVanillaExtract(withSentryConfig(withTM(withAxiom(config)), sentryWebpackPluginOptions)),
 )
+
+// module.exports = {
+//   trailingSlash: true,
+// }
