@@ -1,16 +1,20 @@
+import { useTranslation } from '@pancakeswap/localization'
+import { CLOUD, USDC } from '@pancakeswap/tokens'
+import { AddIcon, Button, CardBody, CardFooter, Flex, Text } from '@pancakeswap/uikit'
+import { useWeb3React } from '@pancakeswap/wagmi'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useNativeCurrency from 'hooks/useNativeCurrency'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import styled from 'styled-components'
-import { Text, Flex, CardBody, CardFooter, Button, AddIcon } from '@pancakeswap/uikit'
-import Link from 'next/link'
-import { useWeb3React } from '@pancakeswap/wagmi'
-import { useTranslation } from '@pancakeswap/localization'
 import { useLPTokensWithBalanceByAccount } from 'views/Swap/StableSwap/hooks/useStableConfig'
-import FullPositionCard, { StableFullPositionCard } from '../../components/PositionCard'
-import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
-import { usePairs, PairState } from '../../hooks/usePairs'
-import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
+import { AppBody, AppHeader } from '../../components/App'
 import Dots from '../../components/Loader/Dots'
-import { AppHeader, AppBody } from '../../components/App'
+import FullPositionCard, { StableFullPositionCard } from '../../components/PositionCard'
+import { PairState, usePairs } from '../../hooks/usePairs'
+import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
+import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
 import Page from '../Page'
 
 const Body = styled(CardBody)`
@@ -20,7 +24,18 @@ const Body = styled(CardBody)`
 export default function Pool() {
   const { account } = useWeb3React()
   const { t } = useTranslation()
+  // ================
+  const router = useRouter()
+  const { chainId } = useActiveWeb3React()
 
+  const native = useNativeCurrency()
+
+  const [currencyIdA, currencyIdB] = router?.query?.currency || [
+    native.symbol,
+    CLOUD[chainId]?.address ?? USDC[chainId]?.address,
+  ]
+
+  // ================
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
   const tokenPairsWithLiquidityTokens = useMemo(
@@ -129,7 +144,7 @@ export default function Pool() {
           )}
         </Body>
         <CardFooter style={{ textAlign: 'center' }}>
-          <Link href="/add" passHref>
+          <Link href={`/add/${currencyIdA}/${currencyIdB}`} passHref>
             <Button id="join-pool-button" width="100%" startIcon={<AddIcon color="white" />}>
               {t('Add Liquidity')}
             </Button>

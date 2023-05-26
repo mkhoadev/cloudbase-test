@@ -45,6 +45,7 @@ const AddLiquidityPage = () => {
   // ) : (
   //   <AddLiquidity currencyA={currencyA} currencyB={currencyB} />
   // )
+
   return <AddLiquidity currencyA={currencyA} currencyB={currencyB} />
 }
 
@@ -68,25 +69,25 @@ export default AddLiquidityPage
 //   const [currencyIdA, currencyIdB] = currency
 //   const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
 
-//   // if (match?.length) {
-//   //   return {
-//   //     redirect: {
-//   //       statusCode: 301,
-//   //       destination: `/add/${match[0]}/${match[1]}`,
-//   //     },
-//   //   }
-//   // }
+//   if (match?.length) {
+//     return {
+//       redirect: {
+//         statusCode: 301,
+//         destination: `/add/${match[0]}/${match[1]}`,
+//       },
+//     }
+//   }
 
-//   // if (currencyIdB && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
-//   //   return {
-//   //     redirect: {
-//   //       statusCode: 303,
-//   //       destination: `/add/${currencyIdA}/${currencyIdB}`,
-//   //     },
-//   //   }
-//   // }
+//   if (currencyIdB && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
+//     return {
+//       redirect: {
+//         statusCode: 303,
+//         destination: `/add/${currencyIdA}`,
+//       },
+//     }
+//   }
 
 //   return {
-//     props: { currency },
+//     props: {},
 //   }
 // }
