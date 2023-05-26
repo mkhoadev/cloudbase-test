@@ -56,38 +56,37 @@ export default AddLiquidityPage
 
 const OLD_PATH_STRUCTURE = /^(0x[a-fA-F0-9]{40}|WETH)-(0x[a-fA-F0-9]{40}|WETH)$/
 
-// export const getStaticPaths: GetStaticPaths = () => {
-//   return {
-//     paths: [{ params: { currency: [] } }],
-//     fallback: false,
-//   }
-// }
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: [{ params: { currency: [] } }],
+    fallback: true,
+  }
+}
 
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//   const { currency = [] } = params
-//   const [currencyIdA, currencyIdB] = currency
-//   const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
-//   console.log('currency', currency)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { currency = [] } = params
+  const [currencyIdA, currencyIdB] = currency
+  const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
 
-//   if (match?.length) {
-//     return {
-//       redirect: {
-//         statusCode: 301,
-//         destination: `/add/${match[0]}/${match[1]}`,
-//       },
-//     }
-//   }
+  // if (match?.length) {
+  //   return {
+  //     redirect: {
+  //       statusCode: 301,
+  //       destination: `/add/${match[0]}/${match[1]}`,
+  //     },
+  //   }
+  // }
 
-//   if (currencyIdB && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
-//     return {
-//       redirect: {
-//         statusCode: 303,
-//         destination: `/add/${currencyIdA}/${currencyIdB}`,
-//       },
-//     }
-//   }
+  // if (currencyIdB && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
+  //   return {
+  //     redirect: {
+  //       statusCode: 303,
+  //       destination: `/add/${currencyIdA}/${currencyIdB}`,
+  //     },
+  //   }
+  // }
 
-//   return {
-//     props: { currency },
-//   }
-// }
+  return {
+    props: { currency },
+  }
+}
