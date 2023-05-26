@@ -151,7 +151,7 @@
     },
     {
       "name": "BullOnBase",
-      "symbol": "BLX",
+      "symbol": "$tBLX",
       "address": "0x0EC5B10F67adf2443a4F61009BE4E0a6531A2AF8",
       "chainId": 84531,
       "decimals": 18,
