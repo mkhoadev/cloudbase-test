@@ -12,14 +12,27 @@ import AddLiquidity from 'views/AddLiquidity'
 // import AddStableLiquidity from 'views/AddLiquidity/AddStableLiquidity/index'
 // import useStableConfig, { StableConfigContext } from 'views/Swap/StableSwap/hooks/useStableConfig'
 
-const AddLiquidityPage = () => {
+export async function getServerSideProps({ params }) {
+  // Fetch data or perform any server-side logic here
+  const { currency = [] } = params
+  const dynamicParams = currency.join('/') // Combine the dynamic parameters into a single string if needed
+
+  // Return the props object
+  return {
+    props: {
+      dynamicParams,
+    },
+  }
+}
+
+const AddLiquidityPage = ({ dynamicParams }) => {
   const router = useRouter()
   const { chainId } = useActiveWeb3React()
   const dispatch = useAppDispatch()
 
   const native = useNativeCurrency()
 
-  const [currencyIdA, currencyIdB] = router?.query?.currency || [
+  const [currencyIdA, currencyIdB] = dynamicParams.split('/') || [
     native.symbol,
     CLOUD[chainId]?.address ?? USDC[chainId]?.address,
   ]
@@ -55,39 +68,39 @@ export default AddLiquidityPage
 
 //=============================================================================
 
-const OLD_PATH_STRUCTURE = /^(0x[a-fA-F0-9]{40}|WETH)-(0x[a-fA-F0-9]{40}|WETH)$/
+// const OLD_PATH_STRUCTURE = /^(0x[a-fA-F0-9]{40}|WETH)-(0x[a-fA-F0-9]{40}|WETH)$/
 
-export const getStaticPaths: GetStaticPaths = () => {
-  return {
-    paths: [{ params: { currency: [] } }],
-    fallback: true,
-  }
-}
+// export const getStaticPaths: GetStaticPaths = () => {
+//   return {
+//     paths: [{ params: { currency: [] } }],
+//     fallback: true,
+//   }
+// }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { currency = [] } = params
-  const [currencyIdA, currencyIdB] = currency
-  const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//   const { currency = [] } = params
+//   const [currencyIdA, currencyIdB] = currency
+//   const match = currencyIdA?.match(OLD_PATH_STRUCTURE)
 
-  // if (match?.length) {
-  //   return {
-  //     redirect: {
-  //       statusCode: 301,
-  //       destination: `/add/${match[0]}/${match[1]}`,
-  //     },
-  //   }
-  // }
+//   if (match?.length) {
+//     return {
+//       redirect: {
+//         statusCode: 301,
+//         destination: `/add/${match[0]}/${match[1]}`,
+//       },
+//     }
+//   }
 
-  // if (currencyIdB && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
-  //   return {
-  //     redirect: {
-  //       statusCode: 303,
-  //       destination: `/add/${currencyIdA}`,
-  //     },
-  //   }
-  // }
+//   if (currencyIdB && currencyIdB && currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
+//     return {
+//       redirect: {
+//         statusCode: 303,
+//         destination: `/add/${currencyIdA}`,
+//       },
+//     }
+//   }
 
-  return {
-    props: {},
-  }
-}
+//   return {
+//     props: {},
+//   }
+// }
